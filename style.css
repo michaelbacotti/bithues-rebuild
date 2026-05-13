@@ -358,3 +358,134 @@ a:hover { color: var(--color-accent-hover); }
   .nav-inner { gap: 16px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+/* ============================================
+   Search
+   ============================================ */
+.nav-search {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.search-toggle:hover { color: var(--color-accent); }
+
+.search-panel {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 200;
+  min-width: 320px;
+}
+.search-panel.open { display: block; }
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  border-radius: 0;
+  outline: none;
+}
+.search-input::placeholder { color: var(--color-text-light); }
+
+.search-results {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  display: block;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border-light);
+  text-decoration: none;
+}
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background: rgba(0,0,0,0.03); }
+
+.result-title {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 3px;
+}
+.result-category {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.result-summary {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  margin-top: 2px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-no-results {
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+/* ============================================
+   Search Page
+   ============================================ */
+.search-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.search-page h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+.search-page-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.search-page-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  outline: none;
+}
+.search-page-btn {
+  padding: 10px 20px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.search-page-btn:hover { background: var(--color-accent-hover); }
