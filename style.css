@@ -268,6 +268,67 @@ a:hover { color: var(--color-accent-light); }
 .footer-copy { font-size: 13px; color: var(--color-text-light); margin-left: auto; }
 
 /* ============================================
+   Book Cover Thumbnails (Review Pages)
+   ============================================ */
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.book-cover-thumb {
+  width: 75px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.review-meta h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+.review-meta .author {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Article Hero Images
+   ============================================ */
+.article-hero {
+  margin: 1.5rem 0 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.article-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   Feed Cards with Thumbnails
+   ============================================ */
+.card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.card:last-child { border-bottom: none; }
+.card-thumb {
+  width: 60px;
+  height: auto;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.card-body { flex: 1; }
+
+/* ============================================
    Responsive
    ============================================ */
 @media (max-width: 640px) {
