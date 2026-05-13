@@ -617,12 +617,6 @@
     "summary": "The Door Between Worlds \u2014 Story"
   },
   {
-    "title": "The Martian",
-    "category": "Book Review",
-    "url": "/reviews/the-martian.html",
-    "summary": "A surviving astronaut, a dead planet, one last chance. A masterclass in survival fiction. By Andy Weir."
-  },
-  {
     "title": "The Orchardist: Harvest",
     "category": "Book Review",
     "url": "/reviews/the-orchardist-harvest.html",
@@ -727,5 +721,90 @@
     "category": "Book Review",
     "url": "/reviews/you-tell-the-story.html",
     "summary": "A draw-and-write storybook where children look at pictures, then write and draw their own stories. No correct answers, just the child's imagination. By Ellie Sunwood."
+  },
+  {
+    "title": "The Echoes Return \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-echoes-return.html"
+  },
+  {
+    "title": "The Ember Song \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-ember-song.html"
+  },
+  {
+    "title": "The Forbidden Library \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-forbidden-library.html"
+  },
+  {
+    "title": "The Forgotten Minute \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-forgotten-minute.html"
+  },
+  {
+    "title": "The Harvest \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-harvest.html"
+  },
+  {
+    "title": "The Humble Mind \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-humble-mind.html"
+  },
+  {
+    "title": "The Last Arena \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-last-arena.html"
+  },
+  {
+    "title": "The Last Garden \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-last-garden.html"
+  },
+  {
+    "title": "The Last Gift \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-last-gift.html"
+  },
+  {
+    "title": "The Last Signal",
+    "category": "Short Story",
+    "url": "/stories/the-last-signal.html"
+  },
+  {
+    "title": "The Last Song \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-last-song.html"
+  },
+  {
+    "title": "The Last Winter \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-last-winter.html"
+  },
+  {
+    "title": "The Listen \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-listen.html"
+  },
+  {
+    "title": "The Martian",
+    "category": "Book Review",
+    "url": "/reviews/the-martian.html"
+  },
+  {
+    "title": "The Other Side \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-other-side.html"
+  },
+  {
+    "title": "The Power of Changing Your Mind",
+    "category": "Book Review",
+    "url": "/reviews/the-power-of-changing-your-mind.html"
+  },
+  {
+    "title": "The Question \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-question.html"
   }
 ]
