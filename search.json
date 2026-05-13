@@ -1,183 +1,9 @@
 [
   {
-    "title": "The Dawn of Civilization",
+    "title": "A Home for Anya",
     "category": "Book Review",
-    "url": "/reviews/dawn-of-civilization.html",
-    "summary": "A prehistoric survival epic where sixteen-year-old Koda fights to turn a wandering tribe into a walled village that can survive. T. Stone's grounded historical fiction at its best."
-  },
-  {
-    "title": "The Richmond Cipher",
-    "category": "Book Review",
-    "url": "/reviews/richmond-cipher.html",
-    "summary": "A historical thriller weaving cryptography, Civil War intrigue, and a family secret into a page-turning mystery by E. Maris."
-  },
-  {
-    "title": "Red Horizon: Lunar Launch",
-    "category": "Book Review",
-    "url": "/reviews/red-horizon.html",
-    "summary": "A near-future lunar colony faces sabotage and political intrigue in this fast-paced sci-fi thriller by M. A. Hale."
-  },
-  {
-    "title": "The Confluence Doctrine",
-    "category": "Book Review",
-    "url": "/reviews/confluence-doctrine.html",
-    "summary": "In a world where suffering has been designed out, Orren Myal hears something that doesn't fit \u2014 a sense of 'full, but unfinished.'"
-  },
-  {
-    "title": "Living with a Moving Planet",
-    "category": "Book Review",
-    "url": "/reviews/living-with-a-moving-planet.html",
-    "summary": "Drawing on deep-time climate records and archaeology, this book shows how humans have adapted to changing baselines for tens of thousands of years. By J. T. Hartley."
-  },
-  {
-    "title": "Beyond the Veil",
-    "category": "Book Review",
-    "url": "/reviews/beyond-the-veil.html",
-    "summary": "A careful tour of evidence around what happens when we die, drawing on NDE research, quantum physics, and philosophy by D. E. Harlan."
-  },
-  {
-    "title": "Veiled Presence",
-    "category": "Book Review",
-    "url": "/reviews/veiled-presence.html",
-    "summary": "Researcher E. C. Stroud maps what can actually be supported by evidence in the modern UAP/UFO record \u2014 disciplined inquiry rather than enthusiasm."
-  },
-  {
-    "title": "The Power of Changing Your Mind",
-    "category": "Book Review",
-    "url": "/reviews/power-of-changing-your-mind.html",
-    "summary": "In a culture that rewards confidence, this book shows how intellectual humility is actually a competitive edge \u2014 by Evan R. Cole."
-  },
-  {
-    "title": "The Shadow Within",
-    "category": "Book Review",
-    "url": "/reviews/shadow-within.html",
-    "summary": "A practical, grounded guide to shadow work that avoids mysticism while acknowledging psychological depth \u2014 by Elena Maris."
-  },
-  {
-    "title": "Echoes of Aetheris",
-    "category": "Book Review",
-    "url": "/reviews/echoes-of-aetheris.html",
-    "summary": "Nine thousand years before history, a wounded alien ship falls onto a frozen steppe. The first hybrid is born \u2014 by Aetheri Codex."
-  },
-  {
-    "title": "Disclosure 2026",
-    "category": "Book Review",
-    "url": "/reviews/disclosure-2026.html",
-    "summary": "Eighteen rated scenarios for what alien first contact could actually look like \u2014 from first signal to global aftermath. By Marcus Reeve."
-  },
-  {
-    "title": "Resonance Drift",
-    "category": "Book Review",
-    "url": "/reviews/resonance-drift.html",
-    "summary": "In Eden Prime's biolum spires, harmony hums \u2014 until a family detects a pulse that defies the weave. By R. Zyrion."
-  },
-  {
-    "title": "Symbiont Bloom",
-    "category": "Book Review",
-    "url": "/reviews/symbiont-bloom.html",
-    "summary": "On volcanic isles of Lumengrove, dawn arrives through living leaf-glass. When the island's pulse skips, a family must unravel a systems puzzle. By Elowen Tidebloom."
-  },
-  {
-    "title": "Otom\u00ed",
-    "category": "Book Review",
-    "url": "/reviews/otomi.html",
-    "summary": "A historical narrative of land, ritual, and continuity \u2014 an Otom\u00ed community clinging to a shrinking lake in 10th century central Mexico highlands. By E. J. Mar\u00edn."
-  },
-  {
-    "title": "Physics of Insight",
-    "category": "Book Review",
-    "url": "/reviews/physics-of-insight.html",
-    "summary": "What if genius isn't rare \u2014 it's hidden inside every mind, waiting for the right switch? By Quantum Chronos."
-  },
-  {
-    "title": "The Physics of Time",
-    "category": "Book Review",
-    "url": "/reviews/the-physics-of-time.html",
-    "summary": "A groundbreaking exploration: what if the universe is a block of spacetime containing all moments, yet consciousness navigates through it? By Quantum Chronos."
-  },
-  {
-    "title": "Consciousness in Higher Dimensional Spacetime",
-    "category": "Book Review",
-    "url": "/reviews/consciousness-in-higher-dimensional-spacetime.html",
-    "summary": "What if consciousness doesn't exist in the same spacetime as the body? A radical extension of Einstein's relativity into the domain of mind. By Quantum Chronos."
-  },
-  {
-    "title": "Quantum Soul Echoes",
-    "category": "Book Review",
-    "url": "/reviews/quantum-soul-echoes.html",
-    "summary": "What if consciousness is what spacetime remembers? Two models synthesized in this rigorous exploration. By Quantum Chronos."
-  },
-  {
-    "title": "Microbiology ABC's",
-    "category": "Book Review",
-    "url": "/reviews/microbiology-abcs.html",
-    "summary": "From amoebas to zooplankton, each letter highlights a microbe or cell structure. A rare children's science book that does not talk down to its readers. By Michael Bacotti."
-  },
-  {
-    "title": "You Tell the Story",
-    "category": "Book Review",
-    "url": "/reviews/you-tell-the-story.html",
-    "summary": "A draw-and-write storybook where children look at pictures, then write and draw their own stories. No correct answers, just the child's imagination. By Ellie Sunwood."
-  },
-  {
-    "title": "The Burning Song",
-    "category": "Book Review",
-    "url": "/reviews/the-burning-song.html",
-    "summary": "When a cave lion marks Aken with its claws, fever nearly claims him. But worse than the wound is the question it raises: How can his band survive? By Rowan Ashcroft."
-  },
-  {
-    "title": "Mindful Memory",
-    "category": "Book Review",
-    "url": "/reviews/mindful-memory.html",
-    "summary": "Empowering retirees with science-backed exercises like memory palaces and timeline mapping. By D. E. Harlan."
-  },
-  {
-    "title": "Shadow Work Journal for Women",
-    "category": "Book Review",
-    "url": "/reviews/shadow-work-journal-for-women.html",
-    "summary": "A beginner-friendly 90-day journal with warm prompts for emotional healing. By Luna Sage."
-  },
-  {
-    "title": "Rules of Survival",
-    "category": "Book Review",
-    "url": "/reviews/rules-of-survival.html",
-    "summary": "Roughly one million years ago, a boy learns the band's rules \u2014 water order, ember law, watch \u2014 and pays for them in skin. By Jorak Veldt."
-  },
-  {
-    "title": "Blood Ember",
-    "category": "Book Review",
-    "url": "/reviews/blood-ember.html",
-    "summary": "Three parts trace how survival habits harden into protocol, law, and chant. From fire to spear to echo. By Jorak Veldt."
-  },
-  {
-    "title": "The Orchardist: Harvest",
-    "category": "Book Review",
-    "url": "/reviews/the-orchardist-harvest.html",
-    "summary": "Diane Kessler falls from a ladder \u2014 in that moment, she doesn't come back. A story of near-death experience, and what returning actually costs. By Kate E Brennan."
-  },
-  {
-    "title": "Little Mike: Fun at the Beach",
-    "category": "Book Review",
-    "url": "/reviews/little-mike-fun-at-the-beach.html",
-    "summary": "Join Little Mike and his friends as they build an awe-inspiring sand castle at the beach. By Michael Jr."
-  },
-  {
-    "title": "The Quiet Hours",
-    "category": "Book Review",
-    "url": "/reviews/the-quiet-hours.html",
-    "summary": "Gentle bedtime stories celebrating simple joys \u2014 perfect for children seeking comfort. By Elara Moss."
-  },
-  {
-    "title": "Little Mike: Learns to Fly",
-    "category": "Book Review",
-    "url": "/reviews/little-mike-learns-to-fly.html",
-    "summary": "Little Mike dreams of flying. With friends John and May, he meets Pilot Thomas who teaches the wonders of airplanes. By Michael Jr."
-  },
-  {
-    "title": "Discovering Washington DC",
-    "category": "Book Review",
-    "url": "/reviews/discovering-washington-dc.html",
-    "summary": "Beyond the monuments \u2014 a guide to the real DC. Stroll Georgetown's cobblestones, tap your feet to jazz, taste a half-smoke. By Evelyn Carter."
+    "url": "/reviews/home-for-anya.html",
+    "summary": "In-depth review of A Home for Anya by Lena Ashfield. Romance. A touching story of home, belonging, and family."
   },
   {
     "title": "Alien Disclosure 2026: The Year Everything Changed",
@@ -186,64 +12,42 @@
     "summary": "From David Grusch's testimony to Trump's February directive \u2014 the alleged hybrid breeding program, the Watchers, and what comes next for humanity."
   },
   {
-    "title": "The Disclosure",
-    "category": "Short Story",
-    "url": "/stories/the-disclosure.html",
-    "summary": "A speech about infrastructure becomes something else entirely \u2014 when the President prepares to address a fractured nation on the night the world changes."
-  },
-  {
-    "title": "Echoes of Transcendence",
-    "category": "Book Review",
-    "url": "/reviews/echoes-of-transcendence.html",
-    "summary": "Where boundaries of reality blur, seekers embark on a transformative journey. Guided by ancient prophecies, they unveil mysteries. By L Everwood."
-  },
-  {
     "title": "American Journeys",
     "category": "Book Review",
     "url": "/reviews/american-journeys.html",
     "summary": "Designed for ESL learners and immigrants, American Journeys uses cultural immersion as the vehicle for linguistic development. By C. Everett."
   },
   {
-    "title": "Mythical Menagerie",
-    "category": "Book Review",
-    "url": "/reviews/mythical-menagerie.html",
-    "summary": "A cross-cultural tour of mythological creatures\u2014dragons, shape-shifters, hybrid beasts\u2014to examine what the creatures different cultures invented reveals about the cultures. By E. Marlowe."
+    "title": "American Voices",
+    "category": "Short Story",
+    "url": "/stories/american-voices.html",
+    "summary": "An in-depth look at American Voices \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
   },
   {
-    "title": "Little Mike: Builds a Robot",
-    "category": "Book Review",
-    "url": "/reviews/little-mike-builds-a-robot.html",
-    "summary": "Little Mike, John, and May attempt to build a robot\u2014which proves harder than expected. Treats failure as information rather than defeat. By Michael Jr."
+    "title": "Before the Streetlights Came On",
+    "category": "Short Story",
+    "url": "/stories/before-the-streetlights-came-on.html",
+    "summary": "An in-depth look at Before the Streetlights Came On \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
   },
   {
-    "title": "Time Investing",
-    "category": "Book Review",
-    "url": "/reviews/time-investing.html",
-    "summary": "Your time is not just a resource you spend\u2014it is a resource you invest. A practical guide to taking your own time seriously. By H Harvey."
+    "title": "Beginner&#39;s Guide to Hopepunk",
+    "slug": "hopepunk-beginners-guide",
+    "type": "article",
+    "excerpt": "Beginner&rsquo;s Guide to Hopepunk What is hopepunk? The sci-fi movement reimagining the future Hopepunk (noun): A sci-fi genre that imagines hopeful futures where humanity solves ...",
+    "url": "/articles/hopepunk-beginners-guide.html"
   },
   {
-    "title": "The Perfection Cycle",
-    "category": "Book Review",
-    "url": "/reviews/the-perfection-cycle.html",
-    "summary": "Consciousness and life are not accidents but expressions of the universe reaching toward complexity and meaning. By J.E. Mercer."
-  },
-  {
-    "title": "The Martian",
-    "category": "Book Review",
-    "url": "/reviews/the-martian.html",
-    "summary": "A surviving astronaut, a dead planet, one last chance. A masterclass in survival fiction. By Andy Weir."
+    "title": "Beginner's Guide to Quantum Physics",
+    "type": "article",
+    "url": "/articles/quantum-physics-beginners-guide/",
+    "category": "article",
+    "excerpt": "Wave-particle duality, superposition, entanglement \u2014 and what it means for consciousness."
   },
   {
     "title": "Best Books for Book Clubs",
     "category": "Article",
     "url": "/articles/best-books-book-clubs.html",
     "summary": "Novels that spark real discussion \u2014 no easy answers, characters worth arguing about. A great book club book has multiple plausible interpretations."
-  },
-  {
-    "title": "Best Books on Discipline and Willpower",
-    "category": "Article",
-    "url": "/articles/best-books-discipline-willpower.html",
-    "summary": "Science-backed reads on building unshakeable discipline. Willpower is finite and depletes with use \u2014 the most effective path to lasting discipline is designing systems."
   },
   {
     "title": "Best Books for Entrepreneurs",
@@ -270,6 +74,12 @@
     "summary": "Your ultimate summer reading list \u2014 from beach reads to mind-expanding adventures. Summer reading means something different to everyone."
   },
   {
+    "title": "Best Books on Discipline and Willpower",
+    "category": "Article",
+    "url": "/articles/best-books-discipline-willpower.html",
+    "summary": "Science-backed reads on building unshakeable discipline. Willpower is finite and depletes with use \u2014 the most effective path to lasting discipline is designing systems."
+  },
+  {
     "title": "Best Business and Leadership Books of 2026",
     "category": "Article",
     "url": "/articles/best-business-books-2026.html",
@@ -288,124 +98,22 @@
     "summary": "Your gateway to the past. Historical fiction is history you can feel. These gateway novels prove the genre is accessible, exciting."
   },
   {
-    "title": "American Voices",
-    "category": "Short Story",
-    "url": "/stories/american-voices.html",
-    "summary": "An in-depth look at American Voices \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
-  },
-  {
-    "title": "Before the Streetlights Came On",
-    "category": "Short Story",
-    "url": "/stories/before-the-streetlights-came-on.html",
-    "summary": "An in-depth look at Before the Streetlights Came On \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
-  },
-  {
-    "title": "Beginner&#39;s Guide to Hopepunk",
-    "slug": "hopepunk-beginners-guide",
+    "title": "Best Science Fiction Books for Beginners \u2014 The Ultimate Comparison Guide",
     "type": "article",
-    "excerpt": "Beginner&rsquo;s Guide to Hopepunk What is hopepunk? The sci-fi movement reimagining the future Hopepunk (noun): A sci-fi genre that imagines hopeful futures where humanity solves ...",
-    "url": "/articles/hopepunk-beginners-guide.html"
+    "excerpt": "Science fiction is the literature of possibility \u2014 but staring at a shelf of 600-page epics can stop a beginner before they start. The genre has a reputation for being hard to enter.",
+    "url": "/articles/books-like-sci-fi-beginners.html"
   },
   {
-    "title": "The Rise of Hopepunk Fiction",
-    "slug": "hopepunk-fiction",
-    "type": "article",
-    "excerpt": "The Rise of Hopepunk Fiction Why dark, gritty sci-fi is giving way to stories that imagine a better tomorrow Introduction For decades, science fiction has been dominated by dystopi...",
-    "url": "/articles/hopepunk-fiction.html"
+    "title": "Beyond the Veil",
+    "category": "Book Review",
+    "url": "/reviews/beyond-the-veil.html",
+    "summary": "A careful tour of evidence around what happens when we die, drawing on NDE research, quantum physics, and philosophy by D. E. Harlan."
   },
   {
-    "title": "Horizonte Rojo: Lanzamiento Lunar",
-    "slug": "horizonte-rojo",
-    "type": "review",
-    "excerpt": "",
-    "url": "/reviews/horizonte-rojo.html",
-    "author": "M. A. Hale"
-  },
-  {
-    "title": "Why We Read Horror: The Power of Fear",
-    "slug": "horror-for-beginners",
-    "type": "article",
-    "excerpt": "Home \u203a Articles \u2190 Back to Articles Why We Read Horror The Power of Fear \u2014 And Why We Seek It Out You know that feeling. Your heart races. Your palms sweat. You glance over your sho...",
-    "url": "/articles/horror-for-beginners.html"
-  },
-  {
-    "title": "How to Read More Books in Less Time",
-    "slug": "how-to-read-more-books",
-    "type": "article",
-    "excerpt": "How to Read More Books in Less Time Practical strategies to read more books without sacrificing comprehension You want to read more. There&rsquo;s a stack of books on your nightsta...",
-    "url": "/articles/how-to-read-more-books.html"
-  },
-  {
-    "title": "How We Review Books at Bithues",
-    "slug": "how-we-review-books",
-    "type": "article",
-    "excerpt": "How We Review Books at Bithues Our philosophy, process, and what makes our reviews different You&rsquo;ve probably noticed that our reviews look a bit different from the typical Am...",
-    "url": "/articles/how-we-review-books.html"
-  },
-  {
-    "title": "Ice Memory \u2014 Story",
-    "slug": "ice-memory",
-    "type": "storie",
-    "excerpt": "",
-    "url": "/stories/ice-memory.html"
-  },
-  {
-    "title": "Jasper&#39;s Flight \u2014 Story",
-    "slug": "jaspers-flight",
-    "type": "storie",
-    "excerpt": "",
-    "url": "/stories/jaspers-flight.html"
-  },
-  {
-    "title": "How to Get Kids Into Reading",
-    "slug": "kids-reading-guide",
-    "type": "article",
-    "excerpt": "How to Get Kids Into Reading Practical strategies to inspire a love of reading in children, from toddlers to teens As parents, we want our children to become readers. Not just beca...",
-    "url": "/articles/kids-reading-guide.html"
-  },
-  {
-    "title": "Meet Little Mike: Adventures That Spark Imagination",
-    "slug": "little-mike-series",
-    "type": "article",
-    "excerpt": "Meet Little Mike: Adventures That Spark Imagination Three wholesome stories about friendship, dreams, and creativity Every child loves stories where the hero is someone they can se...",
-    "url": "/articles/little-mike-series.html"
-  },
-  {
-    "title": "Living with a Moving Planet",
-    "slug": "living-with-a-moving-planet",
-    "type": "review",
-    "excerpt": "",
-    "url": "/reviews/living-with-a-moving-planet.html",
-    "author": "J. T. Hartley"
-  },
-  {
-    "title": "Mabi \u2014 Story",
-    "slug": "mabi",
-    "type": "storie",
-    "excerpt": "",
-    "url": "/stories/mabi.html"
-  },
-  {
-    "title": "Meet the Indie Authors of Bithues",
-    "slug": "meet-indie-authors",
-    "type": "article",
-    "excerpt": "Meet the Indie Authors of Bithues The voices behind the books \u2014 their stories, inspirations, and what drives them to write Behind every book on our shelves is a writer who poured m...",
-    "url": "/articles/meet-indie-authors.html"
-  },
-  {
-    "title": "Memoir and Biography: Real Lives, Extraordinary Stories",
-    "slug": "memoir-biography-guide",
-    "type": "article",
-    "excerpt": "Home \u203a Articles \u2190 Back to Articles Memoir and Biography Real Lives, Extraordinary Stories Fiction has to make sense. Reality doesn&rsquo;t. That&rsquo;s the magic of memoir and bio...",
-    "url": "/articles/memoir-biography-guide.html"
-  },
-  {
-    "title": "Men of the Three Seas \u2014 Leander Vassos",
-    "slug": "men-of-three-seas",
-    "type": "review",
-    "excerpt": "",
-    "url": "/reviews/men-of-three-seas.html",
-    "author": "Leander Vassos"
+    "title": "Blood Ember",
+    "category": "Book Review",
+    "url": "/reviews/blood-ember.html",
+    "summary": "Three parts trace how survival habits harden into protocol, law, and chant. From fire to spear to echo. By Jorak Veldt."
   },
   {
     "title": "Books Like Anxious People",
@@ -444,22 +152,10 @@
     "url": "/articles/books-like-hyperion.html"
   },
   {
-    "title": "Books Like The Physics of Time",
-    "type": "article",
-    "excerpt": "If you loved diving into the physics of time with The Physics of Time, you're probably craving more books that bend your mind about the nature of reality.",
-    "url": "/articles/books-like-physics-of-time.html"
-  },
-  {
     "title": "Books Like Project Hail Mary \u2014 The Ultimate Comparison Guide",
     "type": "article",
     "excerpt": "Andy Weir's Project Hail Mary captured hearts with its science-nerd protagonist, unlikely alien friendship, and mission to save humanity.",
     "url": "/articles/books-like-project-hail-mary.html"
-  },
-  {
-    "title": "Best Science Fiction Books for Beginners \u2014 The Ultimate Comparison Guide",
-    "type": "article",
-    "excerpt": "Science fiction is the literature of possibility \u2014 but staring at a shelf of 600-page epics can stop a beginner before they start. The genre has a reputation for being hard to enter.",
-    "url": "/articles/books-like-sci-fi-beginners.html"
   },
   {
     "title": "Books Like The Martian \u2014 The Ultimate Comparison Guide",
@@ -480,10 +176,10 @@
     "url": "/articles/books-like-the-name-of-the-wind.html"
   },
   {
-    "title": "The Book of Enoch and the UFO Disclosure Moment",
+    "title": "Books Like The Physics of Time",
     "type": "article",
-    "excerpt": "What Is the Book of Enoch? The Watchers and the Nephilim: Visitors From Above. Ancient Astronauts: When Scripture Meets the Fringe.",
-    "url": "/articles/book-of-enoch-2026.html"
+    "excerpt": "If you loved diving into the physics of time with The Physics of Time, you're probably craving more books that bend your mind about the nature of reality.",
+    "url": "/articles/books-like-physics-of-time.html"
   },
   {
     "title": "Business and Leadership Books That Actually Work",
@@ -504,22 +200,10 @@
     "summary": "Every fantasy subgenre explained \u2014 epic, urban, dark, cozy, romantic, portal, and mythology \u2014 plus a deep dive into the 'Punk' movement: steampunk, solarpunk, hopepunk, cyberpunk, atompunk, and more."
   },
   {
-    "title": "When DNA Meets the Page: How Ancestry Testing Brings Historical Fiction to Life",
-    "category": "Article",
-    "url": "/articles/dna-ancestry-historical-fiction.html",
-    "summary": "DNA tests and historical fiction work together to answer the question: who were my ancestors? A look at Otom\u00ed, Xaltocan, Men of the Three Seas, and how genetic genealogy meets narrative."
-  },
-  {
-    "title": "Doomscrolling Is Destroying Your Attention Span \u2014 Here's What Actually Helps",
-    "category": "Article",
-    "url": "/articles/doomscrolling-vs-reading-books.html",
-    "summary": "An in-depth look at digital habits and their effect on attention span, with practical strategies to read more and scroll less."
-  },
-  {
-    "title": "Fantasy for Beginners: Your Gateway to Magic",
-    "category": "Article",
-    "url": "/articles/fantasy-for-beginners.html",
-    "summary": "A beginner's guide to fantasy \u2014 subgenres explained, worldbuilding basics, why read fantasy, and where to start."
+    "title": "Consciousness in Higher Dimensional Spacetime",
+    "category": "Book Review",
+    "url": "/reviews/consciousness-in-higher-dimensional-spacetime.html",
+    "summary": "What if consciousness doesn't exist in the same spacetime as the body? A radical extension of Einstein's relativity into the domain of mind. By Quantum Chronos."
   },
   {
     "title": "Cords of Empire",
@@ -528,15 +212,520 @@
     "summary": "In-depth review of Cords of Empire by E. J. Mar\u00edn. Historical Fiction. ISBN B0GX36Z7KB."
   },
   {
+    "title": "Disclosure 2026",
+    "category": "Book Review",
+    "url": "/reviews/disclosure-2026.html",
+    "summary": "Eighteen rated scenarios for what alien first contact could actually look like \u2014 from first signal to global aftermath. By Marcus Reeve."
+  },
+  {
+    "title": "Discovering Washington DC",
+    "category": "Book Review",
+    "url": "/reviews/discovering-washington-dc.html",
+    "summary": "Beyond the monuments \u2014 a guide to the real DC. Stroll Georgetown's cobblestones, tap your feet to jazz, taste a half-smoke. By Evelyn Carter."
+  },
+  {
+    "title": "Doomscrolling Is Destroying Your Attention Span \u2014 Here's What Actually Helps",
+    "category": "Article",
+    "url": "/articles/doomscrolling-vs-reading-books.html",
+    "summary": "An in-depth look at digital habits and their effect on attention span, with practical strategies to read more and scroll less."
+  },
+  {
+    "title": "Echoes of Aetheris",
+    "category": "Book Review",
+    "url": "/reviews/echoes-of-aetheris.html",
+    "summary": "Nine thousand years before history, a wounded alien ship falls onto a frozen steppe. The first hybrid is born \u2014 by Aetheri Codex."
+  },
+  {
+    "title": "Echoes of Transcendence",
+    "category": "Book Review",
+    "url": "/reviews/echoes-of-transcendence.html",
+    "summary": "Where boundaries of reality blur, seekers embark on a transformative journey. Guided by ancient prophecies, they unveil mysteries. By L Everwood."
+  },
+  {
+    "title": "Fantasy for Beginners: Your Gateway to Magic",
+    "category": "Article",
+    "url": "/articles/fantasy-for-beginners.html",
+    "summary": "A beginner's guide to fantasy \u2014 subgenres explained, worldbuilding basics, why read fantasy, and where to start."
+  },
+  {
     "title": "First Contact Diary",
     "category": "Book Review",
     "url": "/reviews/first-contact-diary.html",
     "summary": "In-depth review of First Contact Diary by Mira Ellison. Science Fiction. A story about communication, survival, and first contact with a new species."
   },
   {
-    "title": "A Home for Anya",
+    "title": "Horizonte Rojo: Lanzamiento Lunar",
+    "slug": "horizonte-rojo",
+    "type": "review",
+    "excerpt": "",
+    "url": "/reviews/horizonte-rojo.html",
+    "author": "M. A. Hale"
+  },
+  {
+    "title": "How We Review Books at Bithues",
+    "slug": "how-we-review-books",
+    "type": "article",
+    "excerpt": "How We Review Books at Bithues Our philosophy, process, and what makes our reviews different You&rsquo;ve probably noticed that our reviews look a bit different from the typical Am...",
+    "url": "/articles/how-we-review-books.html"
+  },
+  {
+    "title": "How to Get Kids Into Reading",
+    "slug": "kids-reading-guide",
+    "type": "article",
+    "excerpt": "How to Get Kids Into Reading Practical strategies to inspire a love of reading in children, from toddlers to teens As parents, we want our children to become readers. Not just beca...",
+    "url": "/articles/kids-reading-guide.html"
+  },
+  {
+    "title": "How to Get Kids Into Reading",
+    "type": "article",
+    "url": "/articles/kids-reading-guide/",
+    "category": "article",
+    "excerpt": "Practical strategies to inspire a love of reading in children, from toddlers to teens."
+  },
+  {
+    "title": "How to Read More Books in Less Time",
+    "slug": "how-to-read-more-books",
+    "type": "article",
+    "excerpt": "How to Read More Books in Less Time Practical strategies to read more books without sacrificing comprehension You want to read more. There&rsquo;s a stack of books on your nightsta...",
+    "url": "/articles/how-to-read-more-books.html"
+  },
+  {
+    "title": "Ice Memory \u2014 Story",
+    "slug": "ice-memory",
+    "type": "storie",
+    "excerpt": "",
+    "url": "/stories/ice-memory.html"
+  },
+  {
+    "title": "Jasper&#39;s Flight \u2014 Story",
+    "slug": "jaspers-flight",
+    "type": "storie",
+    "excerpt": "",
+    "url": "/stories/jaspers-flight.html"
+  },
+  {
+    "title": "Little Mike: Builds a Robot",
     "category": "Book Review",
-    "url": "/reviews/home-for-anya.html",
-    "summary": "In-depth review of A Home for Anya by Lena Ashfield. Romance. A touching story of home, belonging, and family."
+    "url": "/reviews/little-mike-builds-a-robot.html",
+    "summary": "Little Mike, John, and May attempt to build a robot\u2014which proves harder than expected. Treats failure as information rather than defeat. By Michael Jr."
+  },
+  {
+    "title": "Little Mike: Fun at the Beach",
+    "category": "Book Review",
+    "url": "/reviews/little-mike-fun-at-the-beach.html",
+    "summary": "Join Little Mike and his friends as they build an awe-inspiring sand castle at the beach. By Michael Jr."
+  },
+  {
+    "title": "Little Mike: Learns to Fly",
+    "category": "Book Review",
+    "url": "/reviews/little-mike-learns-to-fly.html",
+    "summary": "Little Mike dreams of flying. With friends John and May, he meets Pilot Thomas who teaches the wonders of airplanes. By Michael Jr."
+  },
+  {
+    "title": "Living with a Moving Planet",
+    "category": "Book Review",
+    "url": "/reviews/living-with-a-moving-planet.html",
+    "summary": "Drawing on deep-time climate records and archaeology, this book shows how humans have adapted to changing baselines for tens of thousands of years. By J. T. Hartley."
+  },
+  {
+    "title": "Living with a Moving Planet",
+    "slug": "living-with-a-moving-planet",
+    "type": "review",
+    "excerpt": "",
+    "url": "/reviews/living-with-a-moving-planet.html",
+    "author": "J. T. Hartley"
+  },
+  {
+    "title": "Living with a Moving Planet",
+    "type": "review",
+    "url": "/reviews/living-with-a-moving-planet/",
+    "category": "review",
+    "excerpt": "J. T. Hartley explores what it means to live on a planet that never stops moving."
+  },
+  {
+    "title": "Mabi",
+    "type": "story",
+    "url": "/stories/mabi/",
+    "category": "storie",
+    "excerpt": "A short story about a grandmother, a baby, and a word that means come home."
+  },
+  {
+    "title": "Mabi \u2014 Story",
+    "slug": "mabi",
+    "type": "storie",
+    "excerpt": "",
+    "url": "/stories/mabi.html"
+  },
+  {
+    "title": "Meet Little Mike: Adventures That Spark Imagination",
+    "slug": "little-mike-series",
+    "type": "article",
+    "excerpt": "Meet Little Mike: Adventures That Spark Imagination Three wholesome stories about friendship, dreams, and creativity Every child loves stories where the hero is someone they can se...",
+    "url": "/articles/little-mike-series.html"
+  },
+  {
+    "title": "Meet Little Mike: Adventures That Spark Imagination",
+    "type": "article",
+    "url": "/articles/little-mike-series/",
+    "category": "article",
+    "excerpt": "Three wholesome stories about friendship, dreams, and creativity."
+  },
+  {
+    "title": "Meet the Indie Authors of Bithues",
+    "slug": "meet-indie-authors",
+    "type": "article",
+    "excerpt": "Meet the Indie Authors of Bithues The voices behind the books \u2014 their stories, inspirations, and what drives them to write Behind every book on our shelves is a writer who poured m...",
+    "url": "/articles/meet-indie-authors.html"
+  },
+  {
+    "title": "Meet the Indie Authors of Bithues",
+    "type": "article",
+    "url": "/articles/meet-indie-authors/",
+    "category": "article",
+    "excerpt": "The voices behind the books \u2014 their stories, inspirations, and what drives them to write."
+  },
+  {
+    "title": "Memoir and Biography: Real Lives, Extraordinary Stories",
+    "slug": "memoir-biography-guide",
+    "type": "article",
+    "excerpt": "Home \u203a Articles \u2190 Back to Articles Memoir and Biography Real Lives, Extraordinary Stories Fiction has to make sense. Reality doesn&rsquo;t. That&rsquo;s the magic of memoir and bio...",
+    "url": "/articles/memoir-biography-guide.html"
+  },
+  {
+    "title": "Memoir and Biography: Real Lives, Extraordinary Stories",
+    "type": "article",
+    "url": "/articles/memoir-biography-guide/",
+    "category": "article",
+    "excerpt": "Real lives, extraordinary stories \u2014 why memoir and biography matter."
+  },
+  {
+    "title": "Men of the Three Seas \u2014 Leander Vassos",
+    "slug": "men-of-three-seas",
+    "type": "review",
+    "excerpt": "",
+    "url": "/reviews/men-of-three-seas.html",
+    "author": "Leander Vassos"
+  },
+  {
+    "title": "Men of the Three Seas \u2014 Leander Vassos",
+    "type": "review",
+    "url": "/reviews/men-of-three-seas/",
+    "category": "review",
+    "excerpt": "Leander Vassos delivers an epic historical saga across three seas."
+  },
+  {
+    "title": "Mesoamerican Historical Fiction for Your Curriculum",
+    "type": "article",
+    "url": "/articles/mesoamerican-fiction-homeschool-guide/",
+    "category": "article",
+    "excerpt": "Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology."
+  },
+  {
+    "title": "Microbiology ABC's",
+    "category": "Book Review",
+    "url": "/reviews/microbiology-abcs.html",
+    "summary": "From amoebas to zooplankton, each letter highlights a microbe or cell structure. A rare children's science book that does not talk down to its readers. By Michael Bacotti."
+  },
+  {
+    "title": "Mindful Memory",
+    "category": "Book Review",
+    "url": "/reviews/mindful-memory.html",
+    "summary": "Empowering retirees with science-backed exercises like memory palaces and timeline mapping. By D. E. Harlan."
+  },
+  {
+    "title": "Mythical Menagerie",
+    "category": "Book Review",
+    "url": "/reviews/mythical-menagerie.html",
+    "summary": "A cross-cultural tour of mythological creatures\u2014dragons, shape-shifters, hybrid beasts\u2014to examine what the creatures different cultures invented reveals about the cultures. By E. Marlowe."
+  },
+  {
+    "title": "Oliver and the Ocean",
+    "type": "story",
+    "url": "/stories/oliver-and-the-ocean/",
+    "category": "storie",
+    "excerpt": "A short story about wonder and the sea."
+  },
+  {
+    "title": "One Book a Month Reading Challenge 2026",
+    "category": "Article",
+    "url": "/articles/reading-challenge-2026.html",
+    "summary": "One Book a Month Reading Challenge 2026"
+  },
+  {
+    "title": "Otom\u00ed",
+    "category": "Book Review",
+    "url": "/reviews/otomi.html",
+    "summary": "A historical narrative of land, ritual, and continuity \u2014 an Otom\u00ed community clinging to a shrinking lake in 10th century central Mexico highlands. By E. J. Mar\u00edn."
+  },
+  {
+    "title": "Otom\u00ed \u2014 E. J. Mar\u00edn",
+    "type": "review",
+    "url": "/reviews/otomi/",
+    "category": "review",
+    "excerpt": "Historical fiction from the Otom\u00ed perspective \u2014 a people caught between empires."
+  },
+  {
+    "title": "Physics of Insight",
+    "category": "Book Review",
+    "url": "/reviews/physics-of-insight.html",
+    "summary": "What if genius isn't rare \u2014 it's hidden inside every mind, waiting for the right switch? By Quantum Chronos."
+  },
+  {
+    "title": "Quantum Physics for Beginners",
+    "type": "article",
+    "url": "/articles/quantum-physics-beginners/",
+    "category": "article",
+    "excerpt": "Waves, particles, and the strange nature of reality at the smallest scale."
+  },
+  {
+    "title": "Quantum Soul Echoes",
+    "category": "Book Review",
+    "url": "/reviews/quantum-soul-echoes.html",
+    "summary": "What if consciousness is what spacetime remembers? Two models synthesized in this rigorous exploration. By Quantum Chronos."
+  },
+  {
+    "title": "Quantum Soul Echoes",
+    "type": "review",
+    "url": "/reviews/quantum-soul-echoes/",
+    "category": "review",
+    "excerpt": "What if consciousness is what spacetime remembers?"
+  },
+  {
+    "title": "Read More This Year: A Practical Guide",
+    "category": "Article",
+    "url": "/articles/read-more-this-year.html",
+    "summary": "Read More This Year: A Practical Guide"
+  },
+  {
+    "title": "Red Horizon: Lunar Launch",
+    "category": "Book Review",
+    "url": "/reviews/red-horizon.html",
+    "summary": "A near-future lunar colony faces sabotage and political intrigue in this fast-paced sci-fi thriller by M. A. Hale."
+  },
+  {
+    "title": "Red Horizon: Lunar Launch",
+    "category": "Book Review",
+    "url": "/reviews/red-horizon-lunar-launch.html",
+    "summary": "Red Horizon: Lunar Launch"
+  },
+  {
+    "title": "Resonance Drift",
+    "category": "Book Review",
+    "url": "/reviews/resonance-drift.html",
+    "summary": "In Eden Prime's biolum spires, harmony hums \u2014 until a family detects a pulse that defies the weave. By R. Zyrion."
+  },
+  {
+    "title": "Romance: More Than Just Meet-Cutes",
+    "category": "Article",
+    "url": "/articles/romance-for-beginners.html",
+    "summary": "Romance: More Than Just Meet-Cutes"
+  },
+  {
+    "title": "Rules of Survival",
+    "category": "Book Review",
+    "url": "/reviews/rules-of-survival.html",
+    "summary": "Roughly one million years ago, a boy learns the band's rules \u2014 water order, ember law, watch \u2014 and pays for them in skin. By Jorak Veldt."
+  },
+  {
+    "title": "Rules of the Game \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/rules-of-the-game.html",
+    "summary": "Rules of the Game \u2014 Story"
+  },
+  {
+    "title": "Shadow Work Journal for Women",
+    "category": "Book Review",
+    "url": "/reviews/shadow-work-journal-for-women.html",
+    "summary": "A beginner-friendly 90-day journal with warm prompts for emotional healing. By Luna Sage."
+  },
+  {
+    "title": "Shadow Work: What It Is and Why It Matters (Without the Woo)",
+    "category": "Article",
+    "url": "/articles/shadow-work-guide.html",
+    "summary": "Shadow Work: What It Is and Why It Matters (Without the Woo)"
+  },
+  {
+    "title": "Speed Reading Basics for Book Lovers",
+    "category": "Article",
+    "url": "/articles/speed-reading-basics.html",
+    "summary": "Speed Reading Basics for Book Lovers"
+  },
+  {
+    "title": "Symbiont Bloom",
+    "category": "Book Review",
+    "url": "/reviews/symbiont-bloom.html",
+    "summary": "On volcanic isles of Lumengrove, dawn arrives through living leaf-glass. When the island's pulse skips, a family must unravel a systems puzzle. By Elowen Tidebloom."
+  },
+  {
+    "title": "The Blueprint",
+    "category": "Book Review",
+    "url": "/reviews/the-blueprint.html",
+    "summary": "The Blueprint"
+  },
+  {
+    "title": "The Book of Enoch and the UFO Disclosure Moment",
+    "type": "article",
+    "excerpt": "What Is the Book of Enoch? The Watchers and the Nephilim: Visitors From Above. Ancient Astronauts: When Scripture Meets the Fringe.",
+    "url": "/articles/book-of-enoch-2026.html"
+  },
+  {
+    "title": "The Borrowed Life \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-borrowed-life.html",
+    "summary": "The Borrowed Life \u2014 Story"
+  },
+  {
+    "title": "The Burning Song",
+    "category": "Book Review",
+    "url": "/reviews/the-burning-song.html",
+    "summary": "When a cave lion marks Aken with its claws, fever nearly claims him. But worse than the wound is the question it raises: How can his band survive? By Rowan Ashcroft."
+  },
+  {
+    "title": "The Cartographer of Sea Serpents \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-cartographer-of-sea-serpents.html",
+    "summary": "The Cartographer of Sea Serpents \u2014 Story"
+  },
+  {
+    "title": "The Confluence Doctrine",
+    "category": "Book Review",
+    "url": "/reviews/confluence-doctrine.html",
+    "summary": "In a world where suffering has been designed out, Orren Myal hears something that doesn't fit \u2014 a sense of 'full, but unfinished.'"
+  },
+  {
+    "title": "The Confluence Doctrine",
+    "category": "Book Review",
+    "url": "/reviews/the-confluence-doctrine.html",
+    "summary": "The Confluence Doctrine"
+  },
+  {
+    "title": "The Dawn of Civilization",
+    "category": "Book Review",
+    "url": "/reviews/dawn-of-civilization.html",
+    "summary": "A prehistoric survival epic where sixteen-year-old Koda fights to turn a wandering tribe into a walled village that can survive. T. Stone's grounded historical fiction at its best."
+  },
+  {
+    "title": "The Disclosure",
+    "category": "Short Story",
+    "url": "/stories/the-disclosure.html",
+    "summary": "A speech about infrastructure becomes something else entirely \u2014 when the President prepares to address a fractured nation on the night the world changes."
+  },
+  {
+    "title": "The Door Between Worlds \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/the-door-between-worlds.html",
+    "summary": "The Door Between Worlds \u2014 Story"
+  },
+  {
+    "title": "The Martian",
+    "category": "Book Review",
+    "url": "/reviews/the-martian.html",
+    "summary": "A surviving astronaut, a dead planet, one last chance. A masterclass in survival fiction. By Andy Weir."
+  },
+  {
+    "title": "The Orchardist: Harvest",
+    "category": "Book Review",
+    "url": "/reviews/the-orchardist-harvest.html",
+    "summary": "Diane Kessler falls from a ladder \u2014 in that moment, she doesn't come back. A story of near-death experience, and what returning actually costs. By Kate E Brennan."
+  },
+  {
+    "title": "The Perfection Cycle",
+    "category": "Book Review",
+    "url": "/reviews/the-perfection-cycle.html",
+    "summary": "Consciousness and life are not accidents but expressions of the universe reaching toward complexity and meaning. By J.E. Mercer."
+  },
+  {
+    "title": "The Perfection Cycle",
+    "type": "review",
+    "url": "/reviews/perfection-cycle/",
+    "category": "review",
+    "excerpt": "J. E. Mercer on the endless cycle of striving and what it costs us."
+  },
+  {
+    "title": "The Physics of Time",
+    "category": "Book Review",
+    "url": "/reviews/the-physics-of-time.html",
+    "summary": "A groundbreaking exploration: what if the universe is a block of spacetime containing all moments, yet consciousness navigates through it? By Quantum Chronos."
+  },
+  {
+    "title": "The Power of Changing Your Mind",
+    "category": "Book Review",
+    "url": "/reviews/power-of-changing-your-mind.html",
+    "summary": "In a culture that rewards confidence, this book shows how intellectual humility is actually a competitive edge \u2014 by Evan R. Cole."
+  },
+  {
+    "title": "The Probability of Light",
+    "type": "review",
+    "url": "/reviews/probability-of-light/",
+    "category": "review",
+    "excerpt": "A review of The Probability of Light by Maris K. Vector."
+  },
+  {
+    "title": "The Quiet Hours",
+    "category": "Book Review",
+    "url": "/reviews/the-quiet-hours.html",
+    "summary": "Gentle bedtime stories celebrating simple joys \u2014 perfect for children seeking comfort. By Elara Moss."
+  },
+  {
+    "title": "The Richmond Cipher",
+    "category": "Book Review",
+    "url": "/reviews/richmond-cipher.html",
+    "summary": "A historical thriller weaving cryptography, Civil War intrigue, and a family secret into a page-turning mystery by E. Maris."
+  },
+  {
+    "title": "The Rise of Hopepunk Fiction",
+    "slug": "hopepunk-fiction",
+    "type": "article",
+    "excerpt": "The Rise of Hopepunk Fiction Why dark, gritty sci-fi is giving way to stories that imagine a better tomorrow Introduction For decades, science fiction has been dominated by dystopi...",
+    "url": "/articles/hopepunk-fiction.html"
+  },
+  {
+    "title": "The Shadow Within",
+    "category": "Book Review",
+    "url": "/reviews/shadow-within.html",
+    "summary": "A practical, grounded guide to shadow work that avoids mysticism while acknowledging psychological depth \u2014 by Elena Maris."
+  },
+  {
+    "title": "They Walk Among Us \u2014 Story",
+    "category": "Short Story",
+    "url": "/stories/they-walk-among-us.html",
+    "summary": "They Walk Among Us \u2014 Story"
+  },
+  {
+    "title": "Time Investing",
+    "category": "Book Review",
+    "url": "/reviews/time-investing.html",
+    "summary": "Your time is not just a resource you spend\u2014it is a resource you invest. A practical guide to taking your own time seriously. By H Harvey."
+  },
+  {
+    "title": "Veiled Presence",
+    "category": "Book Review",
+    "url": "/reviews/veiled-presence.html",
+    "summary": "Researcher E. C. Stroud maps what can actually be supported by evidence in the modern UAP/UFO record \u2014 disciplined inquiry rather than enthusiasm."
+  },
+  {
+    "title": "When DNA Meets the Page: How Ancestry Testing Brings Historical Fiction to Life",
+    "category": "Article",
+    "url": "/articles/dna-ancestry-historical-fiction.html",
+    "summary": "DNA tests and historical fiction work together to answer the question: who were my ancestors? A look at Otom\u00ed, Xaltocan, Men of the Three Seas, and how genetic genealogy meets narrative."
+  },
+  {
+    "title": "Where to Start: High Fantasy Reading Order Guide",
+    "category": "Article",
+    "url": "/articles/reading-order-guide-high-fantasy.html",
+    "summary": "Where to Start: High Fantasy Reading Order Guide"
+  },
+  {
+    "title": "Why We Read Horror: The Power of Fear",
+    "slug": "horror-for-beginners",
+    "type": "article",
+    "excerpt": "Home \u203a Articles \u2190 Back to Articles Why We Read Horror The Power of Fear \u2014 And Why We Seek It Out You know that feeling. Your heart races. Your palms sweat. You glance over your sho...",
+    "url": "/articles/horror-for-beginners.html"
+  },
+  {
+    "title": "You Tell the Story",
+    "category": "Book Review",
+    "url": "/reviews/you-tell-the-story.html",
+    "summary": "A draw-and-write storybook where children look at pictures, then write and draw their own stories. No correct answers, just the child's imagination. By Ellie Sunwood."
   }
 ]
