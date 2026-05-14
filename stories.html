@@ -49,7 +49,7 @@
       filtered.forEach(function(item) {
         var card = document.createElement('article');
         card.className = 'card';
-        card.innerHTML = '<div class="card-meta-top"><span class="tag tag--story">Short Story</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.innerHTML = '<div class="card-meta-top"></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
         grid.appendChild(card);
         allCards.push(card);
       });
