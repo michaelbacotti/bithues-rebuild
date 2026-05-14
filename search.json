@@ -311,12 +311,11 @@
     "category": "Article"
   },
   {
-    "title": "Ice Memory — Story",
-    "slug": "ice-memory",
-    "type": "storie",
-    "excerpt": "",
+    "title": "Ice Memory",
+    "category": "Short Story",
     "url": "/stories/ice-memory.html",
-    "category": "Short Story"
+    "summary": "Dr. Yuki Tanaka has been stationed alone at Vostok, Antarctica for eleven months, listening to ice remember. When a mathematical signal begins repeating from beneath the ice — prime numbers ascending, in perfect English — she is the only one there to hear it. And then she understands what it means.",
+    "excerpt": "Dr. Yuki Tanaka has been stationed alone at Vostok, Antarctica for eleven months, listening to ice remember. When a mathematical signal begins repeating from beneath the ice, she is the only one there to hear it."
   },
   {
     "title": "Jasper&#39;s Flight — Story",
