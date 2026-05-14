@@ -174,13 +174,28 @@ a:hover { color: var(--color-accent-hover); }
  padding: 3px 8px;
  border-radius: 3px;
  background: transparent;
- border: 1px solid currentColor;
- margin-bottom: 6px;
 }
 
-.pill-book-review { color: #8a6f3e; border-color: #8a6f3e; }
-.pill-short-story { color: #5a7a65; border-color: #5a7a65; }
-.pill-article { color: #4a7490; border-color: #4a7490; }
+.pill-book-review {
+ color: #8a6f3e;
+ border: 1px solid #8a6f3e;
+ border-color: #8a6f3e;
+ background: transparent;
+}
+
+.pill-short-story {
+ color: #5a7a65;
+ border: 1px solid #5a7a65;
+ border-color: #5a7a65;
+ background: transparent;
+}
+
+.pill-article {
+ color: #4a7490;
+ border: 1px solid #4a7490;
+ border-color: #4a7490;
+ background: transparent;
+}
 
 /* Legacy tag classes — mapped to pill styles, no filled backgrounds */
 .tag {

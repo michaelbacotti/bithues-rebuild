@@ -59,19 +59,29 @@
 
       var totalPages = Math.ceil(allCards.length / itemsPerPage);
       var currentPage = 1;
+
+      function showPage(page) {
+        var start = (page - 1) * itemsPerPage;
+        var end = start + itemsPerPage;
+        allCards.forEach(function(c, i) {
+          c.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+        document.getElementById('page-num').textContent = page + ' of ' + totalPages;
+        document.getElementById('prev-btn').style.display = page <= 1 ? 'none' : '';
+        document.getElementById('next-btn').style.display = page >= totalPages ? 'none' : '';
+      }
+
       document.getElementById('pagination-controls').style.display = totalPages > 1 ? 'flex' : 'none';
-      document.getElementById('page-num').textContent = '1 of ' + totalPages;
 
       window.changePage = function(d) {
-        currentPage = Math.max(1, Math.min(totalPages, currentPage + d));
-        var start = (currentPage - 1) * itemsPerPage;
-        allCards.forEach(function(c, i) {
-          c.style.display = (i >= start && i < start + itemsPerPage) ? '' : 'none';
-        });
-        document.getElementById('page-num').textContent = currentPage + ' of ' + totalPages;
-        document.getElementById('prev-btn').style.display = currentPage === 1 ? 'none' : '';
-        document.getElementById('next-btn').style.display = currentPage === totalPages ? 'none' : '';
+        var newPage = currentPage + d;
+        if (newPage < 1 || newPage > totalPages) return;
+        currentPage = newPage;
+        showPage(currentPage);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       };
+
+      showPage(1);  // <-- THIS IS THE MISSING CALL
     });
   </script>
 
