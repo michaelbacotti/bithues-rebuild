@@ -164,18 +164,42 @@ a:hover { color: var(--color-accent-hover); }
 /* ============================================
    Tags / Category Pills
    ============================================ */
-.tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
+/* Base pill style — all three share this */
+[class^="pill-"] {
+ display: inline-block;
+ font-size: 10px;
+ font-weight: 600;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ padding: 3px 8px;
+ border-radius: 3px;
+ background: transparent;
+ border: 1px solid currentColor;
+ margin-bottom: 6px;
 }
-.tag--review { background: var(--color-tag-review-bg); color: #fff; }
-.tag--article { background: var(--color-tag-article-bg); color: #fff; }
-.tag--story { background: var(--color-tag-story-bg); color: #fff; }
+
+.pill-book-review { color: #8a6f3e; border-color: #8a6f3e; }
+.pill-short-story { color: #5a7a65; border-color: #5a7a65; }
+.pill-article { color: #4a7490; border-color: #4a7490; }
+
+/* Legacy tag classes — mapped to pill styles, no filled backgrounds */
+.tag {
+ display: inline-block;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ padding: 3px 8px;
+ border-radius: 3px;
+ line-height: 1.5;
+ background: transparent;
+ border: 1px solid currentColor;
+}
+
+.tag--review { color: #8a6f3e; border-color: #8a6f3e; }
+.tag--article { color: #4a7490; border-color: #4a7490; }
+.tag--story { color: #5a7a65; border-color: #5a7a65; }
+.tag--genre { background: var(--color-border-light); color: var(--color-text-muted); border-color: transparent; }
 
 /* ============================================
    Section Headers

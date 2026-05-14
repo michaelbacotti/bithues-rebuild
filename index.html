@@ -46,9 +46,13 @@
       var grid = document.getElementById('feed-grid');
       var allCards = [];
       data.forEach(function(item) {
+        var cat = item.category || 'Article';
+        var pillClass = 'pill-article';
+        if (cat === 'Book Review') pillClass = 'pill-book-review';
+        else if (cat === 'Short Story') pillClass = 'pill-short-story';
         var card = document.createElement('article');
         card.className = 'card';
-        card.innerHTML = '<div class="card-meta-top"><span class="tag tag--' + (item.category || 'article').toLowerCase().replace(/\s+/g, '-') + '">' + (item.category || 'Article') + '</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.innerHTML = '<div class="card-meta-top"><span class="' + pillClass + '">' + cat + '</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
         grid.appendChild(card);
         allCards.push(card);
       });
