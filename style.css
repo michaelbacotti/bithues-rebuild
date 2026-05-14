@@ -14,12 +14,12 @@
   --color-accent-hover: #a67c00;
   --color-border: #d9d3cc;
   --color-border-light: #f0ebe3;
-  --color-tag-review: #C4893A;
-  --color-tag-review-bg: #FDF6E3;
-  --color-tag-article: #4A7B6B;
-  --color-tag-article-bg: #E8F5F0;
-  --color-tag-story: #7B6BA8;
-  --color-tag-story-bg: #F0EDF8;
+  --color-tag-review: #c8a96e;
+  --color-tag-review-bg: #c8a96e;
+  --color-tag-article: #7bafc4;
+  --color-tag-article-bg: #7bafc4;
+  --color-tag-story: #7c9e87;
+  --color-tag-story-bg: #7c9e87;
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
   --max-width: 680px;
@@ -173,9 +173,9 @@ a:hover { color: var(--color-accent-hover); }
   padding: 3px 8px;
   border-radius: 3px;
 }
-.tag--review { background: var(--color-tag-review-bg); color: var(--color-tag-review); }
-.tag--article { background: var(--color-tag-article-bg); color: var(--color-tag-article); }
-.tag--story { background: var(--color-tag-story-bg); color: var(--color-tag-story); }
+.tag--review { background: var(--color-tag-review-bg); color: #fff; }
+.tag--article { background: var(--color-tag-article-bg); color: #fff; }
+.tag--story { background: var(--color-tag-story-bg); color: #fff; }
 
 /* ============================================
    Section Headers
