@@ -6,6 +6,7 @@
   <title>Stories | Bithues</title>
   <meta name="description" content="Original short fiction — literary, speculative, and everything in between.">
   <link rel="stylesheet" href="/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,24 +20,32 @@
   </header>
 
   <main class="main">
-    <div class="feed">
-
-      <article class="card">
-        <div class="card-meta-top">
-          <span class="tag tag--story">Short Story</span>
-          <span class="card-date">Jan 2026</span>
-        </div>
-        <h2 class="card-title"><a href="/stories/the-disclosure.html">The Disclosure</a></h2>
-        <p class="card-excerpt">A speech about infrastructure becomes something else entirely — when the President prepares to address a fractured nation on the night the world changes.</p>
-      </article>
-
-    </div>
+    <div class="feed" id="feed-grid"></div>
   </main>
+
+  <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <div id="site-footer"></div>
 
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
+  <script>
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('feed-grid');
+      const filtered = data.filter(item => item.category === 'Short Story' || (item.type && item.type.toLowerCase().includes('story')));
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = '<div class="card-meta-top"><span class="tag tag--story">Short Story</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        grid.appendChild(card);
+      });
+    });
+  </script>
 
 </body>
 </html>
