@@ -3,7 +3,8 @@
     "title": "A Home for Anya",
     "category": "Book Review",
     "url": "/reviews/home-for-anya.html",
-    "summary": "In-depth review of A Home for Anya by Lena Ashfield. Romance. A touching story of home, belonging, and family."
+    "summary": "In-depth review of A Home for Anya by Lena Ashfield. Romance. A touching story of home, belonging, and family.",
+    "content": "In-depth review of A Home for Anya by Lena Ashfield. Romance. A touching story of home, belonging, and family. A Home for Anya"
   },
   {
     "title": "Alien Disclosure 2026: The Year Everything Changed",
@@ -227,7 +228,8 @@
     "title": "Cords of Empire",
     "category": "Book Review",
     "url": "/reviews/cords-of-empire.html",
-    "summary": "In-depth review of Cords of Empire by E. J. Marín. Historical Fiction. ISBN B0GX36Z7KB."
+    "summary": "In-depth review of Cords of Empire by E. J. Marín. Historical Fiction. ISBN B0GX36Z7KB.",
+    "content": "In-depth review of Cords of Empire by E. J. Marín. Historical Fiction. ISBN B0GX36Z7KB. Cords of Empire"
   },
   {
     "title": "Disclosure 2026",
@@ -251,13 +253,15 @@
     "title": "Echoes of Aetheris",
     "category": "Book Review",
     "url": "/reviews/echoes-of-aetheris.html",
-    "summary": "Nine thousand years before history, a wounded alien ship falls onto a frozen steppe. The first hybrid is born — by Aetheri Codex."
+    "summary": "Nine thousand years before history, a wounded alien ship falls onto a frozen steppe. The first hybrid is born — by Aetheri Codex.",
+    "content": "Nine thousand years before history, a wounded alien ship falls onto a frozen steppe. The first hybrid is born — by Aetheri Codex. Echoes of Aetheris"
   },
   {
     "title": "Echoes of Transcendence",
     "category": "Book Review",
     "url": "/reviews/echoes-of-transcendence.html",
-    "summary": "Where boundaries of reality blur, seekers embark on a transformative journey. Guided by ancient prophecies, they unveil mysteries. By L Everwood."
+    "summary": "Where boundaries of reality blur, seekers embark on a transformative journey. Guided by ancient prophecies, they unveil mysteries. By L Everwood.",
+    "content": "Where boundaries of reality blur, seekers embark on a transformative journey. Guided by ancient prophecies, they unveil mysteries. By L Everwood. Echoes of Transcendence"
   },
   {
     "title": "Fantasy for Beginners: Your Gateway to Magic",
@@ -269,7 +273,8 @@
     "title": "First Contact Diary",
     "category": "Book Review",
     "url": "/reviews/first-contact-diary.html",
-    "summary": "In-depth review of First Contact Diary by Mira Ellison. Science Fiction. A story about communication, survival, and first contact with a new species."
+    "summary": "In-depth review of First Contact Diary by Mira Ellison. Science Fiction. A story about communication, survival, and first contact with a new species.",
+    "content": "In-depth review of First Contact Diary by Mira Ellison. Science Fiction. A story about communication, survival, and first contact with a new species. First Contact Diary"
   },
   {
     "title": "Horizonte Rojo: Lanzamiento Lunar",
@@ -278,7 +283,8 @@
     "excerpt": "",
     "url": "/reviews/horizonte-rojo.html",
     "author": "M. A. Hale",
-    "category": "Book Review"
+    "category": "Book Review",
+    "content": " Horizonte Rojo: Lanzamiento Lunar"
   },
   {
     "title": "How We Review Books at Bithues",
@@ -389,7 +395,8 @@
     "type": "review",
     "url": "/reviews/men-of-three-seas.html",
     "category": "Book Review",
-    "excerpt": "Leander Vassos delivers an epic historical saga across three seas."
+    "excerpt": "Leander Vassos delivers an epic historical saga across three seas.",
+    "content": " Men of the Three Seas — Leander Vassos"
   },
   {
     "title": "Mesoamerican Historical Fiction for Your Curriculum",
@@ -433,14 +440,16 @@
     "title": "Otomí",
     "category": "Book Review",
     "url": "/reviews/otomi.html",
-    "summary": "A historical narrative of land, ritual, and continuity — an Otomí community clinging to a shrinking lake in 10th century central Mexico highlands. By E. J. Marín."
+    "summary": "A historical narrative of land, ritual, and continuity — an Otomí community clinging to a shrinking lake in 10th century central Mexico highlands. By E. J. Marín.",
+    "content": "A historical narrative of land, ritual, and continuity — an Otomí community clinging to a shrinking lake in 10th century central Mexico highlands. By E. J. Marín. Otomí"
   },
   {
     "title": "Otomí — E. J. Marín",
     "type": "review",
     "url": "/reviews/otomi.html",
     "category": "Book Review",
-    "excerpt": "Historical fiction from the Otomí perspective — a people caught between empires."
+    "excerpt": "Historical fiction from the Otomí perspective — a people caught between empires.",
+    "content": " Otomí — E. J. Marín"
   },
   {
     "title": "Physics of Insight",
@@ -598,7 +607,8 @@
     "title": "The Power of Changing Your Mind",
     "category": "Book Review",
     "url": "/reviews/power-of-changing-your-mind.html",
-    "summary": "In a culture that rewards confidence, this book shows how intellectual humility is actually a competitive edge — by Evan R. Cole."
+    "summary": "In a culture that rewards confidence, this book shows how intellectual humility is actually a competitive edge — by Evan R. Cole.",
+    "content": "In a culture that rewards confidence, this book shows how intellectual humility is actually a competitive edge — by Evan R. Cole. The Power of Changing Your Mind"
   },
   {
     "title": "The Probability of Light",
@@ -755,7 +765,8 @@
   {
     "title": "The Martian",
     "category": "Book Review",
-    "url": "/reviews/the-martian.html"
+    "url": "/reviews/the-martian.html",
+    "content": " The Martian"
   },
   {
     "title": "The Other Side — Story",
