@@ -21,13 +21,15 @@
     "title": "American Voices",
     "category": "Short Story",
     "url": "/stories/american-voices.html",
-    "summary": "An in-depth look at American Voices \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
+    "summary": "A chorus of American voices holds different mirrors up to the same broad landscape \u2014 each story questioning identity, belonging, and the stories we tell ourselves.",
+    "excerpt": "A chorus of American voices holds different mirrors up to the same broad landscape \u2014 each story questioning identity, belonging, and the stories we tell ourselves."
   },
   {
     "title": "Before the Streetlights Came On",
     "category": "Short Story",
     "url": "/stories/before-the-streetlights-came-on.html",
-    "summary": "An in-depth look at Before the Streetlights Came On \u2014 Story. Key themes, reviews, and recommendations for readers interested in story works."
+    "summary": "A wistful remembrance of the world before streetlights, when children played in darkening streets and the stars were easier to find.",
+    "excerpt": "A wistful remembrance of the world before streetlights, when children played in darkening streets and the stars were easier to find."
   },
   {
     "title": "Beginner&#39;s Guide to Hopepunk",
@@ -39,7 +41,7 @@
   {
     "title": "Beginner's Guide to Quantum Physics",
     "type": "article",
-    "url": "/articles/quantum-physics-beginners-guide/",
+    "url": "/articles/quantum-physics-beginners-guide.html",
     "category": "article",
     "excerpt": "Wave-particle duality, superposition, entanglement \u2014 and what it means for consciousness."
   },
@@ -190,8 +192,9 @@
   {
     "title": "City of Wonders \u2014 Story",
     "type": "storie",
-    "excerpt": "An in-depth look at City of Wonders \u2014 Story. This page covers key themes, reviews, and recommendations for readers interested in story works.",
-    "url": "/stories/city-of-wonders.html"
+    "excerpt": "A fantastical city that defies physics, where citizens half-remember dreams they never had \u2014 part travelogue, part fever dream.",
+    "url": "/stories/city-of-wonders.html",
+    "summary": "A fantastical city that defies physics, where citizens half-remember dreams they never had \u2014 part travelogue, part fever dream."
   },
   {
     "title": "Complete Fantasy Encyclopedia & Punk Guide",
@@ -278,7 +281,7 @@
   {
     "title": "How to Get Kids Into Reading",
     "type": "article",
-    "url": "/articles/kids-reading-guide/",
+    "url": "/articles/kids-reading-guide.html",
     "category": "article",
     "excerpt": "Practical strategies to inspire a love of reading in children, from toddlers to teens."
   },
@@ -300,8 +303,9 @@
     "title": "Jasper&#39;s Flight \u2014 Story",
     "slug": "jaspers-flight",
     "type": "storie",
-    "excerpt": "",
-    "url": "/stories/jaspers-flight.html"
+    "excerpt": "Jasper never asked for wings and does not know how to use them \u2014 a coming-of-age story about trusting what you never trained for.",
+    "url": "/stories/jaspers-flight.html",
+    "summary": "Jasper never asked for wings and does not know how to use them \u2014 a coming-of-age story about trusting what you never trained for."
   },
   {
     "title": "Little Mike: Builds a Robot",
@@ -338,14 +342,14 @@
   {
     "title": "Living with a Moving Planet",
     "type": "review",
-    "url": "/reviews/living-with-a-moving-planet/",
+    "url": "/reviews/living-with-a-moving-planet.html",
     "category": "review",
     "excerpt": "J. T. Hartley explores what it means to live on a planet that never stops moving."
   },
   {
     "title": "Mabi",
     "type": "story",
-    "url": "/stories/mabi/",
+    "url": "/stories/mabi.html",
     "category": "storie",
     "excerpt": "A short story about a grandmother, a baby, and a word that means come home."
   },
@@ -366,7 +370,7 @@
   {
     "title": "Meet Little Mike: Adventures That Spark Imagination",
     "type": "article",
-    "url": "/articles/little-mike-series/",
+    "url": "/articles/little-mike-series.html",
     "category": "article",
     "excerpt": "Three wholesome stories about friendship, dreams, and creativity."
   },
@@ -380,7 +384,7 @@
   {
     "title": "Meet the Indie Authors of Bithues",
     "type": "article",
-    "url": "/articles/meet-indie-authors/",
+    "url": "/articles/meet-indie-authors.html",
     "category": "article",
     "excerpt": "The voices behind the books \u2014 their stories, inspirations, and what drives them to write."
   },
@@ -394,7 +398,7 @@
   {
     "title": "Memoir and Biography: Real Lives, Extraordinary Stories",
     "type": "article",
-    "url": "/articles/memoir-biography-guide/",
+    "url": "/articles/memoir-biography-guide.html",
     "category": "article",
     "excerpt": "Real lives, extraordinary stories \u2014 why memoir and biography matter."
   },
@@ -409,14 +413,14 @@
   {
     "title": "Men of the Three Seas \u2014 Leander Vassos",
     "type": "review",
-    "url": "/reviews/men-of-three-seas/",
+    "url": "/reviews/men-of-three-seas.html",
     "category": "review",
     "excerpt": "Leander Vassos delivers an epic historical saga across three seas."
   },
   {
     "title": "Mesoamerican Historical Fiction for Your Curriculum",
     "type": "article",
-    "url": "/articles/mesoamerican-fiction-homeschool-guide/",
+    "url": "/articles/mesoamerican-fiction-homeschool-guide.html",
     "category": "article",
     "excerpt": "Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology."
   },
@@ -441,7 +445,7 @@
   {
     "title": "Oliver and the Ocean",
     "type": "story",
-    "url": "/stories/oliver-and-the-ocean/",
+    "url": "/stories/oliver-and-the-ocean.html",
     "category": "storie",
     "excerpt": "A short story about wonder and the sea."
   },
@@ -460,7 +464,7 @@
   {
     "title": "Otom\u00ed \u2014 E. J. Mar\u00edn",
     "type": "review",
-    "url": "/reviews/otomi/",
+    "url": "/reviews/otomi.html",
     "category": "review",
     "excerpt": "Historical fiction from the Otom\u00ed perspective \u2014 a people caught between empires."
   },
@@ -473,7 +477,7 @@
   {
     "title": "Quantum Physics for Beginners",
     "type": "article",
-    "url": "/articles/quantum-physics-beginners/",
+    "url": "/articles/quantum-physics-beginners.html",
     "category": "article",
     "excerpt": "Waves, particles, and the strange nature of reality at the smallest scale."
   },
@@ -486,7 +490,7 @@
   {
     "title": "Quantum Soul Echoes",
     "type": "review",
-    "url": "/reviews/quantum-soul-echoes/",
+    "url": "/reviews/quantum-soul-echoes.html",
     "category": "review",
     "excerpt": "What if consciousness is what spacetime remembers?"
   },
@@ -631,7 +635,7 @@
   {
     "title": "The Perfection Cycle",
     "type": "review",
-    "url": "/reviews/perfection-cycle/",
+    "url": "/reviews/perfection-cycle.html",
     "category": "review",
     "excerpt": "J. E. Mercer on the endless cycle of striving and what it costs us."
   },
@@ -650,7 +654,7 @@
   {
     "title": "The Probability of Light",
     "type": "review",
-    "url": "/reviews/probability-of-light/",
+    "url": "/reviews/probability-of-light.html",
     "category": "review",
     "excerpt": "A review of The Probability of Light by Maris K. Vector."
   },
@@ -725,12 +729,16 @@
   {
     "title": "The Echoes Return \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-echoes-return.html"
+    "url": "/stories/the-echoes-return.html",
+    "summary": "What was once spoken into the void finds its way back, changed by distance and time \u2014 a spiritual short about consequence and connection.",
+    "excerpt": "What was once spoken into the void finds its way back, changed by distance and time \u2014 a spiritual short about consequence and connection."
   },
   {
     "title": "The Ember Song \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-ember-song.html"
+    "url": "/stories/the-ember-song.html",
+    "summary": "A song no one claims to know begins among dying fires at the edge of winter \u2014 a story about memory and what we preserve by singing.",
+    "excerpt": "A song no one claims to know begins among dying fires at the edge of winter \u2014 a story about memory and what we preserve by singing."
   },
   {
     "title": "The Forbidden Library \u2014 Story",
@@ -745,7 +753,9 @@
   {
     "title": "The Harvest \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-harvest.html"
+    "url": "/stories/the-harvest.html",
+    "summary": "The harvest comes once a year, bringing with it a reckoning \u2014 a literary short about patience, labor, and the generosity of worked land.",
+    "excerpt": "The harvest comes once a year, bringing with it a reckoning \u2014 a literary short about patience, labor, and the generosity of worked land."
   },
   {
     "title": "The Humble Mind \u2014 Story",
@@ -755,7 +765,9 @@
   {
     "title": "The Last Arena \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-last-arena.html"
+    "url": "/stories/the-last-arena.html",
+    "summary": "The final contest draws witnesses who come not to cheer but to observe \u2014 a spare story about preservation and what it costs.",
+    "excerpt": "The final contest draws witnesses who come not to cheer but to observe \u2014 a spare story about preservation and what it costs."
   },
   {
     "title": "The Last Garden \u2014 Story",
@@ -785,7 +797,9 @@
   {
     "title": "The Listen \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-listen.html"
+    "url": "/stories/the-listen.html",
+    "summary": "A sound that should not exist is recorded at the bottom of a frozen lake \u2014 science fiction about being the first to hear the unhearable.",
+    "excerpt": "A sound that should not exist is recorded at the bottom of a frozen lake \u2014 science fiction about being the first to hear the unhearable."
   },
   {
     "title": "The Martian",
@@ -805,6 +819,8 @@
   {
     "title": "The Question \u2014 Story",
     "category": "Short Story",
-    "url": "/stories/the-question.html"
+    "url": "/stories/the-question.html",
+    "summary": "A simple question meets a simpler, more uncomfortable answer \u2014 a meta-fiction short that plays gentle games with readers.",
+    "excerpt": "A simple question meets a simpler, more uncomfortable answer \u2014 a meta-fiction short that plays gentle games with readers."
   }
 ]
