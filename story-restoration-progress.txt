@@ -1,0 +1,16 @@
+# Story Content Restoration Progress
+# Working dir: /Users/mike/.openclaw/workspace-bacottibot/websites/bithues-rebuild-2026-05-13/stories/
+# Started: 2026-05-14
+
+## SKIPPED (already restored):
+- before-the-streetlights-came-on.html (11743 bytes, 18 paragraphs)
+
+## PENDING (27 stories to restore):
+american-voices, city-of-wonders, ice-memory, jaspers-flight, mabi, oliver-and-the-ocean, rules-of-the-game, the-borrowed-life, the-cartographer-of-sea-serpents, the-disclosure, the-door-between-worlds, the-echoes-return, the-ember-song, the-forbidden-library, the-forgotten-minute, the-harvest, the-humble-mind, the-last-arena, the-last-garden, the-last-gift, the-last-signal, the-last-song, the-last-winter, the-listen, the-other-side, the-question, they-walk-among-us
+
+## BATCH 1 (0 done)
+## BATCH 2 (0 done)
+## BATCH 3 (0 done)
+## BATCH 4 (0 done)
+## BATCH 5 (0 done)
+## BATCH 6 (0 done)
