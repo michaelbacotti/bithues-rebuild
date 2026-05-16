@@ -40,6 +40,13 @@
     "excerpt": "The letter from the town clerk arrived on a Tuesday in April, three weeks after the last cold snap."
   },
   {
+    "title": "Mabi",
+    "category": "Short Story",
+    "url": "/stories/mabi.html",
+    "summary": "A grandmother arrives from the islands and sings a lullaby in a language no one living can translate \u2014 and in doing so, unlocks something in a baby who has never said a word.",
+    "excerpt": "Lena was eleven months old, and she had never said a word. This is the kind of fact about a baby that contains a whole world of worry."
+  },
+  {
     "title": "American Voices",
     "category": "Short Story",
     "url": "/stories/american-voices.html",
@@ -370,21 +377,6 @@
     "category": "Book Review",
     "url": "/reviews/living-with-a-moving-planet.html",
     "summary": "Drawing on deep-time climate records and archaeology, this book shows how humans have adapted to changing baselines for tens of thousands of years. By J. T. Hartley."
-  },
-  {
-    "title": "Mabi",
-    "type": "story",
-    "url": "/stories/mabi.html",
-    "category": "Short Story",
-    "excerpt": "A short story about a grandmother, a baby, and a word that means come home."
-  },
-  {
-    "title": "Mabi \u2014 Story",
-    "slug": "mabi",
-    "type": "storie",
-    "excerpt": "",
-    "url": "/stories/mabi.html",
-    "category": "Short Story"
   },
   {
     "title": "Meet Little Mike: Adventures That Spark Imagination",
