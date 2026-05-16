@@ -159,6 +159,20 @@ a:hover { color: var(--color-accent-hover); }
   font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3; /* default 3 lines for articles */
+}
+
+/* Reviews: 2-line preview */
+.card[data-category="Book Review"] .card-excerpt {
+  -webkit-line-clamp: 2;
+}
+
+/* Stories: 4-line preview */
+.card[data-category="Short Story"] .card-excerpt {
+  -webkit-line-clamp: 4;
 }
 
 /* ============================================

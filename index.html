@@ -53,6 +53,7 @@
         var card = document.createElement('article');
         card.className = 'card';
         card.innerHTML = '<div class="card-meta-top"><span class="' + pillClass + '">' + cat + '</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.setAttribute('data-category', cat);
         grid.appendChild(card);
         allCards.push(card);
       });
