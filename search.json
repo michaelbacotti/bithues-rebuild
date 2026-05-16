@@ -1,5 +1,12 @@
 [
   {
+    "title": "Reminiscences of a Stock Operator",
+    "category": "Book Review",
+    "url": "/reviews/reminiscences-of-a-stock-operator.html",
+    "summary": "First published in 1923, Reminiscences of a Stock Operator remains the most honest book ever written about the markets. By Edwin Lefevre.",
+    "content": "Reminiscences of a Stock Operator Edwin Lefevre 1923 Finance markets trading psychology Livermore"
+  },
+  {
     "title": "A Home for Anya",
     "category": "Book Review",
     "url": "/reviews/home-for-anya.html",
@@ -17,6 +24,20 @@
     "category": "Book Review",
     "url": "/reviews/american-journeys.html",
     "summary": "Designed for ESL learners and immigrants, American Journeys uses cultural immersion as the vehicle for linguistic development. By C. Everett."
+  },
+  {
+    "title": "The Seed Library at the End of May",
+    "category": "Short Story",
+    "url": "/stories/the-seed-library-at-the-end-of-may.html",
+    "summary": "On a warm afternoon in late May, a boy discovers a mysterious wooden box at the edge of his grandmother's garden \u2014 filled with hundreds of labeled seed packets and a note that changes the way he sees his neighborhood forever.",
+    "excerpt": "Take one. Leave one. The seeds know where to go."
+  },
+  {
+    "title": "The Weight of Summer Light",
+    "category": "Short Story",
+    "url": "/stories/the-weight-of-summer-light.html",
+    "summary": "On the last warm day of September, a woman returns to her family's lake house after her father's death and discovers that home was never about the place itself \u2014 it was the people who made it matter.",
+    "excerpt": "The letter from the town clerk arrived on a Tuesday in April, three weeks after the last cold snap."
   },
   {
     "title": "American Voices",
@@ -778,12 +799,5 @@
     "url": "/stories/the-question.html",
     "summary": "A simple question meets a simpler, more uncomfortable answer \u2014 a meta-fiction short that plays gentle games with readers.",
     "excerpt": "A simple question meets a simpler, more uncomfortable answer \u2014 a meta-fiction short that plays gentle games with readers."
-  },
-  {
-    "title": "Reminiscences of a Stock Operator",
-    "category": "Book Review",
-    "url": "/reviews/reminiscences-of-a-stock-operator.html",
-    "summary": "First published in 1923, Reminiscences of a Stock Operator remains the most honest book ever written about the markets \u2014 not because it tells you how to win, but because it shows you exactly how and why people lose. By Edwin Lefevre.",
-    "content": "Reminiscences of a Stock Operator by Edwin Lefevre 1923 Finance markets trading psychology risk fallibility"
   }
 ]
