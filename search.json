@@ -1,5 +1,11 @@
 [
   {
+    "title": "A Global Heartbeat Called Michael Jackson",
+    "category": "Article",
+    "url": "/articles/a-global-heartbeat-called-michael-jackson.html",
+    "summary": "Michael Jackson did not just live in the times of the late twentieth and early twenty-first centuries \u2014 he helped shape them. His music became a shared language: a way for people who rarely sat in the same room to feel as if they were standing in the same circle, swaying to the same rhythm."
+  },
+  {
     "title": "Reminiscences of a Stock Operator",
     "category": "Book Review",
     "url": "/reviews/reminiscences-of-a-stock-operator.html",
@@ -66,14 +72,16 @@
     "type": "article",
     "excerpt": "Beginner&rsquo;s Guide to Hopepunk What is hopepunk? The sci-fi movement reimagining the future Hopepunk (noun): A sci-fi genre that imagines hopeful futures where humanity solves ...",
     "url": "/articles/hopepunk-beginners-guide.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Beginner&rsquo;s Guide to Hopepunk What is hopepunk? The sci-fi movement reimagining the future Hopepunk (noun): A sci-fi genre that imagines hopeful futures where humanity solves ..."
   },
   {
     "title": "Beginner's Guide to Quantum Physics",
     "type": "article",
     "url": "/articles/quantum-physics-beginners-guide.html",
     "category": "Article",
-    "excerpt": "Wave-particle duality, superposition, entanglement \u2014 and what it means for consciousness."
+    "excerpt": "Wave-particle duality, superposition, entanglement \u2014 and what it means for consciousness.",
+    "summary": "Wave-particle duality, superposition, entanglement \u2014 and what it means for consciousness."
   },
   {
     "title": "Best Books for Book Clubs",
@@ -134,7 +142,8 @@
     "type": "article",
     "excerpt": "Science fiction is the literature of possibility \u2014 but staring at a shelf of 600-page epics can stop a beginner before they start. The genre has a reputation for being hard to enter.",
     "url": "/articles/books-like-sci-fi-beginners.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Science fiction is the literature of possibility \u2014 but staring at a shelf of 600-page epics can stop a beginner before they start. The genre has a reputation for being hard to enter."
   },
   {
     "title": "Beyond the Veil",
@@ -153,84 +162,96 @@
     "type": "article",
     "excerpt": "Fredrik Backman's Anxious People is one of those rare novels that wears its heart on its sleeve while wrapping you in dark comedy.",
     "url": "/articles/books-like-anxious-people.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Fredrik Backman's Anxious People is one of those rare novels that wears its heart on its sleeve while wrapping you in dark comedy."
   },
   {
     "title": "Books Like Atomic Habits",
     "type": "article",
     "excerpt": "James Clear's Atomic Habits became a modern classic not because it discovered something new about human behavior, but because it made the science of habit formation genuinely actionable.",
     "url": "/articles/books-like-atomic-habits.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "James Clear's Atomic Habits became a modern classic not because it discovered something new about human behavior, but because it made the science of habit formation genuinely actionable."
   },
   {
     "title": "Books Like Dark Matter by Blake Crouch",
     "type": "article",
     "excerpt": "Blake Crouch's Dark Matter is a quantum thriller at its finest \u2014 a man is placed in a \"quantum version of himself\" and forced to navigate parallel versions of his life.",
     "url": "/articles/books-like-dark-matter.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Blake Crouch's Dark Matter is a quantum thriller at its finest \u2014 a man is placed in a \"quantum version of himself\" and forced to navigate parallel versions of his life."
   },
   {
     "title": "Books Like Dune \u2014 The Ultimate Comparison Guide",
     "type": "article",
     "excerpt": "Frank Herbert's Dune is one of those rare novels that reshaped an entire genre.",
     "url": "/articles/books-like-dune.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Frank Herbert's Dune is one of those rare novels that reshaped an entire genre."
   },
   {
     "title": "Books Like Ender's Game",
     "type": "article",
     "excerpt": "Orson Scott Card's Ender's Game opens with a question that haunts every page: what if the military trained children to save humanity?",
     "url": "/articles/books-like-enders-game.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Orson Scott Card's Ender's Game opens with a question that haunts every page: what if the military trained children to save humanity?"
   },
   {
     "title": "Books Like Hyperion",
     "type": "article",
     "excerpt": "Dan Simmons' Hyperion is one of the most ambitious novels in science fiction \u2014 a book that combines a Canterbury Tales structure, seven interconnected pilgrimage stories.",
     "url": "/articles/books-like-hyperion.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Dan Simmons' Hyperion is one of the most ambitious novels in science fiction \u2014 a book that combines a Canterbury Tales structure, seven interconnected pilgrimage stories."
   },
   {
     "title": "Books Like Project Hail Mary \u2014 The Ultimate Comparison Guide",
     "type": "article",
     "excerpt": "Andy Weir's Project Hail Mary captured hearts with its science-nerd protagonist, unlikely alien friendship, and mission to save humanity.",
     "url": "/articles/books-like-project-hail-mary.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Andy Weir's Project Hail Mary captured hearts with its science-nerd protagonist, unlikely alien friendship, and mission to save humanity."
   },
   {
     "title": "Books Like The Martian \u2014 The Ultimate Comparison Guide",
     "type": "article",
     "excerpt": "The Martian redefined what survival science fiction could be. Andy Weir gave us Mark Watney \u2014 a botanist stranded on Mars, presumed dead.",
     "url": "/articles/books-like-the-martian.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "The Martian redefined what survival science fiction could be. Andy Weir gave us Mark Watney \u2014 a botanist stranded on Mars, presumed dead."
   },
   {
     "title": "Books Like The Midnight Library",
     "type": "article",
     "excerpt": "An in-depth look at Books Like The Midnight Library. This page covers key themes, reviews, and recommendations.",
     "url": "/articles/books-like-the-midnight-library.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "An in-depth look at Books Like The Midnight Library. This page covers key themes, reviews, and recommendations."
   },
   {
     "title": "Books Like The Name of the Wind",
     "type": "article",
     "excerpt": "An in-depth look at Books Like The Name of the Wind. This page covers key themes, reviews, and recommendations.",
     "url": "/articles/books-like-the-name-of-the-wind.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "An in-depth look at Books Like The Name of the Wind. This page covers key themes, reviews, and recommendations."
   },
   {
     "title": "Books Like The Physics of Time",
     "type": "article",
     "excerpt": "If you loved diving into the physics of time with The Physics of Time, you're probably craving more books that bend your mind about the nature of reality.",
     "url": "/articles/books-like-physics-of-time.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "If you loved diving into the physics of time with The Physics of Time, you're probably craving more books that bend your mind about the nature of reality."
   },
   {
     "title": "Business and Leadership Books That Actually Work",
     "type": "article",
     "excerpt": "The business section of any bookstore is overwhelming. Thousands of titles promising success, wealth, and transformation. Most are noise. A few are gold.",
     "url": "/articles/business-leadership-guide.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "The business section of any bookstore is overwhelming. Thousands of titles promising success, wealth, and transformation. Most are noise. A few are gold."
   },
   {
     "title": "City of Wonders",
@@ -318,25 +339,28 @@
     "title": "How We Review Books at Bithues",
     "slug": "how-we-review-books",
     "type": "article",
-    "excerpt": "How We Review Books at Bithues Our philosophy, process, and what makes our reviews different You&rsquo;ve probably noticed that our reviews look a bit different from the typical Am...",
+    "excerpt": "Our philosophy, process, and what makes our reviews different You&rsquo;ve probably noticed that our reviews look a bit different from the typical Am...",
     "url": "/articles/how-we-review-books.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Our philosophy, process, and what makes our reviews different You&rsquo;ve probably noticed that our reviews look a bit different from the typical Am..."
   },
   {
     "title": "How to Get Kids Into Reading",
     "slug": "kids-reading-guide",
     "type": "article",
-    "excerpt": "How to Get Kids Into Reading Practical strategies to inspire a love of reading in children, from toddlers to teens As parents, we want our children to become readers. Not just beca...",
+    "excerpt": "Practical strategies to inspire a love of reading in children, from toddlers to teens As parents, we want our children to become readers. Not just beca...",
     "url": "/articles/kids-reading-guide.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Practical strategies to inspire a love of reading in children, from toddlers to teens As parents, we want our children to become readers. Not just beca..."
   },
   {
     "title": "How to Read More Books in Less Time",
     "slug": "how-to-read-more-books",
     "type": "article",
-    "excerpt": "How to Read More Books in Less Time Practical strategies to read more books without sacrificing comprehension You want to read more. There&rsquo;s a stack of books on your nightsta...",
+    "excerpt": "Practical strategies to read more books without sacrificing comprehension You want to read more. There&rsquo;s a stack of books on your nightsta...",
     "url": "/articles/how-to-read-more-books.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Practical strategies to read more books without sacrificing comprehension You want to read more. There&rsquo;s a stack of books on your nightsta..."
   },
   {
     "title": "Ice Memory",
@@ -382,17 +406,19 @@
     "title": "Meet Little Mike: Adventures That Spark Imagination",
     "slug": "little-mike-series",
     "type": "article",
-    "excerpt": "Meet Little Mike: Adventures That Spark Imagination Three wholesome stories about friendship, dreams, and creativity Every child loves stories where the hero is someone they can se...",
+    "excerpt": "Three wholesome stories about friendship, dreams, and creativity Every child loves stories where the hero is someone they can se...",
     "url": "/articles/little-mike-series.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Three wholesome stories about friendship, dreams, and creativity Every child loves stories where the hero is someone they can se..."
   },
   {
     "title": "Meet the Indie Authors of Bithues",
     "slug": "meet-indie-authors",
     "type": "article",
-    "excerpt": "Meet the Indie Authors of Bithues The voices behind the books \u2014 their stories, inspirations, and what drives them to write Behind every book on our shelves is a writer who poured m...",
+    "excerpt": "The voices behind the books \u2014 their stories, inspirations, and what drives them to write Behind every book on our shelves is a writer who poured m...",
     "url": "/articles/meet-indie-authors.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "The voices behind the books \u2014 their stories, inspirations, and what drives them to write Behind every book on our shelves is a writer who poured m..."
   },
   {
     "title": "Memoir and Biography: Real Lives, Extraordinary Stories",
@@ -400,7 +426,8 @@
     "type": "article",
     "excerpt": "Home \u203a Articles \u2190 Back to Articles Memoir and Biography Real Lives, Extraordinary Stories Fiction has to make sense. Reality doesn&rsquo;t. That&rsquo;s the magic of memoir and bio...",
     "url": "/articles/memoir-biography-guide.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Home \u203a Articles \u2190 Back to Articles Memoir and Biography Real Lives, Extraordinary Stories Fiction has to make sense. Reality doesn&rsquo;t. That&rsquo;s the magic of memoir and bio..."
   },
   {
     "title": "Men of the Three Seas \u2014 Leander Vassos",
@@ -415,7 +442,8 @@
     "type": "article",
     "url": "/articles/mesoamerican-fiction-homeschool-guide.html",
     "category": "Article",
-    "excerpt": "Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology."
+    "excerpt": "Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology.",
+    "summary": "Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology."
   },
   {
     "title": "Microbiology ABC's",
@@ -446,7 +474,7 @@
     "title": "One Book a Month Reading Challenge 2026",
     "category": "Article",
     "url": "/articles/reading-challenge-2026.html",
-    "summary": "One Book a Month Reading Challenge 2026"
+    "summary": ""
   },
   {
     "title": "Otom\u00ed",
@@ -474,7 +502,8 @@
     "type": "article",
     "url": "/articles/quantum-physics-beginners.html",
     "category": "Article",
-    "excerpt": "Waves, particles, and the strange nature of reality at the smallest scale."
+    "excerpt": "Waves, particles, and the strange nature of reality at the smallest scale.",
+    "summary": "Waves, particles, and the strange nature of reality at the smallest scale."
   },
   {
     "title": "Quantum Soul Echoes",
@@ -486,7 +515,7 @@
     "title": "Read More This Year: A Practical Guide",
     "category": "Article",
     "url": "/articles/read-more-this-year.html",
-    "summary": "Read More This Year: A Practical Guide"
+    "summary": ""
   },
   {
     "title": "Red Horizon: Lunar Launch",
@@ -504,7 +533,7 @@
     "title": "Romance: More Than Just Meet-Cutes",
     "category": "Article",
     "url": "/articles/romance-for-beginners.html",
-    "summary": "Romance: More Than Just Meet-Cutes"
+    "summary": ""
   },
   {
     "title": "Rules of Survival",
@@ -529,13 +558,13 @@
     "title": "Shadow Work: What It Is and Why It Matters (Without the Woo)",
     "category": "Article",
     "url": "/articles/shadow-work-guide.html",
-    "summary": "Shadow Work: What It Is and Why It Matters (Without the Woo)"
+    "summary": ""
   },
   {
     "title": "Speed Reading Basics for Book Lovers",
     "category": "Article",
     "url": "/articles/speed-reading-basics.html",
-    "summary": "Speed Reading Basics for Book Lovers"
+    "summary": ""
   },
   {
     "title": "Symbiont Bloom",
@@ -554,7 +583,8 @@
     "type": "article",
     "excerpt": "What Is the Book of Enoch? The Watchers and the Nephilim: Visitors From Above. Ancient Astronauts: When Scripture Meets the Fringe.",
     "url": "/articles/book-of-enoch-2026.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "What Is the Book of Enoch? The Watchers and the Nephilim: Visitors From Above. Ancient Astronauts: When Scripture Meets the Fringe."
   },
   {
     "title": "The Borrowed Life",
@@ -650,9 +680,10 @@
     "title": "The Rise of Hopepunk Fiction",
     "slug": "hopepunk-fiction",
     "type": "article",
-    "excerpt": "The Rise of Hopepunk Fiction Why dark, gritty sci-fi is giving way to stories that imagine a better tomorrow Introduction For decades, science fiction has been dominated by dystopi...",
+    "excerpt": "Why dark, gritty sci-fi is giving way to stories that imagine a better tomorrow Introduction For decades, science fiction has been dominated by dystopi...",
     "url": "/articles/hopepunk-fiction.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Why dark, gritty sci-fi is giving way to stories that imagine a better tomorrow Introduction For decades, science fiction has been dominated by dystopi..."
   },
   {
     "title": "The Shadow Within",
@@ -689,7 +720,7 @@
     "title": "Where to Start: High Fantasy Reading Order Guide",
     "category": "Article",
     "url": "/articles/reading-order-guide-high-fantasy.html",
-    "summary": "Where to Start: High Fantasy Reading Order Guide"
+    "summary": ""
   },
   {
     "title": "Why We Read Horror: The Power of Fear",
@@ -697,7 +728,8 @@
     "type": "article",
     "excerpt": "Home \u203a Articles \u2190 Back to Articles Why We Read Horror The Power of Fear \u2014 And Why We Seek It Out You know that feeling. Your heart races. Your palms sweat. You glance over your sho...",
     "url": "/articles/horror-for-beginners.html",
-    "category": "Article"
+    "category": "Article",
+    "summary": "Home \u203a Articles \u2190 Back to Articles Why We Read Horror The Power of Fear \u2014 And Why We Seek It Out You know that feeling. Your heart races. Your palms sweat. You glance over your sho..."
   },
   {
     "title": "You Tell the Story",
