@@ -23,6 +23,116 @@
       font-weight: 600;
       color: #3a2e1e;
     }
+
+    /* ── Live Price Section ─────────────────────────────────────── */
+    .live-price-section {
+      margin: 0 0 28px;
+      padding: 16px 20px;
+      background: #f5f1ec;
+      border: 1px solid #e0d8cc;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #5a4a3a;
+    }
+    .live-price-section .lp-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .live-price-section .lp-row:last-child { margin-bottom: 0; }
+    .live-price-section .lp-label {
+      font-weight: 600;
+      min-width: 130px;
+      color: #3a2e1e;
+    }
+    .live-price-section .lp-price { font-weight: 500; }
+    .live-price-section .lp-status {
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .lp-status.in-stock   { background: #d4edda; color: #155724; }
+    .lp-status.unavailable { background: #f8d7da; color: #721c24; }
+    .lp-status.checking   { background: #fff3cd; color: #856404; }
+    .live-price-section .lp-amazon-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 18px;
+      border: 1px solid #8a6f3e;
+      color: #8a6f3e;
+      font-size: 12px;
+      text-decoration: none;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .live-price-section .lp-amazon-btn:hover {
+      background: #8a6f3e;
+      color: #fff;
+    }
+
+    /* ── Related Books ──────────────────────────────────────────── */
+    .related-books {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid #e8e4dd;
+    }
+    .related-books-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c1f14;
+      margin-bottom: 20px;
+    }
+    .related-books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .related-book-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .related-book-card a {
+      display: block;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      transition: box-shadow 0.2s;
+    }
+    .related-book-card a:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .related-book-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 3px;
+    }
+    .related-book-card .rb-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2c1f14;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .related-book-card .rb-author {
+      font-size: 11px;
+      color: #888;
+    }
+    .related-book-card .rb-price {
+      font-size: 12px;
+      font-weight: 500;
+      color: #8b6914;
+    }
+    .related-books-loading,
+    .related-books-error {
+      font-size: 13px;
+      color: #999;
+    }
+    .related-books-error { color: #c07878; }
   </style>
   <link rel="canonical" href="https://www.bithues.com/reviews/american-journeys.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
@@ -52,6 +162,22 @@
 
       <!-- BODY -->
       <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+
+        <!-- ── Live Price ── -->
+        <div class="live-price-section" id="live-price-section">
+          <div class="lp-row">
+            <span class="lp-label">Amazon Price:</span>
+            <span class="lp-price" id="lp-amazon-price">Checking…</span>
+            <span class="lp-status checking" id="lp-status">—</span>
+          </div>
+          <div class="lp-row">
+            <span class="lp-label">KDP / Kindle:</span>
+            <span class="lp-price">$4.99</span>
+            <span class="lp-status in-stock">Available</span>
+          </div>
+          <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0CD9JC1HY?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon &rarr;</a>
+        </div>
+
         <p>American Journeys is designed for ESL learners, immigrants to the United States, and anyone curious about American culture as expressed through language. C. Everett&rsquo;s approach is built around the principle that language and culture are inseparable — that learning English as if it were a neutral skill set misses what makes it actually work as a living system. The book uses American cultural immersion as the vehicle for linguistic development, which is a sound pedagogical approach grounded in established research on second language acquisition.</p>
 
         <p>For its primary audience, the book likely functions best as a companion to formal language study rather than a standalone resource. The cultural content is rich and genuinely informative — sections on regional dialects, the role of sports in American social life, the surprisingly complex etiquette of tipping, and the enormous diversity within &ldquo;American culture&rdquo; that makes the term almost misleading — but it assumes a reader with enough English to engage with nuance. Everett writes clearly but not simply, which is appropriate for an intermediate-to-advanced audience and limiting for a beginner.</p>
@@ -66,6 +192,15 @@
             Buy on Amazon &rarr;
           </a>
         </div>
+
+        <!-- ── Related Books ── -->
+        <div class="related-books" id="related-books-section">
+          <p class="related-books-title">More from E. J. Marín</p>
+          <div class="related-books-grid" id="related-books-grid">
+            <p class="related-books-loading" id="rb-loading">Loading recommendations…</p>
+          </div>
+        </div>
+
       </div>
     </article>
   </main>
@@ -93,6 +228,132 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
+</script>
+<script src="/amazon-api.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var ASIN = 'B0CD9JC1HY';
+
+  // ── Live Price ───────────────────────────────────────────────────────
+  function updateLivePriceUI(price, avail) {
+    var priceEl = document.getElementById('lp-amazon-price');
+    var statusEl = document.getElementById('lp-status');
+    if (!priceEl || !statusEl) return;
+
+    if (price) {
+      priceEl.textContent = price;
+      var availClass = avail ? 'in-stock' : 'unavailable';
+      var availText  = avail ? 'In Stock' : 'Out of Stock';
+      statusEl.className = 'lp-status ' + availClass;
+      statusEl.textContent = availText;
+    } else {
+      priceEl.textContent = '—';
+      statusEl.className = 'lp-status unavailable';
+      statusEl.textContent = 'Check site';
+    }
+  }
+
+  function fetchLivePrice() {
+    AmazonAPI.getProduct(ASIN).then(function (product) {
+      if (product && product.price) {
+        updateLivePriceUI(product.price, product.available);
+      } else {
+        updateLivePriceUI(null, false);
+      }
+    }).catch(function () {
+      updateLivePriceUI(null, false);
+    });
+  }
+
+  if (typeof AmazonAPI !== 'undefined') {
+    fetchLivePrice();
+  }
+
+  // ── Related Books ─────────────────────────────────────────────────────
+  var RELATED_BOOKS = [
+    {
+      asin:  'B0GQCZKRGB',
+      title: 'The Richmond Cipher',
+      author: 'E. J. Marín',
+      image: 'https://images-na.ssl-images-amazon.com/images/P/B0GQCZKRGB.01._SX150_.jpg',
+      price: null,
+    },
+    {
+      asin:  'B0GS367G2M',
+      title: 'Otomí',
+      author: 'E. J. Marín',
+      image: 'https://images-na.ssl-images-amazon.com/images/P/B0GS367G2M.01._SX150_.jpg',
+      price: null,
+    },
+    {
+      asin:  'B0CDFFW3LD',
+      title: 'Mythical Menagerie',
+      author: 'E. J. Marín',
+      image: 'https://images-na.ssl-images-amazon.com/images/P/B0CDFFW3LD.01._SX150_.jpg',
+      price: null,
+    },
+    {
+      asin:  'B0GQ2YCLD4',
+      title: 'Living with a Moving Planet',
+      author: 'C. Everett',
+      image: 'https://images-na.ssl-images-amazon.com/images/P/B0GQ2YCLD4.01._SX150_.jpg',
+      price: null,
+    },
+  ];
+
+  function renderRelatedBooks(books) {
+    var grid = document.getElementById('related-books-grid');
+    if (!grid) return;
+    grid.innerHTML = books.map(function (b) {
+      var priceHtml = b.price
+        ? '<span class="rb-price">' + b.price + '</span>'
+        : '';
+      return '<div class="related-book-card">' +
+        '<a href="https://www.amazon.com/dp/' + b.asin + '?tag=bithues-20" target="_blank" rel="noopener">' +
+        '<img src="' + b.image + '" alt="' + b.title + '" loading="lazy"></a>' +
+        '<a href="https://www.amazon.com/dp/' + b.asin + '?tag=bithues-20" target="_blank" rel="noopener" class="rb-title">' + b.title + '</a>' +
+        '<span class="rb-author">' + b.author + '</span>' +
+        priceHtml +
+        '</div>';
+    }).join('');
+  }
+
+  function loadRelatedBooks() {
+    var grid    = document.getElementById('related-books-grid');
+    var loading = document.getElementById('rb-loading');
+    if (!grid) return;
+
+    // Always show fallback immediately, then try to enhance with live prices
+    if (loading) loading.style.display = 'none';
+    renderRelatedBooks(RELATED_BOOKS);
+
+    // Try to fetch live prices from the API
+    if (typeof AmazonAPI === 'undefined') return;
+
+    AmazonAPI.searchProducts('E. J. Marin books', 4).then(function (results) {
+      if (results && results.length > 0) {
+        // Merge live prices into fallback data
+        results.forEach(function (r) {
+          var match = RELATED_BOOKS.find(function (b) { return b.asin === r.asin; });
+          if (match) { match.price = r.price; }
+        });
+        // Re-render with any prices we found
+        var priceMap = {};
+        results.forEach(function (r) { priceMap[r.asin] = r.price; });
+        var enriched = RELATED_BOOKS.map(function (b) {
+          return { asin: b.asin, title: b.title, author: b.author, image: b.image, price: priceMap[b.asin] || null };
+        });
+        renderRelatedBooks(enriched);
+      }
+    }).catch(function () {
+      // Silently keep fallback data — API may be ineligible
+    });
+  }
+
+  loadRelatedBooks();
+})();
 </script>
 
   <div id="site-footer"></div>

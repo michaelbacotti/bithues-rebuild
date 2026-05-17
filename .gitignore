@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+package.json
+package-lock.json
+
+# Local config (contains secrets — NOT committed)
+amazon-config.js
+
+# OS files
+.DS_Store

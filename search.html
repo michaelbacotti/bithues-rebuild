@@ -6,6 +6,7 @@
   <title>Search | Bithues</title>
   <meta name="description" content="Search Bithues book reviews, articles, and stories.">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/search-page.css">
   <link rel="canonical" href="https://www.bithues.com/search.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
 </head>
@@ -15,15 +16,78 @@
     <div class="search-page">
       <h1>Search</h1>
       <form action="/search.html" method="get" class="search-page-form">
-        <input type="text" name="q" class="search-page-input" placeholder="Search..." autofocus>
+        <input type="text" name="q" class="search-page-input" placeholder="Search for books, authors, topics…" autofocus>
         <button type="submit" class="search-page-btn">Search</button>
       </form>
-      <div class="search-page-results"></div>
+
+      <!-- Local site results (existing) -->
+      <div class="search-page-results" id="local-results"></div>
+
+      <!-- Amazon product search results (new) -->
+      <div id="amazon-search-section" class="amazon-search-section" style="display:none;">
+        <h2>Results on Amazon</h2>
+        <p class="amazon-search-loading" id="amazon-loading">Searching Amazon…</p>
+        <div class="amazon-grid" id="amazon-results"></div>
+        <p class="amazon-search-error" id="amazon-error" style="display:none;"></p>
+      </div>
     </div>
   </main>
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
   <script src="/search-page.js"></script>
+  <script src="/amazon-api.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var params    = new URLSearchParams(window.location.search);
+    var q         = params.get('q') || '';
+    var section   = document.getElementById('amazon-search-section');
+    var loading   = document.getElementById('amazon-loading');
+    var resultsEl = document.getElementById('amazon-results');
+    var errorEl   = document.getElementById('amazon-error');
+
+    if (!q || !section) return;
+
+    function renderAmazonResults(items) {
+      if (!items || !items.length) {
+        resultsEl.innerHTML = '<p style="font-size:14px;color:#999;">No Amazon results found for "' + q + '".</p>';
+        return;
+      }
+      resultsEl.innerHTML = items.map(function (item) {
+        var priceHtml = item.price
+          ? '<span class="am-price">' + item.price + '</span>'
+          : '<span class="am-price" style="color:#999;">See site for price</span>';
+        return '<div class="amazon-card">' +
+          '<a class="cover-link" href="' + item.link + '" target="_blank" rel="noopener">' +
+          '<img src="' + item.image + '" alt="' + item.title + '" loading="lazy"></a>' +
+          '<p class="am-title"><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></p>' +
+          (item.author ? '<span class="am-author">' + item.author + '</span>' : '') +
+          priceHtml +
+          '<a class="am-btn" href="' + item.link + '" target="_blank" rel="noopener">View on Amazon &rarr;</a>' +
+          '</div>';
+      }).join('');
+    }
+
+    if (typeof AmazonAPI !== 'undefined') {
+      section.style.display = 'block';
+      AmazonAPI.searchProducts(q, 8).then(function (items) {
+        if (loading) loading.style.display = 'none';
+        renderAmazonResults(items);
+        if (!items || !items.length) {
+          // No results — suppress section to avoid confusing empty state
+          if (section) section.style.display = 'none';
+        }
+      }).catch(function () {
+        if (loading) loading.style.display = 'none';
+        if (errorEl) {
+          errorEl.textContent = 'Amazon search unavailable right now.';
+          errorEl.style.display = 'block';
+        }
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
