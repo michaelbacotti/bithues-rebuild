@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Book Should I Read Next? | Bithues</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="canonical" href="https://www.bithues.com/which-book-should-i-read-next/">
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <div class="hero hero--small">
+    <div class="hero-inner">
+      <h1 class="hero-title">Which Book Should I Read Next?</h1>
+      <p class="hero-tagline">Answer a few quick questions and get a personalized reading recommendation.</p>
+    </div>
+  </div>
+
+  <main class="main">
+    <div id="quiz-container" class="quiz-wrapper">
+      <!-- Quiz questions appear here, one at a time -->
+    </div>
+
+    <div id="results" style="display:none;" class="results-wrapper">
+      <!-- Results appear here -->
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  <script>
+    // ─────────────────────────────────────────────────────────────────────────────
+    // BOOK DATASET — 20 real books with real affiliate URLs from Bithues reviews
+    // ─────────────────────────────────────────────────────────────────────────────
+    var BOOKS = [
+      {
+        title: "American Journeys",
+        author: "C. Everett",
+        tags: ["historical-fiction", "adventure", "prehistoric", "family", "coming-of-age"],
+        mood: "adventurous",
+        experience: "immersive",
+        readingEnergy: "medium",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0CD9JC1HY?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/american-journeys.html",
+        whyFit: "You want a sweeping historical adventure with real stakes. American Journeys drops you into another era with characters who feel the weight of their choices."
+      },
+      {
+        title: "Beyond the Veil",
+        author: "D. E. Harlan",
+        tags: ["nonfiction", "philosophical", "consciousness", "science", "nde"],
+        mood: "thoughtful",
+        experience: "philosophical",
+        readingEnergy: "deep",
+        format: "nonfiction",
+        length: "medium",
+        depth: "educational",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GPLX1NJD?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/beyond-the-veil.html",
+        whyFit: "You want something that makes you think hard about big questions. Beyond the Veil is a disciplined, evidence-rich look at what the data actually says about consciousness and death."
+      },
+      {
+        title: "Blood Ember",
+        author: "Jorak Veldt",
+        tags: ["fantasy", "adventure", "epic", "dark"],
+        mood: "adventurous",
+        experience: "immersive",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GN41C6KG?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/blood-ember.html",
+        whyFit: "You want a rich fantasy world with real conflict and consequence. Blood Ember delivers real stakes, dark atmosphere, and a story that pulls you in deep."
+      },
+      {
+        title: "Cords of Empire",
+        author: "E. J. Marin",
+        tags: ["historical-fiction", "family", "mexican-history", "drama", "political"],
+        mood: "thoughtful",
+        experience: "immersive",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GX36Z7KB?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/cords-of-empire.html",
+        whyFit: "You want historical fiction with genuine moral complexity. Cords of Empire traces the costs of ambition and power across generations with real literary skill."
+      },
+      {
+        title: "The Dawn of Civilization",
+        author: "T. Stone",
+        tags: ["historical-fiction", "prehistoric", "adventure", "coming-of-age"],
+        mood: "adventurous",
+        experience: "immersive",
+        readingEnergy: "medium",
+        format: "fiction",
+        length: "medium",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0BTD9CT35?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/dawn-of-civilization.html",
+        whyFit: "You want a prehistoric world that feels grounded and real. The Dawn of Civilization builds its world without modern gloss, and its young characters face hard choices before they're ready."
+      },
+      {
+        title: "Horizonte Rojo",
+        author: "M. A. Hale",
+        tags: ["sci-fi", "lunar", "adventure", "thriller", "spanish"],
+        mood: "adventurous",
+        experience: "mind-bending",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GR1199SJ?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/horizonte-rojo.html",
+        whyFit: "You want a Spanish-language sci-fi thriller set on the Moon. Horizonte Rojo delivers fast pacing, technical authority, and political intrigue in equal measure."
+      },
+      {
+        title: "Men of the Three Seas",
+        author: "Leander Vassos",
+        tags: ["historical-fiction", "family", "mediterranean", "adventure", "multi-generational"],
+        mood: "thoughtful",
+        experience: "immersive",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0D38W5972?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/men-of-three-seas.html",
+        whyFit: "You want a multi-generational saga with real moral weight. Men of the Three Seas makes you feel the Mediterranean as more than geography — it's a character in its own right."
+      },
+      {
+        title: "Red Horizon",
+        author: "M. A. Hale",
+        tags: ["sci-fi", "lunar", "thriller", "political", "sabotage"],
+        mood: "dark",
+        experience: "mind-bending",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GQVLB9N2?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/red-horizon.html",
+        whyFit: "You want a tense, technically grounded lunar thriller. Red Horizon delivers sabotage, political intrigue, and the kind of procedural authenticity that makes every emergency feel real."
+      },
+      {
+        title: "The Martian",
+        author: "Andy Weir",
+        tags: ["sci-fi", "adventure", "survival", "humor", "space"],
+        mood: "hopeful",
+        experience: "mind-bending",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B082BHWQCJ?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/the-martian.html",
+        whyFit: "You want a survival story with humor and genuine scientific grounding. The Martian is the book that makes problem-solving feel like the best adventure of all."
+      },
+      {
+        title: "The Orchardist: Harvest",
+        author: "Kate E Brennan",
+        tags: ["literary-fiction", "reflective", "family", "threshold"],
+        mood: "thoughtful",
+        experience: "emotional",
+        readingEnergy: "medium",
+        format: "fiction",
+        length: "medium",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GKRKP1Q4?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/the-orchardist-harvest.html",
+        whyFit: "You want a literary novel about crossing a threshold and returning changed. The Orchardist: Harvest is quiet, precise, and deeply felt."
+      },
+      {
+        title: "The Quiet Hours",
+        author: "Elara Moss",
+        tags: ["short-stories", "relaxing", "family", "bedtime", "gentle"],
+        mood: "hopeful",
+        experience: "relaxing",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "family",
+        amazonUrl: "https://www.amazon.com/dp/B0FH33TF12?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/the-quiet-hours.html",
+        whyFit: "You want something gentle and restorative. The Quiet Hours is a collection of brief, perfectly formed vignettes designed for the bedtime reading ritual."
+      },
+      {
+        title: "The Richmond Cipher",
+        author: "E. Maris",
+        tags: ["historical-fiction", "thriller", "mystery", "civil-war", "cryptography"],
+        mood: "dark",
+        experience: "emotional",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GQCZKRGB?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/richmond-cipher.html",
+        whyFit: "You want a historical thriller with real puzzle-box plotting. The Richmond Cipher weaves cryptography and Civil War intrigue into a page-turning family mystery."
+      },
+      {
+        title: "Echoes of Aetheris",
+        author: "Aetheri Codex",
+        tags: ["sci-fi", "adventure", "space", "alien", "epic"],
+        mood: "adventurous",
+        experience: "mind-bending",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GPPBCKYF?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/echoes-of-aetheris.html",
+        whyFit: "You want sweeping sci-fi with genuine narrative power. Echoes of Aetheris is a nine-thousand-year epic that earns every one of its grand scale beats."
+      },
+      {
+        title: "Echoes of Transcendence",
+        author: "L. Everwood",
+        tags: ["fantasy", "mystical", "philosophical", "adventure", "prophecy"],
+        mood: "thoughtful",
+        experience: "philosophical",
+        readingEnergy: "immersive",
+        format: "fiction",
+        length: "long",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0C8RQB9BP?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/echoes-of-transcendence.html",
+        whyFit: "You want fantasy with real philosophical depth. Echoes of Transcendence blends mystical adventure with genuine emotional resonance."
+      },
+      {
+        title: "First Contact Diary",
+        author: "Mira Ellison",
+        tags: ["sci-fi", "first-contact", "emotional", "communication", "literary"],
+        mood: "thoughtful",
+        experience: "emotional",
+        readingEnergy: "medium",
+        format: "fiction",
+        length: "medium",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GTSXS48K?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/first-contact-diary.html",
+        whyFit: "You want sci-fi that is fundamentally about understanding and being understood. First Contact Diary is emotionally grounded and quietly devastating."
+      },
+      {
+        title: "A Home for Anya",
+        author: "Lena Ashfield",
+        tags: ["romance", "family", "home", "emotional", "gentle"],
+        mood: "hopeful",
+        experience: "emotional",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "medium",
+        depth: "entertaining",
+        audience: "family",
+        amazonUrl: "https://www.amazon.com/dp/B0GQK61R5H?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/home-for-anya.html",
+        whyFit: "You want a touching story about home and belonging. A Home for Anya earns every emotional beat with characters you genuinely care about."
+      },
+      {
+        title: "Mindful Memory",
+        author: "D. E. Harlan",
+        tags: ["nonfiction", "educational", "memory", "science", "practical"],
+        mood: "thoughtful",
+        experience: "educational",
+        readingEnergy: "medium",
+        format: "nonfiction",
+        length: "short",
+        depth: "educational",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GPH597LL?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/mindful-memory.html",
+        whyFit: "You want something practical that actually makes a difference. Mindful Memory gives you science-backed exercises for cognitive improvement, grounded in real research."
+      },
+      {
+        title: "The Power of Changing Your Mind",
+        author: "Evan R. Cole",
+        tags: ["nonfiction", "philosophical", "intellectual-humility", "practical", "educational"],
+        mood: "thoughtful",
+        experience: "educational",
+        readingEnergy: "medium",
+        format: "nonfiction",
+        length: "short",
+        depth: "educational",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GHQG9LLS?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/power-of-changing-your-mind.html",
+        whyFit: "You want a short, sharp book that reframes how you think about thinking. The Power of Changing Your Mind treats intellectual humility as a genuine competitive edge."
+      },
+      {
+        title: "The Shadow Within",
+        author: "Elena Maris",
+        tags: ["nonfiction", "psychology", "shadow-work", "practical", "reflective"],
+        mood: "thoughtful",
+        experience: "emotional",
+        readingEnergy: "medium",
+        format: "nonfiction",
+        length: "medium",
+        depth: "reflective",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GPT6QRDW?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/shadow-within.html",
+        whyFit: "You want practical psychology without the mysticism. The Shadow Within is grounded, honest, and actually useful for working with yourself instead of just reading about it."
+      },
+      {
+        title: "Symbiont Bloom",
+        author: "Elowen Tidebloom",
+        tags: ["fantasy", "science-fiction", "nature", "adventure", "systems-puzzle"],
+        mood: "adventurous",
+        experience: "mind-bending",
+        readingEnergy: "medium",
+        format: "fiction",
+        length: "medium",
+        depth: "entertaining",
+        audience: "anyone",
+        amazonUrl: "https://www.amazon.com/dp/B0GS6KMYXV?tag=michaelbacoti-20",
+        reviewUrl: "/reviews/symbiont-bloom.html",
+        whyFit: "You want something with a unique premise and a systems puzzle at its heart. Symbiont Bloom builds a world around living leaf-glass and a family that has to figure out why the island's pulse skips."
+      }
+    ];
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // QUIZ QUESTIONS & ANSWER WEIGHTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    var QUESTIONS = [
+      {
+        id: "mood",
+        text: "What mood are you in?",
+        options: [
+          { label: "Adventurous", value: "adventurous" },
+          { label: "Thoughtful", value: "thoughtful" },
+          { label: "Escapist", value: "dark" },
+          { label: "Inspired", value: "hopeful" },
+          { label: "Dark", value: "dark" },
+          { label: "Hopeful", value: "hopeful" }
+        ]
+      },
+      {
+        id: "experience",
+        text: "What kind of experience do you want?",
+        options: [
+          { label: "Relaxing", value: "relaxing" },
+          { label: "Mind-bending", value: "mind-bending" },
+          { label: "Emotional", value: "emotional" },
+          { label: "Educational", value: "educational" },
+          { label: "Philosophical", value: "philosophical" },
+          { label: "Immersive adventure", value: "immersive" }
+        ]
+      },
+      {
+        id: "readingEnergy",
+        text: "How's your reading energy today?",
+        options: [
+          { label: "Light and easy", value: "light" },
+          { label: "Medium", value: "medium" },
+          { label: "Deep and immersive", value: "immersive" }
+        ]
+      },
+      {
+        id: "format",
+        text: "Fiction or nonfiction?",
+        options: [
+          { label: "Fiction", value: "fiction" },
+          { label: "Nonfiction", value: "nonfiction" },
+          { label: "Either works", value: "either" }
+        ]
+      },
+      {
+        id: "length",
+        text: "How long do you want it?",
+        options: [
+          { label: "Short", value: "short" },
+          { label: "Medium", value: "medium" },
+          { label: "Long", value: "long" }
+        ]
+      },
+      {
+        id: "depth",
+        text: "What kind of depth?",
+        options: [
+          { label: "Reflective", value: "reflective" },
+          { label: "Entertaining", value: "entertaining" },
+          { label: "Educational", value: "educational" }
+        ]
+      },
+      {
+        id: "audience",
+        text: "Who's it for?",
+        options: [
+          { label: "Me", value: "anyone" },
+          { label: "Family", value: "family" },
+          { label: "Anyone", value: "anyone" }
+        ]
+      }
+    ];
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // SCORING ENGINE
+    // ─────────────────────────────────────────────────────────────────────────────
+    function scoreBook(book, answers) {
+      var score = 0;
+
+      // Mood match
+      if (book.mood === answers.mood) score += 4;
+
+      // Experience match
+      if (book.experience === answers.experience) score += 3;
+      if (book.experience === answers.mood) score += 1; // cross-weight
+
+      // Reading energy match
+      if (book.readingEnergy === answers.readingEnergy) score += 3;
+      if (answers.readingEnergy === 'light' && book.readingEnergy === 'light') score += 2;
+
+      // Format match
+      if (book.format === answers.format || answers.format === 'either') score += 3;
+
+      // Length match
+      if (book.length === answers.length) score += 2;
+
+      // Depth match
+      if (book.depth === answers.depth) score += 2;
+
+      // Audience match
+      if (book.audience === answers.audience || answers.audience === 'anyone') score += 2;
+
+      return score;
+    }
+
+    function getRecommendations(answers) {
+      var scored = BOOKS.map(function(book) {
+        return { book: book, score: scoreBook(book, answers) };
+      });
+      scored.sort(function(a, b) { return b.score - a.score; });
+      return scored.slice(0, 3);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // UI STATE
+    // ─────────────────────────────────────────────────────────────────────────────
+    var currentQuestion = 0;
+    var answers = {};
+    var totalQuestions = QUESTIONS.length;
+
+    function renderProgress() {
+      return '<div class="quiz-progress"><span class="quiz-progress-label">Question ' + (currentQuestion + 1) + ' of ' + totalQuestions + '</span><div class="quiz-dots">' +
+        QUESTIONS.map(function(_, i) {
+          return '<span class="quiz-dot' + (i < currentQuestion ? ' quiz-dot--done' : '') + (i === currentQuestion ? ' quiz-dot--active' : '') + '"></span>';
+        }).join('') +
+        '</div></div>';
+    }
+
+    function renderQuestion() {
+      var q = QUESTIONS[currentQuestion];
+      var html = renderProgress();
+      html += '<div class="quiz-question">' + q.text + '</div>';
+      html += '<div class="quiz-options">';
+      q.options.forEach(function(opt) {
+        html += '<button class="quiz-option" data-value="' + opt.value + '">' + opt.label + '</button>';
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderResults(recs) {
+      var html = '<div class="results-inner">';
+      html += '<div class="results-header">';
+      html += '<h2 class="results-title">Your Perfect Next Read</h2>';
+      html += '<p class="results-subtitle">Based on your answers, here\'s what we\'d recommend.</p>';
+      html += '</div>';
+
+      html += '<div class="results-list">';
+      recs.forEach(function(item, index) {
+        var book = item.book;
+        var badge = index === 0 ? 'Best Match' : (index === 1 ? 'Also Great' : 'Worth a Read');
+        var badgeClass = index === 0 ? 'badge--best' : (index === 1 ? 'badge--alt' : 'badge--alt');
+        html += '<div class="result-card' + (index === 0 ? ' result-card--best' : '') + '">';
+        if (index === 0) {
+          html += '<div class="result-badge ' + badgeClass + '">' + badge + '</div>';
+        } else {
+          html += '<div class="result-badge ' + badgeClass + '">' + badge + '</div>';
+        }
+        html += '<div class="result-book-info">';
+        html += '<h3 class="result-book-title">' + book.title + '</h3>';
+        html += '<p class="result-book-author">by ' + book.author + '</p>';
+        html += '<p class="result-why">' + book.whyFit + '</p>';
+        html += '</div>';
+        html += '<div class="result-actions">';
+        if (book.reviewUrl) {
+          html += '<a href="' + book.reviewUrl + '" class="btn btn--review">Read Review</a>';
+        }
+        html += '<a href="' + book.amazonUrl + '" class="btn btn--amazon" target="_blank" rel="noopener">View on Amazon <span class="paid-link-label">(paid link)</span></a>';
+        html += '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+
+      html += '<div class="amazon-disclosure">As an Amazon Associate, Bithues earns from qualifying purchases. Book recommendations are editorial, not paid placements.</div>';
+
+      html += '<div class="results-footer">';
+      html += '<button class="btn btn--restart" id="restart-quiz">Start Over</button>';
+      html += '<a href="/reviews.html" class="btn btn--browse">Browse All Reviews</a>';
+      html += '</div>';
+      html += '</div>';
+      return html;
+    }
+
+    function initQuiz() {
+      var container = document.getElementById('quiz-container');
+      container.innerHTML = renderQuestion();
+
+      container.querySelectorAll('.quiz-option').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var q = QUESTIONS[currentQuestion];
+          var value = this.getAttribute('data-value');
+          answers[q.id] = value;
+
+          // Highlight selected, then advance
+          container.querySelectorAll('.quiz-option').forEach(function(b) { b.classList.remove('quiz-option--selected'); });
+          this.classList.add('quiz-option--selected');
+
+          setTimeout(function() {
+            currentQuestion++;
+            if (currentQuestion < totalQuestions) {
+              container.innerHTML = renderQuestion();
+              bindQuizEvents();
+            } else {
+              showResults();
+            }
+          }, 400);
+        });
+      });
+    }
+
+    function bindQuizEvents() {
+      var container = document.getElementById('quiz-container');
+      container.querySelectorAll('.quiz-option').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var q = QUESTIONS[currentQuestion];
+          var value = this.getAttribute('data-value');
+          answers[q.id] = value;
+
+          container.querySelectorAll('.quiz-option').forEach(function(b) { b.classList.remove('quiz-option--selected'); });
+          this.classList.add('quiz-option--selected');
+
+          setTimeout(function() {
+            currentQuestion++;
+            if (currentQuestion < totalQuestions) {
+              container.innerHTML = renderQuestion();
+              bindQuizEvents();
+            } else {
+              showResults();
+            }
+          }, 400);
+        });
+      });
+    }
+
+    function showResults() {
+      var recs = getRecommendations(answers);
+      document.getElementById('quiz-container').style.display = 'none';
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.style.display = 'block';
+      resultsDiv.innerHTML = renderResults(recs);
+
+      document.getElementById('restart-quiz').addEventListener('click', restartQuiz);
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      answers = {};
+      document.getElementById('results').style.display = 'none';
+      document.getElementById('quiz-container').style.display = 'block';
+      document.getElementById('quiz-container').innerHTML = renderQuestion();
+      bindQuizEvents();
+    }
+
+    // Start
+    document.addEventListener('DOMContentLoaded', initQuiz);
+  </script>
+
+  <style>
+    /* ── Quiz Layout ─────────────────────────────── */
+    .quiz-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .quiz-progress {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .quiz-progress-label {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-light);
+      margin-bottom: 12px;
+    }
+    .quiz-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .quiz-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .quiz-dot--done { background: var(--color-tag-review); }
+    .quiz-dot--active { background: var(--color-accent); transform: scale(1.3); }
+
+    .quiz-question {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--color-text);
+      margin-bottom: 32px;
+      line-height: 1.3;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quiz-option {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: var(--color-text);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .quiz-option:hover {
+      border-color: var(--color-accent);
+      background: #faf6ef;
+      transform: translateX(4px);
+    }
+    .quiz-option--selected {
+      border-color: var(--color-accent);
+      background: #f5eed8;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    /* Fade in new questions */
+    .quiz-wrapper { animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Results ─────────────────────────────── */
+    .results-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .results-inner { animation: fadeIn 0.4s ease; }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .results-title {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+    .results-subtitle {
+      font-size: 17px;
+      color: var(--color-text-muted);
+    }
+
+    .results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .result-card {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
+    }
+    .result-card--best {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 4px rgba(139,105,20,0.08);
+    }
+
+    .result-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .badge--best {
+      background: var(--color-accent);
+      color: #fff;
+    }
+    .badge--alt {
+      background: var(--color-border-light);
+      color: var(--color-text-muted);
+    }
+
+    .result-book-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .result-book-author {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 14px;
+    }
+    .result-why {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      border-left: 3px solid var(--color-tag-review);
+      padding-left: 14px;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn--review {
+      background: var(--color-tag-review);
+      color: #fff;
+    }
+    .btn--review:hover { background: #b8934f; color: #fff; }
+    .btn--amazon {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .btn--amazon:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .paid-link-label {
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.7;
+      margin-left: 2px;
+    }
+
+    .amazon-disclosure {
+      text-align: center;
+      font-size: 12px;
+      color: var(--color-text-light);
+      padding: 20px;
+      border-top: 1px solid var(--color-border-light);
+      margin-top: 8px;
+    }
+
+    .results-footer {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn--restart {
+      background: transparent;
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 14px;
+      padding: 10px 18px;
+    }
+    .btn--restart:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .btn--browse {
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 14px;
+      padding: 10px 18px;
+    }
+    .btn--browse:hover { background: var(--color-accent-hover); color: #fff; }
+
+    /* ── Mobile ─────────────────────────────── */
+    @media (max-width: 600px) {
+      .quiz-question { font-size: 22px; }
+      .result-card { padding: 20px; }
+      .result-book-title { font-size: 19px; }
+      .result-actions { flex-direction: column; }
+      .btn { text-align: center; }
+    }
+  </style>
+</body>
+</html>
