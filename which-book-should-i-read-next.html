@@ -25,7 +25,7 @@
       <div class="kids-banner-inner">
         <span class="kids-banner-label">For Young Readers</span>
         <h2 class="kids-banner-title">Looking for children's books?</h2>
-        <p class="kids-banner-desc">Simple, confident, character-driven stories for kids — the Little Mike series brings the same warmth as classic Frog and Toad, with a modern STEM edge.</p>
+        <p class="kids-banner-desc">STEM adventures through the Little Mike series, or gentle classics like Frog and Toad for reading aloud together.</p>
         <div class="kids-book-grid">
           <div class="kids-book-card">
             <img src="https://images-na.ssl-images-amazon.com/images/P/B0CFHT4WDX.01._SX150_.jpg" alt="Little Mike: Fun at the Beach" width="80">
@@ -409,6 +409,36 @@
         amazonUrl: "https://www.amazon.com/dp/B0DC6FTG21?tag=bithues-20",
         reviewUrl: "/reviews/little-mike-builds-a-robot.html",
         whyFit: "A hands-on robotics adventure that makes STEM feel like play. Little Mike and his friends figure out how to solve a problem together — no adult rescue required."
+      },
+      {
+        title: "Frog and Toad Are Friends",
+        author: "Arnold Lobel",
+        tags: ["children", "classic", "friendship", "gentle", "read-aloud", "emotional"],
+        mood: "hopeful",
+        experience: "relaxing",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "children-classic",
+        amazonUrl: "https://www.amazon.com/dp/B000VCQBC2?tag=bithues-20",
+        reviewUrl: null,
+        whyFit: "A timeless classic about friendship — Frog and Toad's five simple stories carry real emotional weight and make for perfect read-aloud sessions."
+      },
+      {
+        title: "Frog and Toad Together",
+        author: "Arnold Lobel",
+        tags: ["children", "classic", "friendship", "courage", "read-aloud", "emotional"],
+        mood: "hopeful",
+        experience: "relaxing",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "children-classic",
+        amazonUrl: "https://www.amazon.com/dp/B000VCQBE8?tag=bithues-20",
+        reviewUrl: null,
+        whyFit: "The sequel that deepens the friendship — gentle, warm, and exactly right for a quiet bedtime routine."
       }
     ];
 
@@ -482,8 +512,16 @@
         options: [
           { label: "Me", value: "anyone" },
           { label: "Family", value: "family" },
-          { label: "For my kids", value: "children" },
+          { label: "For my kids", value: "children-stem" },
           { label: "Anyone", value: "anyone" }
+        ]
+      },
+      {
+        id: "childType",
+        text: "What kind of story?",
+        options: [
+          { label: "STEM & adventures", value: "children-stem" },
+          { label: "Friendship & feelings", value: "children-classic" }
         ]
       }
     ];
@@ -515,8 +553,11 @@
       if (book.depth === answers.depth) score += 2;
 
       // Audience match
-      if (book.audience === answers.audience || answers.audience === 'anyone' || answers.audience === 'children') score += 2;
-      if (answers.audience === 'children' && book.audience === 'children') score += 5;
+      if (book.audience === answers.audience || answers.audience === 'anyone') score += 2;
+      if (answers.audience === 'children-stem' && book.audience === 'children') score += 5;
+      if (answers.audience === 'children-stem' && book.audience === 'children-classic') score -= 5;
+      if (answers.audience === 'children-classic' && book.audience === 'children-classic') score += 5;
+      if (answers.audience === 'children-classic' && book.audience === 'children') score -= 5;
 
       return score;
     }
@@ -569,11 +610,7 @@
         var badge = index === 0 ? 'Best Match' : (index === 1 ? 'Also Great' : 'Worth a Read');
         var badgeClass = index === 0 ? 'badge--best' : (index === 1 ? 'badge--alt' : 'badge--alt');
         html += '<div class="result-card' + (index === 0 ? ' result-card--best' : '') + '">';
-        if (index === 0) {
-          html += '<div class="result-badge ' + badgeClass + '">' + badge + '</div>';
-        } else {
-          html += '<div class="result-badge ' + badgeClass + '">' + badge + '</div>';
-        }
+        html += '<div class="result-badge ' + badgeClass + '">' + badge + '</div>';
         html += '<div class="result-book-info">';
         html += '<h3 class="result-book-title">' + book.title + '</h3>';
         html += '<p class="result-book-author">by ' + book.author + '</p>';
@@ -602,28 +639,7 @@
     function initQuiz() {
       var container = document.getElementById('quiz-container');
       container.innerHTML = renderQuestion();
-
-      container.querySelectorAll('.quiz-option').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var q = QUESTIONS[currentQuestion];
-          var value = this.getAttribute('data-value');
-          answers[q.id] = value;
-
-          // Highlight selected, then advance
-          container.querySelectorAll('.quiz-option').forEach(function(b) { b.classList.remove('quiz-option--selected'); });
-          this.classList.add('quiz-option--selected');
-
-          setTimeout(function() {
-            currentQuestion++;
-            if (currentQuestion < totalQuestions) {
-              container.innerHTML = renderQuestion();
-              bindQuizEvents();
-            } else {
-              showResults();
-            }
-          }, 400);
-        });
-      });
+      bindQuizEvents();
     }
 
     function bindQuizEvents() {
