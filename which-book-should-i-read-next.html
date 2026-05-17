@@ -21,6 +21,32 @@
   </div>
 
   <main class="main">
+    <div class="kids-banner">
+      <div class="kids-banner-inner">
+        <span class="kids-banner-label">For Young Readers</span>
+        <h2 class="kids-banner-title">Looking for children's books?</h2>
+        <p class="kids-banner-desc">Simple, confident, character-driven stories for kids — the Little Mike series brings the same warmth as classic Frog and Toad, with a modern STEM edge.</p>
+        <div class="kids-book-grid">
+          <div class="kids-book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/P/B0CFHT4WDX.01._SX150_.jpg" alt="Little Mike: Fun at the Beach" width="80">
+            <span>Fun at the Beach</span>
+            <a href="https://www.amazon.com/dp/B0CFHT4WDX?tag=bithues-20" target="_blank" rel="noopener">→ Amazon</a>
+          </div>
+          <div class="kids-book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/P/B0FPBBTHLT.01._SX150_.jpg" alt="Little Mike: Learns to Fly" width="80">
+            <span>Learns to Fly</span>
+            <a href="https://www.amazon.com/dp/B0FPBBTHLT?tag=bithues-20" target="_blank" rel="noopener">→ Amazon</a>
+          </div>
+          <div class="kids-book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/P/B0DC6FTG21.01._SX150_.jpg" alt="Little Mike: Builds a Robot" width="80">
+            <span>Builds a Robot</span>
+            <a href="https://www.amazon.com/dp/B0DC6FTG21?tag=bithues-20" target="_blank" rel="noopener">→ Amazon</a>
+          </div>
+        </div>
+        <p class="kids-banner-note"><a href="/reviews.html?filter=children">Browse all children's reviews →</a></p>
+      </div>
+    </div>
+
     <div id="quiz-container" class="quiz-wrapper">
       <!-- Quiz questions appear here, one at a time -->
     </div>
@@ -338,6 +364,51 @@
         amazonUrl: "https://www.amazon.com/dp/B0GS6KMYXV?tag=michaelbacoti-20",
         reviewUrl: "/reviews/symbiont-bloom.html",
         whyFit: "You want something with a unique premise and a systems puzzle at its heart. Symbiont Bloom builds a world around living leaf-glass and a family that has to figure out why the island's pulse skips."
+      },
+      {
+        title: "Little Mike: Fun at the Beach",
+        author: "Michael Jr.",
+        tags: ["children", "adventure", "beach", "teamwork", "confidence", "educational"],
+        mood: "hopeful",
+        experience: "relaxing",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "children",
+        amazonUrl: "https://www.amazon.com/dp/B0CFHT4WDX?tag=bithues-20",
+        reviewUrl: "/reviews/little-mike-fun-at-the-beach.html",
+        whyFit: "A warm, confident beach adventure that shows kids what teamwork looks like in practice. Simple sentences, real stakes, and a character who tries hard even when things are scary."
+      },
+      {
+        title: "Little Mike: Learns to Fly",
+        author: "Michael Jr.",
+        tags: ["children", "aeronautics", "STEM", "persistence", "confidence", "educational"],
+        mood: "hopeful",
+        experience: "educational",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "children",
+        amazonUrl: "https://www.amazon.com/dp/B0FPBBTHLT?tag=bithues-20",
+        reviewUrl: "/reviews/little-mike-learns-to-fly.html",
+        whyFit: "A child-sized STEM story about learning to fly — not metaphorically, literally. Shows kids that failure is part of learning and that asking for help is a strength, not a weakness."
+      },
+      {
+        title: "Little Mike: Builds a Robot",
+        author: "Michael Jr.",
+        tags: ["children", "robotics", "STEM", "teamwork", "problem-solving", "educational"],
+        mood: "hopeful",
+        experience: "educational",
+        readingEnergy: "light",
+        format: "fiction",
+        length: "short",
+        depth: "entertaining",
+        audience: "children",
+        amazonUrl: "https://www.amazon.com/dp/B0DC6FTG21?tag=bithues-20",
+        reviewUrl: "/reviews/little-mike-builds-a-robot.html",
+        whyFit: "A hands-on robotics adventure that makes STEM feel like play. Little Mike and his friends figure out how to solve a problem together — no adult rescue required."
       }
     ];
 
@@ -411,6 +482,7 @@
         options: [
           { label: "Me", value: "anyone" },
           { label: "Family", value: "family" },
+          { label: "For my kids", value: "children" },
           { label: "Anyone", value: "anyone" }
         ]
       }
@@ -443,7 +515,8 @@
       if (book.depth === answers.depth) score += 2;
 
       // Audience match
-      if (book.audience === answers.audience || answers.audience === 'anyone') score += 2;
+      if (book.audience === answers.audience || answers.audience === 'anyone' || answers.audience === 'children') score += 2;
+      if (answers.audience === 'children' && book.audience === 'children') score += 5;
 
       return score;
     }
@@ -678,6 +751,76 @@
     /* Fade in new questions */
     .quiz-wrapper { animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Kids Banner ─────────────────────────────── */
+    .kids-banner {
+      background: linear-gradient(135deg, #f5eed8 0%, #e8f4e8 100%);
+      border: 1.5px solid rgba(139,105,20,0.2);
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .kids-banner-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-accent);
+      background: rgba(139,105,20,0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .kids-banner-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 10px;
+    }
+    .kids-banner-desc {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 520px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+    .kids-book-grid {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .kids-book-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    .kids-book-card img {
+      width: 80px;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .kids-book-card a {
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .kids-banner-note {
+      font-size: 13px;
+      color: var(--color-text-light);
+    }
+    .kids-banner-note a {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
 
     /* ── Results ─────────────────────────────── */
     .results-wrapper {
