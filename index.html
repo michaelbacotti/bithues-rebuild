@@ -49,7 +49,7 @@
       var itemsPerPage = 5;
       var grid = document.getElementById('feed-grid');
       var allCards = [];
-      data.slice().reverse().forEach(function(item) {
+      data.forEach(function(item) {
         var cat = item.category || 'Article';
         var pillClass = 'pill-article';
         if (cat === 'Book Review') pillClass = 'pill-book-review';
