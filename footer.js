@@ -12,6 +12,7 @@
       '      <a href="/articles.html">Articles</a>',
       '      <a href="/stories.html">Stories</a>',
       '      <a href="/about.html">About</a>',
+      '      <a href="/contact.html">Contact</a>',
       '    </nav>',
       '    <p class="footer-copy">&copy; ' + new Date().getFullYear() + ' Bithues. All rights reserved.</p>',
       '  </div>',

@@ -12,7 +12,6 @@
       '      <a href="/articles.html" class="nav-link">Articles</a>',
       '      <a href="/stories.html" class="nav-link">Stories</a>',
       '      <a href="/about.html" class="nav-link">About</a>',
-      '      <a href="/contact.html" class="nav-link">Contact</a>',
       '    </div>',
       '    <div class="nav-search">',
       '      <button class="search-toggle" aria-label="Search">',
