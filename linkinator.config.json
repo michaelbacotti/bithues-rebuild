@@ -1,0 +1,10 @@
+{
+  "urls": [
+    "https://www.bithues.com",
+    "https://www.bithues.com/reviews",
+    "https://www.bithues.com/which-book-should-i-read-next"
+  ],
+  "concurrency": 5,
+  "backlog": 10,
+  "checks": ["internal", "fragment"]
+}

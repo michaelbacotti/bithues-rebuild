@@ -7,6 +7,7 @@
       '  <div class="footer-inner">',
       '    <a href="/" class="footer-brand">Bithues</a>',
       '    <nav class="footer-nav">',
+      '      <a href="/which-book-should-i-read-next/">Find Books</a>',
       '      <a href="/reviews.html">Reviews</a>',
       '      <a href="/articles.html">Articles</a>',
       '      <a href="/stories.html">Stories</a>',
