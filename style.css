@@ -556,3 +556,20 @@ a:hover { color: var(--color-accent-hover); }
 .share-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-right: 4px; }
 .share-btn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 12px; border-radius: 4px; font-size: 12px; text-decoration: none; border: 1px solid #8a6f3e; background: transparent; cursor: pointer; font-family: inherit; color: #8a6f3e; transition: opacity 0.15s; }
 .share-btn:hover { opacity: 0.7; }
+
+/* Book comparison table */
+.book-comparison { margin: 1.5rem 0; overflow-x: auto; }
+.book-comparison table { width: 100%; border-collapse: collapse; }
+.book-comparison th { background: var(--accent, #8b6914); color: white; padding: 0.6rem 0.8rem; text-align: left; font-size: 0.9rem; }
+.book-comparison td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #e5e5e5; font-size: 0.9rem; }
+
+/* Book grid */
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+.book-card { text-align: center; }
+.book-card img { width: 120px; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.book-card p { font-size: 0.85rem; margin: 0.5rem 0; line-height: 1.4; }
+.book-card a { color: var(--accent, #8b6914); font-weight: 600; }
+
+/* Source links */
+.source-link { font-size: 0.8rem; color: #666; margin-top: 0.5rem; }
+.source-link a { color: #888; }
