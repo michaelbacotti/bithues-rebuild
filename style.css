@@ -573,3 +573,33 @@ a:hover { color: var(--color-accent-hover); }
 /* Source links */
 .source-link { font-size: 0.8rem; color: #666; margin-top: 0.5rem; }
 .source-link a { color: #888; }
+
+/* ── Hero Book Cover ─────────────────────────── */
+.hero-book-cover {
+  text-align: center;
+  margin: 0 auto 28px;
+  padding: 0;
+}
+.hero-book-cover img {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto;
+}
+.hero-book-cover img:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.22);
+  transform: translateY(-2px);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hero-book-caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-light);
+  margin-top: 10px;
+}
+.hero-book-caption a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
