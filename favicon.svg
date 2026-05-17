@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Open book icon -->
+  <path d="M4 6 C4 6 8 5 16 5 C24 5 28 6 28 6 L28 24 C28 24 24 23 16 23 C8 23 4 24 4 24 Z" fill="#8b6914"/>
+  <path d="M16 5 L16 23" stroke="#FAF8F5" stroke-width="0.5"/>
+  <path d="M4 6 L4 24 C4 24 8 23 16 23 C16 23 16 5 16 5 C8 5 4 6 4 6Z" fill="none" stroke="#6b5010" stroke-width="0.3"/>
+  <path d="M28 6 L28 24 C28 24 24 23 16 23 C16 23 16 5 16 5 C24 5 28 6 28 6Z" fill="none" stroke="#6b5010" stroke-width="0.3"/>
+  <line x1="16" y1="10" x2="16" y2="18" stroke="#FAF8F5" stroke-width="0.4"/>
+  <line x1="10" y1="10" x2="10" y2="18" stroke="#FAF8F5" stroke-width="0.3"/>
+  <line x1="13" y1="10" x2="13" y2="18" stroke="#FAF8F5" stroke-width="0.3"/>
+  <line x1="19" y1="10" x2="19" y2="18" stroke="#FAF8F5" stroke-width="0.3"/>
+  <line x1="22" y1="10" x2="22" y2="18" stroke="#FAF8F5" stroke-width="0.3"/>
+</svg>
