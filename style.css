@@ -610,3 +610,9 @@ a:hover { color: var(--color-accent-hover); }
   margin: 0 auto 40px;
   padding: 0 24px;
 }
+
+/* Story page image - constrain to text column width */
+.review-image-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
