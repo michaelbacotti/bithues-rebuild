@@ -603,3 +603,10 @@ a:hover { color: var(--color-accent-hover); }
   color: var(--color-accent);
   font-weight: 600;
 }
+
+/* Related links block — align with text content */
+.related-links {
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
