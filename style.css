@@ -552,7 +552,7 @@ a:hover { color: var(--color-accent-hover); }
 .search-page-btn:hover { background: var(--color-accent-hover); }
 
 /* Share bar */
-.share-bar { display: flex; align-items: center; gap: 10px; max-width: var(--max-width); margin: 40px auto 32px; padding: 16px 24px; border-top: 1px solid #e8e4dd; border-bottom: 1px solid #e8e4dd; }
+.share-bar { display: flex; align-items: center; gap: 10px; max-width: var(--max-width); margin: 16px auto 32px; padding: 16px 24px; border-top: 1px solid #e8e4dd; border-bottom: 1px solid #e8e4dd; }
 .share-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-right: 4px; }
 .share-btn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 12px 7px 16px; border-radius: 4px; font-size: 12px; text-decoration: none; border: 1px solid #8a6f3e; background: transparent; cursor: pointer; font-family: inherit; color: #8a6f3e; transition: opacity 0.15s; }
 .share-btn:hover { opacity: 0.7; }
