@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bithues — Book Reviews, Articles & Stories</title>
   <meta name="description" content="Book reviews, reading guides, science fiction, fantasy, and original stories — curated for curious readers.">
+  <!-- TODO: Get google-site-verification code from AdSense dashboard or Google Search Console -->
+  <meta name="google-site-verification" content="" />
   <link rel="stylesheet" href="/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -24,8 +26,15 @@
   </header>
 
   <main class="main">
+    <div class="intro-block">
+      <h2>Curated Reading for Every Interest</h2>
+      <p>Whether you are hunting for your next great read, exploring a new genre, or looking for thoughtful commentary on science fiction, fantasy, and the craft of storytelling, Bithues has something for you. Our reviews go beyond the surface — covering narrative structure, thematic depth, and what makes a book worth your time. Explore our latest articles below or browse by category.</p>
+    </div>
     <div class="feed" id="feed-grid"></div>
   </main>
+  <noscript>
+    <p style="padding:1rem;text-align:center;color:var(--text-light);">This page uses JavaScript to display articles. Enable JavaScript for the full experience.</p>
+  </noscript>
 
   <div id="pagination-controls" style="display:none;justify-content:center;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--font-body,system-ui);">
     <button id="prev-btn" onclick="changePage(-1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
