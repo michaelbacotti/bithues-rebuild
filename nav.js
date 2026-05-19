@@ -8,10 +8,10 @@
       '    <a href="/" class="nav-logo">Bithues</a>',
       '    <div class="nav-links">',
       '      <a href="/which-book-should-i-read-next/" class="nav-link">Find Books</a>',
-      '      <a href="/reviews.html" class="nav-link">Reviews</a>',
-      '      <a href="/articles.html" class="nav-link">Articles</a>',
-      '      <a href="/stories.html" class="nav-link">Stories</a>',
-      '      <a href="/about.html" class="nav-link">About</a>',
+      '      <a href="/reviews" class="nav-link">Reviews</a>',
+      '      <a href="/articles" class="nav-link">Articles</a>',
+      '      <a href="/stories" class="nav-link">Stories</a>',
+      '      <a href="/about" class="nav-link">About</a>',
       '    </div>',
       '    <div class="nav-search">',
       '      <button class="search-toggle" aria-label="Search">',
@@ -49,7 +49,7 @@
       if (e.key === 'Enter') {
         var q = searchInput.value.trim();
         if (q.length > 0) {
-          window.location.href = '/search.html?q=' + encodeURIComponent(q);
+          window.location.href = '/search?q=' + encodeURIComponent(q);
         }
       }
     });
