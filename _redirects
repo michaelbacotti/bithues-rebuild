@@ -1,0 +1,4 @@
+# Redirect legacy .html URLs to clean URLs
+# These pages were indexed by Google with wrong canonical when they fell back to index
+/press.html /press 301
+/book-tracker.html /book-tracker 301
