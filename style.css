@@ -806,3 +806,193 @@ a:hover { color: var(--color-accent-hover); }
   .homepage-grid { grid-template-columns: 1fr; }
   .hero-card-title { font-size: 1.4rem; }
 }
+
+/* ── Hero card ────────────────────────────────────────────────────── */
+.hero-card {
+  display: flex;
+  flex-direction: row;
+  min-height: 360px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 40px 0 48px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+.hero-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+
+.hero-card-thumb {
+  width: 480px;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.hero-card-content {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.hero-card-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.hero-card-excerpt {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+}
+
+.hero-card-read {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ── Section divider ─────────────────────────────────────────────── */
+.homepage-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+
+.homepage-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.homepage-divider-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.homepage-divider-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.homepage-divider-link:hover { text-decoration: underline; }
+
+/* ── Homepage section spacing ───────────────────────────────────── */
+.homepage-section {
+  margin-bottom: 48px;
+}
+
+/* ── 3-column grid ───────────────────────────────────────────────── */
+.homepage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: box-shadow 0.2s;
+}
+.grid-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
+
+.grid-card-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.grid-card-thumb {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.grid-card-body {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.grid-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+.pill-book-review { background: var(--color-tag-review-bg); color: #fff; }
+.pill-article     { background: var(--color-tag-article-bg); color: #fff; }
+.pill-short-story { background: var(--color-tag-story-bg); color: #fff; }
+
+.grid-card-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 6px;
+  color: var(--color-text);
+}
+
+.grid-card-excerpt {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-card { flex-direction: column; min-height: auto; }
+  .hero-card-thumb { width: 100%; height: 260px; }
+  .hero-card-content { padding: 28px 24px; }
+  .hero-card-title { font-size: 1.7rem; }
+  .homepage-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 540px) {
+  .homepage-grid { grid-template-columns: 1fr; }
+  .hero-card-title { font-size: 1.4rem; }
+}

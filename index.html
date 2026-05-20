@@ -25,29 +25,52 @@
 
   <main class="main" style="max-width:1100px;margin:0 auto;padding:0 24px 60px;">
 
-    <!-- Hero story (newest/featured) -->
+    <!-- Hero featured story -->
     <div class="homepage-hero" id="homepage-hero"></div>
 
-    <!-- Section divider -->
-    <div class="homepage-divider">
-      <span class="homepage-divider-line"></span>
-      <span class="homepage-divider-label">Latest</span>
-      <span class="homepage-divider-line"></span>
-    </div>
-
-    <!-- 3-column grid of recent stories -->
-    <div class="homepage-grid" id="homepage-grid"></div>
-
-    <!-- Ad -->
-    <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-    <!-- Intro block -->
+    <!-- INTRO -->
     <div class="intro-block" style="max-width:680px;margin:0 auto;padding:0 0 48px;">
       <p>Bithues is for readers who want more than summaries, star ratings, and listicles. We publish reviews, reading guides, and literary essays that examine what books are doing on the page, what ideas they leave behind, and which titles are truly worth your time. Whether you read science fiction, fantasy, children's literature, or thoughtful nonfiction, Bithues helps you choose better books and think more deeply about them.</p>
     </div>
+
+    <!-- ARTICLES SECTION -->
+    <div class="homepage-section" id="section-articles">
+      <div class="homepage-divider">
+        <span class="homepage-divider-line"></span>
+        <span class="homepage-divider-label">Articles</span>
+        <span class="homepage-divider-line"></span>
+        <a href="/articles/" class="homepage-divider-link">Browse all →</a>
+      </div>
+      <div class="homepage-grid" id="grid-articles"></div>
+    </div>
+
+    <!-- REVIEWS SECTION -->
+    <div class="homepage-section" id="section-reviews">
+      <div class="homepage-divider">
+        <span class="homepage-divider-line"></span>
+        <span class="homepage-divider-label">Book Reviews</span>
+        <span class="homepage-divider-line"></span>
+        <a href="/reviews/" class="homepage-divider-link">Browse all →</a>
+      </div>
+      <div class="homepage-grid" id="grid-reviews"></div>
+    </div>
+
+    <!-- STORIES SECTION -->
+    <div class="homepage-section" id="section-stories">
+      <div class="homepage-divider">
+        <span class="homepage-divider-line"></span>
+        <span class="homepage-divider-label">Short Stories</span>
+        <span class="homepage-divider-line"></span>
+        <a href="/stories/" class="homepage-divider-link">Browse all →</a>
+      </div>
+      <div class="homepage-grid" id="grid-stories"></div>
+    </div>
+
+    <!-- Ad -->
+    <div style="margin:2rem 0;padding:.75rem;background:var(--color-surface);border-radius:var(--radius);text-align:center;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   </main>
 
@@ -60,50 +83,70 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
 
-      // Sort newest first by date
+      // Sort newest first
       data.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
 
-      // ── Hero ──────────────────────────────────────────────────────
+      // Hero = newest item
       var heroItem = data[0];
       if (heroItem) {
         var heroEl = document.getElementById('homepage-hero');
         var cat = heroItem.category || 'Article';
-        var pillClass = 'pill-article';
-        if (cat === 'Book Review') pillClass = 'pill-book-review';
-        else if (cat === 'Short Story') pillClass = 'pill-short-story';
+        var pillClass = cat === 'Book Review' ? 'pill-book-review' : cat === 'Short Story' ? 'pill-short-story' : 'pill-article';
+        var imgHtml = heroItem.image
+          ? '<div class="hero-card-thumb" style="background-image:url(' + heroItem.image + ')"></div>'
+          : '';
         heroEl.innerHTML =
           '<a href="' + heroItem.url + '" class="hero-card">' +
-            '<div class="hero-card-inner">' +
-              '<div class="hero-card-content">' +
-                '<span class="' + pillClass + ' hero-pill">' + cat + '</span>' +
-                '<h2 class="hero-card-title">' + heroItem.title + '</h2>' +
-                '<p class="hero-card-excerpt">' + (heroItem.summary || heroItem.excerpt || '') + '</p>' +
-                '<span class="hero-card-read">Read more →</span>' +
-              '</div>' +
+            imgHtml +
+            '<div class="hero-card-content">' +
+              '<span class="' + pillClass + ' hero-pill">' + cat + '</span>' +
+              '<h2 class="hero-card-title">' + heroItem.title + '</h2>' +
+              '<p class="hero-card-excerpt">' + (heroItem.summary || heroItem.excerpt || '') + '</p>' +
+              '<span class="hero-card-read">Read more →</span>' +
             '</div>' +
           '</a>';
       }
 
-      // ── Grid (items 2–13, 3 columns) ─────────────────────────────
-      var gridEl = document.getElementById('homepage-grid');
-      var gridItems = data.slice(1, 13);
+      // Separate by category
+      var articles = [];
+      var reviews  = [];
+      var stories = [];
 
-      gridItems.forEach(function(item) {
+      data.slice(1).forEach(function(item) {
         var cat = item.category || 'Article';
-        var pillClass = 'pill-article';
-        if (cat === 'Book Review') pillClass = 'pill-book-review';
-        else if (cat === 'Short Story') pillClass = 'pill-short-story';
-
-        var card = document.createElement('article');
-        card.className = 'grid-card';
-        card.innerHTML =
-          '<a href="' + item.url + '" class="grid-card-link">' +
-            '<span class="' + pillClass + ' grid-pill">' + cat + '</span>' +
-            '<h3 class="grid-card-title">' + item.title + '</h3>' +
-            '<p class="grid-card-excerpt">' + (item.summary || item.excerpt || '') + '</p>' +
-          '</a>';
-        gridEl.appendChild(card);
+        if (cat === 'Book Review') reviews.push(item);
+        else if (cat === 'Short Story') stories.push(item);
+        else articles.push(item);
       });
+
+      // Render a section grid
+      function renderGrid(containerId, items) {
+        var el = document.getElementById(containerId);
+        if (!el) return;
+        items.slice(0, 6).forEach(function(item) {
+          var cat = item.category || 'Article';
+          var pillClass = cat === 'Book Review' ? 'pill-book-review' : cat === 'Short Story' ? 'pill-short-story' : 'pill-article';
+          var imgHtml = item.image
+            ? '<div class="grid-card-thumb" style="background-image:url(' + item.image + ')"></div>'
+            : '';
+          var card = document.createElement('article');
+          card.className = 'grid-card';
+          card.innerHTML =
+            '<a href="' + item.url + '" class="grid-card-link">' +
+              imgHtml +
+              '<div class="grid-card-body">' +
+                '<span class="' + pillClass + ' grid-pill">' + cat + '</span>' +
+                '<h3 class="grid-card-title">' + item.title + '</h3>' +
+                '<p class="grid-card-excerpt">' + (item.summary || item.excerpt || '') + '</p>' +
+              '</div>' +
+            '</a>';
+          el.appendChild(card);
+        });
+      }
+
+      renderGrid('grid-articles', articles);
+      renderGrid('grid-reviews',  reviews);
+      renderGrid('grid-stories',  stories);
 
     });
   </script>
