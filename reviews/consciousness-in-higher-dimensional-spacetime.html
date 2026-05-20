@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consciousness in Higher Dimensional Spacetime — Review | Bithues</title>
+  <title>Consciousness in Higher Dimensional Spacetime | Bithues</title>
   <meta name="description" content="What if consciousness doesn't exist in the same spacetime as the body? A radical extension of Einstein's relativity into the domain of mind.">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -46,7 +46,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Consciousness in Higher Dimensional Spacetime \u2014 Review | Bithues"
+      "name": "Consciousness in Higher Dimensional Spacetime  | Bithues"
     }
   ]
 }
@@ -55,7 +55,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Consciousness in Higher Dimensional Spacetime \u2014 Review | Bithues",
+  "headline": "Consciousness in Higher Dimensional Spacetime  | Bithues",
   "url": "https://www.bithues.com/reviews/consciousness-in-higher-dimensional-spacetime",
   "publisher": {
     "@type": "Organization",
@@ -71,22 +71,42 @@
   <main class="main">
     <article class="content-article">
       <!-- HEADER -->
-      <div class="review-page-header">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <span class="pill pill-book-review">Book Review</span>
-          <span style="font-size:12px; color:#999;">January 2026</span>
-        </div>
-        <h1 style="font-size:2rem; line-height:1.2; margin:0 0 20px; color:#2c1f14;">Consciousness in Higher Dimensional Spacetime</h1>
-        <div style="display:flex; gap:24px; align-items:flex-start;">
-          <a href="https://www.amazon.com/dp/B0GGVDKZ96?tag=michaelbacoti-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B0GGVDKZ96.01._SX150_.jpg" alt="Consciousness in Higher Dimensional Spacetime book cover"
-                 style="width:110px; border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,0.12); display:block;">
-          </a>
-          <div>
-            <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">by Quantum Chronos</p>
-            <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Science</p>
+            <!-- HEADER -->
+      <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start;">
+        <!-- Left: Cover + Author + Price -->
+        <div style="flex:0 0 auto;">
+          <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
+            <a href="https://www.amazon.com/dp/?tag=michaelbacoti-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0GGVDKZ96.01._SX150_.jpg" alt="Quantum Chronos's book" style="width:110px; border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,0.12); display:block;">
+            </a>
+            <div>
+              <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">by Quantum Chronos</p>
+              <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Science</p>
+            </div>
+          </div>
+          <!-- Live Price — moved here (right of cover) -->
+          <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
+            <div class="lp-row">
+              <span class="lp-label">Amazon Price:</span>
+              <span class="lp-price" id="lp-amazon-price">Checking…</span>
+              <span class="lp-status checking" id="lp-status">—</span>
+            </div>
+            <div class="lp-row">
+              <span class="lp-label">KDP / Kindle:</span>
+              <span class="lp-price">$4.99</span>
+              <span class="lp-status in-stock">Available</span>
+            </div>
+            <a id="lp-amazon-btn" href="https://www.amazon.com/dp/?tag=michaelbacoti-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon &rarr;</a>
           </div>
         </div>
+        <!-- Right: Related Books -->
+        <div style="flex:1; min-width:0;" id="related-books-sidebar">
+          <p class="related-books-title" style="font-size:13px; font-weight:600; color:#3a2e1e; margin:0 0 10px; letter-spacing:0.03em; text-transform:uppercase;">More Like This</p>
+          <div class="related-books-grid" id="related-books-grid">
+            <p class="related-books-loading" id="rb-loading">Loading…</p>
+          </div>
+        </div>
+      </div>
       </div>
 
       <!-- BODY -->

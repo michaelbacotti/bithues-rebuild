@@ -616,3 +616,25 @@ a:hover { color: var(--color-accent-hover); }
   max-width: 680px;
   margin: 0 auto;
 }
+
+/* ============================================
+   Homepage Section Feeds
+   ============================================ */
+#section-articles,
+#section-reviews,
+#section-stories {
+  margin-bottom: 48px;
+}
+
+#section-stories {
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-more {
+  font-size: 14px;
+  color: var(--color-accent);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.section-more:hover { color: var(--color-accent-hover); }

@@ -18,7 +18,7 @@
 
   <header class="hero hero--small">
     <div class="hero-inner">
-      <h1 class="hero-title">Book Reviews</h1>
+      <h1 class="hero-title">Reviews</h1>
       <p class="hero-tagline">In-depth reviews across fiction, sci-fi, fantasy, nonfiction, and more.</p>
     </div>
   </header>
@@ -50,6 +50,9 @@
       var grid = document.getElementById('feed-grid');
       var filtered = data.filter(item => item.category === 'Book Review' || (item.type && item.type.toLowerCase().includes('review')));
       var allCards = [];
+      // Sort newest first by date
+      filtered.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
+
       filtered.forEach(function(item) {
         var card = document.createElement('article');
         card.className = 'card';

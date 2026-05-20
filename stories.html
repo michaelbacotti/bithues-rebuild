@@ -50,6 +50,7 @@
       var grid = document.getElementById('feed-grid');
       var filtered = data.filter(item => item.category === 'Short Story' || (item.type && item.type.toLowerCase().includes('story')));
       var allCards = [];
+      filtered.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
       filtered.forEach(function(item) {
         var card = document.createElement('article');
         card.className = 'card';

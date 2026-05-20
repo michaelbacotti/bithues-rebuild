@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dawn of Civilization — Review | Bithues</title>
+  <title>The Dawn of Civilization | Bithues</title>
   <meta name="description" content="A review of T. Stone's The Dawn of Civilization — prehistoric survival fiction that's both rigorously grounded and emotionally immediate. Young adult historical fiction at its best.">
-  <meta property="og:title" content="The Dawn of Civilization — Review | Bithues">
+  <meta property="og:title" content="The Dawn of Civilization | Bithues">
   <meta property="og:description" content="T. Stone's prehistoric survival epic — young adult historical fiction about a tribe at the dawn of civilization. A grounded, unsentimental portrait of leadership, law, and what it costs to build something lasting.">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -48,7 +48,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "The Dawn of Civilization \u2014 Review | Bithues"
+      "name": "The Dawn of Civilization  | Bithues"
     }
   ]
 }
@@ -57,7 +57,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Dawn of Civilization \u2014 Review | Bithues",
+  "headline": "The Dawn of Civilization  | Bithues",
   "url": "https://www.bithues.com/reviews/dawn-of-civilization",
   "publisher": {
     "@type": "Organization",
@@ -76,29 +76,40 @@
     <article class="content-article">
 
       <!-- NEW PAGE HEADER -->
-      <div class="review-page-header">
-        <!-- Top line: category pill + date -->
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <span class="pill pill-book-review">Book Review</span>
-          <span style="font-size:12px; color:#999;">May 14, 2026</span>
-        </div>
-        <!-- Title -->
-        <h1 style="font-size:2rem; line-height:1.2; margin:0 0 20px; color:#2c1f14;">The Dawn of Civilization</h1>
-        <!-- Book cover + author/genre block side by side -->
-        <div style="display:flex; gap:24px; align-items:flex-start;">
-          <a href="https://www.amazon.com/dp/B0BTD9CT35?tag=michaelbacoti-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-            <img src="https://images-na.ssl-images-amazon.com/images/P/B0BTD9CT35.01._SX150_.jpg"
-                 alt="The Dawn of Civilization book cover"
-                 style="width:110px; border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,0.12); display:block;">
-          </a>
-          <div>
-            <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">by T. Stone</p>
-            <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Young Adult &middot; Historical Fiction</p>
+      <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start;">
+        <!-- Left: Cover + Author + Price -->
+        <div style="flex:0 0 auto;">
+          <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
+            <a href="https://www.amazon.com/dp/B0BTD9CT35?tag=michaelbacoti-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+              <img src="https://images-na.ssl-images-amazon.com/images/P/B0BTD9CT35.01._SX150_.jpg" alt="T. Stone" style="width:110px; border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,0.12); display:block;">
+            </a>
+            <div>
+              <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">by T. Stone</p>
+              <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Young Adult · Historical Fiction</p>
+            </div>
+          </div>
+          <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
+            <div class="lp-row">
+              <span class="lp-label">Amazon Price:</span>
+              <span class="lp-price" id="lp-amazon-price">Checking…</span>
+              <span class="lp-status checking" id="lp-status">—</span>
+            </div>
+            <div class="lp-row">
+              <span class="lp-label">KDP / Kindle:</span>
+              <span class="lp-price">$4.99</span>
+              <span class="lp-status in-stock">Available</span>
+            </div>
+            <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0BTD9CT35?tag=michaelbacoti-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
           </div>
         </div>
-      </div>
-
-      <!-- REVIEW BODY -->
+        <!-- Right: Related Books -->
+        <div style="flex:1; min-width:0;" id="related-books-sidebar">
+          <p class="related-books-title" style="font-size:13px; font-weight:600; color:#3a2e1e; margin:0 0 10px; letter-spacing:0.03em; text-transform:uppercase;">More Like This</p>
+          <div class="related-books-grid" id="related-books-grid">
+            <p class="related-books-loading" id="rb-loading">Loading…</p>
+          </div>
+        </div>
+      </div><!-- REVIEW BODY -->
       <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
         <p><em>T. Stone's The Dawn of Civilization is a rare example of prehistoric fiction that feels both emotionally immediate and rigorously grounded. It is marketed as young adult historical fiction, but it lands comfortably in that crossover space where thoughtful teens and adults who enjoy serious historical adventures can meet.</em></p>
 
