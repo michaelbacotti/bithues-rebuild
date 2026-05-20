@@ -165,14 +165,9 @@ a:hover { color: var(--color-accent-hover); }
   -webkit-line-clamp: 3; /* default 3 lines for articles */
 }
 
-/* Reviews: 2-line preview */
-.card[data-category="Book Review"] .card-excerpt {
-  -webkit-line-clamp: 2;
-}
-
-/* Stories: 4-line preview */
-.card[data-category="Short Story"] .card-excerpt {
-  -webkit-line-clamp: 4;
+/* All card excerpts: 3 lines */
+.card-excerpt {
+  -webkit-line-clamp: 3;
 }
 
 /* ============================================

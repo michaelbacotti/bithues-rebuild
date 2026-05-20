@@ -72,9 +72,9 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
 
-      var MAX_ARTICLES = 5;
-      var MAX_REVIEWS  = 5;
-      var MAX_STORIES  = 5;
+      var MAX_ARTICLES = 3;
+      var MAX_REVIEWS  = 3;
+      var MAX_STORIES  = 3;
 
       // Sort each category by date (newest first)
       var articles = data.filter(function(item) { return item.category === 'Article'; })
