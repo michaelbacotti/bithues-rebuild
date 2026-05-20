@@ -636,3 +636,173 @@ a:hover { color: var(--color-accent-hover); }
   white-space: nowrap;
 }
 .section-more:hover { color: var(--color-accent-hover); }
+
+/* ============================================
+   Homepage — TIME.com editorial style
+   ============================================ */
+
+/* Hero card */
+.homepage-hero {
+  margin: 40px 0 32px;
+}
+
+.hero-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.hero-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-card-inner {
+  display: flex;
+  min-height: 320px;
+  background: var(--color-surface);
+}
+
+.hero-card-content {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 620px;
+}
+
+.hero-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.pill-book-review { background: var(--color-tag-review-bg); color: #fff; }
+.pill-article     { background: var(--color-tag-article-bg); color: #fff; }
+.pill-short-story { background: var(--color-tag-story-bg); color: #fff; }
+
+.hero-card-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.hero-card-excerpt {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+}
+
+.hero-card-read {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+/* Section divider */
+.homepage-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 28px;
+}
+
+.homepage-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.homepage-divider-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* 3-column grid */
+.homepage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.grid-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: box-shadow 0.2s;
+}
+.grid-card:hover {
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.grid-card-link {
+  display: block;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.grid-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.grid-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  color: var(--color-text);
+}
+
+.grid-card-excerpt {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-card-inner { flex-direction: column; min-height: auto; }
+  .hero-card-content { padding: 28px 24px; max-width: 100%; }
+  .hero-card-title { font-size: 1.7rem; }
+  .homepage-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 540px) {
+  .homepage-grid { grid-template-columns: 1fr; }
+  .hero-card-title { font-size: 1.4rem; }
+}
