@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Reviews — Page 3 | Bithues</title>
+  <meta name="description" content="In-depth book reviews across fiction, sci-fi, fantasy, nonfiction, and more — curated for curious readers.">
+  <link rel="stylesheet" href="/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://www.bithues.com/reviews/21">
+
+<script>
+  // Pre-load page 3 reviews (21-30) for /reviews/21 route
+  var PAGE3_REVIEWS = "<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/mythical-menagerie\">Mythical Menagerie</a></h2>\n  <p class=\"card-excerpt\">Review of Mythical Menagerie by Nadia El-Chehen. Creatures from myth, legend, and the spaces between. A beautifully illustrated journey through the fantastic bestiary.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/mindful-memory\">Mindful Memory</a></h2>\n  <p class=\"card-excerpt\">Empowering retirees with science-backed exercises like memory palaces and timeline mapping.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/microbiology-abcs\">Microbiology ABCs</a></h2>\n  <p class=\"card-excerpt\">Review of Microbiology ABCs. The invisible world made visible through the alphabet. Science and language learning meet in a genuinely clever package.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/men-of-three-seas\">Men of the Three Seas</a></h2>\n  <p class=\"card-excerpt\">An epic historical saga spanning three seas and three generations — Leander Vassos delivers a sweeping, character-driven epic that earns its scale.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/living-with-a-moving-planet\">Living with a Moving Planet</a></h2>\n  <p class=\"card-excerpt\">J. T. Hartley explores what it means to live on a planet that never stops moving.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-learns-to-fly\">Little Mike: Learns to Fly</a></h2>\n  <p class=\"card-excerpt\">Little Mike dreams of flying. With friends John and May, he meets Pilot Thomas who teaches the wonders of airplanes.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-fun-at-the-beach\">Little Mike Fun at the Beach</a></h2>\n  <p class=\"card-excerpt\">Review of Little Mike Fun at the Beach. A child's perfect beach day — sun, surf, and the small adventures that feel enormous when you're young.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-builds-a-robot\">Little Mike Builds a Robot</a></h2>\n  <p class=\"card-excerpt\">Review of Little Mike Builds a Robot. A children's book about ingenuity, friendship, and the surprising intelligence of small things.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/horizonte-rojo\">Horizonte Rojo: Lanzamiento Lunar — Reseña</a></h2>\n  <p class=\"card-excerpt\">Una novela de ciencia ficción que comienza cuando la cuenta regresiva termina — M. A. Hale construye un thriller lunar ambientado en una colonia lunar en el momento del lanzamiento.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/home-for-anya\">A Home for Anya</a></h2>\n  <p class=\"card-excerpt\">A touching story of home, belonging, and family — Lena Ashfield delivers a romance that earns every emotional beat.</p>\n</article>\n";
+  var PAGE3_START = 20; // 0-indexed start for page 3 (3rd page at 10/page)
+</script>
+
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <header class="hero hero--small">
+    <div class="hero-inner">
+      <h1 class="hero-title">Reviews</h1>
+      <p class="hero-tagline">In-depth reviews across fiction, sci-fi, fantasy, nonfiction, and more.</p>
+    </div>
+  </header>
+
+  <main class="main" style="max-width:var(--max-width-wide);margin:0 auto;padding:0 24px;">
+    <div class="feed" id="feed-grid"></div>
+  </main>
+
+  <div id="pagination-controls" style="display:none;justify-content:center;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--font-body,system-ui);">
+    <button id="prev-btn" onclick="changePage(-1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
+    <span id="page-num" style="font-size:.9rem;color:#3a2f1e;"></span>
+    <button id="next-btn" onclick="changePage(1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;">Next →</button>
+  </div>
+
+  <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <div id="site-footer"></div>
+
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  <script>
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => {
+      var itemsPerPage = 10;
+      var grid = document.getElementById('feed-grid');
+      var filtered = data.filter(item => item.category === 'Book Review' || (item.type && item.type.toLowerCase().includes('review')));
+      var allCards = [];
+      // Sort newest first by date
+      filtered.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
+
+      filtered.forEach(function(item) {
+        var card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = '<div class="card-meta-top"></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.setAttribute('data-category', 'Book Review');
+        grid.appendChild(card);
+        allCards.push(card);
+      });
+
+      var totalPages = Math.ceil(allCards.length / itemsPerPage);
+      var currentPage = 2;
+      document.getElementById('pagination-controls').style.display = totalPages > 1 ? 'flex' : 'none';
+      document.getElementById('page-num').textContent = '1 of ' + totalPages;
+
+      window.changePage = function(d) {
+        currentPage = Math.max(1, Math.min(totalPages, currentPage + d));
+        var start = (currentPage - 1) * itemsPerPage;
+        allCards.forEach(function(c, i) {
+          c.style.display = (i >= start && i < start + itemsPerPage) ? '' : 'none';
+        });
+        document.getElementById('page-num').textContent = currentPage + ' of ' + totalPages;
+        document.getElementById('prev-btn').style.display = currentPage === 1 ? 'none' : '';
+        document.getElementById('next-btn').style.display = currentPage === totalPages ? 'none' : '';
+      };
+      // Initialize: hide all cards beyond page 1
+      var startInit = (1 - 1) * itemsPerPage;
+      allCards.forEach(function(c, i) {
+        c.style.display = (i >= startInit && i < startInit + itemsPerPage) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
