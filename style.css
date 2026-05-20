@@ -165,7 +165,10 @@ a:hover { color: var(--color-accent-hover); }
   -webkit-line-clamp: 3; /* default 3 lines for articles */
 }
 
-/* All card excerpts: 3 lines */
+/* Stories: 4-line preview */
+.card[data-category="Short Story"] .card-excerpt { -webkit-line-clamp: 4; }
+
+/* All other card excerpts: 3 lines */
 .card-excerpt {
   -webkit-line-clamp: 3;
 }

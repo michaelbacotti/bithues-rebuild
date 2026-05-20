@@ -23,45 +23,27 @@
     </div>
   </header>
 
-  <main class="main homepage-feeds" style="max-width:var(--max-width-wide);margin:0 auto;padding:0 24px;">
-
-    <!-- ARTICLES -->
-    <section id="section-articles">
-      <div class="section-header">
-        <h2 class="section-title">Articles</h2>
-        <a href="/articles" class="section-more">View all Articles →</a>
-      </div>
-      <div class="feed" id="feed-articles"></div>
-    </section>
-
-    <!-- BOOK REVIEWS -->
-    <section id="section-reviews">
-      <div class="section-header">
-        <h2 class="section-title">Book Reviews</h2>
-        <a href="/reviews" class="section-more">View all Reviews →</a>
-      </div>
-      <div class="feed" id="feed-reviews"></div>
-    </section>
-
-    <!-- STORIES -->
-    <section id="section-stories">
-      <div class="section-header">
-        <h2 class="section-title">Stories</h2>
-        <a href="/stories" class="section-more">View all Stories →</a>
-      </div>
-      <div class="feed" id="feed-stories"></div>
-    </section>
-
+  <main class="main">
+    <div class="feed" id="feed-grid"></div>
   </main>
+  <noscript>
+    <p style="padding:1rem;text-align:center;color:var(--text-light);">This page uses JavaScript to display articles. Enable JavaScript for the full experience.</p>
+  </noscript>
+
+  <div id="pagination-controls" style="display:none;justify-content:center;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--font-body,system-ui);">
+    <button id="prev-btn" onclick="changePage(-1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
+    <span id="page-num" style="font-size:.9rem;color:#3a2f1e;"></span>
+    <button id="next-btn" onclick="changePage(1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;">Next →</button>
+  </div>
+
+  <div class="intro-block" style="max-width:var(--max-width);margin:0 auto;padding:0 24px 48px;">
+    <p>Bithues is for readers who want more than summaries, star ratings, and listicles. We publish reviews, reading guides, and literary essays that examine what books are doing on the page, what ideas they leave behind, and which titles are truly worth your time. Whether you read science fiction, fantasy, children's literature, or thoughtful nonfiction, Bithues helps you choose better books and think more deeply about them.</p>
+  </div>
 
   <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </div>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <div class="intro-block" style="max-width:var(--max-width);margin:0 auto;padding:0 24px 48px;">
-    <p>Bithues is for readers who want more than summaries, star ratings, and listicles. We publish reviews, reading guides, and literary essays that examine what books are doing on the page, what ideas they leave behind, and which titles are truly worth your time. Whether you read science fiction, fantasy, children's literature, or thoughtful nonfiction, Bithues helps you choose better books and think more deeply about them.</p>
-  </div>
 
   <div id="site-footer"></div>
 
@@ -69,49 +51,52 @@
   <script src="/footer.js"></script>
   <script>
   fetch('/search.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
+    .then(r => r.json())
+    .then(data => {
+      var itemsPerPage = 5;
+      var grid = document.getElementById('feed-grid');
+      var allCards = [];
+      // Sort all items by date, newest first
+      data.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
 
-      var MAX_ARTICLES = 3;
-      var MAX_REVIEWS  = 3;
-      var MAX_STORIES  = 3;
-
-      // Sort each category by date (newest first)
-      var articles = data.filter(function(item) { return item.category === 'Article'; })
-                         .sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
-      var reviews  = data.filter(function(item) { return item.category === 'Book Review'; })
-                         .sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
-      var stories  = data.filter(function(item) { return item.category === 'Short Story'; })
-                         .sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
-
-      function makeCard(item) {
+      data.forEach(function(item) {
         var cat = item.category || 'Article';
         var pillClass = 'pill-article';
         if (cat === 'Book Review') pillClass = 'pill-book-review';
         else if (cat === 'Short Story') pillClass = 'pill-short-story';
         var card = document.createElement('article');
         card.className = 'card';
-        card.innerHTML =
-          '<div class="card-meta-top"></div>' +
-          '<h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2>' +
-          '<p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
-        return card;
+        card.innerHTML = '<div class="card-meta-top"><span class="' + pillClass + '">' + cat + '</span></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.setAttribute('data-category', cat);
+        grid.appendChild(card);
+        allCards.push(card);
+      });
+
+      var totalPages = Math.ceil(allCards.length / itemsPerPage);
+      var currentPage = 1;
+
+      function showPage(page) {
+        var start = (page - 1) * itemsPerPage;
+        var end = start + itemsPerPage;
+        allCards.forEach(function(c, i) {
+          c.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+        document.getElementById('page-num').textContent = page + ' of ' + totalPages;
+        document.getElementById('prev-btn').style.display = page <= 1 ? 'none' : '';
+        document.getElementById('next-btn').style.display = page >= totalPages ? 'none' : '';
       }
 
-      var articlesGrid = document.getElementById('feed-articles');
-      articles.slice(0, MAX_ARTICLES).forEach(function(item) {
-        articlesGrid.appendChild(makeCard(item));
-      });
+      document.getElementById('pagination-controls').style.display = totalPages > 1 ? 'flex' : 'none';
 
-      var reviewsGrid = document.getElementById('feed-reviews');
-      reviews.slice(0, MAX_REVIEWS).forEach(function(item) {
-        reviewsGrid.appendChild(makeCard(item));
-      });
+      window.changePage = function(d) {
+        var newPage = currentPage + d;
+        if (newPage < 1 || newPage > totalPages) return;
+        currentPage = newPage;
+        showPage(currentPage);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
 
-      var storiesGrid = document.getElementById('feed-stories');
-      stories.slice(0, MAX_STORIES).forEach(function(item) {
-        storiesGrid.appendChild(makeCard(item));
-      });
+      showPage(1);  // <-- THIS IS THE MISSING CALL
     });
   </script>
 
