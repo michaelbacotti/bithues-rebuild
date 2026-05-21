@@ -133,7 +133,23 @@
         </div>
       </div>
     </div>
-    <footer class="reader-footer">
+    
+    <!-- Story page navigation -->
+    <nav class="story-page-nav">
+      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">6</span></span>
+      <div class="story-page-buttons">
+        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
+        <button id="next-page-btn" class="story-nav-btn">Next</button>
+      </div>
+    </nav>
+
+    <!-- Bookmark / Share button -->
+    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="bm-label">Share</span>
+      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+    </button>
+<footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
         All Stories
@@ -186,6 +202,69 @@
     var hp = parseInt(hashM[1]);
     if (hp >= 1 && hp <= totalPages) currentPage = hp;
   }
+
+  function showPage(n) {
+    if (n < 1 || n > totalPages) return;
+    allSegments.forEach(function(el){ el.style.display = 'none'; });
+    var target = document.getElementById('page-' + n);
+    if (target) target.style.display = 'block';
+    var curEl = document.getElementById('current-page-num');
+    if (curEl) curEl.textContent = n;
+    var prevBtn = document.getElementById('prev-page-btn');
+    var nextBtn = document.getElementById('next-page-btn');
+    if (prevBtn) prevBtn.disabled = (n === 1);
+    if (nextBtn) nextBtn.disabled = (n === totalPages);
+    currentPage = n;
+    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
+    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
+  }
+
+  var toastEl = document.getElementById('story-resume-toast');
+  function showToast(msg) {
+    if (toastEl) { toastEl.textContent = msg; toastEl.classList.add('show'); setTimeout(function(){ toastEl.classList.remove('show'); }, 3000); }
+    else if (bmToast) { bmToast.textContent = msg; bmToast.classList.add('show'); setTimeout(function(){ bmToast.classList.remove('show'); }, 2500); }
+  }
+
+  if (currentPage > 1) showToast('Resume from page ' + currentPage);
+  else showPage(1);
+
+  var nextBtn = document.getElementById('next-page-btn');
+  var prevBtn = document.getElementById('prev-page-btn');
+  if (nextBtn) nextBtn.addEventListener('click', function(){ showPage(currentPage + 1); });
+  if (prevBtn) prevBtn.addEventListener('click', function(){ showPage(currentPage - 1); });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
+  });
+})();
+</script>
+
+
+<script>
+// Story reader JS (segments are pre-rendered in HTML)
+(function(){
+  var bmBtn = document.getElementById('reader-bookmark-btn');
+  var bmToast = document.getElementById('reader-bookmark-toast');
+  if (bmBtn) {
+    bmBtn.addEventListener('click', function() {
+      var url = window.location.href.split('#')[0] + '#page-' + currentPage;
+      navigator.clipboard.writeText(url).catch(function(){});
+      if (bmToast) { bmToast.classList.add('show'); setTimeout(function(){ bmToast.classList.remove('show'); }, 2500); }
+    });
+  }
+
+  var allSegments = document.querySelectorAll('.story-page-segment');
+  var totalPages = allSegments.length;
+  if (totalPages === 0) return;
+
+  var currentPage = 1;
+  var slug = window.location.pathname.split('/').pop().replace('.html','');
+
+  try { var saved = parseInt(localStorage.getItem('bithues-story-' + slug)); if (saved >= 1 && saved <= totalPages) currentPage = saved; } catch(e){}
+
+  var hashM = window.location.hash.match(/^#page-(\d+)$/);
+  if (hashM) { var hp = parseInt(hashM[1]); if (hp >= 1 && hp <= totalPages) currentPage = hp; }
 
   function showPage(n) {
     if (n < 1 || n > totalPages) return;
