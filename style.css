@@ -1279,6 +1279,11 @@ a:hover { color: var(--color-accent-hover); }
   }
 }
 
+/* ── Homepage structural helpers ───────────────────────────────── */
+.homepage-top { overflow: hidden; }
+.homepage-ad { margin: 0 auto; text-align: center; }
+.site-section-anchor { display: block; visibility: hidden; height: 0; }
+
 /* ── Responsive ──────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-card { flex-direction: column; min-height: auto; }
