@@ -159,6 +159,7 @@
       background-size: cover;
       background-position: center;
       flex-shrink: 0;
+      min-height: 120px;
     }
 
     .section--featured-left .featured-card-thumb,
@@ -228,6 +229,7 @@
     }
 
     .featured-card--text-only .featured-card-body {
+      flex: 1;
       padding: 32px 36px;
       border-left: 3px solid var(--color-accent);
     }
@@ -588,8 +590,8 @@
                 }
                 return null;
               }
-              // For stories: look for inline body images (relative paths ending in .jpg)
-              var storyImg = html.match(/<img[^>]+src=["']([^"']+\.jpg)["'][^>]*>/i);
+              // For stories: look for inline body images (relative or absolute paths ending in .jpg)
+              var storyImg = html.match(/src=["']([^"']+\.jpg)["']/i);
               if (storyImg) return storyImg[1];
               return null;
             })
@@ -650,21 +652,26 @@
           '</a>';
         }
 
-        /* ── Fetch images for top items in each section, then render ── */
-        Promise.all([
-          fetchImageFromPage(stories[0].url + '.html', 'Short Story').then(function (img) {
-            stories[0]._image = img;
-            stories[0]._imageAlt = stories[0].title;
-          }),
-          fetchImageFromPage(articles[0].url + '.html', 'Article').then(function (img) {
-            articles[0]._image = img;
-            articles[0]._imageAlt = articles[0].title;
-          }),
-          fetchImageFromPage(reviews[0].url + '.html', 'Book Review').then(function (img) {
-            reviews[0]._image = img;
-            reviews[0]._imageAlt = reviews[0].title;
-          })
-        ]).then(function () {
+        /* ── Fetch images for featured AND supporting items in each section, then render ── */
+        var storyFetches  = [(stories[0]  || {}).url  && fetchImageFromPage(stories[0].url  + '.html', 'Short Story').then(function (img) { stories[0]._image  = img; stories[0]._imageAlt  = stories[0].title; })].filter(Boolean);
+        var articleFetches = [(articles[0] || {}).url && fetchImageFromPage(articles[0].url + '.html', 'Article').then(function (img) { articles[0]._image = img; articles[0]._imageAlt = articles[0].title; })].filter(Boolean);
+        var reviewFetches  = [(reviews[0]  || {}).url  && fetchImageFromPage(reviews[0].url  + '.html', 'Book Review').then(function (img) { reviews[0]._image  = img; reviews[0]._imageAlt  = reviews[0].title; })].filter(Boolean);
+
+        // Also fetch images for supporting cards (up to 4 per section)
+        (stories.slice(1, 5)  || []).forEach(function (item, i) {
+          if (!item.url) return;
+          storyFetches.push(fetchImageFromPage(item.url + '.html', 'Short Story').then(function (img) { stories[i + 1]._image = img; }));
+        });
+        (articles.slice(1, 5) || []).forEach(function (item, i) {
+          if (!item.url) return;
+          articleFetches.push(fetchImageFromPage(item.url + '.html', 'Article').then(function (img) { articles[i + 1]._image = img; }));
+        });
+        (reviews.slice(1, 5)  || []).forEach(function (item, i) {
+          if (!item.url) return;
+          reviewFetches.push(fetchImageFromPage(item.url + '.html', 'Book Review').then(function (img) { reviews[i + 1]._image = img; }));
+        });
+
+        Promise.all(storyFetches.concat(articleFetches).concat(reviewFetches)).then(function () {
 
           /* ── Stories: featured LEFT ── */
           var storiesEl = document.getElementById('grid-stories');
