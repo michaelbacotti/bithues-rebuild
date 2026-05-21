@@ -11,6 +11,368 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="https://www.bithues.com/">
+
+  <style>
+    /* ── CSS variable fallbacks ── */
+    :root { --radius: 5px; }
+
+    /* ── Homepage layout ── */
+    .homepage-top {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Section nav anchors ── */
+    .site-section-anchor {
+      display: block;
+      visibility: hidden;
+      height: 0;
+      pointer-events: none;
+    }
+
+    /* ── Section header band ── */
+    .section-band {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 40px 0 24px;
+    }
+
+    .section-band-title {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text);
+    }
+
+    .section-band-pills {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .section-pill-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 3px;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .section-pill-link:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: transparent;
+    }
+
+    .section-pill-link.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    .section-browse-all {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-accent);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      margin-left: auto;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .section-browse-all:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Editorial section layout ── */
+    .editorial-section {
+      margin-bottom: 64px;
+    }
+
+    /* Featured card size: roughly 2-3 columns wide */
+    .editorial-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    /* Section: featured LEFT — 2-col asymmetric */
+    .section--featured-left .editorial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Section: featured RIGHT — 2-col asymmetric, featured in right col */
+    .section--featured-right .editorial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Section: featured TOP-LEFT — 3-col with large featured spanning 2 cols */
+    .section--featured-top-left .editorial-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    /* ── Featured card ── */
+    .featured-card {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+      background: var(--color-surface);
+    }
+
+    .featured-card:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    }
+
+    .featured-card-thumb {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .section--featured-left .featured-card-thumb,
+    .section--featured-right .featured-card-thumb {
+      height: 280px;
+    }
+
+    .section--featured-top-left .featured-card-thumb {
+      height: 220px;
+    }
+
+    .featured-card-body {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .featured-card .card-pill {
+      align-self: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .featured-card .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-text);
+      margin: 0 0 10px;
+    }
+
+    .featured-card .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .featured-card .card-title a:hover {
+      color: var(--color-accent);
+    }
+
+    .featured-card .card-excerpt {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin: 0 0 20px;
+      flex: 1;
+    }
+
+    .featured-card .card-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ── Supporting cards (small) ── */
+    .supporting-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section--featured-right .supporting-cards {
+      order: -1;
+    }
+
+    .support-card {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      gap: 14px;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      background: var(--color-surface);
+      transition: box-shadow 0.15s;
+      flex: 1;
+    }
+
+    .support-card:hover {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .support-card-thumb {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+      background: var(--color-border-light);
+    }
+
+    .support-card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .support-card .card-pill {
+      align-self: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .support-card .card-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--color-text);
+      margin: 0 0 6px;
+    }
+
+    .support-card .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .support-card .card-title a:hover {
+      color: var(--color-accent);
+    }
+
+    .support-card .card-meta {
+      font-size: 11px;
+      color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── Card pills (shared) ── */
+    .card-pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .pill-article {
+      background: #4a7490;
+      color: #fff;
+    }
+
+    .pill-book-review {
+      background: #8a6f3e;
+      color: #fff;
+    }
+
+    .pill-short-story {
+      background: #5a7a65;
+      color: #fff;
+    }
+
+    /* ── Ad band between sections ── */
+    .homepage-ad {
+      margin: 0 0 48px;
+      padding: .75rem;
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border-light);
+      text-align: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .section--featured-left .editorial-grid,
+      .section--featured-right .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section--featured-right .supporting-cards {
+        order: 0;
+      }
+
+      .section--featured-top-left .editorial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section--featured-left .featured-card-thumb,
+      .section--featured-right .featured-card-thumb {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section--featured-left .editorial-grid,
+      .section--featured-right .editorial-grid,
+      .section--featured-top-left .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section--featured-top-left .featured-card {
+        grid-column: 1;
+      }
+
+      .section--featured-left .featured-card-thumb,
+      .section--featured-right .featured-card-thumb,
+      .section--featured-top-left .featured-card-thumb {
+        height: 200px;
+      }
+
+      .section-band {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .section-browse-all {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+
+      .supporting-cards {
+        gap: 12px;
+      }
+
+      .support-card {
+        padding: 14px 16px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,54 +385,86 @@
     </div>
   </header>
 
-  <main class="main" style="max-width:1100px;margin:0 auto;padding:0 24px 60px;">
+  <main>
 
-    <!-- Hero featured story -->
-    <div class="homepage-hero" id="homepage-hero"></div>
+    <!-- ── STORIES SECTION ─────────────────────────────────── -->
+    <div class="homepage-top">
 
-    <!-- INTRO -->
-    <div class="intro-block" style="max-width:680px;margin:0 auto;padding:0 0 48px;">
-      <p>Bithues is for readers who want more than summaries, star ratings, and listicles. We publish reviews, reading guides, and literary essays that examine what books are doing on the page, what ideas they leave behind, and which titles are truly worth your time. Whether you read science fiction, fantasy, children's literature, or thoughtful nonfiction, Bithues helps you choose better books and think more deeply about them.</p>
-    </div>
+      <!-- Anchor for nav -->
+      <span class="site-section-anchor" id="stories"></span>
 
-    <!-- ARTICLES SECTION -->
-    <div class="homepage-section" id="section-articles">
-      <div class="homepage-divider">
-        <span class="homepage-divider-line"></span>
-        <span class="homepage-divider-label">Articles</span>
-        <span class="homepage-divider-line"></span>
-        <a href="/articles/" class="homepage-divider-link">Browse all →</a>
+      <div class="editorial-section section--featured-left">
+
+        <div class="section-band">
+          <h2 class="section-band-title">Stories</h2>
+          <div class="section-band-pills">
+            <a href="/stories/" class="section-pill-link">All Stories</a>
+            <a href="/stories/" class="section-pill-link">Sci-Fi</a>
+            <a href="/stories/" class="section-pill-link">Literary</a>
+          </div>
+          <a href="/stories/" class="section-browse-all">Browse all →</a>
+        </div>
+
+        <div class="editorial-grid" id="grid-stories">
+          <!-- JS fills featured + supporting cards -->
+        </div>
+
       </div>
-      <div class="homepage-grid" id="grid-articles"></div>
-    </div>
 
-    <!-- REVIEWS SECTION -->
-    <div class="homepage-section" id="section-reviews">
-      <div class="homepage-divider">
-        <span class="homepage-divider-line"></span>
-        <span class="homepage-divider-label">Book Reviews</span>
-        <span class="homepage-divider-line"></span>
-        <a href="/reviews/" class="homepage-divider-link">Browse all →</a>
+      <!-- Ad -->
+      <div class="homepage-ad">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
-      <div class="homepage-grid" id="grid-reviews"></div>
-    </div>
 
-    <!-- STORIES SECTION -->
-    <div class="homepage-section" id="section-stories">
-      <div class="homepage-divider">
-        <span class="homepage-divider-line"></span>
-        <span class="homepage-divider-label">Short Stories</span>
-        <span class="homepage-divider-line"></span>
-        <a href="/stories/" class="homepage-divider-link">Browse all →</a>
+      <!-- ── ARTICLES SECTION ───────────────────────────────── -->
+      <span class="site-section-anchor" id="articles"></span>
+
+      <div class="editorial-section section--featured-right">
+
+        <div class="section-band">
+          <h2 class="section-band-title">Articles</h2>
+          <div class="section-band-pills">
+            <a href="/articles/" class="section-pill-link">All Articles</a>
+            <a href="/articles/" class="section-pill-link">Guides</a>
+            <a href="/articles/" class="section-pill-link">Lists</a>
+          </div>
+          <a href="/articles/" class="section-browse-all">Browse all →</a>
+        </div>
+
+        <div class="editorial-grid" id="grid-articles">
+          <!-- JS fills featured + supporting cards -->
+        </div>
+
       </div>
-      <div class="homepage-grid" id="grid-stories"></div>
-    </div>
 
-    <!-- Ad -->
-    <div style="margin:2rem 0;padding:.75rem;background:var(--color-surface);border-radius:var(--radius);text-align:center;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <!-- Ad -->
+      <div class="homepage-ad">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+
+      <!-- ── REVIEWS SECTION ────────────────────────────────── -->
+      <span class="site-section-anchor" id="reviews"></span>
+
+      <div class="editorial-section section--featured-top-left">
+
+        <div class="section-band">
+          <h2 class="section-band-title">Book Reviews</h2>
+          <div class="section-band-pills">
+            <a href="/reviews/" class="section-pill-link">All Reviews</a>
+            <a href="/reviews/" class="section-pill-link">Sci-Fi</a>
+            <a href="/reviews/" class="section-pill-link">Fantasy</a>
+            <a href="/reviews/" class="section-pill-link">Nonfiction</a>
+          </div>
+          <a href="/reviews/" class="section-browse-all">Browse all →</a>
+        </div>
+
+        <div class="editorial-grid" id="grid-reviews">
+          <!-- JS fills featured + supporting cards -->
+        </div>
+
+      </div>
+
+    </div><!-- /.homepage-top -->
 
   </main>
 
@@ -78,77 +472,170 @@
 
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
+
   <script>
-  fetch('/search.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
+    /* ── Smooth scroll with sticky-header offset ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 60;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
 
-      // Sort newest first
-      data.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
+    /* ── Load and render content from search.json ── */
+    fetch('/search.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
 
-      // Hero = newest item
-      var heroItem = data[0];
-      if (heroItem) {
-        var heroEl = document.getElementById('homepage-hero');
-        var cat = heroItem.category || 'Article';
-        var pillClass = cat === 'Book Review' ? 'pill-book-review' : cat === 'Short Story' ? 'pill-short-story' : 'pill-article';
-        var imgHtml = heroItem.image
-          ? '<div class="hero-card-thumb" style="background-image:url(' + heroItem.image + ')"></div>'
-          : '';
-        heroEl.innerHTML =
-          '<a href="' + heroItem.url + '" class="hero-card">' +
+        function pillClass(category) {
+          if (category === 'Book Review') return 'pill-book-review';
+          if (category === 'Short Story')  return 'pill-short-story';
+          return 'pill-article';
+        }
+
+        function excerpt(item) {
+          return item.summary || item.excerpt || '';
+        }
+
+        function formatDate(ts) {
+          if (!ts) return '';
+          var d = new Date(ts * 1000);
+          return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        /* ── Fetch image URL from content page HTML ── */
+        function fetchImageFromPage(url, type) {
+          return fetch(url)
+            .then(function (r) { return r.text(); })
+            .then(function (html) {
+              // For book reviews: find the main cover image (Amazon image tag)
+              if (type === 'Book Review') {
+                var m = html.match(/<img[^>]+src=["'](https:\/\/images-na\.ssl-images-amazon\.com\/images\/P\/[^"']+)["'][^>]*>/i);
+                if (m) return m[1];
+              }
+              // For articles: find first content image (not ads)
+              var imgs = html.match(/<img[^>]+src=["'](https?:\/\/(?!pagead2\.googlesyndication|googleads|doubleclick)[^\"']+)["'][^>]*>/gi) || [];
+              for (var i = 0; i < imgs.length; i++) {
+                var src = imgs[i].match(/src=["']([^"']+)["']/)[1];
+                if (src && !src.includes('favicon') && !src.includes('apple-touch') && !src.includes('manifest')) {
+                  return src;
+                }
+              }
+              // For stories: look for inline body images (relative paths)
+              var storyImg = html.match(/<img[^>]+src=(\/stories[^"'>]+)(?:\.jpg|\.png)[^>]*>/i);
+              if (storyImg) return storyImg[1];
+              return null;
+            })
+            .catch(function () { return null; });
+        }
+
+        /* ── Sort newest first ── */
+        data.sort(function (a, b) { return (b.date || 0) - (a.date || 0); });
+
+        /* ── Separate into piles ── */
+        var articles = [];
+        var reviews  = [];
+        var stories  = [];
+
+        data.forEach(function (item) {
+          var cat = item.category || 'Article';
+          if (cat === 'Book Review')  reviews.push(item);
+          else if (cat === 'Short Story') stories.push(item);
+          else articles.push(item);
+        });
+
+        /* ── Build a featured card HTML ── */
+        function featuredCard(item) {
+          var cls = pillClass(item.category || 'Article');
+          var imgHtml = item._image
+            ? '<div class="featured-card-thumb" style="background-image:url(' + item._image + ')" role="img" aria-label="' + (item._imageAlt || item.title) + '"></div>'
+            : '<div class="featured-card-thumb" style="background:var(--color-border-light);height:220px;"></div>';
+          return '<a href="' + item.url + '" class="featured-card">' +
             imgHtml +
-            '<div class="hero-card-content">' +
-              '<span class="' + pillClass + ' hero-pill">' + cat + '</span>' +
-              '<h2 class="hero-card-title">' + heroItem.title + '</h2>' +
-              '<p class="hero-card-excerpt">' + (heroItem.summary || heroItem.excerpt || '') + '</p>' +
-              '<span class="hero-card-read">Read more →</span>' +
+            '<div class="featured-card-body">' +
+              '<span class="card-pill ' + cls + '">' + (item.category || 'Article') + '</span>' +
+              '<h3 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h3>' +
+              '<p class="card-excerpt">' + excerpt(item) + '</p>' +
+              '<span class="card-cta">Read more →</span>' +
             '</div>' +
           '</a>';
-      }
+        }
 
-      // Separate by category
-      var articles = [];
-      var reviews  = [];
-      var stories = [];
-
-      data.slice(1).forEach(function(item) {
-        var cat = item.category || 'Article';
-        if (cat === 'Book Review') reviews.push(item);
-        else if (cat === 'Short Story') stories.push(item);
-        else articles.push(item);
-      });
-
-      // Render a section grid
-      function renderGrid(containerId, items) {
-        var el = document.getElementById(containerId);
-        if (!el) return;
-        items.slice(0, 6).forEach(function(item) {
-          var cat = item.category || 'Article';
-          var pillClass = cat === 'Book Review' ? 'pill-book-review' : cat === 'Short Story' ? 'pill-short-story' : 'pill-article';
-          var imgHtml = item.image
-            ? '<div class="grid-card-thumb" style="background-image:url(' + item.image + ')"></div>'
+        /* ── Build a supporting card HTML ── */
+        function supportCard(item) {
+          var cls = pillClass(item.category || 'Article');
+          var imgHtml = item._image
+            ? '<img src="' + item._image + '" alt="' + (item._imageAlt || item.title) + '" class="support-card-thumb" loading="lazy">'
             : '';
-          var card = document.createElement('article');
-          card.className = 'grid-card';
-          card.innerHTML =
-            '<a href="' + item.url + '" class="grid-card-link">' +
-              imgHtml +
-              '<div class="grid-card-body">' +
-                '<span class="' + pillClass + ' grid-pill">' + cat + '</span>' +
-                '<h3 class="grid-card-title">' + item.title + '</h3>' +
-                '<p class="grid-card-excerpt">' + (item.summary || item.excerpt || '') + '</p>' +
-              '</div>' +
-            '</a>';
-          el.appendChild(card);
-        });
-      }
+          return '<a href="' + item.url + '" class="support-card">' +
+            imgHtml +
+            '<div class="support-card-body">' +
+              '<span class="card-pill ' + cls + '">' + (item.category || 'Article') + '</span>' +
+              '<h3 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h3>' +
+              '<div class="card-meta"><span>' + formatDate(item.date) + '</span></div>' +
+            '</div>' +
+          '</a>';
+        }
 
-      renderGrid('grid-articles', articles);
-      renderGrid('grid-reviews',  reviews);
-      renderGrid('grid-stories',  stories);
+        /* ── Fetch images for top items in each section, then render ── */
+        Promise.all([
+          fetchImageFromPage(stories[0].url + '.html', 'Short Story').then(function (img) {
+            stories[0]._image = img;
+            stories[0]._imageAlt = stories[0].title;
+          }),
+          fetchImageFromPage(articles[0].url + '.html', 'Article').then(function (img) {
+            articles[0]._image = img;
+            articles[0]._imageAlt = articles[0].title;
+          }),
+          fetchImageFromPage(reviews[0].url + '.html', 'Book Review').then(function (img) {
+            reviews[0]._image = img;
+            reviews[0]._imageAlt = reviews[0].title;
+          })
+        ]).then(function () {
 
-    });
+          /* ── Stories: featured LEFT ── */
+          var storiesEl = document.getElementById('grid-stories');
+          if (storiesEl && stories.length > 0) {
+            var feat = stories[0];
+            var supporting = stories.slice(1, 5);
+            var cards = supporting.map(function (s) { return supportCard(s); });
+            storiesEl.innerHTML =
+              '<div class="featured-card-wrap">' + featuredCard(feat) + '</div>' +
+              '<div class="supporting-cards">' + cards.join('') + '</div>';
+          }
+
+          /* ── Articles: featured RIGHT ── */
+          var articlesEl = document.getElementById('grid-articles');
+          if (articlesEl && articles.length > 0) {
+            var feat = articles[0];
+            var supporting = articles.slice(1, 5);
+            var cards = supporting.map(function (s) { return supportCard(s); });
+            articlesEl.innerHTML =
+              '<div class="supporting-cards">' + cards.join('') + '</div>' +
+              '<div class="featured-card-wrap">' + featuredCard(feat) + '</div>';
+          }
+
+          /* ── Reviews: featured TOP-LEFT (spans 2 cols) ── */
+          var reviewsEl = document.getElementById('grid-reviews');
+          if (reviewsEl && reviews.length > 0) {
+            var feat = reviews[0];
+            var supporting = reviews.slice(1, 5);
+            var cards = supporting.map(function (s) { return supportCard(s); });
+            reviewsEl.innerHTML =
+              '<div class="featured-card-wrap featured-card-wide">' + featuredCard(feat) + '</div>' +
+              '<div class="supporting-cards">' + cards.join('') + '</div>';
+          }
+
+          /* ── Trigger ads ── */
+          try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+
+        }); // end Promise.all
+
+      }); // end fetch
   </script>
 
 </body>

@@ -984,6 +984,17 @@ a:hover { color: var(--color-accent-hover); }
   margin: 0;
 }
 
+/* ── Featured card wide (spans 2 cols in 3-col editorial grid) ── */
+.featured-card-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 860px) {
+  .featured-card-wide {
+    grid-column: span 1;
+  }
+}
+
 /* ── Responsive ──────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-card { flex-direction: column; min-height: auto; }

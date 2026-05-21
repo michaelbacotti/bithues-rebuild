@@ -10,8 +10,11 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <!-- IMPORTANT: Update this canonical to match the page's actual URL slug before publishing -->
   <link rel="canonical" href="https://www.bithues.com/PAGE-SLUG">
+  <!-- NOTE: Each published page must have its canonical set to its own URL slug (e.g. /reviews/american-journeys). -->
+  <!-- The _template.html file is for reference only — it does NOT deploy to Cloudflare Pages. -->
+  <!-- Named-slug pages (reviews/american-journeys.html → /reviews/american-journeys) work correctly. -->
+  <!-- Numeric or unmatched routes (reviews/21, authors/, root /) serve the index fallback with root canonical — those need per-file fixes in the actual deployed pages. -->
 </head>
 <body>
 

@@ -4,9 +4,8 @@
 - Entity: Bithues (book review and literary publication)
 - Purpose: Book reviews, reading guides, articles, and original short fiction
 - Repo: github.com/michaelbacotti/bithues-rebuild
-- Live URL: www.bithues.com (pending migration from current Hugo setup)
-- Staging URL: bithues-rebuild.pages.dev
-- Cloudflare Pages project: bithues-rebuild
+- Live URL: www.bithues.com (Cloudflare Pages)
+- Staging URL: bithues-rebuild.pages.dev (Cloudflare Pages preview)
 - Architecture: Flat HTML — see skills/website-flat-html.md
 
 ## Design Reference (from live bithues.com homepage, 2026-05-13)
