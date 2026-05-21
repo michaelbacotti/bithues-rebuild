@@ -59,6 +59,46 @@
 .story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
 .story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
 .bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
+
+.reader-wrap{position:relative;max-width:680px;margin:0 auto;padding:0 24px 80px}
+.reader-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
+.reader-body p{margin:0 0 1.5em}
+.reader-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0;z-index:99;transition:width .1s}
+.reader-bookmark{position:absolute;top:0;right:0;background:none;border:1px solid var(--color-border);border-radius:4px;padding:6px 10px;cursor:pointer;color:var(--color-text-muted);font-size:12px;display:flex;align-items:center;gap:5px}
+.reader-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.reader-bookmark-tooltip{display:none;background:var(--color-text);color:var(--color-bg);font-size:11px;padding:4px 8px;border-radius:3px;position:absolute;top:100%;right:0;margin-top:4px;white-space:nowrap}
+.reader-footer{text-align:center;padding:32px 24px;border-top:1px solid var(--color-border-light);max-width:680px;margin:0 auto}
+.reader-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--color-accent);font-size:14px;font-weight:500}
+.reader-back-link:hover{text-decoration:underline}
+.story-ad-section{text-align:center;padding:0 24px 32px;max-width:680px;margin:0 auto}
+.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
+.story-hero{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
+.story-hero-inner{}
+.story-hero .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
+.story-hero h1{font-family:var(--font-serif);font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:14px}
+.story-hero .byline{font-size:14px;color:var(--color-text-light);font-style:italic}
+.story-hero-image{max-width:680px;margin:0 auto 40px;padding:0 24px}
+.story-hero-image img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block}
+
+.reader-wrap{position:relative;max-width:680px;margin:0 auto;padding:0 24px 80px}
+.reader-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
+.reader-body p{margin:0 0 1.5em}
+.reader-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0;z-index:99;transition:width .1s}
+.reader-bookmark{position:absolute;top:0;right:0;background:none;border:1px solid var(--color-border);border-radius:4px;padding:6px 10px;cursor:pointer;color:var(--color-text-muted);font-size:12px;display:flex;align-items:center;gap:5px}
+.reader-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.reader-bookmark-tooltip{display:none;background:var(--color-text);color:var(--color-bg);font-size:11px;padding:4px 8px;border-radius:3px;position:absolute;top:100%;right:0;margin-top:4px;white-space:nowrap}
+.reader-footer{text-align:center;padding:32px 24px;border-top:1px solid var(--color-border-light);max-width:680px;margin:0 auto}
+.reader-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--color-accent);font-size:14px;font-weight:500}
+.reader-back-link:hover{text-decoration:underline}
+.story-ad-section{text-align:center;padding:0 24px 32px;max-width:680px;margin:0 auto}
+.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
+.story-hero{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
+.story-hero-inner{}
+.story-hero .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
+.story-hero h1{font-family:var(--font-serif);font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:14px}
+.story-hero .byline{font-size:14px;color:var(--color-text-light);font-style:italic}
+.story-hero-image{max-width:680px;margin:0 auto 40px;padding:0 24px}
+.story-hero-image img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block}
 </style>
   <link rel="canonical" href="https://www.bithues.com/stories/the-weight-of-summer-light">
 <script type="application/ld+json">
@@ -230,8 +270,24 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
     <span class="copy-label">Copy</span>
   </button>
-</div>
-<script>
+</div></div></div>
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+
+        </div>
+      </div>
+    </div>
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+</div><script>
 document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
   var url = encodeURIComponent(window.location.href);
   var title = encodeURIComponent(document.title);
@@ -259,5 +315,57 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
 
-</body>
+
+<script>
+(function(){
+  var bar = document.getElementById('story-progress-bar');
+  var container = document.getElementById('reader-container');
+  if(bar && container) {
+    window.addEventListener('scroll', function() {
+      var rect = container.getBoundingClientRect();
+      var total = container.offsetHeight - window.innerHeight;
+      var pct = total > 0 ? Math.max(0, Math.min(100, ((-rect.top) / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }, {passive:true});
+  }
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if(btn && tip) {
+    btn.addEventListener('click', function() {
+      if(navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          tip.style.display = 'block';
+          setTimeout(function() { tip.style.display = 'none'; }, 2000);
+        });
+      }
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('story-progress-bar');
+  var container = document.getElementById('reader-container');
+  if(bar && container) {
+    window.addEventListener('scroll', function() {
+      var rect = container.getBoundingClientRect();
+      var total = container.offsetHeight - window.innerHeight;
+      var pct = total > 0 ? Math.max(0, Math.min(100, ((-rect.top) / total) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }, {passive:true});
+  }
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if(btn && tip) {
+    btn.addEventListener('click', function() {
+      if(navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          tip.style.display = 'block';
+          setTimeout(function() { tip.style.display = 'none'; }, 2000);
+        });
+      }
+    });
+  }
+})();
+</script></body>
 </html>
