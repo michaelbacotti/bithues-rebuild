@@ -43,7 +43,23 @@
       font-weight: 600;
       color: #3a2e1e;
     }
-  </style>
+  
+/* Story Reader Mode */
+#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
+.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
+.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
+.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
+.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
+.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
+.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
+.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
+.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
+.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
+.story-body p{margin:0 0 1.5em}
+.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
+.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
+</style>
   <link rel="canonical" href="https://www.bithues.com/stories/the-weight-of-summer-light">
 <script type="application/ld+json">
 {
@@ -87,20 +103,7 @@
 </head>
 <body>
   <div id="site-nav"></div>
-
-  <header class="content-header">
-    <div class="content-header-inner">
-      <span class="tag tag--article">Story</span>
-      <h1 class="content-title">The Weight of Summer Light</h1>
-      <p class="content-meta">Stories</p>
-    </div>
-  </header>
-
-  <div class="content-image">
-    <img src="/stories/the-weight-of-summer-light.jpg" alt="A warm summer evening at a small wooden dock on a calm lake, golden hour light filtering through trees" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:1.5rem;">
-  </div>
-
-  <div class="content-body">
+<div class="content-body">
 
     <p>The letter from the town clerk arrived on a Tuesday in April, three weeks after the last cold snap and two days after the forsythia in her neighbor's yard erupted into yellow so bright it looked like the bushes were on fire. Eleanor folded the envelope into thirds, then into sixths, and set it on the kitchen counter where it sat for the rest of the day like a small accusation.</p>
 

@@ -3,15 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Cartographer of Sea Serpents | Bithues</title>
+  <title>T H E   C A R T O G R A P H E R   O F   S E A   S E R P E N T S | Bithues</title>
   <meta name="description" content="Short Story by Bithues">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>
-    .story-body p { margin-bottom: 1.5em; line-height: 1.85; font-size: 17px; }
-  </style>
   <link rel="canonical" href="https://www.bithues.com/stories/the-cartographer-of-sea-serpents">
-<script type="application/ld+json">
+  <style>
+
+/* ─── Story Reader Mode ─────────────────────────────── */
+.story-hero {
+  text-align: center;
+  padding: 48px 24px 40px;
+}
+.story-hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.story-hero .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid #5a7a65;
+  color: #5a7a65;
+  margin-bottom: 20px;
+}
+.story-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.story-hero .byline {
+  font-size: 14px;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.story-hero-image {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.story-hero-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.story-ad-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  text-align: center;
+}
+.story-ad-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+
+/* ─── Reader Container ──────────────────────────────── */
+.reader-wrap {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* Bookmark button */
+.reader-bookmark {
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-text-light);
+  border-radius: 4px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.reader-bookmark:hover { color: var(--color-accent); }
+.reader-bookmark:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.reader-bookmark .bm-label { white-space: nowrap; }
+.reader-bookmark-tooltip {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  background: var(--color-text);
+  color: var(--color-surface);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  padding: 5px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.reader-bookmark-tooltip.show { opacity: 1; }
+
+/* Progress bar */
+.reader-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--color-accent);
+  width: 0%;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+}
+
+/* ─── Story Body ─────────────────────────────────────── */
+.reader-body {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+.reader-body p {
+  margin-bottom: 1.5em;
+  font-size: 18px;
+  line-height: 1.85;
+}
+.reader-body p:last-child { margin-bottom: 0; }
+
+/* ─── Share/Back Footer ───────────────────────────────── */
+.reader-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: center;
+}
+.reader-back-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.reader-back-link:hover { color: var(--color-accent-hover); }
+
+@media (max-width: 640px) {
+  .reader-body { font-size: 16px; }
+  .reader-body p { font-size: 16px; }
+  .story-hero h1 { font-size: 28px; }
+  .reader-bookmark .bm-label { display: none; }
+}
+
+  
+/* Story Reader Mode */
+#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
+.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
+.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
+.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
+.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
+.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
+.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
+.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
+.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
+.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
+.story-body p{margin:0 0 1.5em}
+.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
+.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
+</style>
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -25,22 +211,22 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Articles",
-      "item": "https://www.bithues.com/articles"
+      "name": "Stories",
+      "item": "https://www.bithues.com/stories"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "The Cartographer of Sea Serpents \u2014 Story | Bithues"
+      "name": "T H E   C A R T O G R A P H E R   O F   S E A   S E R P E N T S | Bithues"
     }
   ]
 }
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Cartographer of Sea Serpents \u2014 Story | Bithues",
+  "headline": "T H E   C A R T O G R A P H E R   O F   S E A   S E R P E N T S | Bithues",
   "url": "https://www.bithues.com/stories/the-cartographer-of-sea-serpents",
   "publisher": {
     "@type": "Organization",
@@ -53,103 +239,139 @@
 </head>
 <body>
   <div id="site-nav"></div>
-  <header class="content-header">
-    <div class="content-header-inner">
-      <span class="tag tag--story">Short Story</span>
-      <h1 class="content-title">The Cartographer of Sea Serpents</h1>
-      <p class="content-meta">by Bithues</p>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>T H E   C A R T O G R A P H E R   O F   S E A   S E R P E N T S</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The email from the Cairnwick town council arrived on a Wednesday, which was how Dr. Maren Holt preferred her intrusions — orderly, scheduled, easy to decline. She did not decline it. She read it twice, made a pot of tea, and then read it again with the feeling one gets when the universe offers something that looks like work but smells like trouble.</p>
+<p>The council had retained her to investigate reports of a sea serpent in Greak Sound, a rocky inlet on the northern coast where herring fishermen had been reporting a large, long-necked creature surfacing near their boats for the past six weeks. The reports were "disturbing commerce," the email noted, and the council needed "a professional assessment" before deciding how to proceed. Maren had spent fifteen years providing professional assessments of folkloric creatures — a polite term for the gap between what people claimed to see and what biology could explain. Oarfish accounted for most sea serpent sightings.</p>
+<p>Elongated shark embryos, occasionally. Floating kelp, frequently. She had never once confirmed anything that couldn't be explained, and she had built a quiet career on exactly this fact. Her monograph on the Scandinavian Søorm was still cited in textbooks: an exhaustive analysis demonstrating that every reported sighting between 1808 and 1922 could be attributed to the rare but entirely mundane frilled shark, Megalodon charcod.</p>
+<p>The frilled shark had a long, dark body, a vaguely serpentine head, and absolutely no interest in commerce or human beings. It was, as Maren had written in her conclusion, "a fish doing what fish do, in waters humans rarely visit, observed by humans who rarely fish." Her academic peers had praised the rigor. The Norwegian tourism board had not. She drove to Cairnwick on a Thursday, the coastal road narrowing as she climbed above the tree line and then dropping sharply toward the harbor.</p>
+<p>Cairnwick was the kind of town that cities forgot to absorb — weathered fishing houses stacked along a harbor channel, a single pub with a hand-painted sign, a processing plant that hummed day and night and funded half the municipal budget. The council office was a converted lighthouse keeper's cottage, and the woman who greeted her — Margret, the town clerk — had the look of someone who had been fielding sea serpent phone calls for six weeks and had reached the end of her patience somewhere around week three. "They're not joking," Margret said, leading her into a small office papered with photocopied reports. "We have eleven sworn statements." Maren sat and read them.</p>
+<p>She read them carefully, the way she read everything — with her pen moving across a legal pad, underlining. The reports were consistent in ways that made her pen slow. Not the wild consistency of panic, where everyone agrees because they want to believe. The deeper consistency of detail.</p>
+<p>The creature was dark gray, not black. It surfaced at dawn and dusk, not midday. It moved slowly — "like it had somewhere to be but no hurry to arrive," one fisherman wrote. Three of the eleven witnesses mentioned a sound: a low, sustained tone, like a cello string bowed beneath the water.</p>
+<p>Two witnesses described it as singing. Maren set her pen down. She spent the next two days doing what she always did. She interviewed the witnesses.</p>
+<p>She reviewed the harbor logs. She walked the shoreline at low tide, looking for the bones or carcasses that sometimes washed up after a large marine animal died nearby. She found nothing. No bones.</p>
+<p>No distinctive tracks on the seafloor. No blubber deposits in the tidal pools. She interviewed an elderly woman — the widow of a fisherman who had gone missing in Greak Sound in 1987 — and listened to a story about a creature that had risen alongside his boat and sung to him, and the fisherman had leaned over the gunwale and spoken to it, and then he had gone into the water and not returned. "He spoke to it," Maren said, carefully.</p>
+<p>"He said it sounded like his mother's voice," the widow said. "Singing a hymn he hadn't heard since he was a child." Maren thanked her and walked back to her car in the gray afternoon light. She sat in the driver's seat and stared through the windshield at the harbor, the fishing boats, the processing plant. She was a scientist.</p>
+<p>She did not believe in monsters. The widow was grieving, and grief made poetry out of accident. The fishermen were bored, and boredom made monsters out of fish. This was her life — translating wonder into misidentification, making the world safe and explicable.</p>
+<p>She was good at it. She believed in it. She sat in her car for a long time. That night, she drove back to the cottage she was renting and opened her private journal.</p>
+<p>Not her professional journal — the one filed under her maiden name at the back of a locked cabinet, the one that did not exist as far as her academic record was concerned. In it were transcriptions from Icelandic annals and medieval bestiaries, from Portuguese fishermen's journals and a single letter from a Benedictine monk in Donegal, written in 1603. All of them described the same thing: a creature that lived in the deep kelp forests, that had an elongated neck and a head shaped vaguely like a horse, that surfaced near boats not to attack but to observe. The old texts called it by many names.</p>
+<p>The Vinlands Serpent. The Long Neck of the Western Waters. In Portuguese, the дракон adormecido — the sleeping dragon. It was never described as predatory.</p>
+<p>It was described as curious. It sang — the texts were emphatic about this — and its song could ease pain in other creatures, could calm a school of panicked fish, could make a dying whale grow quiet. The texts agreed on one other thing: it had been hunted. Its liver yielded an oil that medieval physicians believed could cure diseases of the spirit.</p>
+<p>Every source she had found agreed it had been hunted to extinction by the sixteenth century. No fossils had ever been found. No remains. No genetic traces in modern marine DNA surveys.</p>
+<p>She had written in her journal, years ago: either the creature never existed, or it disappeared so completely that it took its existence with it. She fell asleep at the kitchen table with the journal open and dreamed of dark water and something vast moving beneath it, patient and unhurried. She woke before dawn and went back to the widow's story. She pulled the old texts from her bag — the photocopies she kept in a folder, the ones she referenced in her professional work but never published in full.</p>
+<p>She read the description from the Icelandic bestiary, the one written in 1348 by a monk who had interviewed sailors: "It is a gentle creature, and slow to anger. It surfaces not to frighten but to look upon the world of men, as a scholar looks upon a page. Its song is not a threat but a kind of speaking, as if it believes it can be understood." Maren had read this passage a hundred times. She had filed it under "unreliable narrator — cultural projection." She read it again now and her pen did not move.</p>
+<p>Her father had been a marine biologist who spent thirty years studying deep-water cetaceans — sperm whales, beaked whales, the great undulating giants that dive to trenches humans cannot reach. He had retired to a small house on the Oregon coast when his mind began to fail, and in the last years he had looked at Maren sometimes with recognition and sometimes without, and in the moments of recognition he had said things that she, as his dutiful scientific daughter, had written off as the confused meanderings of a brilliant man losing his hold on the present. He had said: "There are things that survive by not being seen. That's not extinction.</p>
+<p>That's choice." She had adjusted his oxygen tank and changed the subject. She pulled the whale population data for the region. There was a species listed as "presence uncertain" — a deep-diving beaked whale, never formally hunted because it was too elusive to catch, thought to have been driven to extinction by general whaling pressure in the 1800s. No confirmed sighting since 1912.</p>
+<p>Maren had noted this absence in her thesis, a small asterisk in a larger argument about data gaps in historical marine records. She had not thought about it in years. She thought about it now, sitting in a rented cottage at five in the morning, listening to the wind. She kayaked into Greak Sound on the third day.</p>
+<p>She brought her hydrophone, her underwater camera, and a thermos of coffee she did not drink. The morning was overcast and calm, the water flat as gray glass. She paddled to the center of the inlet and sat, and listened. The hydrophone hummed with the usual chorus of the sea — the clicking of snapping shrimp, the low groans of cod, the distant percussion of a humpback's song bouncing off the rock walls.</p>
+<p>She sat for an hour. She sat for two. The coffee went cold. The harbor lights came on behind her, and the sky began to lighten from gray to pearl.</p>
+<p>Then she heard it. It was not a fish sound. It was not a whale sound. It was a sustained, complex tone that rose and fell in patterns too intricate to be mechanical, too deliberate to be biological accident.</p>
+<p>It lasted nearly four minutes. It repeated. Maren held her breath so completely she forgot to breathe, and then the water beside her kayak began to move. Something rose from below.</p>
+<p>She saw it first as a dark shape in the green water beneath her — larger than her kayak, larger than anything she had a frame of reference for in the narrow inlet. Then her eyes adjusted and she saw it clearly: a creature with smooth gray skin, an elongated neck rising two meters from the surface of the water, and a head with large dark eyes that looked at her with an expression she could only describe as unsurprised. It was a seven-meter animal. It may have been eight.</p>
+<p>It held its head above the water at the height of her kayak's edge and regarded her the way a professor regards a student who has finally asked the right question. Maren said, very quietly, "Oh." The creature's eyes did not blink. She could see barnacles on its dorsal surface, old scars on its tail — signs of a long life, a hard life, a life that had included encounters with the species that hunted it for oil and wonder and medicine. Maren was a scientist.</p>
+<p>She did not believe in monsters. She believed in this: a real animal, breathing real air, looking at her with eyes that held something she did not have a taxonomic classification for. "I'm sorry," she said, because she did not know what else to say to something that should not exist and was looking at her as if it had been waiting. "I'm sorry we hunted you." The creature lowered its head until one enormous eye was level with her face.</p>
+<p>In that eye she saw not anger and not fear but something worse: patience. A patience that had outlasted harpoons and nets and the desperate believing of fishermen who needed the world to be full of monsters because monsters were at least explicable. The patience of a creature that had survived by becoming unseeable, and had found, after centuries of hiding, that the humans had finally stopped looking — not because they had found peace, but because they had forgotten there was anything left to find. The creature opened its mouth.</p>
+<p>What came out was not the song she had heard on the hydrophone. It was a lower, quieter sound — a sustained, resonant tone that seemed to come from the water itself as much as from the animal. It lasted less than a minute. When it stopped, the creature looked at her once more, turned, and sank beneath the surface with a slowness that felt deliberate, as if it were making a point about exits.</p>
+<p>Maren sat on the water for a long time. The sun came up. The harbor woke. A fishing boat passed fifty meters to her left and the fishermen inside it did not see her, or the creature, or anything but the flat gray water and the promise of herring.</p>
+<p>She told the town council, on her last evening in Cairnwick, that she had found no evidence of a sea serpent. She told them the sounds on the hydrophone were consistent with a large cetacean — possibly a beaked whale, a species known for complex vocalizations and deep-diving behavior. She recommended the town monitor the inlet for future sightings and submit any further reports to the marine biology department. The council thanked her.</p>
+<p>Margret shook her hand and said she was glad the matter was settled. Maren drove home the next morning in rain, the windshield wipers going, and did not think about anything for the entire six-hour drive. She filed her report. She wrote her paper — the real one, not the professional assessment for Cairnwick but the one she had been assembling for years, in the cabinet, under her maiden name.</p>
+<p>She framed it as a study in collective imagination and cultural memory. She cited the old texts. She noted the structural similarity between medieval descriptions and the behavior of deep-diving beaked whales. She did not mention the kayak.</p>
+<p>She did not mention the eye. She did not mention that on the night before she left Cairnwick, standing on the harbor wall at dusk, she had heard the sound again — rising from the water at the mouth of Greak Sound, low and vast and unhurried, as if the creature were confirming something it had always known. She sent the paper to three journals. All three rejected it.</p>
+<p>The first said it was insufficiently skeptical. The second said the premise was interesting but the conclusion unsupported. The third did not respond. She published it on her personal website, where it was read by eleven people, nine of whom were her former graduate students.</p>
+<p>One of them was a young woman from Iceland who was studying folklore and marine biology simultaneously and who wrote to say that her grandmother had described the exact same creature, in the same detail, in a story she had told when the woman was a child. The grandmother had called it the one who stayed behind. The young woman's name was Sigrun. She came to visit Maren in the spring, and Maren took her to Greak Sound, and they paddled out together at dawn and waited.</p>
+<p>Sigrun was not a skeptic. She sat in the kayak with the calm attentiveness of someone who expected something and was prepared to wait as long as necessary. Maren sat beside her and thought about her father and his remark about things that survived by not being seen. The sound came at first light.</p>
+<p>Maren touched Sigrun's arm and pointed. The creature surfaced between their two kayaks — the same animal, or one of its kind, with barnacles on its neck and ancient scars on its tail. Sigrun did not gasp or reach for a camera. She listened, the way her grandmother had listened, the way the old texts described — with full and undivided attention.</p>
+<p>The creature looked at them both. Maren felt, or imagined she felt, a recognition in its gaze that extended to the woman beside her, to the grandmother in Iceland, to the Benedictine monk in 1603, to every human being who had ever sat on dark water and listened. Afterward, Sigrun asked her what she planned to do with what she had seen. Maren thought about this.</p>
+<p>She thought about the paper that no one read. She thought about the locked cabinet and the journal inside it. She thought about her father, in the last lucid afternoon of his life, looking at her as if to say something he had decided was better left unsaid. "I'm going to give it to you," Maren said.</p>
+<p>She reached into the waterproof case behind her seat and pulled out the leather journal — the private one, the real one, the one with the old texts and the widow's testimony and her own field notes, and at the back, the page she had added last spring, the one with the drawing she had made from memory of an eye that held centuries. Sigrun took it carefully. She did not open it. She placed it in her lap and looked at Maren with the same calm attention the creature had shown them both — patient, serious, ready to wait as long as necessary for whatever came next.</p>
+<p>"Some things survive because they choose to," Maren said. "Maybe some things survive so they can be found by the right person." Sigrun held the journal. The water was flat. The sun was up.</p>
+<p>Somewhere below them, something ancient was descending back into the dark, patient and unhurried, having shown itself one more time to remind the world that the boundary between science and wonder was thinner than most scientists were willing to admit.</p>
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="content-image"><img src="/stories/images/the-cartographer-of-sea-serpents.jpg" alt="The Cartographer of Sea Serpents" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:1.5rem;"></div>
-  <div class="content-body story-body">
-    <p>The email from the Cairnwick town council arrived on a Wednesday, which was how Dr. Maren Holt preferred her intrusions — orderly, scheduled, easy to decline. She did not decline it. She read it twice, made a pot of tea, and then read it again with the feeling one gets when the universe offers something that looks like work but smells like trouble.</p>
-    <p>The council had retained her to investigate reports of a sea serpent in Greak Sound, a rocky inlet on the northern coast where herring fishermen had been reporting a large, long-necked creature surfacing near their boats for the past six weeks. The reports were "disturbing commerce," the email noted, and the council needed "a professional assessment" before deciding how to proceed. Maren had spent fifteen years providing professional assessments of folkloric creatures — a polite term for the gap between what people claimed to see and what biology could explain. Oarfish accounted for most sea serpent sightings.</p>
-    <p>Elongated shark embryos, occasionally. Floating kelp, frequently. She had never once confirmed anything that couldn't be explained, and she had built a quiet career on exactly this fact. Her monograph on the Scandinavian Søorm was still cited in textbooks: an exhaustive analysis demonstrating that every reported sighting between 1808 and 1922 could be attributed to the rare but entirely mundane frilled shark, Megalodon charcod.</p>
-    <p>The frilled shark had a long, dark body, a vaguely serpentine head, and absolutely no interest in commerce or human beings. It was, as Maren had written in her conclusion, "a fish doing what fish do, in waters humans rarely visit, observed by humans who rarely fish." Her academic peers had praised the rigor. The Norwegian tourism board had not. She drove to Cairnwick on a Thursday, the coastal road narrowing as she climbed above the tree line and then dropping sharply toward the harbor.</p>
-    <p>Cairnwick was the kind of town that cities forgot to absorb — weathered fishing houses stacked along a harbor channel, a single pub with a hand-painted sign, a processing plant that hummed day and night and funded half the municipal budget. The council office was a converted lighthouse keeper's cottage, and the woman who greeted her — Margret, the town clerk — had the look of someone who had been fielding sea serpent phone calls for six weeks and had reached the end of her patience somewhere around week three. "They're not joking," Margret said, leading her into a small office papered with photocopied reports. "We have eleven sworn statements." Maren sat and read them.</p>
-    <p>She read them carefully, the way she read everything — with her pen moving across a legal pad, underlining. The reports were consistent in ways that made her pen slow. Not the wild consistency of panic, where everyone agrees because they want to believe. The deeper consistency of detail.</p>
-    <p>The creature was dark gray, not black. It surfaced at dawn and dusk, not midday. It moved slowly — "like it had somewhere to be but no hurry to arrive," one fisherman wrote. Three of the eleven witnesses mentioned a sound: a low, sustained tone, like a cello string bowed beneath the water.</p>
-    <p>Two witnesses described it as singing. Maren set her pen down. She spent the next two days doing what she always did. She interviewed the witnesses.</p>
-    <p>She reviewed the harbor logs. She walked the shoreline at low tide, looking for the bones or carcasses that sometimes washed up after a large marine animal died nearby. She found nothing. No bones.</p>
-    <p>No distinctive tracks on the seafloor. No blubber deposits in the tidal pools. She interviewed an elderly woman — the widow of a fisherman who had gone missing in Greak Sound in 1987 — and listened to a story about a creature that had risen alongside his boat and sung to him, and the fisherman had leaned over the gunwale and spoken to it, and then he had gone into the water and not returned. "He spoke to it," Maren said, carefully.</p>
-    <p>"He said it sounded like his mother's voice," the widow said. "Singing a hymn he hadn't heard since he was a child." Maren thanked her and walked back to her car in the gray afternoon light. She sat in the driver's seat and stared through the windshield at the harbor, the fishing boats, the processing plant. She was a scientist.</p>
-    <p>She did not believe in monsters. The widow was grieving, and grief made poetry out of accident. The fishermen were bored, and boredom made monsters out of fish. This was her life — translating wonder into misidentification, making the world safe and explicable.</p>
-    <p>She was good at it. She believed in it. She sat in her car for a long time. That night, she drove back to the cottage she was renting and opened her private journal.</p>
-    <p>Not her professional journal — the one filed under her maiden name at the back of a locked cabinet, the one that did not exist as far as her academic record was concerned. In it were transcriptions from Icelandic annals and medieval bestiaries, from Portuguese fishermen's journals and a single letter from a Benedictine monk in Donegal, written in 1603. All of them described the same thing: a creature that lived in the deep kelp forests, that had an elongated neck and a head shaped vaguely like a horse, that surfaced near boats not to attack but to observe. The old texts called it by many names.</p>
-    <p>The Vinlands Serpent. The Long Neck of the Western Waters. In Portuguese, the дракон adormecido — the sleeping dragon. It was never described as predatory.</p>
-    <p>It was described as curious. It sang — the texts were emphatic about this — and its song could ease pain in other creatures, could calm a school of panicked fish, could make a dying whale grow quiet. The texts agreed on one other thing: it had been hunted. Its liver yielded an oil that medieval physicians believed could cure diseases of the spirit.</p>
-    <p>Every source she had found agreed it had been hunted to extinction by the sixteenth century. No fossils had ever been found. No remains. No genetic traces in modern marine DNA surveys.</p>
-    <p>She had written in her journal, years ago: either the creature never existed, or it disappeared so completely that it took its existence with it. She fell asleep at the kitchen table with the journal open and dreamed of dark water and something vast moving beneath it, patient and unhurried. She woke before dawn and went back to the widow's story. She pulled the old texts from her bag — the photocopies she kept in a folder, the ones she referenced in her professional work but never published in full.</p>
-    <p>She read the description from the Icelandic bestiary, the one written in 1348 by a monk who had interviewed sailors: "It is a gentle creature, and slow to anger. It surfaces not to frighten but to look upon the world of men, as a scholar looks upon a page. Its song is not a threat but a kind of speaking, as if it believes it can be understood." Maren had read this passage a hundred times. She had filed it under "unreliable narrator — cultural projection." She read it again now and her pen did not move.</p>
-    <p>Her father had been a marine biologist who spent thirty years studying deep-water cetaceans — sperm whales, beaked whales, the great undulating giants that dive to trenches humans cannot reach. He had retired to a small house on the Oregon coast when his mind began to fail, and in the last years he had looked at Maren sometimes with recognition and sometimes without, and in the moments of recognition he had said things that she, as his dutiful scientific daughter, had written off as the confused meanderings of a brilliant man losing his hold on the present. He had said: "There are things that survive by not being seen. That's not extinction.</p>
-    <p>That's choice." She had adjusted his oxygen tank and changed the subject. She pulled the whale population data for the region. There was a species listed as "presence uncertain" — a deep-diving beaked whale, never formally hunted because it was too elusive to catch, thought to have been driven to extinction by general whaling pressure in the 1800s. No confirmed sighting since 1912.</p>
-    <p>Maren had noted this absence in her thesis, a small asterisk in a larger argument about data gaps in historical marine records. She had not thought about it in years. She thought about it now, sitting in a rented cottage at five in the morning, listening to the wind. She kayaked into Greak Sound on the third day.</p>
-    <p>She brought her hydrophone, her underwater camera, and a thermos of coffee she did not drink. The morning was overcast and calm, the water flat as gray glass. She paddled to the center of the inlet and sat, and listened. The hydrophone hummed with the usual chorus of the sea — the clicking of snapping shrimp, the low groans of cod, the distant percussion of a humpback's song bouncing off the rock walls.</p>
-    <p>She sat for an hour. She sat for two. The coffee went cold. The harbor lights came on behind her, and the sky began to lighten from gray to pearl.</p>
-    <p>Then she heard it. It was not a fish sound. It was not a whale sound. It was a sustained, complex tone that rose and fell in patterns too intricate to be mechanical, too deliberate to be biological accident.</p>
-    <p>It lasted nearly four minutes. It repeated. Maren held her breath so completely she forgot to breathe, and then the water beside her kayak began to move. Something rose from below.</p>
-    <p>She saw it first as a dark shape in the green water beneath her — larger than her kayak, larger than anything she had a frame of reference for in the narrow inlet. Then her eyes adjusted and she saw it clearly: a creature with smooth gray skin, an elongated neck rising two meters from the surface of the water, and a head with large dark eyes that looked at her with an expression she could only describe as unsurprised. It was a seven-meter animal. It may have been eight.</p>
-    <p>It held its head above the water at the height of her kayak's edge and regarded her the way a professor regards a student who has finally asked the right question. Maren said, very quietly, "Oh." The creature's eyes did not blink. She could see barnacles on its dorsal surface, old scars on its tail — signs of a long life, a hard life, a life that had included encounters with the species that hunted it for oil and wonder and medicine. Maren was a scientist.</p>
-    <p>She did not believe in monsters. She believed in this: a real animal, breathing real air, looking at her with eyes that held something she did not have a taxonomic classification for. "I'm sorry," she said, because she did not know what else to say to something that should not exist and was looking at her as if it had been waiting. "I'm sorry we hunted you." The creature lowered its head until one enormous eye was level with her face.</p>
-    <p>In that eye she saw not anger and not fear but something worse: patience. A patience that had outlasted harpoons and nets and the desperate believing of fishermen who needed the world to be full of monsters because monsters were at least explicable. The patience of a creature that had survived by becoming unseeable, and had found, after centuries of hiding, that the humans had finally stopped looking — not because they had found peace, but because they had forgotten there was anything left to find. The creature opened its mouth.</p>
-    <p>What came out was not the song she had heard on the hydrophone. It was a lower, quieter sound — a sustained, resonant tone that seemed to come from the water itself as much as from the animal. It lasted less than a minute. When it stopped, the creature looked at her once more, turned, and sank beneath the surface with a slowness that felt deliberate, as if it were making a point about exits.</p>
-    <p>Maren sat on the water for a long time. The sun came up. The harbor woke. A fishing boat passed fifty meters to her left and the fishermen inside it did not see her, or the creature, or anything but the flat gray water and the promise of herring.</p>
-    <p>She told the town council, on her last evening in Cairnwick, that she had found no evidence of a sea serpent. She told them the sounds on the hydrophone were consistent with a large cetacean — possibly a beaked whale, a species known for complex vocalizations and deep-diving behavior. She recommended the town monitor the inlet for future sightings and submit any further reports to the marine biology department. The council thanked her.</p>
-    <p>Margret shook her hand and said she was glad the matter was settled. Maren drove home the next morning in rain, the windshield wipers going, and did not think about anything for the entire six-hour drive. She filed her report. She wrote her paper — the real one, not the professional assessment for Cairnwick but the one she had been assembling for years, in the cabinet, under her maiden name.</p>
-    <p>She framed it as a study in collective imagination and cultural memory. She cited the old texts. She noted the structural similarity between medieval descriptions and the behavior of deep-diving beaked whales. She did not mention the kayak.</p>
-    <p>She did not mention the eye. She did not mention that on the night before she left Cairnwick, standing on the harbor wall at dusk, she had heard the sound again — rising from the water at the mouth of Greak Sound, low and vast and unhurried, as if the creature were confirming something it had always known. She sent the paper to three journals. All three rejected it.</p>
-    <p>The first said it was insufficiently skeptical. The second said the premise was interesting but the conclusion unsupported. The third did not respond. She published it on her personal website, where it was read by eleven people, nine of whom were her former graduate students.</p>
-    <p>One of them was a young woman from Iceland who was studying folklore and marine biology simultaneously and who wrote to say that her grandmother had described the exact same creature, in the same detail, in a story she had told when the woman was a child. The grandmother had called it the one who stayed behind. The young woman's name was Sigrun. She came to visit Maren in the spring, and Maren took her to Greak Sound, and they paddled out together at dawn and waited.</p>
-    <p>Sigrun was not a skeptic. She sat in the kayak with the calm attentiveness of someone who expected something and was prepared to wait as long as necessary. Maren sat beside her and thought about her father and his remark about things that survived by not being seen. The sound came at first light.</p>
-    <p>Maren touched Sigrun's arm and pointed. The creature surfaced between their two kayaks — the same animal, or one of its kind, with barnacles on its neck and ancient scars on its tail. Sigrun did not gasp or reach for a camera. She listened, the way her grandmother had listened, the way the old texts described — with full and undivided attention.</p>
-    <p>The creature looked at them both. Maren felt, or imagined she felt, a recognition in its gaze that extended to the woman beside her, to the grandmother in Iceland, to the Benedictine monk in 1603, to every human being who had ever sat on dark water and listened. Afterward, Sigrun asked her what she planned to do with what she had seen. Maren thought about this.</p>
-    <p>She thought about the paper that no one read. She thought about the locked cabinet and the journal inside it. She thought about her father, in the last lucid afternoon of his life, looking at her as if to say something he had decided was better left unsaid. "I'm going to give it to you," Maren said.</p>
-    <p>She reached into the waterproof case behind her seat and pulled out the leather journal — the private one, the real one, the one with the old texts and the widow's testimony and her own field notes, and at the back, the page she had added last spring, the one with the drawing she had made from memory of an eye that held centuries. Sigrun took it carefully. She did not open it. She placed it in her lap and looked at Maren with the same calm attention the creature had shown them both — patient, serious, ready to wait as long as necessary for whatever came next.</p>
-    <p>"Some things survive because they choose to," Maren said. "Maybe some things survive so they can be found by the right person." Sigrun held the journal. The water was flat. The sun was up.</p>
-    <p>Somewhere below them, something ancient was descending back into the dark, patient and unhurried, having shown itself one more time to remind the world that the boundary between science and wonder was thinner than most scientists were willing to admit.</p>
-  </div>
-<div class="share-bar">
-  <span class="share-label">Share</span>
-  <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-  </a>
-  <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-  </a>
-  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-  </a>
-  <button class="share-btn share-copy" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('.copy-label').textContent='Copied!';setTimeout(()=>{this.querySelector('.copy-label').textContent='Copy'},2000)})">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-    <span class="copy-label">Copy</span>
-  </button>
-</div>
-<script>
-document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
-  var url = encodeURIComponent(window.location.href);
-  var title = encodeURIComponent(document.title);
-  if (el.classList.contains("share-x")) el.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
-  if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-  if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
-});
-</script>
 
-  <div class="related-links">
-<h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">Continue Reading</h3>
-<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
-<a href="/stories/" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Browse All Stories</a>
-<a href="/articles/fantasy-for-beginners.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Fantasy for Beginners</a>
-<a href="/articles/hopepunk-fiction.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Hopepunk Fiction</a>
-</div>
-</div>  <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
 
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
