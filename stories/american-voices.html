@@ -286,19 +286,35 @@
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-<p>The radio hummed from the kitchen counter, its dial tuned to WLRB in Cleveland, and Clara could hear her father's voice mixing with the static even from the back hallway. He was on again tonight — not the news, but the late-night call-in program where strangers tried to explain themselves to each other across state lines. She pressed her ear against the bedroom door and listened as a man from Tucson described the exact shade of light on the Rincon Mountains at six in the evening, and how it made him feel like the earth was breathing.</p>
+        <div class="story-page-segment" data-page="1" id="page-1">
+          <p>The radio hummed from the kitchen counter, its dial tuned to WLRB in Cleveland, and Clara could hear her father's voice mixing with the static even from the back hallway. He was on again tonight — not the news, but the late-night call-in program where strangers tried to explain themselves to each other across state lines. She pressed her ear against the bedroom door and listened as a man from Tucson described the exact shade of light on the Rincon Mountains at six in the evening, and how it made him feel like the earth was breathing.</p>
 <p>"My grandmother used to say home isn't a place," the caller said. "It's the feeling you get when you've been gone long enough." Clara heard her father respond: "And how long is that for you?" The man laughed, a short surprised sound, and said he didn't know yet. He was still measuring.</p>
 <p>Downstairs, her mother was washing dishes in that deliberate way she did when she was thinking about something else entirely. Clara knew that when the water went quiet, when the rhythm stopped, her mother was standing at the sink staring out the window at the maple tree they had planted the year they arrived from Puerto Rico. Twelve years now. The tree was taller than the house, and Clara had stopped noticing it until she saw her mother's reflection in the glass, still and watchful, looking at something beyond the glass.</p>
 <p>The question on the radio changed. The host, a man Clara had never seen but whose voice she knew better than some relatives, asked: "What does it mean to belong here?" Clara turned the knob slightly, letting the static bloom like a curtain, and in that white noise she could hear every frequency of being American — the hymns, the ads, the baseball game cutting in and out, the Spanish morning show at five AM, the evangelical preacher at midnight, all of it braided together like wheat.</p>
 <p>Marcus listened in his car parked outside the warehouse where he worked the night shift. He turned it up when the call-in host took a question from a woman in Detroit who had immigrated from Ghana thirty-one years ago and still kept a photo of Accra above her bed but sang "The Star-Spangled Banner" every morning with her grandchildren on her knees. "I don't think I chose one or the other," she said. "I think I became both, and both is still American, isn't it?" Marcus turned the volume down to 12, which was not loud or quiet but in between, like most things in his life, and he thought about the test he'd failed again at the DMV, the third time, and how he'd told his wife he passed and she believed him because she wanted to.</p>
-<p>The radio host thanked the woman from Ghana and read the next caller's name — Robert, from Scranton, Pennsylvania. "I'm third generation," Robert said. "My grandfather came from Ireland. My father was born here. I was born here. And I still don't know what that means. I look at people who came last month and they seem more certain than I do." Clara heard her father laugh softly into the microphone. "Maybe certainty isn't what belonging looks like," he said. "Maybe it's just showing up. Day after day. Even when you're not sure."</p>
+        </div>
+        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
+          <p>The radio host thanked the woman from Ghana and read the next caller's name — Robert, from Scranton, Pennsylvania. "I'm third generation," Robert said. "My grandfather came from Ireland. My father was born here. I was born here. And I still don't know what that means. I look at people who came last month and they seem more certain than I do." Clara heard her father laugh softly into the microphone. "Maybe certainty isn't what belonging looks like," he said. "Maybe it's just showing up. Day after day. Even when you're not sure."</p>
 <p>In the morning, Clara would go to school and sit in the cafeteria among the children of immigrants and the children of people whose grandparents had lived in the same three blocks for a hundred years, and she would try to tell the difference between them and find that she could not. She would hear them argue about whether the cafeteria's lasagna was authentic and whether anyone's grandmother's version was more real, and she would think about the radio and the voices she had absorbed through the walls — all those people reaching across distance to say I am here, I am still here, I am trying to understand what that means.</p>
 <p>The dial stayed on WLRB until her father finally clicked it off near midnight. In the silence that followed, Clara heard the house settle, the radiator tick, her mother's footsteps going up. She heard her own name spoken softly, then the bedroom door close. The maples moved in the wind outside her window, their branches scraping the glass like a question that had already been answered so many times it had become part of the house itself, part of the family's bones, part of the long conversation America was always having in the dark, through static and static and static, reaching for something that might never fully arrive.</p>
         </div>
+        </div>
+    <!-- Story page navigation -->
+    <nav class="story-page-nav">
+      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">2</span></span>
+      <div class="story-page-buttons">
+        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
+        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </div>
+    </nav>
 
-    <!-- Footer -->
+    <!-- Bookmark / Share button -->
+    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="bm-label">Share</span>
+      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+    </button>
+
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -311,111 +327,7 @@
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
   
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
 
-  var chunkSize = 3;
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
-
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-    '<div class="story-page-buttons">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
 
 </body>
 </html>

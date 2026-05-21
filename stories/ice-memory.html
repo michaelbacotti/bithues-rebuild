@@ -286,20 +286,36 @@
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-<p>Dr. Yuki Tanaka had been at Vostok Station for eleven months when she heard the signal. She had stopped counting days somewhere around month four, when the darkness settled in and the only thing that felt real was the work — the slow, cold extraction of ice cores from two kilometers below the Antarctic surface, each layer a year, each bubble of trapped air a moment preserved. The ice remembered things.</p>
+        <div class="story-page-segment" data-page="1" id="page-1">
+          <p>Dr. Yuki Tanaka had been at Vostok Station for eleven months when she heard the signal. She had stopped counting days somewhere around month four, when the darkness settled in and the only thing that felt real was the work — the slow, cold extraction of ice cores from two kilometers below the Antarctic surface, each layer a year, each bubble of trapped air a moment preserved. The ice remembered things.</p>
 <p>That was what had drawn her to glaciology in the first place: the idea that the past was not gone but merely frozen, waiting for someone patient enough to read it. She was not supposed to be the one monitoring the array that night. She had traded shifts with Chen, who had a date — some new algorithm-matching service that had found him a woman in Christchurch who liked jazz and alpine climbing and had, according to his phone, an 87% compatibility score. Yuki did not judge. She had not had a date in three years, which was the least of her problems. Her problems were larger than dates. Her problems were the size of a career ended and a reputation in ruins and a name that certain people in certain rooms would not say aloud without a prefix of disappointment. She had been a physicist. A good one. One of the youngest to hold a tenure-track position at the Institute. And then she had published something that was not ready to be published, and the fallout had been — well. It had been the end of that life, and the beginning of this one, in the cold and the dark, listening to ice remember.</p>
 <p>The signal appeared on her screen at 3:12 AM, local time.</p>
 <p>Not unusual in itself — the deep sensors picked up electromagnetic fluctuations constantly, most of them geological, some of them anthropogenic, a few of them genuinely mysterious in ways that graduate students wrote papers about and that conference attendees nodded at without really hearing. But this signal was different. It was regular. It was repeating. And when she ran the first analysis, her hands went still on the keyboard. It was mathematical. Prime numbers, ascending. 2, 3, 5, 7, 11, 13. Not random noise. Not equipment malfunction. A pattern, deliberate and unmistakable, ascending through the ice — not from space, not from the atmosphere, but from below. From beneath the ice. From very far below.</p>
 <p>She ran the analysis four times. She checked the equipment. She checked the calibration. She went outside in the minus-forty cold and looked at the array and came back in and ran it again. The result was the same. A signal from the deep ice, a mathematical sequence that had no natural explanation, and when she decoded it — slowly, carefully, giving herself time to believe what she was seeing — it resolved into something that should not have been possible. English. Perfect English. And the words were simple, almost childlike in their directness: Is anyone there? Yuki sat very still.</p>
-<p>The station hummed around her. The ice moved beneath her feet, imperceptibly, ancient. She thought about her father, who had been a physicist too, who had spent his whole life chasing a unified theory in a notebook he never published, who had died still reaching for something he believed the universe contained if only he could find the right equation. She thought about the signal, and what it meant, and whether meaning was something that could survive two kilometers of ice and eleven months of darkness and the particular quality of loneliness that comes from being the only person in the world who knows something. She recorded her response.</p>
+        </div>
+        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
+          <p>The station hummed around her. The ice moved beneath her feet, imperceptibly, ancient. She thought about her father, who had been a physicist too, who had spent his whole life chasing a unified theory in a notebook he never published, who had died still reaching for something he believed the universe contained if only he could find the right equation. She thought about the signal, and what it meant, and whether meaning was something that could survive two kilometers of ice and eleven months of darkness and the particular quality of loneliness that comes from being the only person in the world who knows something. She recorded her response.</p>
 <p>She spoke into the microphone with a steadiness she did not feel, a steadiness that was mostly the product of training and exhaustion and the knowledge that what she was doing was either the most important thing anyone had ever done or nothing at all. “Yes,” she said. “Someone is here.” She packaged her response in the format the signal had used — prime numbers, mathematical structure, encoded meaning. She sealed it in the ice core sample she had been analyzing, at the depth corresponding to the present day, where it would be preserved for as long as the ice held. Then she sealed the original signal’s container alongside it, and she labeled both with the date and her initials, and she placed them back in the cold storage where they would wait. She walked back to her quarters through the quiet station. In the common room, two graduate students were arguing about satellite coverage. In the kitchen, someone had left a half-eaten sandwich on the counter. The world was going on, as it always does, indifferent to the extraordinary things happening inside it. Yuki did not sleep that night. She sat on the edge of her bunk and thought about the signal, and the response, and the strange loop of causality she had just closed without meaning to. The signal was from below — from the future, in a sense, traveling upward through geological time to arrive at a moment when she would be here to receive it. Her response would travel down, through the ice, to a place and a time she could not imagine. And then she understood. Not the mechanism. That would come later, in the papers and the peer reviews and the Nobel nominations that would arrive like apologies from a universe that had briefly forgotten her. She understood something simpler and more important. The signal was not a question. It was an answer. It was the answer she would spend the rest of her life trying to send — to her father, to herself, to anyone who had ever pointed a receiver at the dark and wondered if anyone was listening. The answer was yes.</p>
 <p>The answer had always been yes. She had just been the one chosen to hear it and to speak it back into the ice. She lay down on her bunk and closed her eyes. The station hummed. The ice remembered. Outside, the Antarctic wind moved across the continent like a breath, carrying snow from places that had not seen it fall in ten thousand years. Yuki slept.</p>
 <p>And in her sleep, she dreamed of her father’s notebook, open on a desk in a room full of light, and in the dream the equation was solved, and the solution was the simplest possible thing — a single word, repeated, in every language that had ever been spoken or would ever be spoken again: Yes. Yes. Yes. The ice kept its vigil. The stars turned. And somewhere in the deep freeze of the world, a question and its answer rested side by side, waiting for the future to arrive.</p>
         </div>
+        </div>
+    <!-- Story page navigation -->
+    <nav class="story-page-nav">
+      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">2</span></span>
+      <div class="story-page-buttons">
+        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
+        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </div>
+    </nav>
 
-    <!-- Footer -->
+    <!-- Bookmark / Share button -->
+    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="bm-label">Share</span>
+      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+    </button>
+
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -312,111 +328,7 @@
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
   
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
 
-  var chunkSize = 3;
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
-
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-    '<div class="story-page-buttons">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
 
 </body>
 </html>
