@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const STORIES_DIR = path.join(__dirname, 'stories');
+const STORIES_DIR = path.join(__dirname, 'story');
 
 const SEGMENTED_CSS = `
 /* ─── Segmented Reader Mode ─────────────────────────── */
