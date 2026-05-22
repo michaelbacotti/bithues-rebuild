@@ -265,6 +265,12 @@ a:hover { color: var(--color-accent-hover); }
 
 .content-meta { font-size: 14px; color: var(--color-text-light); margin-top: 12px; }
 
+.content-hero-image {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 0;
+}
+
 .content-body {
   max-width: var(--max-width);
   margin: 0 auto;
