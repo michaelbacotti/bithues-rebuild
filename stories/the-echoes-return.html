@@ -180,40 +180,7 @@
   .reader-bookmark .bm-label { display: none; }
 }
 
-  
-/* Story Reader Mode */
-#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
-.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
-.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
-.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
-.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
-.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
-.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
-.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
-.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
-.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
-.story-body p{margin:0 0 1.5em}
-.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
-.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
-
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-</style>
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +220,6 @@
 }
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <div id="site-nav"></div>
@@ -269,8 +235,7 @@
     </header>
 
 
-    <div class="story-hero-image"><img src="/stories/images/the-echoes-return.jpg" alt="The Echoes Return" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block;"></div>
-  
+
   <div class="story-ad-section">
     <p class="story-ad-label">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -278,66 +243,46 @@
 
     <!-- Reader Container -->
     <div class="reader-wrap">
-      
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-        <div class="story-page-segment" data-page="1" id="page-1">
-          <p>The house had the smell of her grandmother before it had anything else. Iris noticed it in the hallway, the moment she stepped inside—the faintest trace of lavender and something older beneath it, something that had no name but lived in the walls. The garden had gone wild in the three years since anyone had tended it. The roses had grown into each other and the stone path was half-covered in moss and the fountain at the center had gone dry.</p>
+<p>The house had the smell of her grandmother before it had anything else. Iris noticed it in the hallway, the moment she stepped inside—the faintest trace of lavender and something older beneath it, something that had no name but lived in the walls. The garden had gone wild in the three years since anyone had tended it. The roses had grown into each other and the stone path was half-covered in moss and the fountain at the center had gone dry.</p>
 <p>She stood on the step for a moment, her keys still in her hand, and understood that she had inherited more than a house.</p>
 <p>The attic was at the top of the stairs, past the bedroom that had always been her grandmother's, past the smaller room that had been empty for as long as Iris could remember. The boxes were there as the letter had promised they would be. Twelve of them, stacked against the far wall, each one marked in her grandmother's handwriting with a simple instruction: For Iris — do not open until I am gone. Her grandmother had been dead for six weeks.</p>
 <p>Iris sat down on the floor of the attic and opened the first box.</p>
 <p>The letters were different. That was the first thing she noticed. Different hands, different paper, different years written faintly in the top corners so faded they were hard to read. What they had in common was the addressee.</p>
-        </div>
-        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
-          <p>Every single one was addressed to The Echoes. Not a person. Not a family. The Echoes, as if the words themselves were a place, a location where things that had been lost could be sent and might arrive.</p>
+<p>Every single one was addressed to The Echoes. Not a person. Not a family. The Echoes, as if the words themselves were a place, a location where things that had been lost could be sent and might arrive.</p>
 <p>None of the letters had a return address. None of them had been sent.</p>
 <p>She read the first one. It was written in a careful, old-fashioned hand by someone she did not recognize, a woman, and it asked for forgiveness for something that had happened in 1952. She read the second.</p>
 <p>A man, different hand, different year, asking for forgiveness for what he had said and what he had not said and what he had let happen. She read the third and the fourth and by the fifth she realized that what she was reading was not random. These were answers to questions no one had asked, responses to an exchange that had been happening for decades, and she had been given the other side of it.</p>
 <p>She started to hear things that night. A sound like a music box, very faint, coming from somewhere below her bedroom.</p>
-        </div>
-        <div class="story-page-segment" data-page="3" id="page-3" style="display:none">
-          <p>She went downstairs and checked the kitchen and the front room and the small parlor where her grandmother had sat in the evenings. Nothing. The house was silent. She went back to bed and lay awake for a long time and eventually fell asleep and in the morning the sound was gone and she told herself it was nothing, the house settling, the wind, an explanation that made sense and explained nothing.</p>
+<p>She went downstairs and checked the kitchen and the front room and the small parlor where her grandmother had sat in the evenings. Nothing. The house was silent. She went back to bed and lay awake for a long time and eventually fell asleep and in the morning the sound was gone and she told herself it was nothing, the house settling, the wind, an explanation that made sense and explained nothing.</p>
 <p>The second night she heard footsteps.</p>
 <p>They were in the hall outside her bedroom, slow and deliberate, the footsteps of someone who was not in a hurry. She got out of bed and opened the door and called out her grandmother's name—old habit, reflex—and the footsteps stopped. The hallway was empty. She stood in the doorway for a long time, her hand on the frame, and the silence that came back was different from ordinary silence.</p>
 <p>It was the silence of someone listening.</p>
 <p>By the third night she had read half the boxes. The letters in the second box were older than the first, written in the twenties and thirties, and the handwriting was less certain, the language more formal, as if the writers had been raised to believe that certain things required a specific form before they could be said at all. They were asking for forgiveness for the same things humans always ask forgiveness for—forgotten children, abandoned promises, small cruelties that had grown into large ones, large cruelties that had been dressed up as necessity. And each one was addressed to The Echoes, and none of them had been sent, and Iris understood that her grandmother had kept them not because she had written them but because she had been their guardian, their keeper, the person who made sure they existed even when they could not be delivered.</p>
-        </div>
-        <div class="story-page-segment" data-page="4" id="page-4" style="display:none">
-          <p>The humming started on the fourth night.</p>
+<p>The humming started on the fourth night.</p>
 <p>She woke to the sound of someone humming just below the threshold of full hearing, a melody she almost recognized but could not quite place. It was in the room with her. She could feel it in the air, in the way the air moves when someone is breathing nearby, and she lay very still and listened and the humming became something closer to a voice, not words, not exactly, but the shape of something that wanted to be words, and she understood that her grandmother had been humming this sound in this house for eighty years and the house had learned it and the house was trying to teach it to her.</p>
 <p>Each letter seemed to answer a question no one asked. That was the phrase that came back to her most often as she worked through the boxes.</p>
 <p>She would read a letter and set it down and think: this answers something I have not yet asked. And then, a day or two later, she would find herself in a particular moment and the letter would return to her and she would understand what question it had answered. A conversation happening in two directions at once, one side already written, the other side still being lived.</p>
 <p>She wrote back on the eleventh night. She sat at the small desk in the parlor with a piece of paper and wrote: I don't know who you are.</p>
-        </div>
-        <div class="story-page-segment" data-page="5" id="page-5" style="display:none">
-          <p>I don't know what this means. But I am here, and I am listening. She addressed it to The Echoes, the way the others were addressed, and she left it in the attic on the desk where she had found the boxes, placed carefully in the center, as if it were a reply that needed to be positioned precisely to be found.</p>
+<p>I don't know what this means. But I am here, and I am listening. She addressed it to The Echoes, the way the others were addressed, and she left it in the attic on the desk where she had found the boxes, placed carefully in the center, as if it were a reply that needed to be positioned precisely to be found.</p>
 <p>The response came three days later. She found it in the morning when she went up to the attic, tucked beneath the lid of the fifth box, a single sheet of paper in her grandmother's handwriting.</p>
 <p>It said: You found them. You read them. You wrote back. That is all that was ever required.</p>
 <p>You are one of us now. You have always been one of us. The handwriting was the same as the notes on the boxes, certain and unhurried, and at the bottom there was a date from the previous month, the week before her grandmother died.</p>
 <p>The house is quiet now but not empty. Iris knows this is not metaphor.</p>
-        </div>
-        <div class="story-page-segment" data-page="6" id="page-6" style="display:none">
-          <p>She hears it in the particular quality of the silence in the hallways, in the way the air moves in the rooms that have been closed for years, in the small sounds that come in the evening just before dark. Something is here that was here before her, something that has been listening for a very long time, and now that she has answered it has settled into a different kind of presence, less waiting, more present. She cannot explain it. She does not try.</p>
+<p>She hears it in the particular quality of the silence in the hallways, in the way the air moves in the rooms that have been closed for years, in the small sounds that come in the evening just before dark. Something is here that was here before her, something that has been listening for a very long time, and now that she has answered it has settled into a different kind of presence, less waiting, more present. She cannot explain it. She does not try.</p>
 <p>She walks through the house in the mornings and reads the letters in the order they were written and listens for the humming that comes just before sleep, and the house holds her the way it held her grandmother, and the echo, she understands now, was never lost. It was only waiting to be answered.</p>
         </div>
-        </div>
-    <!-- Story page navigation -->
-    <nav class="story-page-nav">
-      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">6</span></span>
-      <div class="story-page-buttons">
-        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
-        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </nav>
+    </div>
 
-    <!-- Bookmark / Share button -->
-    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="bm-label">Share</span>
-      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-    </button>
-
+    <!-- Footer -->
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -349,8 +294,50 @@
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
-  
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

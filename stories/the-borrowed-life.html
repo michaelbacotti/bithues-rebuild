@@ -180,40 +180,7 @@
   .reader-bookmark .bm-label { display: none; }
 }
 
-  
-/* Story Reader Mode */
-#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
-.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
-.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
-.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
-.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
-.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
-.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
-.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
-.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
-.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
-.story-body p{margin:0 0 1.5em}
-.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
-.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
-
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-</style>
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +220,6 @@
 }
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <div id="site-nav"></div>
@@ -269,8 +235,7 @@
     </header>
 
 
-    <div class="story-hero-image"><img src="/stories/images/the-borrowed-life.jpg" alt="The Borrowed Life" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block;"></div>
-  
+
   <div class="story-ad-section">
     <p class="story-ad-label">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -278,39 +243,27 @@
 
     <!-- Reader Container -->
     <div class="reader-wrap">
-      
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-        <div class="story-page-segment" data-page="1" id="page-1">
-          <p>The debriefing took nine hours. Then there were medical screenings, psych evaluations, a mandatory two-week quarantine during which Commander Yuki Tanaka was not permitted to speak to anyone outside the program. By the time they released her into the California sunlight, the world had moved on without her in ways she was only beginning to understand. The mission had lasted three thousand, six hundred and forty-two days. She knew this number because she had calculated it herself, lying in the cryo-pod during the long dark between stars, her metabolism suppressed to three percent of normal, her dreams running on a loop of her children’s faces as they had been on departure day. Marcus, age four, gap-toothed and laughing. Lena, age four, solemn in her yellow sundress, refusing to smile for the camera because she had decided she didn’t like photographs. Nine years old in his school portrait. Fourteen in his intake form. The mission clock had counted every second, but time, she was learning, was not a number. It was a place you could lose. The facility gave her a phone. She called Danielle from the parking lot, her hands shaking so badly she missed the first three digits. Danielle answered on the fourth ring. Her voice was warm, familiar, a little confused. “Yuki? Is that— are you out?” “I just walked out the door. I’m in the parking lot.” A long pause. When Danielle spoke again, there was something careful in her tone, something measured. “Okay. That’s— that’s great. Are you okay? Do you need someone to come get you?” Yuki looked at the asphalt, at the scrub brush at the edge of the lot, at the sky which was very blue and very far away. “I don’t know,” she said. “I don’t know what I need.” “I’ll come get you,” Danielle said. “Give me forty minutes.”</p>
+<p>The debriefing took nine hours. Then there were medical screenings, psych evaluations, a mandatory two-week quarantine during which Commander Yuki Tanaka was not permitted to speak to anyone outside the program. By the time they released her into the California sunlight, the world had moved on without her in ways she was only beginning to understand. The mission had lasted three thousand, six hundred and forty-two days. She knew this number because she had calculated it herself, lying in the cryo-pod during the long dark between stars, her metabolism suppressed to three percent of normal, her dreams running on a loop of her children’s faces as they had been on departure day. Marcus, age four, gap-toothed and laughing. Lena, age four, solemn in her yellow sundress, refusing to smile for the camera because she had decided she didn’t like photographs. Nine years old in his school portrait. Fourteen in his intake form. The mission clock had counted every second, but time, she was learning, was not a number. It was a place you could lose. The facility gave her a phone. She called Danielle from the parking lot, her hands shaking so badly she missed the first three digits. Danielle answered on the fourth ring. Her voice was warm, familiar, a little confused. “Yuki? Is that— are you out?” “I just walked out the door. I’m in the parking lot.” A long pause. When Danielle spoke again, there was something careful in her tone, something measured. “Okay. That’s— that’s great. Are you okay? Do you need someone to come get you?” Yuki looked at the asphalt, at the scrub brush at the edge of the lot, at the sky which was very blue and very far away. “I don’t know,” she said. “I don’t know what I need.” “I’ll come get you,” Danielle said. “Give me forty minutes.”</p>
 <p>Yuki waited on a bench by the entrance. A woman in a lab coat walked past and glanced at her, did a double-take, kept walking. Yuki wondered what she looked like. She had been told her hair had gone entirely white — a known effect of prolonged cryo exposure, not dangerous, not permanent, probably. Her reflection in the car window showed a woman she almost recognized: leaner than she remembered, older, with dark circles under her eyes and white hair pulled back in a knot. She looked like someone from a story about hardship. She looked like a stranger. Danielle’s car was silver, not the red Honda they’d had when Yuki left. New car. Danielle had always talked about getting a new car. The kids had been obsessed with the color red. Yuki sat in the passenger seat and didn’t know where to put her hands. “You look good,” Danielle said, and didn’t look at her. She was navigating the GPS, pulling out of the lot, threading onto the highway. “Tired. But good.” “Thanks.” Silence. The radio was on, something Yuki didn’t recognize, a woman’s voice singing about highways and forgetting. Danielle’s hands were steady on the wheel. She’d cut her hair short — it suited her, Yuki thought, though the thought felt intrusive, like noticing a stranger’s perfume. “The kids?” Yuki asked. “They’re at my mother’s. I thought — I didn’t know what you’d need, after. I didn’t know if you’d want space or—” “I want to see them.” “Okay.” Danielle’s jaw tightened almost imperceptibly. “We’ll go to my mom’s. But Yuki — you should know. They’re fourteen now. It’s been a long time. They’re going to need — they’re going to have feelings about this that are complicated. I need you to be ready for that.” “I know.” “You don’t, though.” Danielle’s voice was quiet, not angry, something worse than angry. “You really don’t. But okay.” They drove through streets Yuki didn’t recognize. New buildings. New restaurants. A coffee shop where a mural had been painted on the side wall — colors so bright they looked borrowed from another decade. The world had continued. Of course it had. But she hadn’t prepared for the specific texture of its continuation: the way things looked exactly the same except entirely different, the way familiar streets had grown strange with ten years of accumulation. Danielle’s mother’s house looked the same. The same wind chimes on the porch, the same lemon tree in the yard. Yuki had planted that tree with Marcus when he was two, holding him up so he could pat the soil down around the sapling. She tried to remember what it had felt like to hold him — the actual weight of him, the warmth — and found the memory thin, worn smooth like a stone at the bottom of a river. The children were in the backyard. Yuki saw them through the glass door: two tall figures bent over something on the picnic table. Marcus had Danielle’s dark hair and his father’s easy posture. Lena was all angles, gangly, a book open beside her that she wasn’t reading. They looked up when the door opened and Yuki saw, with a pain that had no name, the moment of recognition followed immediately by something guarded, something braced. “Hey,” Marcus said. He stood up. He was taller than she was now. His voice had changed — had changed years ago, she understood, had been changing this whole time while she dreamed in the dark. “You’re, um. You’re back.” “I’m back.” Lena didn’t stand. She looked at Yuki the way she might look at a documentary about a place she would never visit — interested, detached, faintly pitying. “Hi, Mom,” she said. The word sounded strange in her mouth, a specimen under glass. “You look different.” “I know,” Yuki said. “I know I do.”</p>
 <p>The afternoon was a series of careful movements. Questions Yuki didn’t know how to answer. The kids had been raised by Danielle and, before that, by Danielle’s mother during the worst years, and they had the mannerisms to prove it — references Yuki didn’t understand, jokes she wasn’t part of, a shorthand for the world that had been built without her. Lena showed her a video on her phone. “This is our band,” she said, and played something with aggressive guitar and a singer yelling about nothing. “We’re pretty good. We’re playing a showcase next month.” Lena had a band. Lena had been in a band for how long? How had Yuki not known? She had known things, in the abstract — mission control sent her family updates quarterly, clinical summaries of milestones and setbacks — but knowing something abstractly and knowing it the way you know your own hand were different kinds of knowledge, separated by an ocean she was only now seeing the true size of.</p>
 <p>That night, Danielle drove her to the apartment that was waiting for her — temporary housing, the program called it, just until she was stabilized. The apartment was clean and beige and contained exactly nothing that belonged to her. She stood in the doorway and felt the absence like weather, like pressure. “You can stay at the house,” Danielle said from the hallway. “The kids would — I think they’d like that. I think it would be good. If you wanted.” “Is that what you want?” Danielle leaned against the doorframe. She was forty-six years old. There were lines around her eyes that hadn’t been there before, and a way she held her shoulders that spoke of a weight carried too long. “I don’t know what I want anymore, Yuki. I used to know. I used to have a five-year plan and a retirement account and two kids who believed in the tooth fairy. Now I have two teenagers and a job I don’t like and a house with a mortgage and I haven’t known what I want for so long I think I forgot how to want things.” She paused. “I waited for you. I need you to know that. I waited for two years, and then I stopped waiting, and then I spent a year being angry that I had to stop, and then I spent a year being sad about being angry, and then I just — I kept living. That’s what I did. I kept living, and the living got heavy, and I put it down sometimes, and then I picked it up again.” “Danielle—” “You don’t owe me an apology. You did your job. You did what you were supposed to do. I’m not angry anymore. I’m just — I’m tired, Yuki. And you’re home now, and I don’t know what that means for us, and I think you don’t either.” Yuki wanted to say something true. She wanted to say: I thought about you every day. I dreamed about you and the kids and sometimes the dreams were the only thing keeping me sane in the dark. I counted the days by your birthdays — I made myself remember every single one, held each one like a coin I was hoarding. I love you in a way that has not changed, not once, not in three thousand six hundred and forty-two days. But she also knew that none of this was enough. That love, untended, became something else. That time did not preserve — it transformed, it eroded, it built new things in the spaces where the old things used to be. “I don’t know what it means either,” she said. “But I want to find out. If you’ll let me.” Danielle nodded slowly. She reached out and touched Yuki’s arm — briefly, a cautious gesture, like greeting an animal that might startle. “Get some sleep,” she said. “We’ll figure it out tomorrow.”</p>
 <p>The apartment was silent. Yuki sat on the edge of the bed and looked at her hands. They were the same hands she remembered — the scar on the left thumb from a kitchen knife, the slightly crooked pinky on the right — but they felt borrowed, like props from someone else’s life. She thought about the cryo-pod. The way it had felt to be suspended, metabolically paused, a creature held between moments. She had thought of it as a kind of magic. A way to step outside of time, to cheat it. But time was not cheated. Time was only moved. And now it had all come due at once. She lay down on the unfamiliar bed and closed her eyes and did not sleep.</p>
-        </div>
-        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
-          <p>In the weeks that followed, she learned the geography of her own absence. She learned that Marcus had stopped playing piano and started coding, had won a regional competition for an app that helped elderly people manage their prescriptions. She learned that Lena had been hospitalized once, at twelve, for severe anxiety, and that Danielle had slept in a chair beside her bed for three nights and that Yuki had not been there, had been nowhere, had been suspended in the cold dark while her daughter learned what it meant to be afraid. She learned that Danielle had taken up running and completed two marathons and that her times were listed in a frame on the wall that hadn’t been there before. She learned that the oak tree in the backyard had to be cut down after a storm and that there was a new lemon tree planted in its place, smaller, and that Marcus had planted it himself, at age eleven, and cried when he did it because it reminded him of the one before. She learned these things in pieces, in sideways conversations, in the silences between what people said and what they meant. She learned that her mother-in-law had once sat Danielle down and said, “You can’t wait forever, sweetheart,” and that Danielle had cried for an hour in the bathroom and come out and made dinner and not left. She learned that Marcus had asked, once, if she was ever coming back, and that Danielle had said yes, of course, and that Marcus had stopped asking after the third year.</p>
+<p>In the weeks that followed, she learned the geography of her own absence. She learned that Marcus had stopped playing piano and started coding, had won a regional competition for an app that helped elderly people manage their prescriptions. She learned that Lena had been hospitalized once, at twelve, for severe anxiety, and that Danielle had slept in a chair beside her bed for three nights and that Yuki had not been there, had been nowhere, had been suspended in the cold dark while her daughter learned what it meant to be afraid. She learned that Danielle had taken up running and completed two marathons and that her times were listed in a frame on the wall that hadn’t been there before. She learned that the oak tree in the backyard had to be cut down after a storm and that there was a new lemon tree planted in its place, smaller, and that Marcus had planted it himself, at age eleven, and cried when he did it because it reminded him of the one before. She learned these things in pieces, in sideways conversations, in the silences between what people said and what they meant. She learned that her mother-in-law had once sat Danielle down and said, “You can’t wait forever, sweetheart,” and that Danielle had cried for an hour in the bathroom and come out and made dinner and not left. She learned that Marcus had asked, once, if she was ever coming back, and that Danielle had said yes, of course, and that Marcus had stopped asking after the third year.</p>
 <p>The re-integration counselor they assigned her was a patient woman named Priya who had worked with returning astronauts for twenty years. “Time doesn’t just pass,” she said during their third session. “It accumulates. And when you’re suspended in cryo, you’re not accumulating anything. You’re static. You’re a photograph. And then you come back and the world has been moving, and moving fast, and you have to figure out how to be a moving thing again in a world that has already moved on without you.” “How long does that take?” Yuki asked. “There’s no data on that. Most astronauts come back after months, not years. You have a unique case.” Priya smiled gently. “You also have something most people in your situation don’t. You have people who love you, even if they don’t know exactly how to do that right now. You have a wife who sounds like she’s been carrying a torch she didn’t want to admit she still had. You have children who are angry and hurt and also, from what I hear, curious about you. That curiosity is a gift, Yuki. Don’t waste it.” She didn’t waste it. Or she tried not to. She started small: breakfasts with Marcus, where they talked about code and music and the things he’d built, careful to stay on the surface because the surface was where he was comfortable. Afternoons with Lena, who was harder, who had her mother’s sharp edges and none of her mother’s patience for sentiment. Lena showed her the band again, and this time Yuki listened — really listened, not the way you listen to something familiar, but the way you listen to someone telling you who they are — and said, “The bass line in the second song is really good. Who’s that?” And Lena looked at her with something almost like surprise, and said, “That’s me. I wrote it. I play bass.” And Yuki said, “You’re talented. I mean that.” And Lena nodded, and didn’t say anything, but something in her posture loosened, just slightly. She went back to Danielle’s house on a Sunday. They sat on the back porch and watched the new lemon tree, young and precarious in the evening light. The old one had been bigger, had been a framework for childhoods, and this one was just a tree — young, unfinished, possible. “I planted this one because the other one was gone,” Marcus said. He was sitting on the porch steps, working on something on his laptop. He said it without looking up. “I wanted something to grow. I wanted to know I could make something grow.” Yuki looked at Danielle. Danielle was looking at the tree. “It’ll get bigger,” Yuki said to Marcus. “Give it time.” “That’s what you always say.” Marcus typed something, frowned, deleted it. “Time. Give it time. Like it’s a thing you can just — like it’s easy.” “It’s not easy. Nothing about it is easy.” “Then why do you say it?” She thought about this for a long moment. The lemon tree moved in the evening breeze. Somewhere inside, Lena was playing something on her bass, the notes faint and tentative through the screen door. “Because it’s the only thing I know for sure,” Yuki said. “That time passes. That things change. That if you keep showing up, something eventually shifts. I don’t know if that’s comforting or not. I think sometimes it’s just true.” Marcus closed his laptop. He looked at her — really looked, the way he hadn’t yet, with something searching and unguarded. “I used to be so mad at you,” he said. “I was so mad I didn’t even know what I was mad about. It was just — this thing. This presence that was supposed to be here and wasn’t. And then it turned into this shape inside me that I carried around and I didn’t know what to do with it.” “I’m sorry,” Yuki said, and the words felt both enormous and insufficient, a door too small for the room it was supposed to open. “I’m sorry I wasn’t here. I’m sorry that you had to carry that.” “Yeah.” He looked at the tree. “Me too.” Danielle stood up. She walked over to where Yuki was sitting and sat down beside her, close enough that their shoulders touched. She didn’t say anything. She didn’t have to. The weight of her beside her, the warmth, the specific reality of Danielle’s body after ten years and also no time at all — it was enough. It was not a resolution. It was not a forgiveness. It was a beginning, which is to say it was a door left open in a house where all the other doors had been closed for years.</p>
 <p>The stars came out, one by one, the way they always did. Yuki looked up at them and felt, for the first time, like she was standing on the right planet. Not because the world had become familiar again, or because the distance between her and her family had closed. But because she was here, now, present, accumulating. A moving thing in a world that kept moving, learning the weight of her own life for the first time. The lemon tree grew another inch that summer. Nobody kept track but everyone noticed.</p>
         </div>
-        </div>
-    <!-- Story page navigation -->
-    <nav class="story-page-nav">
-      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">2</span></span>
-      <div class="story-page-buttons">
-        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
-        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </nav>
+    </div>
 
-    <!-- Bookmark / Share button -->
-    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="bm-label">Share</span>
-      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-    </button>
-
+    <!-- Footer -->
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -322,8 +275,50 @@
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
-  
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

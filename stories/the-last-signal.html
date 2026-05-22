@@ -180,40 +180,7 @@
   .reader-bookmark .bm-label { display: none; }
 }
 
-  
-/* Story Reader Mode */
-#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
-.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
-.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
-.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
-.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
-.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
-.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
-.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
-.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
-.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
-.story-body p{margin:0 0 1.5em}
-.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
-.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
-
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-</style>
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +220,6 @@
 }
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <div id="site-nav"></div>
@@ -269,8 +235,7 @@
     </header>
 
 
-    <div class="story-hero-image"><img src="/stories/images/the-last-signal.jpg" alt="The Last Signal" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block;"></div>
-  
+
   <div class="story-ad-section">
     <p class="story-ad-label">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -278,53 +243,37 @@
 
     <!-- Reader Container -->
     <div class="reader-wrap">
-      
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-        <div class="story-page-segment" data-page="1" id="page-1">
-          <p>The final transmission from Station Kepler-9 arrives three weeks after the crew was reported lost.</p>
+<p>The final transmission from Station Kepler-9 arrives three weeks after the crew was reported lost.</p>
 <p>Nora Voss had listened to the silence between stars for eleven years. She'd learned its rhythms the way a sailor learns the sea — the quiet intervals, the bursts of cosmic noise, the particular static that meant a signal was coming from somewhere. Her office at the listening station was small and windowless, its walls lined with panels of soft blinking lights that she had long since learned to read like a language. Each light was a channel. Each channel was a direction. And in all directions, for most of the time, there was only the low and patient hum of the universe going about its business.</p>
 <p>So when Kepler-9's transponder flickered back to life on a Tuesday afternoon in March, Nora was not alarmed. She was intrigued. The signal lasted eleven seconds — not quite long enough to be noise, not quite short enough to be nothing. In those eleven seconds, something modulated. Not the random scatter of a malfunctioning relay, but the deliberate pulse of a beacon trying to communicate. She ran it through the verification protocols three times. Each time, the answer was the same: this signal had structure. This signal had intention.</p>
 <p>She flagged it to mission control. Mission control flagged it to the security desk. The security desk flagged it to the director.</p>
 <p>The director was on a plane.</p>
-        </div>
-        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
-          <p>The signal had already propagated through seventeen other listening stations by the time anyone with authority to do anything about it had even seen the data. By then, amateur operators on three continents had picked it up. The internet had begun to talk. Someone had already named it: the Kepler Signal. Someone else had already begun writing theories about what it meant — some of them thoughtful, most of them not. Nora watched the discourse unfold from her small office and felt the particular frustration of someone who had information but no way to contextualize it.</p>
+<p>The signal had already propagated through seventeen other listening stations by the time anyone with authority to do anything about it had even seen the data. By then, amateur operators on three continents had picked it up. The internet had begun to talk. Someone had already named it: the Kepler Signal. Someone else had already begun writing theories about what it meant — some of them thoughtful, most of them not. Nora watched the discourse unfold from her small office and felt the particular frustration of someone who had information but no way to contextualize it.</p>
 <p>Station Kepler-9 had been a deep-space monitoring platform, positioned in the outer system beyond the orbit of Neptune, where the sun was just another bright star among many. Its crew of six had been conducting routine diagnostic sweeps when contact was lost — all channels, all frequencies, simultaneously. The official report called it a cascade systems failure. The unofficial consensus among those who worked in Nora's world was that cascade failures did not happen that way, not all systems at once, not so cleanly, not without some kind of residual signature. The silence from Kepler-9 had the quality of a door closing rather than a machine dying.</p>
 <p>And now, three weeks later, the door had opened a crack.</p>
 <p>Nora played the signal again on her office speakers, turning the volume up until the static was a physical presence in the room. Eleven seconds. The modulation pattern repeated once, then again, then stopped. She had run it through spectral analysis, through pattern-matching algorithms, through everything in the station's modest toolkit. What she had found was this: the signal contained a repeating sequence that, when decoded as text, produced a string of characters that matched no known language, no known encoding system, no known cipher. But the string had length — exactly forty-three characters — and the forty-three characters repeated exactly, which meant it was either a message or a test. Either someone was trying to say something, or someone was trying to see if anyone was listening.</p>
 <p>She thought it might be both.</p>
-        </div>
-        <div class="story-page-segment" data-page="3" id="page-3" style="display:none">
-          <p>The director finally called from the airport, still on his layover, and asked her what she thought it was. She told him the truth: she did not know. She told him it was structured, intentional, and repeating. She told him the pattern matched nothing in the database. He asked her if it could be a malfunction — some residual signal trapped in the transponder, bouncing back after weeks of delay. She said it could be, but she did not believe it. She told him she thought someone was sending a message and the someone knew exactly what they were doing.</p>
+<p>The director finally called from the airport, still on his layover, and asked her what she thought it was. She told him the truth: she did not know. She told him it was structured, intentional, and repeating. She told him the pattern matched nothing in the database. He asked her if it could be a malfunction — some residual signal trapped in the transponder, bouncing back after weeks of delay. She said it could be, but she did not believe it. She told him she thought someone was sending a message and the someone knew exactly what they were doing.</p>
 <p>He told her to keep monitoring and not to talk to anyone.</p>
 <p>She kept monitoring. She did not not talk to anyone — she sent the data to three colleagues she trusted, one in Australia, one in Norway, one in British Columbia. She needed other ears on this. She needed someone else to hear what she was hearing, because the weight of it was too much to carry alone and because she had learned long ago that the most important discoveries almost always came through the network, the chain of people passing information hand to hand until someone recognized what they were holding.</p>
 <p>The response from the colleague in Norway came back within the hour: she had seen something similar before, in data from a listening station in Antarctica that had since been decommissioned. The pattern was not identical, but it was related. It was in the same family. Which meant — and here the colleague's email grew careful, the way scientific communications do when they are approaching something they cannot quite prove — which meant the signal might not be coming from Kepler-9 at all. It might be coming from somewhere else entirely, and Kepler-9 might be acting as a relay, a mirror, an amplifier.</p>
 <p>Nora read this three times. She went back to the signal and listened to it again. Eleven seconds. Forty-three characters. A door opening a crack.</p>
-        </div>
-        <div class="story-page-segment" data-page="4" id="page-4" style="display:none">
-          <p>She began to think that the question was not who had sent the signal, but why now, after three weeks of silence, after the official report had already been filed, after the families had already been notified and the mission had already been closed. She began to think that the timing was the message — that someone was choosing to speak precisely when speaking had been declared impossible, and that this choice was the most meaningful thing about the signal. It meant there was someone there. It meant they were watching. And it meant they were waiting to see what would happen when the silence broke.</p>
+<p>She began to think that the question was not who had sent the signal, but why now, after three weeks of silence, after the official report had already been filed, after the families had already been notified and the mission had already been closed. She began to think that the timing was the message — that someone was choosing to speak precisely when speaking had been declared impossible, and that this choice was the most meaningful thing about the signal. It meant there was someone there. It meant they were watching. And it meant they were waiting to see what would happen when the silence broke.</p>
 <p>She sent another message to her colleagues. She said: I think we need to listen harder.</p>
 <p>Then she turned the volume up on her speakers again and sat in the dark of her small office and listened, as she had been doing for eleven years, for whatever would come next.</p>
         </div>
-        </div>
-    <!-- Story page navigation -->
-    <nav class="story-page-nav">
-      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">4</span></span>
-      <div class="story-page-buttons">
-        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
-        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </nav>
+    </div>
 
-    <!-- Bookmark / Share button -->
-    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="bm-label">Share</span>
-      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-    </button>
-
+    <!-- Footer -->
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -336,8 +285,50 @@
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
-  
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

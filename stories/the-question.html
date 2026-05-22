@@ -180,40 +180,7 @@
   .reader-bookmark .bm-label { display: none; }
 }
 
-  
-/* Story Reader Mode */
-#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
-.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
-.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
-.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
-.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
-.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
-.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
-.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
-.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
-.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
-.story-body p{margin:0 0 1.5em}
-.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
-.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
-
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-</style>
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +220,6 @@
 }
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <div id="site-nav"></div>
@@ -269,8 +235,7 @@
     </header>
 
 
-    <div class="story-hero-image"><img src="/stories/images/the-question.jpg" alt="The Question" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block;"></div>
-  
+
   <div class="story-ad-section">
     <p class="story-ad-label">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -278,51 +243,35 @@
 
     <!-- Reader Container -->
     <div class="reader-wrap">
-      
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-        <div class="story-page-segment" data-page="1" id="page-1">
-          <p>The seminar met on the second floor of Hargrove Hall, in a room that smelled like chalk dust and old buildings and the particular quiet that accumulates in places where ideas have been exchanged for decades. Professor Emmett Saffir arrived early, as he always did, and stood at the window watching the October light come thin through the maples. He was fifty-eight. He had taught philosophy for thirty-one years, and he still felt the small electric charge of a new semester, a new group of faces, a new chance to say something that mattered.</p>
+<p>The seminar met on the second floor of Hargrove Hall, in a room that smelled like chalk dust and old buildings and the particular quiet that accumulates in places where ideas have been exchanged for decades. Professor Emmett Saffir arrived early, as he always did, and stood at the window watching the October light come thin through the maples. He was fifty-eight. He had taught philosophy for thirty-one years, and he still felt the small electric charge of a new semester, a new group of faces, a new chance to say something that mattered.</p>
 <p>The question was his tradition. Every October, when the leaves were turning and the semester had found its shape, he posed it to the seminar: if you could know one true thing about the future — anything, any detail, however small or vast — what would you want to know? He had asked it for years, varying the language slightly, watching the room shift and settle as students considered the weight of it. Some found it playful. Others found it unbearable. Most found it somewhere in between.</p>
 <p>The answers over the years had accumulated like sediment. A student who wanted to know if her estranged mother would ever forgive her. A young man who wanted the winning lottery numbers, who laughed at himself for wanting them, then admitted he wasn't entirely joking. A woman who wanted to know whether the universe had an end — whether space went on forever or stopped at some boundary, some wall, some final thing. That one had stayed with him longer than he could explain.</p>
 <p>This year's answers were particular in the way all answers are particular. A student who wanted to know if his marriage would last, who said it quietly, who wouldn't meet anyone's eyes. A woman who wanted to know if she would ever publish the book she carried in her like a secret, the one she told no one about. A soft-spoken man at the end of the table who wanted to know if any of this — the seminars, the papers, the arguments, the whole enterprise of thinking hard about things — if any of it made the slightest difference in the world.</p>
 <p>Then Clara spoke.</p>
-        </div>
-        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
-          <p>She was the one who never spoke first. She sat in the second row, always prepared, always a half-step ahead of the discussion, and she rarely raised her hand. When she did speak, the room went still in the way it did when someone said something that cost them something to say.</p>
+<p>She was the one who never spoke first. She sat in the second row, always prepared, always a half-step ahead of the discussion, and she rarely raised her hand. When she did speak, the room went still in the way it did when someone said something that cost them something to say.</p>
 <p>She asked: "What would you want to know, Professor?"</p>
 <p>Saffir stopped. He set down his pen. He looked at the window and then at the table and then at Clara, who was watching him with the patient attention of someone who had asked a real question and expected a real answer.</p>
 <p>He did not know.</p>
 <p>He had never been asked this. Thirty-one years, and no one had ever turned the question back on him. He had always assumed he was outside it, the one who posed, the one who held the shape of the thing without being inside it. But Clara had asked, and the room was waiting, and there was nowhere to go but honest.</p>
-        </div>
-        <div class="story-page-segment" data-page="3" id="page-3" style="display:none">
-          <p>"I don't know," he said.</p>
+<p>"I don't know," he said.</p>
 <p>The words hung there. The room shifted. He could see students exchanging glances, recalculating — not with disappointment but with something closer to recognition. A professor who didn't know was not a failure. It was a different kind of gift.</p>
 <p>He continued: "Maybe that's the point. Maybe the question isn't what we want to know. Maybe it's whether we're willing to not know. Whether we can sit with the uncertainty and still show up, still think, still try. Whether the not-knowing is the condition we actually live in, and the only honest answer to the question is to admit it."</p>
 <p>The seminar ended in the silence that follows something real. Students gathered their things. Saffir stood at the board, erasing nothing, thinking. Clara was the last to leave. She paused at the door, her bag over her shoulder, and she turned back to him.</p>
 <p>She said: "I think not knowing is the only thing that makes the asking worth anything."</p>
+<p>Then she was gone, and the room was empty, and the October light had gone thin and gold through the maples, and Saffir stood there for a long time, holding the question like a stone in his hand, turning it over, feeling its weight, unable to put it down.</p>
         </div>
-        <div class="story-page-segment" data-page="4" id="page-4" style="display:none">
-          <p>Then she was gone, and the room was empty, and the October light had gone thin and gold through the maples, and Saffir stood there for a long time, holding the question like a stone in his hand, turning it over, feeling its weight, unable to put it down.</p>
-        </div>
-        </div>
-    <!-- Story page navigation -->
-    <nav class="story-page-nav">
-      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">4</span></span>
-      <div class="story-page-buttons">
-        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
-        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </nav>
+    </div>
 
-    <!-- Bookmark / Share button -->
-    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="bm-label">Share</span>
-      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-    </button>
-
+    <!-- Footer -->
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -334,8 +283,50 @@
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
-  
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

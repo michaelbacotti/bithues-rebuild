@@ -180,40 +180,7 @@
   .reader-bookmark .bm-label { display: none; }
 }
 
-  
-/* Story Reader Mode */
-#story-progress-bar{position:fixed;top:60px;left:0;height:3px;background:var(--color-accent);width:0%;z-index:99;transition:width .1s}
-.story-header{text-align:center;padding:48px 24px 32px;max-width:680px;margin:0 auto}
-.story-header .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid #5a7a65;color:#5a7a65;margin-bottom:16px}
-.story-title{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--color-text);line-height:1.2;margin-bottom:12px}
-.story-byline{font-size:15px;color:var(--color-text-muted);margin-bottom:0}
-.story-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin:24px 0;display:block}
-.story-ad-block{max-width:680px;margin:0 auto 40px;padding:0 24px;text-align:center}
-.story-ad-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-light);margin-bottom:8px}
-.story-reader{max-width:680px;margin:0 auto;padding:0 24px 80px;position:relative}
-.story-body{font-family:var(--font-serif);font-size:18px;line-height:1.85;color:var(--color-text)}
-.story-body p{margin:0 0 1.5em}
-.story-bookmark{position:absolute;top:0;right:24px;background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px;cursor:pointer;color:var(--color-text-muted);transition:all .2s;display:flex;align-items:center;justify-content:center}
-.story-bookmark:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.bookmark-toast{position:absolute;top:0;right:56px;background:var(--color-text);color:var(--color-bg);font-size:12px;font-family:var(--font-sans);padding:6px 12px;border-radius:4px;display:none;opacity:0;transition:opacity .2s}
-
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-</style>
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +220,6 @@
 }
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <div id="site-nav"></div>
@@ -269,8 +235,7 @@
     </header>
 
 
-    <div class="story-hero-image"><img src="/stories/images/the-forgotten-minute.jpg" alt="The Forgotten Minute" style="width:100%;max-height:400px;object-fit:cover;border-radius:4px;display:block;"></div>
-  
+
   <div class="story-ad-section">
     <p class="story-ad-label">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -278,81 +243,57 @@
 
     <!-- Reader Container -->
     <div class="reader-wrap">
-      
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
       <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       <div id="reader-container">
         <div class="reader-body">
-        <div class="story-page-segment" data-page="1" id="page-1">
-          <p>He woke at 6:47 and knew, immediately, that something was wrong. Not alarming — not the sharp wrongness of a nightmare or the dull wrongness of illness. A quieter wrongness. The wrongness of a sentence with a word missing, of a room where the furniture has been rearranged by a few inches.</p>
+<p>He woke at 6:47 and knew, immediately, that something was wrong. Not alarming — not the sharp wrongness of a nightmare or the dull wrongness of illness. A quieter wrongness. The wrongness of a sentence with a word missing, of a room where the furniture has been rearranged by a few inches.</p>
 <p>He lay still and listened to the refrigerator hum and the distant sound of a garbage truck and his own breathing, which was normal, and he could not identify what was different. He got up. He walked to the kitchen. On the counter beside the sink was a coffee cup, ceramic, blue, his favorite, and it was half-full of coffee that had gone cold.</p>
 <p>He stared at it for a moment. He did not remember pouring it. He did not remember making it. He made coffee every morning in a ritual that had not changed in twelve years — kettle, French press, two minutes of waiting — and he could not recall, try as he might, making this cup.</p>
 <p>But there it was. Half-full. Cold. Evidence.</p>
 <p>He drank it anyway. It tasted like cold coffee and the particular staleness of something that had been sitting too long. He poured the rest down the sink and stood at the window and looked at the backyard, where the oak tree was dropping its leaves in the windless morning, and he thought: I am forgetting things now. I am fifty-three and I am forgetting things.</p>
-        </div>
-        <div class="story-page-segment" data-page="2" id="page-2" style="display:none">
-          <p>The phone was on the nightstand. He picked it up to check the time — 7:04 — and noticed the call log. The last entry was 6:48. Incoming.</p>
+<p>The phone was on the nightstand. He picked it up to check the time — 7:04 — and noticed the call log. The last entry was 6:48. Incoming.</p>
 <p>Duration: one minute. He did not recognize the number. He did not remember answering the phone. He did not remember making a call, though the log clearly showed that at 6:48, someone had called him and he had spoken to them for sixty seconds, and he had no memory of it whatsoever.</p>
 <p>He sat down on the edge of the bed. He pressed the call-back option. The phone rang four times and a woman's voice answered — not a recorded message, a real voice, female, older, with an accent he couldn't place. "Hello?" "Hi," he said.</p>
 <p>"I'm sorry to call you back — I just noticed a call on my log that I don't remember making. Did you call me this morning?" A pause. "I don't think so. What number are you returning?" He read his own number back to her.</p>
 <p>She laughed — a small, uncertain sound. "That's not my number. I don't know who you are. But I hope you're having a good morning." She hung up.</p>
-        </div>
-        <div class="story-page-segment" data-page="3" id="page-3" style="display:none">
-          <p>He sat with the phone in his hand and felt the wrongness sharpen into something he could name. Not a forgotten thing. An absent thing. A minute of his life that had not been forgotten but excised — removed from the record as if it had never existed, leaving only the edges, the seams.</p>
+<p>He sat with the phone in his hand and felt the wrongness sharpen into something he could name. Not a forgotten thing. An absent thing. A minute of his life that had not been forgotten but excised — removed from the record as if it had never existed, leaving only the edges, the seams.</p>
 <p>He showered. He dressed. He left for work at his usual time and took his usual route and listened to the radio and did not hear any of it because he was counting the minutes, tracking the shape of the morning, waiting for something to slip again. The minute had gone at 6:48.</p>
 <p>He had woken at 6:47. Between 6:47 and 6:48, something had happened — or not happened — or happened in a direction he could not follow. At the office, he sat at his desk and opened his email and found nothing unusual. Twenty-three new messages.</p>
 <p>Routine. He scrolled through them without reading and checked his calendar — a meeting at ten, a conference call at two, a dinner with clients at seven. All of it ordinary. All of it as it should be.</p>
 <p>He could find no evidence of the missing minute anywhere except in the places it should not have been: the coffee cup, the call log, the ragged edge of his own memory. His colleague Diane came by his desk around nine-thirty. She leaned against the doorframe and said, "You okay? You look like you didn't sleep." "I slept.</p>
-        </div>
-        <div class="story-page-segment" data-page="4" id="page-4" style="display:none">
-          <p>I just — I lost a minute this morning. This morning, I mean. I lost sixty seconds somewhere." Diane raised an eyebrow. "Lost how?" "I don't know.</p>
+<p>I just — I lost a minute this morning. This morning, I mean. I lost sixty seconds somewhere." Diane raised an eyebrow. "Lost how?" "I don't know.</p>
 <p>I woke up and there was coffee I didn't pour and a call I didn't make and I can't account for the time between — I mean, I can account for it, I was here, I was awake, but I can't remember it. It's just gone." "Like a blackout?" "No. A blackout is when you forget. This is different.</p>
 <p>This is when something didn't happen. When the minute was — I don't know. Removed." Diane studied him for a moment. She had a way of looking at people that was both kind and appraising, as though she were simultaneously trying to help and trying to decide if he needed professional help.</p>
 <p>"Have you talked to a doctor?" "About losing one minute?" "About losing any amount of time. Memory blanks can be a symptom of lots of things. Stress, sleep deprivation, something neurological. Even if it is just one minute." She paused.</p>
 <p>"Especially if it's just one minute. A minute is a weird amount of time to lose." He had not thought of it that way. He had been so focused on the strangeness of the loss that he had not considered its precision. One minute.</p>
-        </div>
-        <div class="story-page-segment" data-page="5" id="page-5" style="display:none">
-          <p>Not an hour, not a morning, not a general fog — a specific, demarcated absence, as though someone had taken scissors to the film of his life and cut out a single frame. The day continued. He attended the meeting and made notes he would not remember making. He took the conference call and contributed to a conversation he would not recall initiating.</p>
+<p>Not an hour, not a morning, not a general fog — a specific, demarcated absence, as though someone had taken scissors to the film of his life and cut out a single frame. The day continued. He attended the meeting and made notes he would not remember making. He took the conference call and contributed to a conversation he would not recall initiating.</p>
 <p>He ate lunch at his desk and read the same paragraph of an article three times without understanding it. And through all of it, the question persisted: what had happened in the minute? What had he done, or said, or thought, or failed to do, that was so significant it needed to be removed? He left the office at six.</p>
 <p>He took the same route home. He cooked dinner — pasta, garlic bread, a glass of wine — and sat at the kitchen table and tried to reconstruct the morning. 6:47, waking. 6:48, the call log showed.</p>
 <p>6:49, presumably, waking had continued, the day had begun in earnest. Between those two points — between the moment of waking and the moment of the call — there should have been movement, thought, breath. But there was nothing. A gap.</p>
 <p>A seam. He washed the dishes. He watched the news. He went to bed at his usual time and set the alarm for 6:30 and lay in the dark and listened to the house settle and the refrigerator hum and the particular silence of a night when nothing is happening and everything is.</p>
-        </div>
-        <div class="story-page-segment" data-page="6" id="page-6" style="display:none">
-          <p>He woke at 6:30 and lay very still. The alarm had not gone off yet. He had woken on his own, three minutes early, in the gray light before dawn. He lay and watched the ceiling and waited.</p>
+<p>He woke at 6:30 and lay very still. The alarm had not gone off yet. He had woken on his own, three minutes early, in the gray light before dawn. He lay and watched the ceiling and waited.</p>
 <p>6:31. 6:32. 6:33. The alarm went off at 6:30 and he had woken at 6:30 and the three minutes he had been awake before the alarm were still there, intact, remembered — the cool side of the pillow, the weight of the blanket, the sound of a bird outside beginning its morning song.</p>
 <p>No gap. No seam. Just the ordinary continuity of being conscious, minute by minute, the way consciousness was supposed to work. He got up.</p>
 <p>He made coffee — this time he watched himself do it, watched the kettle, watched the steam, watched the pour, watched the minute hand of the clock on the wall move from 6:47 to 6:48 and beyond. He was there. He was present. The minute passed and he was in it, fully and completely, with nothing missing and nothing removed.</p>
 <p>He drank his coffee standing at the window. The oak tree had dropped more leaves overnight. The garbage truck was making its rounds. The world was ordinary and continuous and present and he was in it, he was here, he had not been extracted from it.</p>
-        </div>
-        <div class="story-page-segment" data-page="7" id="page-7" style="display:none">
-          <p>But he could not stop thinking about yesterday. About the minute that was not there. About the woman on the phone who had said I hope you're having a good morning and had meant it, or seemed to, and had hung up and returned to whatever her life was, a life that intersected with his for sixty seconds and then receded, leaving no trace except a number in a call log and a silence where a memory should have been. He called in sick to work.</p>
+<p>But he could not stop thinking about yesterday. About the minute that was not there. About the woman on the phone who had said I hope you're having a good morning and had meant it, or seemed to, and had hung up and returned to whatever her life was, a life that intersected with his for sixty seconds and then receded, leaving no trace except a number in a call log and a silence where a memory should have been. He called in sick to work.</p>
 <p>He did not know why — he was not sick, he felt fine — but something told him to stay home, to be here, to be present in the house where the minute had gone missing. He sat in the kitchen and then in the living room and then in the backyard and he watched the oak tree and he waited for something to happen, though he did not know what he was waiting for. At 11:15, the doorbell rang. He opened the door.</p>
 <p>There was no one there. But on the doorstep, placed carefully on the mat as though left by hand, was a small object — a brass key, old, tarnished, with a tag attached by a thin chain. The tag was metal, slightly curved, and engraved with a single word: AFTER. He picked up the key.</p>
 <p>It was heavier than it looked and warm, as though it had been held recently, as though it had been waiting for him. He turned it over in his hands and looked for a lock it might fit and found none. He looked up and down the street and saw no one. He went back inside and sat at the kitchen table with the key in front of him and tried to understand what it meant, and as he sat there, trying, he felt something shift — not outside him but inside, in the place where time lived, in the place where minutes accumulated and were stored and could be retrieved or lost or given away.</p>
 <p>The key did not unlock anything. But it opened something. And what it opened was the understanding that the minute had not been stolen. The minute had been borrowed.</p>
-        </div>
-        <div class="story-page-segment" data-page="8" id="page-8" style="display:none">
-          <p>And whatever had been borrowed was coming back — not as memory, not as event, but as this: a key to a door he had not known existed, in a house he had not known he was building, in a future he had not known he was walking toward. He put the key in his pocket. He went outside and sat on the porch and watched the oak tree drop its leaves one by one into the windless morning. He was here.</p>
+<p>And whatever had been borrowed was coming back — not as memory, not as event, but as this: a key to a door he had not known existed, in a house he had not known he was building, in a future he had not known he was walking toward. He put the key in his pocket. He went outside and sat on the porch and watched the oak tree drop its leaves one by one into the windless morning. He was here.</p>
 <p>He was now. He was the next minute, and the one after that, and the one after that, each one arriving on time and leaving on time and leaving behind it the accumulated evidence of a life that was being lived, however strangely, however incompletely, one minute at a time. Somewhere, far away, a woman answered her phone and heard a silence on the other end, and she said, "I hope you're having a good morning," and she meant it, and she hung up, and she went on with her day, which was also being lived one minute at a time, and the minutes were also accumulating, and the gaps between them were also there, and the mystery of their existence was also, in its own quiet way, unbearable. He sat on the porch.</p>
 <p>The key was in his pocket. The minute was gone and the key was here and he was here and the oak tree was dropping its leaves and the world was continuing, relentlessly, minute by minute, into a future he could not see and did not know and would, somehow, have to trust.</p>
         </div>
-        </div>
-    <!-- Story page navigation -->
-    <nav class="story-page-nav">
-      <span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">8</span></span>
-      <div class="story-page-buttons">
-        <button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>
-        <button id="next-page-btn" class="story-nav-btn">Next</button>
       </div>
-    </nav>
+    </div>
 
-    <!-- Bookmark / Share button -->
-    <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to current page">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="bm-label">Share</span>
-      <span id="reader-bookmark-toast" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-    </button>
-
+    <!-- Footer -->
     <footer class="reader-footer">
       <a href="/stories/" class="reader-back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -364,8 +305,50 @@
   <div id="site-footer"></div>
   <script src="/nav.js"></script>
   <script src="/footer.js"></script>
-  
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+<script>
+// Progress bar
+(function () {
+  var bar = document.getElementById('story-progress-bar');
+  var reader = document.getElementById('reader-container');
+  if (!bar || !reader) return;
+
+  function updateProgress() {
+    var rect = reader.getBoundingClientRect();
+    var total = reader.offsetHeight - window.innerHeight;
+    var scrolled = Math.max(0, -rect.top);
+    var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+})();
+
+// Bookmark / copy link
+(function () {
+  var btn = document.getElementById('reader-bookmark-btn');
+  var tip = document.getElementById('reader-bookmark-tip');
+  if (!btn || !tip) return;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    }).catch(function () {
+      var el = document.createElement('input');
+      el.value = window.location.href;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      tip.classList.add('show');
+      setTimeout(function () { tip.classList.remove('show'); }, 2000);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
