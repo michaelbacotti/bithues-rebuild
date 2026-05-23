@@ -244,7 +244,6 @@
   opacity: 1;
 }
 
-/* Responsive */
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
   .story-page-indicator { min-width: 80px; font-size: 12px; }
@@ -252,14 +251,53 @@
 }
 
 </style>
-  <script>// Segmented story reader
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.bithues.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stories",
+      "item": "https://www.bithues.com/stories"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "C I T Y   O F   W O N D E R S | Bithues"
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "C I T Y   O F   W O N D E R S | Bithues",
+  "url": "https://www.bithues.com/stories/city-of-wonders",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bithues",
+    "url": "https://www.bithues.com"
+  }
+}
+</script>
+  <script>
+// Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
   if (!readerBody) return;
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution (aim for 4-6 paragraphs per page)
+  // Dynamic chunk size for even distribution
   var total = allPs.length;
   var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
   var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
@@ -358,7 +396,115 @@
     window.addEventListener('scroll', updateProgress, {passive:true});
     updateProgress();
   }
-})();</script>
+})();
+</script>
+  <script src="/footer.js"></script>
+  
+<script>
+// Segmented story reader
+(function(){
+  var readerBody = document.querySelector('.reader-body');
+  if (!readerBody) return;
+  var allPs = Array.from(readerBody.querySelectorAll('p'));
+  if (allPs.length === 0) return;
+
+  var chunkSize = 3;
+  var pages = [];
+  for (var i = 0; i < allPs.length; i += chunkSize) {
+    pages.push(allPs.slice(i, i + chunkSize));
+  }
+  var totalPages = pages.length;
+
+  // Move all p tags into segmented divs
+  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
+  pages.forEach(function(chunk, idx) {
+    var div = document.createElement('div');
+    div.className = 'story-page-segment';
+    div.setAttribute('data-page', idx + 1);
+    div.id = 'page-' + (idx + 1);
+    if (idx > 0) div.style.display = 'none';
+    chunk.forEach(function(p){ div.appendChild(p); });
+    readerBody.appendChild(div);
+  });
+
+  // Nav bar
+  var nav = document.createElement('div');
+  nav.className = 'story-page-nav';
+  nav.innerHTML =
+    '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
+    '<div class="story-page-buttons">' +
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
+    '</div>';
+  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
+
+  // Toast
+  var toast = document.createElement('div');
+  toast.className = 'story-resume-toast';
+  toast.id = 'story-resume-toast';
+  document.body.appendChild(toast);
+
+  var currentPage = 1;
+  var slug = window.location.pathname.split('/').pop().replace('.html','');
+
+  function showPage(n) {
+    if (n < 1 || n > totalPages) return;
+    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
+    var target = document.getElementById('page-' + n);
+    if (target) target.style.display = 'block';
+    var curEl = document.getElementById('current-page-num');
+    if (curEl) curEl.textContent = n;
+    var prevBtn = document.getElementById('prev-page-btn');
+    var nextBtn = document.getElementById('next-page-btn');
+    if (prevBtn) prevBtn.disabled = (n === 1);
+    if (nextBtn) nextBtn.disabled = (n === totalPages);
+    currentPage = n;
+    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
+    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
+    var reader = document.getElementById('reader-container');
+    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
+  }
+
+  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
+  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
+  });
+
+  (function(){
+    var savedPage = 1;
+    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
+    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
+    if (startPage > totalPages) startPage = 1;
+    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
+    else { showPage(1); }
+  })();
+
+  // Per-page scroll progress bar
+  var bar = document.getElementById('story-progress-bar');
+  var container = document.getElementById('reader-container');
+  if (bar && container) {
+    function updateProgress() {
+      var rect = container.getBoundingClientRect();
+      var total = container.offsetHeight - window.innerHeight;
+      var scrolled = Math.max(0, -rect.top);
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, {passive:true});
+    updateProgress();
+  }
+})();
+</script>
 
 </body>
 </html>
