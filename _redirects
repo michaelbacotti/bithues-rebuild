@@ -2,6 +2,6 @@
 /press.html /press 301
 /book-tracker.html /book-tracker 301
 
-# Normalize /story/ to /stories/ (singular -> plural)
+# Redirect /story/ to /stories/ (singular -> plural)
 /story/ /stories/ 301
 /story/:splat /stories/:splat 301
