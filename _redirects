@@ -4,4 +4,4 @@
 
 # Normalize /story/ to /stories/ (singular -> plural)
 /story/ /stories/ 301
-/story/* /stories/$1 301
+/story/:splat /stories/:splat 301
