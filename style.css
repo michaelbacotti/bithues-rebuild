@@ -14,12 +14,12 @@
   --color-accent-hover: #a67c00;
   --color-border: #d9d3cc;
   --color-border-light: #f0ebe3;
-  --color-tag-review: #c8a96e;
-  --color-tag-review-bg: #c8a96e;
-  --color-tag-article: #7bafc4;
-  --color-tag-article-bg: #7bafc4;
-  --color-tag-story: #7c9e87;
-  --color-tag-story-bg: #7c9e87;
+  --color-tag-review: #8b6414;
+  --color-tag-review-bg: #8b6414;
+  --color-tag-article: #3c6e82;
+  --color-tag-article-bg: #3c6e82;
+  --color-tag-story: #466950;
+  --color-tag-story-bg: #466950;
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
   --max-width: 680px;

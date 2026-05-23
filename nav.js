@@ -14,11 +14,11 @@
       '      <a href="/about" class="nav-link">About</a>',
       '    </div>',
       '    <div class="nav-search">',
-      '      <button class="search-toggle" aria-label="Search">',
+      '      <button class="search-toggle" aria-label="Search" aria-expanded="false" aria-controls="search-panel">',
       '        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
       '      </button>',
-      '      <div class="search-panel">',
-      '        <input type="text" class="search-input" placeholder="Search..." autocomplete="off">',
+      '      <div id="search-panel" class="search-panel">',
+      '        <input type="text" class="search-input" placeholder="Search..." autocomplete="off" aria-label="Search input">',
       '        <div class="search-results"></div>',
       '      </div>',
       '    </div>',
@@ -36,13 +36,16 @@
 
   if (searchToggle && searchPanel) {
     searchToggle.addEventListener('click', function () {
-      searchPanel.classList.add('open');
-      searchInput.focus();
+      var isOpen = searchPanel.classList.contains('open');
+      searchPanel.classList.toggle('open');
+      searchToggle.setAttribute('aria-expanded', String(!isOpen));
+      if (!isOpen) searchInput.focus();
     });
 
     searchInput.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         searchPanel.classList.remove('open');
+        searchToggle.setAttribute('aria-expanded', 'false');
         searchInput.value = '';
         searchResults.innerHTML = '';
       }
@@ -94,6 +97,7 @@
     document.addEventListener('click', function (e) {
       if (!searchPanel.contains(e.target) && !searchToggle.contains(e.target)) {
         searchPanel.classList.remove('open');
+        searchToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }

@@ -28,9 +28,9 @@
   </main>
 
   <div id="pagination-controls" style="display:none;justify-content:center;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--font-body,system-ui);">
-    <button id="prev-btn" onclick="changePage(-1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
+    <button id="prev-btn" onclick="changePage(-1)" aria-label="Previous page" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
     <span id="page-num" style="font-size:.9rem;color:#3a2f1e;"></span>
-    <button id="next-btn" onclick="changePage(1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;">Next →</button>
+    <button id="next-btn" onclick="changePage(1)" aria-label="Next page" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;">Next →</button>
   </div>
 
   <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
