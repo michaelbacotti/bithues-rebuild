@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,92 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>T H E   Q U E S T I O N</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-question.jpg" alt="the question cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The seminar met on the second floor of Hargrove Hall, in a room that smelled like chalk dust and old buildings and the particular quiet that accumulates in places where ideas have been exchanged for decades. Professor Emmett Saffir arrived early, as he always did, and stood at the window watching the October light come thin through the maples. He was fifty-eight. He had taught philosophy for thirty-one years, and he still felt the small electric charge of a new semester, a new group of faces, a new chance to say something that mattered.</p>
+<p>The question was his tradition. Every October, when the leaves were turning and the semester had found its shape, he posed it to the seminar: if you could know one true thing about the future — anything, any detail, however small or vast — what would you want to know? He had asked it for years, varying the language slightly, watching the room shift and settle as students considered the weight of it. Some found it playful. Others found it unbearable. Most found it somewhere in between.</p>
+<p>The answers over the years had accumulated like sediment. A student who wanted to know if her estranged mother would ever forgive her. A young man who wanted the winning lottery numbers, who laughed at himself for wanting them, then admitted he wasn't entirely joking. A woman who wanted to know whether the universe had an end — whether space went on forever or stopped at some boundary, some wall, some final thing. That one had stayed with him longer than he could explain.</p>
+<p>This year's answers were particular in the way all answers are particular. A student who wanted to know if his marriage would last, who said it quietly, who wouldn't meet anyone's eyes. A woman who wanted to know if she would ever publish the book she carried in her like a secret, the one she told no one about. A soft-spoken man at the end of the table who wanted to know if any of this — the seminars, the papers, the arguments, the whole enterprise of thinking hard about things — if any of it made the slightest difference in the world.</p>
+<p>Then Clara spoke.</p>
+<p>She was the one who never spoke first. She sat in the second row, always prepared, always a half-step ahead of the discussion, and she rarely raised her hand. When she did speak, the room went still in the way it did when someone said something that cost them something to say.</p>
+<p>She asked: "What would you want to know, Professor?"</p>
+<p>Saffir stopped. He set down his pen. He looked at the window and then at the table and then at Clara, who was watching him with the patient attention of someone who had asked a real question and expected a real answer.</p>
+<p>He did not know.</p>
+<p>He had never been asked this. Thirty-one years, and no one had ever turned the question back on him. He had always assumed he was outside it, the one who posed, the one who held the shape of the thing without being inside it. But Clara had asked, and the room was waiting, and there was nowhere to go but honest.</p>
+<p>"I don't know," he said.</p>
+<p>The words hung there. The room shifted. He could see students exchanging glances, recalculating — not with disappointment but with something closer to recognition. A professor who didn't know was not a failure. It was a different kind of gift.</p>
+<p>He continued: "Maybe that's the point. Maybe the question isn't what we want to know. Maybe it's whether we're willing to not know. Whether we can sit with the uncertainty and still show up, still think, still try. Whether the not-knowing is the condition we actually live in, and the only honest answer to the question is to admit it."</p>
+<p>The seminar ended in the silence that follows something real. Students gathered their things. Saffir stood at the board, erasing nothing, thinking. Clara was the last to leave. She paused at the door, her bag over her shoulder, and she turned back to him.</p>
+<p>She said: "I think not knowing is the only thing that makes the asking worth anything."</p>
+<p>Then she was gone, and the room was empty, and the October light had gone thin and gold through the maples, and Saffir stood there for a long time, holding the question like a stone in his hand, turning it over, feeling its weight, unable to put it down.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +376,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +395,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +450,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +463,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +473,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>

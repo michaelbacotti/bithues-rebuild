@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,111 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>An in-depth look at The Door Between Worlds</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-door-between-worlds.jpg" alt="the door between worlds cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The first pair of shoes he ever resoled was his mother's, and he was eleven years old, and he felt it immediately: the echo in his fingertips, the tremor of something running through the rubber and into his skin like a current. His mother's feet, her walk to the market, her standing at the stove, her dancing at a wedding in 1952 when she was seventeen and the world was still possible. He pulled his hands back and stared at the shoe and his mother said, "Rafael, what's wrong?" and he said, "Nothing," because he did not have the language for what had just happened and would not have it for another forty years. He was seventy-three now.</p>
+<p>The shop on Calle Obispo was small and smelled of leather and glue and the particular sweetness of old rubber. He had worked alone since his wife passed, since Carmen, who had understood what he carried and had never asked him to explain it. She had simply learned to leave him alone when he held a new pair of shoes in his hands, to let him stand very still with his eyes closed while the wearer's life moved through him — the tourist from Madrid with the grief in her heels, the old fisherman whose sandals carried the salt of fifty years, the boy who had walked twelve blocks to his first job interview and whose shoes remembered the trembling hope in his chest. He understood, now, what he was.</p>
+<p>Not a shoemaker — everyone was a shoemaker if they had hands and patience. He was something else. A keeper of paths. A reader of the ground.</p>
+<p>The woman came in on a Thursday. He knew it was a Thursday because the light through the window had that particular quality, amber and tired, and because Thursdays had always been Carmen's day to visit the botanica on Zanja Street and come home with incense and a new candle for Saint Lazarus. The woman was perhaps sixty, or perhaps much older — there was a hardness in her face that made age difficult to calculate. She carried a shoebox, brown cardboard, unremarkable, and she set it on the counter with the careful deliberateness of someone setting down something heavier than it looked.</p>
+<p>"My husband left these," she said. "Thirty years ago. He took the suitcase and his good boots and these — these were the ones he left behind. I kept them.</p>
+<p>I don't know why I kept them." Rafael looked at her. She was wearing cream-colored sandals, thin-strapped, the kind that leave marks on the skin. Her feet had known the sidewalks of this city the way his had — intimately, daily, through joy and sorrow and the ordinary accumulation of a life. "You want me to resole them?" "I don't know what I want." She touched the box with one finger, then withdrew.</p>
+<p>"Someone told me you could fix things. That you had hands for things other people couldn't see." Rafael did not answer. He took the box and opened it. Inside were a pair of men's dress shoes, black, scuffed at the toe, the left heel worn unevenly from decades of use before they were abandoned.</p>
+<p>He lifted the right shoe by its edge and held it. He closed his eyes. And then he was somewhere else. He was walking — but not his walk, not Rafael's walk with its flat-footed patience and the slight hitch in the left knee from a fall off a bicycle when he was nine.</p>
+<p>This was a different gait, bouncier, younger, a man who moved through the world as though it owed him something and he had not yet been proven wrong. He smelled coffee and cigarette smoke and the particular sweetness of a woman — not Carmen, something before Carmen, someone he had loved before he knew what love would cost. The sun was warm on his face and he was happy, genuinely happy, and the happiness was so sharp and clean that Rafael had to open his eyes to escape it because it was unbearable, because it was not his happiness and it ached. He put the shoe down.</p>
+<p>He picked up the left one. This time it was different. The walk was heavier, slower. There was a weight in the chest that hadn't been there before, a grayness settling into the margins of everything.</p>
+<p>He was still walking the same streets — he recognized the corner of Neptuno and Reina, the broken mosaic step at the pharmacy on San Rafael — but now the steps were heavy with something that had accumulated, layer upon layer, like sediment at the bottom of a river. Regret. He had never felt it so plainly, not in himself, not in the thousands of shoes that had passed through his hands. The man who had worn these shoes had carried a specific, crystalline regret, and it was in the leather, in the stitching, in the very atoms of the heel worn down to nothing by thirty years of walking away.</p>
+<p>Rafael set the shoe down. He was trembling. "They're from thirty years ago," he said quietly. "But he kept wearing them." The woman was watching him.</p>
+<p>Her face had changed — there was something open now, something exposed. "He sent letters. For the first two years. Then they stopped.</p>
+<p>I didn't know if he was alive or dead. I never found out. I just — I just waited." "You're still waiting." "I don't know how to stop." Rafael looked at the shoes. He understood, now, what they held.</p>
+<p>Not just one man's journey — but the echo of the woman who had stayed. He could feel her in the room, even though she hadn't touched these shoes. The waiting had seeped into them somehow, through proximity, through thirty years of the box sitting somewhere in her apartment, the box opened and closed, the box held and set down. The shoe remembered her the way the air remembers perfume.</p>
+<p>"The man who wore these," Rafael said carefully, "he was happy once. When he put them on, he was young, and he was going somewhere that mattered, and the world was open." He paused. "But the last time he wore them, he was carrying something terrible. Something he'd done.</p>
+<p>Or something he hadn't done and couldn't live with not fixing." The woman's eyes were wet. She didn't wipe them. "He left because of me," she said. "Because of what I'd found out.</p>
+<p>He'd done something — before we married — something that i discovered. And he couldn't stay and he couldn't explain, and so he just — he went. And I've spent thirty years wondering if I should have let him explain." Rafael picked up the shoe again. He held it gently, the way you hold a bird that might fly away.</p>
+<p>"He's alive," he said, and he knew it the way he knew things, not logically but completely. "He's alive and he's far away and he thinks about you every day. He thinks about you the way you think about him. He's not suffering more than you are, but he's suffering.</p>
+<p>He's been suffering since the day he left." "How do you know that?" "Because the shoes told me." He turned the shoe over. The sole was worn in a pattern he recognized now — the way a man walks when he is walking from something he cannot outpace. "They always tell me." The woman looked at the shoes for a long time. The light through the window had shifted; it was later than she'd thought.</p>
+<p>Outside, Havana hummed with its eternal music — a radio playing something old, a man arguing, a child laughing. The city that never stopped, that kept moving even when you stood still. "Should I keep waiting?" she asked. "Should I keep waiting or should I finally put him down?" This was the question Rafael had been asked a hundred times, in a hundred variations, by the shoes that passed through his hands.</p>
+<p>And his answer was always the same, because the shoes always told the same truth: that love was not a thing you could close like a book, but it was also not a door you had to leave open forever. That waiting was a choice, and not-waiting was also a choice, and both choices could be made with dignity. "You should know what you feel," he said. "Not what you think you should feel.</p>
+<p>Not what anyone else would feel in your place. What you actually feel, right now, in your own body, when you think about him." "I'm afraid if I stop waiting, I'll forget him." "You won't forget him. You can't. He's in you now.</p>
+<p>He's been in you for thirty years. You've walked with him, dreamed with him, argued with him in the dark — all of that is in you. The shoes aren't him. The shoes are just where he's been.</p>
+<p>You're where he lives." The woman was quiet. Then she reached out and touched the shoe, just with one fingertip, the way you touch something sacred. "Keep them," she said. "Fix them or don't.</p>
+<p>I don't think I need them anymore." She left. Rafael watched her go — watched the way she walked, her cream-colored sandals, her weight shifting from heel to toe with the particular rhythm of someone who has walked these streets her whole life. She didn't look back. He hoped she wouldn't.</p>
+<p>Hoped she would go home and open her windows and let the sea air in and sit in the chair by the window where she had probably sat every evening for thirty years, and sit there, and not wait. Just be. Just be present, for once, in a room where no one was coming through the door. He turned back to the shoes.</p>
+<p>He picked up the left one and held it, and this time he went deeper, past the regret, past the departure, into something older. He felt the man as a boy — small, dark-eyed, running through the streets of Old Havana with a sack of mangoes his mother had sent him to sell. He felt the boy's joy, pure and uncomplicated, the joy of running fast in a city that was all miracle and possibility. He felt the first time the boy had kissed a girl behind a curtain and how his heart had seemed too large for his chest.</p>
+<p>He felt the wedding, his own wedding, the shoes on his feet and the love so overwhelming he had to look away from it, had to stare at the floor to keep from weeping. The shoes remembered all of it. Every step of a life, documented in the wear of leather and the compression of rubber, a biography written in the grammar of distance traveled. This was what he did — what he had always done.</p>
+<p>He read the unwritten pages. He translated the footsteps into meaning. He held the evidence of a human life in his hands and bore witness to it, quietly, without judgment, the way a priest holds a confession. He set the shoes down on the counter.</p>
+<p>He did not know if he would resole them. Perhaps he would. Perhaps he would keep them in the shop, in the cabinet where he kept the other orphan shoes — the ones whose owners had died, or disappeared, or simply never came back. Perhaps one day the man would return to this city, to these streets, and feel something pull at him, some echo in his old worn feet, and he would find the shop on Obispo Street and sit in the chair across from Rafael and say, "The shoes.</p>
+<p>I left them with a woman, thirty years ago." Rafael would hand them back. And then he would watch what happened next. Or perhaps not. Perhaps the shoes would stay here forever, held in trust, waiting for a story to complete itself.</p>
+<p>This was also a kind of living. This was also a way of keeping faith. He turned back to the workbench. There were other shoes waiting — a child's sneakers, a nurse's clogs, a pair of red heels for a woman who danced at the Tropicana on weekends.</p>
+<p>Each of them carrying its cargo, each of them ready to be read. He picked up the first one and closed his eyes and let the next life move through him, patient and ceaseless and full of the world's enormous, unbearable weight. Outside, the light faded over Havana. Somewhere, a woman walked home in cream-colored sandals and did not look back.</p>
+<p>Somewhere, a man who had been running for thirty years sat down and rested his feet. And in the shop on Obispo Street, a shoemaker continued his work — not fixing shoes, exactly, but tending to the evidence of what it meant to be human and moving and alive in a world that wore you down, step by step, until the soles of your shoes were as thin as memory and twice as honest.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +395,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +414,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +469,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +482,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +492,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>

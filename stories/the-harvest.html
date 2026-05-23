@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,86 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>The Harvest</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-harvest.jpg" alt="the harvest cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The combine's headlights came on at exactly six o'clock, the way they had every evening for forty years, because Marla's hands knew when to reach for the switch before her mind did. The field stretched out in front of her for 280 acres and the sun had gone down twenty minutes ago and now the only light was the pale yellow sweep of the headlamps cutting through the last of the dusk. The corn stood shoulder-high and dry and ready. October in the Midwest meant the air tasted like dust and diesel and the combine's engine note had become the only sound in the world besides the wind moving through the stalks.</p>
+<p>Marla drove. The cab smelled like grease and old coffee and the rubber floor mat was worn through to the metal in the spot where her left heel worked the clutch year after year. She had farmed this land since she was twenty-two, which was a long time ago now, and her husband Dean had died in March and she had not stopped working since because the land did not know about grief and the field did not care that someone was gone. She kept the header moving at seven miles per hour, the way the manual said, and the stalks fell in a perfect line behind her and the grain poured into the cart with a sound like rain on a tin roof.</p>
+<p>Rae stood in the grain cart trailing behind, watching the auger and checking the moisture readings and thinking about how she had not been home in three years, not since the argument about the farm and Dean's hospital bills and the way things got said that could not be taken back. Rae was thirty-eight and lived in Columbus and worked in healthcare administration and had built a life that did not involve cornfields or early mornings or the particular silence of a farm after dark. She was here because Marla had called and said the harvest was coming and maybe it was time, and Rae had gotten in her car and driven nine hours and now she was standing in a grain cart watching her mother work and feeling like a stranger in her own family's story.</p>
+<p>On the truck hood, Stella sat with her legs pulled up and her chin on her knees, watching the combine move through the field like a machine from another planet. She was nine. She had never been to the farm before and she did not understand what any of it was for, but she liked the vibration of the truck engine through the seat and the way the headlights made a tunnel of light in the dark and the sound of her grandmother's machine out there in the field, unstoppable, going about its work. Stella had her mother's red hair and her grandfather's stubbornness and she had already decided that next year she would ask to drive the combine and she would not take no for an answer.</p>
+<p>In the cab, Marla and Rae talked about the things that could be talked about. The price of grain. The neighbor's soybean yield. The weather forecast for next week. They did not talk about Dean and they did not talk about the hospital bills and they did not talk about the argument or the three years or the way things had broken and not been put back together. There were things in families that stayed broken not because people didn't care but because the shape of the damage was too precise to fix without breaking something else. They talked about the land instead. The way the field had been yielding three bushels per acre more than last year. The way the soil smelled after a rain in September, which was the best smell in the world if you knew what you were looking for.</p>
+<p>Stella watched her grandmother from the truck hood. She saw the way Marla adjusted the header height without looking at the controls, the way she turned at the end of each row with a precision that seemed impossible, the way she knew exactly when to accelerate and when to slow. It was not a skill exactly. It was something deeper than that, something that had become part of her body after forty years of doing the same thing in the same field in the same season over and over until the boundary between the woman and the work disappeared and there was just the one thing, the motion, the harvest, the field that was hers because she had given it the best years of her life.</p>
+<p>"Can I drive it next year?" Stella called out from the truck hood. Her voice carried across the field in the dark and Marla heard her and smiled, a small smile that Rae saw from the grain cart and did not understand the meaning of. Marla slowed the combine and leaned out the window and said yes, next year, and Stella felt something open up inside her chest that she did not have a name for yet, a feeling that would stay with her for the rest of her life, the feeling of being invited into something large and old and serious.</p>
+<p>The last round began at eight-fifteen, when the last light was gone and the combine headlights were the only illumination left in the world. The three of them were together in the dark without meaning to be, the combine and the grain cart and the truck, and they moved through the last rows of the field in a kind of ceremony that had nothing to do with ceremony and everything to do with the simple fact that work existed and it needed to be done and they were the ones who did it. The corn fell. The grain poured into the cart. The truck moved alongside them like something alive. The engine notes layered over each other in the cool October air. The sky above them was enormous and black and scattered with stars that Marla had seen ten thousand times and never stopped looking at.</p>
+<p>When the field was empty, Marla drove the combine back to the barn and Rae followed in the grain truck and Stella sat in the truck bed with her legs hanging over the side and her face turned up toward the sky. The truck bed was full of grain, six hundred bushels of corn that would be worth something at the elevator in the morning, and the weight of it pressed down into the suspension and made the ride smooth and heavy and good. The farmhouse lights came into view across the last stretch of field and Marla saw them and felt the same thing she felt every year after the last load was in: the quiet that comes after something difficult is finished, the tiredness that is also a kind of gratitude, the knowledge that the land had taken care of them again and they had done their part and tomorrow there would be more work and that was alright, that was what being alive meant, that was the whole of it.</p>
+<p>Stella climbed down from the truck bed and walked toward the farmhouse with her mother and her grandmother and the kitchen light was on and the door was open and inside there was food on the stove and warmth and the particular feeling of being somewhere that you belong. The year's work was done. The grain was in. The field was empty and the combine was parked in the barn and the engine ticks cooled in the dark. Marla stood at the kitchen window and looked out at the land she had worked her whole life and she did not say anything, because there was nothing that needed to be said that the land did not already know.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +370,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +389,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +444,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +457,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +467,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>

@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,81 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>T H E   L A S T   W I N T E R</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-last-winter.jpg" alt="The Last Winter cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The mother found them before sunset. Arat saw her first — a dark shape between the pines, moving with the patient deliberation of an animal that had learned it had no predators except the ones that came in groups with spears. Cautious. Watching. Deciding. The calf was lying down in a small hollow Arat had found, sheltered from the wind by a fallen birch. It was still trembling, but the trembling was less. When the mother appeared at the edge of the clearing, the calf lifted its head and made a sound — not the distress whine, but a lower, steadier call. A greeting. A reassurance. The mother looked at Arat for a long time. The silence stretched. The wind moved through the trees and made a sound like breathing. Then the mother turned and walked away, and the calf followed, and they both disappeared into the forest as though they had never been. Arat sat in the hollow and shivered until dark. She did not cry. She had not cried since her mother died, and she had forgotten how.</p>
+<p>The days took on a rhythm. Wake. Move. Find food. Make fire. Sleep. Wake. She found a cave on the third day — a shallow one, barely deep enough to keep the wind off, but dry, and with a floor of old leaves that held some warmth. She lined it with pine boughs and spent the first night listening to the sounds outside and wondering if anything was brave enough or hungry enough to come looking. Nothing did. She ate bark when the meat wasn’t there. She ate the wintergreen leaves she’d learned to识别 in her mother’s shadow, bitter and tough but alive. She caught a rabbit on the sixth day, and the eating of it was a revelation — protein, warmth, the reminder that her body was still a body and not just a vehicle for endurance. On the seventh day, she saw the mammoth again. They were moving through the valley below her cave, mother and calf, and they were moving slowly — grazing on the tops of snow-buried shrubs, the mother’s trunk pulling at branches just out of reach while the calf stayed close. Arat watched from the ridge. She did not go down. She did not approach. But she watched, and the watching was something she couldn’t name. On the ninth day, the calf appeared at the mouth of her cave. Arat was inside, curled in her furs, and she heard the sound before she saw the shape — a soft thump on the frozen ground outside, and then the high whine she’d come to recognize. She crawled to the entrance and looked out and there it was: the mammoth calf, alone, looking at her with those dark wet eyes. She didn’t know what to do. The calf didn’t seem to know either. They looked at each other across the threshold of the cave, across the species and the instinct and all the things that should have kept them strangers, and the calf made its sound again. Arat put out her hand. The calf leaned forward and sniffed her fingers, and then it turned and walked back into the forest, and she watched it go until the white swallowed it whole.</p>
+<p>The winter deepened. The cold became a constant — not sharp anymore, not an intrusion, but a condition of existence, like gravity, like the need to breathe. Arat learned the grammar of it: how to sleep in the coldest hours, how to wake and move and generate warmth through motion, how to read the sky for the signs that meant a storm was coming and she needed to be inside, covered, breathing into the hollow she’d made. The mammoth returned. Not every day, and not always the mother — sometimes the calf came alone, appearing at the cave mouth like a visitor with no schedule and no expectations. They did not touch, not often. They did not need to. There was something in the being-together that was enough: two creatures who had no reason to be in each other’s lives, choosing, again and again, to be. Arat started to talk to it. Not words — she was not that far gone, not yet — but sounds. The low murmurs she used to calm the rabbits her mother taught her to trap. The clicking noises that meant safety in the grammar of beasts. Sometimes she sang, without melody, the way her mother had sung when the work was done and the fire was low and the night was long. The calf would tilt its head at these sounds, and sometimes it would move closer, and sometimes it would simply stand in the entrance of the cave and listen until she stopped. She did not think about the tribe. She thought about them constantly — not the faces but the feelings, the weight of belonging somewhere and then not belonging, the particular loneliness of having been known and then forgotten. But she did not let herself think of them as people. They were a place she’d left. They were the before. The before was over.</p>
+<p>The thaw came slowly, the way thaws do in these places — not a day but a process, a gradual softening of the world that you only noticed when you realized you’d stopped shivering. The snow thinned. The river’s sounds changed, from cracking to rushing. The trees, black with winter, began to show the faintest blush of something that might have been green. One morning, Arat woke and knew the tribe would come back. They migrated, as they always did — south in the deepest cold, north as the ice retreated, following the game and the rhythms of a world that had no interest in human convenience. They’d be returning to this valley within a moon, maybe less. They’d find her here. And she would have to decide. The calf appeared on the first morning of her knowing. It was larger now — not full-grown, but bigger, the tusks beginning to curve with a purpose that hadn’t been there before. It stood at the mouth of the cave and looked at her, and she looked back, and she understood with a clarity that felt like falling that the calf had always known what she was doing out here. Had always known and had chosen to come anyway. The mother appeared behind it. And the mother looked at Arat with an expression — if animals could have expressions — that might have been recognition. Or gratitude. Or nothing at all, just the flat assessment of an animal deciding whether this small two-legged thing was part of the world’s furniture or an intrusion to be tolerated. The mother turned and walked into the trees. The calf lingered for a moment, made its sound, and followed. Arat watched them go. She did not follow.</p>
+<p>She spent the remaining weeks of winter preparing. Not for the tribe — she could not prepare for the tribe, could not anticipate what they would do or say, could not armor herself against the memories that would surface when she saw familiar faces. She prepared for herself. She gathered food and dried it. She checked her knife and sharpened it. She walked the perimeter of what would be her territory when the tribe arrived, and she memorized its features: the cave, the river, the ridge, the clearing where she had freed the calf from the ice. She thought about revenge. The thought came at night, in the hollow dark, and it was hot and clean and simple: she could tell them what she knew, which was nothing, and let them understand that she knew nothing, and let the knowing sink in like a stone in water. She could refuse to explain. She could let their guilt do the work that her words couldn’t. She could be cold to them the way they had been cold to her. Or she could be done. She could walk away from the valley and find somewhere else, somewhere the tribe would never come, and she could live the rest of her life in the knowing that she had been right and they had been wrong and nothing — not justice, not acknowledgment, not even the satisfaction of watching them understand — nothing would change that. The calf came back one last time, three days before the tribe was due. It stood in the clearing and waited, and Arat came out of the cave and stood in the snow, and they looked at each other across the space between what was wild and what was human. She thought about what home meant. Her mother in the fever. The child who had died and that she had not killed. The cave, the river, the ridge. The small warm body that had chosen her in the first days when choosing was the only thing that mattered. Home was not a place. Home was what you made when you stayed. Ice — beautiful, deadly, like most things that matter The calf made its sound. Low, steady, almost gentle. And then it turned and walked into the trees and did not look back. Arat watched until the white took it. Then she turned and went inside, and she did not come out again until the tribe arrived.</p>
+<p>They came in the morning, as they always did — a long procession of furs and familiar shapes moving through the thinning trees, following the river north. Arat stood at the mouth of her cave and watched them approach. She could see faces now. Brin, the elder’s son, who had been a boy when the elder died and was now a man with the bearing of someone who had carried weight. Old Sori, who had taught her to set bones. The others, the many others, the ones she had known and lived among and sometimes loved. They saw her. She watched the ripple of recognition move through the group, watched the conversations start, watched the hesitation that was not quite fear but was not quite anything else, either. Brin was the one who came forward. He stopped at the base of the ridge and looked up at her, and his face did something complicated — opening and closing, rearranging itself around emotions he didn’t seem to have the vocabulary for. “Arat,” he said. Just her name. Like a question. Like an answer. “Brin,” she said. There was a silence. The river behind them made its sounds. The wind moved through the trees and scattered a few remaining snowflakes from the branches. “The child,” Brin said. “It wasn’t — we found — it wasn’t the fever. The healer examined it again, this winter. There was something in the mother’s milk. Something wrong. We were wrong.” Arat nodded. She had known this. She had always known this — not the specifics, but the shape of it, the way a shape exists in the dark before you can see it clearly. The truth of what happened to children in winters like this one. “I know,” she said. Brin waited. The tribe waited, behind him, a collection of faces and furs and silence. They were waiting for her to come down. To rejoin. To resume her place in the order of things. Arat looked past Brin to the valley beyond. The river caught the light. The trees were dark and patient. Somewhere in those trees — not far, probably not far at all — a mammoth and her calf were waking to the spring, moving through a world that did not require them to forgive or be forgiven, that only asked them to survive, to stay together, to keep moving toward whatever came next. She thought about going back. She could do it. She could walk down this ridge and join them and let the years ahead fill in what the years behind had broken. She could learn to belong again. She could try. Or she could stay. Up here. Alone. Knowing what she knew and needing nothing from them but the absence of their interference. The cave was hers now. The valley knew her. The forest had made a place for her, and she had made a place for herself in it, and that place was not theirs to give or take. “I will come down,” she said finally. “I will walk with you. I will stay through the summer.” Brin’s face opened with something like hope. “But I am not coming back,” she said. “Not to stay. This is where I belong now. This is where I chose to stay when staying was the hardest thing. I earned this. You cannot give it to me and you cannot take it away.” The silence that followed was long. But it was not cold. It was the kind of silence that happens when something true has been said and everyone involved is still figuring out what it means. Brin nodded. Slowly. The way you nod when you’re accepting something larger than you can argue with. “The valley will be here,” he said. “The valley will be here,” she agreed. She turned and went back inside the cave. She did not close the entrance — there was nothing to close it with, and no need. But she stood in the dark for a moment, feeling the air on her face, listening to the sounds of the world outside beginning its slow resurrection. Home was not a place. Home was what you made when you stayed. She had stayed. She had made it. And whatever came next — the summer with the tribe, the autumn of her solitude, the winter that would come again with its demands and its silences — she would face it the way she’d faced everything: with the knowledge that she was here, she was real, and she had not given up. Outside, the mammoth made a sound. Low and vast, almost beyond hearing, the sound of something large moving through a world that was only beginning to remember how to be alive. Arat smiled. She went outside. The sun was warm on her face for the first time in months, and she lifted her hand to shield her eyes, and she watched the valley below come back to life.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +365,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +384,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +439,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +452,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +462,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>

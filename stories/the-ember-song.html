@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,97 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>The Ember Song</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-ember-song.jpg" alt="the ember song cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The village of Harrow sat at 2,200 meters in the Alps, and winter arrived in October and did not leave until May. That was the fact of it. The road closed. The cable car stopped running.</p>
+<p>The stores put up their shutters and did not open them again until the snow began to melt, and by then it was June and the world had become someone else's memory. The village went dark in the truest sense—not just the streetlamps but the way people's faces changed when the last ember died. There was a silence that had weight to it.</p>
+<p>Every year, when the last ember in the communal furnace burned down to nothing, someone from the village walked to the volcanic pass above the treeline and lit a torch from the vent that had been burning since before anyone could remember. No one knew why it worked.</p>
+<p>The elders said the fire was older than the village, older than the roads, older than the language they spoke. They said the mountain chose, and that was enough. It was not a contest or a test. The mountain simply looked at someone and that person understood they were meant to go.</p>
+<p>Cal had seen it happen three times in his life. He had seen the chosen walk out into the dark and come back with fire, and he had never thought much about it at all.</p>
+<p>He was twelve. His father had gone the year Cal turned six, and his father's father before that, and the list went back further than Cal could trace. It was a family thing, people said, but that wasn't quite right.</p>
+<p>It was not a privilege exactly. It was more like a door that opened once and you walked through and that was all. Cal's father never spoke about the night he made the walk. His grandfather was already dead by the time Cal was born.</p>
+<p>There was no one left to ask what it felt like to stand at the top of the world and light a torch from the mouth of the earth. Cal had assumed it was nothing. Just a walk. Just a torch.</p>
+<p>The morning the last ember died, the elders gathered in the stone building at the center of the village.</p>
+<p>Cal's mother walked him to the door and then stopped, which was unusual. The other children stood with their parents in the square outside, and no one spoke. The furnace was in the basement of the building and it had gone cold sometime in the night and now the village waited for whatever came next. Cal stood with the others and felt nothing in particular.</p>
+<p>He was cold. He was hungry. He wanted to go home and eat breakfast. Then the door opened and Elder Maren looked at him and said his name, and Cal understood that he was meant to go.</p>
+<p>Not because he wanted to. Because the mountain had looked at him and found him suitable.</p>
+<p>The walk began at the edge of the village where the paved road ended and the mountain path began. The path switchbacked up through the larch forest for the first hour, and the trees grew smaller and closer together as the altitude increased, and then they thinned and gave out entirely and Cal was above the treeline in air that tasted like iron and cold. He kept walking.</p>
+<p>He had been told the path would not let him get lost. He had been told this by his father once, years ago, in a conversation Cal had not understood until now. The path did not let you get lost because there was only one direction to go. Up.</p>
+<p>The switchbacks continued for three more hours.</p>
+<p>Cal's legs ached and his lungs burned and the wind came off the ridge in gusts that nearly knocked him sideways. He stopped twice to rest and each time he looked back and the village was smaller and farther away and he could see the whole valley spread out below him like a map of somewhere he had never been. He had lived his whole life in that valley and he had never seen it from this height. It looked like a place for someone else.</p>
+<p>He kept walking.</p>
+<p>At the top, the world opened up. The volcanic vent exhaled steam into the cold air and the fire at its center glowed orange and steady, and the wind died and the silence was so complete that Cal could hear his own heartbeat. He stood at the edge of the caldera and looked out at Switzerland and none of it felt like Switzerland. It felt like the first morning of the world.</p>
+<p>He took the torch from his pack—it was made of birch wood and had been waiting for him his whole life, really—and he held it to the fire and the flame caught and held, and he began the walk back down.</p>
+<p>It took four hours to return. The sun had been up when he lit the torch and now it was gone and the village was dark and the children were still awake, all of them, standing in the square with their faces turned toward the path. Cal came out of the mountain in the dark with the torch still burning and he walked through the crowd of silent people and he did not feel triumphant. He was twelve years old and his legs were shaking and the fire on the torch threw his shadow large against the stone walls of the village and then he was inside and the furnace was lit and the light spread outward and the village came back to itself.</p>
+<p>His mother took the torch from his hand. Someone handed him bread and salt. The children went home to bed. Cal stood in the warm light of the furnace and felt nothing in particular except that he was home, and the fire was burning, and morning would come in its own time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +381,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +400,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +455,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +468,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +478,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>

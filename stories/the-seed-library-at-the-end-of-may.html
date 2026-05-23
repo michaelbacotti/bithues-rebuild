@@ -201,10 +201,6 @@
   min-width: 100px;
   text-align: center;
 }
-.story-page-buttons {
-  display: flex;
-  gap: 10px;
-}
 .story-nav-btn {
   background: none;
   border: 1px solid var(--color-border);
@@ -240,9 +236,7 @@
   z-index: 200;
   pointer-events: none;
 }
-.story-resume-toast.show {
-  opacity: 1;
-}
+.story-resume-toast.show { opacity: 1; }
 
 @media (max-width: 500px) {
   .story-page-nav-inner { gap: 10px; }
@@ -289,7 +283,104 @@
   }
 }
 </script>
-  <script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+
+/* ─── Segmented Reader Mode ─────────────────────────── */
+.story-page-segment{display:block}
+.story-page-segment[style*="display:none"]{display:none!important}
+
+.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
+.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
+.story-page-buttons{display:flex;gap:10px}
+.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
+.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
+.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+
+.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
+.story-resume-toast.show{opacity:1}
+
+.no-js .story-page-segment{display:block!important}
+
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <article>
+    <!-- Story Header -->
+    <header class="story-hero">
+      <div class="story-hero-inner">
+        <span class="tag">Short Story</span>
+        <h1>The Seed Library at the End of May</h1>
+        <p class="byline">by Bithues</p>
+      </div>
+    </header>
+
+
+    <div class="story-hero-image">
+      <img src="/stories/images/the-seed-library-at-the-end-of-may.jpg" alt="the seed library at the end of may cover art">
+    </div>
+
+  <div class="story-ad-section">
+    <p class="story-ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+    <!-- Reader Container -->
+    <div class="reader-wrap">
+      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="bm-label">Share</span>
+        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
+      </button>
+      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="reader-container">
+        <div class="reader-body">
+<p>The box was older than Marcus. That was the first thing he noticed — not its paint, which had gone the soft gray of things left out in weather for many seasons, but the way it sat in the world. Like it had always been there. Like it belonged to the fence line the way a stone belongs to a riverbed.</p>
+<p>It was the last Saturday in May, and his grandmother had sent him to the far end of the garden to find the hose. The garden at the end of May was an explosion — tomatoes setting fruit, basil a green ocean, the sugar snap peas climbing their bamboo cage in a direction that seemed to defy geometry. His grandmother called it her "problem corridor," the strip of land behind the garage that got too much sun and not enough attention. She'd been threatening to fix it for three summers.</p>
+<p>The box was attached to the back of the garage, half-hidden by the volunteer tomato plants that had seeded themselves from last year's compost. Marcus had to push through the leaves to see what it was, and when he did, he just stood there.</p>
+<p>It was a wooden cabinet, maybe two feet tall, with a glass door and small brass latches. Inside were rows and rows of small envelopes, each one handwritten with a label: Cherokee Purple Tomato. Mammoth Sunflower. Lazy Housewife Bean. Bronze Fennel. Hundreds of them. Hundreds of handwriting styles, some in pencil, some in pen, some so faded they'd gone the color of old leaves.</p>
+<p>At the bottom, weighted down by a river stone, there was a note on a card that had gone soft at the edges:</p>
+<p>Marcus carried the note to his grandmother. She was at the kitchen table, hulling strawberries from the patch by the fence, a bowl of them going red and gold in the late afternoon light.</p>
+<p>"What's this?" she said, and he watched her read it, watched her face change — not surprise exactly, but recognition. Like she'd found a letter she'd forgotten she'd written.</p>
+<p>"Mrs. Bellweather," she said. "Of course."</p>
+<p>"Who?"</p>
+<p>"Ruth Bellweather. She lived three houses down when I moved in here. 1971. She had this box — I remember now, I haven't thought about it in years — she used to insist everyone in the neighborhood take seeds and bring seeds and keep it going. She called it the seed library."</p>
+<p>"But Mrs. Bellweather is —" Marcus started, and his grandmother nodded.</p>
+<p>"Gone. Thirty years now, maybe more. But the box stayed." She looked at the note again. "Take one. Leave one."</p>
+<p>They went back to the garden together and opened the glass door. Inside, Marcus could see that some packets were decades old, their paper turned tissue-thin, the handwriting in colors that didn't exist anymore. But others were recent — different handwritings, different pens, dates written in the corners. 2019. 2021. 2023.</p>
+<p>"Someone's been keeping it going," his grandmother said, and she was quiet for a long time after that.</p>
+<p>Marcus took a packet of Moon and Stars watermelon. His grandmother took Lemon Cucumber. They each put one back — seeds they'd saved from their own garden, labeled in their own hands, placed in the rows where the old met the new.</p>
+<p>"We should tell people," Marcus said. "About the box."</p>
+<p>"I think they already know," his grandmother said. "Look."</p>
+<p>She pointed to the packet above where Marcus had placed his Moon and Stars. It was dated this year. April. Different handwriting, light and careful, with a little arrow pointing up: If you have any Questions About Growing, Ask at #42 — That's Us.</p>
+<p>That evening, Marcus walked to number 42. It was a blue house with a porch that wrapped around two sides, and on the porch was a woman about his mother's age with dirt on her knees and dirt under her fingernails, planting something in a window box.</p>
+<p>"The seed box," she said, before Marcus could say anything. "You're from the yellow house, aren't you? The one with the big garden."</p>
+<p>"Yeah."</p>
+<p>"My grandmother knew your grandmother. She said your grandmother was the one who originally got Mrs. Bellweather started on the whole thing. Something about a tomato plant and a conversation in 1974." She smiled. "She made us promise to keep it going."</p>
+<p>"Keep it going," Marcus said.</p>
+<p>"That's how these things work," the woman said. "Someone starts something, someone else takes it up, and then it's just part of the neighborhood. Like the speed bump on Maple, or the way everyone knows not to park in front of the Nguyens' house on trash day. It becomes the infrastructure."</p>
+<p>Marcus walked home as the light went gold and then amber and then a deep, soft blue that smelled like cut grass and someone's barbecue and the particular green of a garden in late May when everything is reaching for everything else. At his grandmother's fence, he paused and looked down the garden path toward the box, half-visible in the dusk.</p>
+<p>He thought about Mrs. Bellweather, who he'd never known, who had left a box at the end of a garden and trusted the neighborhood to keep it alive. He thought about all the hands that had opened that glass door over fifty years — taking, giving, taking again — passing something forward the way you pass a song, the way you pass a story, the way you pass anything worth keeping.</p>
+<p>The Moon and Stars watermelon grew. So did the Lemon Cucumber. And in the fall, when Marcus saved seeds from both and walked them back down the garden path and placed them in the box where someone had once written The seeds know where to go, he understood, finally, what that meant.</p>
+<p>The seeds didn't know anything. People did. People were the library. The box was just the place they kept it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reader-footer">
+      <a href="/stories/" class="reader-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Stories
+      </a>
+    </footer>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="/nav.js"></script>
+  <script src="/footer.js"></script>
+  
+<script>
 // Segmented story reader
 (function(){
   var readerBody = document.querySelector('.reader-body');
@@ -297,11 +388,7 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  // Dynamic chunk size for even distribution
-  var total = allPs.length;
-  var targetPages = Math.max(3, Math.min(12, Math.round(total / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(total / targetPages)));
-
+  var chunkSize = 3;
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
@@ -320,15 +407,15 @@
     readerBody.appendChild(div);
   });
 
-  // Nav bar (centered)
+  // Nav bar
   var nav = document.createElement('div');
   nav.className = 'story-page-nav';
   nav.innerHTML =
-    '<div class="story-page-nav-inner">' +
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>' +
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>' +
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>' +
-    '</div>';
+    '<div class="story-page-nav-inner">
+      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
+      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
+      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
+    </div>';
   readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
 
   // Toast
@@ -375,7 +462,7 @@
   (function(){
     var savedPage = 1;
     try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(\d+)$/);
+    var hashM = window.location.hash.match(/^#page-(d+)$/);
     var startPage = hashM ? parseInt(hashM[1]) : savedPage;
     if (startPage > totalPages) startPage = 1;
     if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
@@ -388,9 +475,9 @@
   if (bar && container) {
     function updateProgress() {
       var rect = container.getBoundingClientRect();
-      var totalH = container.offsetHeight - window.innerHeight;
+      var total = container.offsetHeight - window.innerHeight;
       var scrolled = Math.max(0, -rect.top);
-      var pct = totalH > 0 ? Math.min(100, (scrolled / totalH) * 100) : 0;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
       bar.style.width = pct + '%';
     }
     window.addEventListener('scroll', updateProgress, {passive:true});
@@ -398,9 +485,6 @@
   }
 })();
 </script>
-  <script src="/footer.js"></script>
-  
-
 
 </body>
 </html>
