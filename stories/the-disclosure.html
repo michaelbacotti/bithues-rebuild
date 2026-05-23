@@ -436,7 +436,9 @@
   var allPs = Array.from(readerBody.querySelectorAll('p'));
   if (allPs.length === 0) return;
 
-  var chunkSize = 3;
+  // Dynamic chunk size for even distribution
+  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
+  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
   var pages = [];
   for (var i = 0; i < allPs.length; i += chunkSize) {
     pages.push(allPs.slice(i, i + chunkSize));
