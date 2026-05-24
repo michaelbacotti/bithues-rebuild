@@ -24,9 +24,9 @@
   nav.innerHTML = [
    '<div class="tab-bar">',
    ' <div class="tab-bar-inner">',
+   '  <a href="/articles.html">Articles</a>',
+   '  <a href="/reviews.html">Reviews</a>',
    '  <a href="/stories">Stories</a>',
-   '  <a href="/about">About</a>',
-   '  <a href="/contact">Contact</a>',
    ' </div>',
    '</div>'
   ].join('\n');
