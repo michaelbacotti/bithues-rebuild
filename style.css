@@ -852,12 +852,19 @@ small, .small {
  }
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
+/* For Amazon book covers (portrait 2:3 ratio) — use contain + taller height */
+.card-thumb.portrait-book, .hero-col-img.portrait-book {
+    height: 180px;
+    background-size: contain;
+    background-position: top center;
+}
+
 .card-thumb {
     background-color: #2a2a2a;
     background-image: url('/images/card-fallback.svg');
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: contain;
+    background-size: cover;
     width: 100%;
     height: 240px;
 }
