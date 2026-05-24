@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>The Sound Between Stars | Bithues</title>
- <meta name="description" content="Dr. Yuki Tanaka spent her career listening for signals from deep space. On the night she finally heard one, she realized the message was not coming from the distance. It was coming from the space between her own heartbeats — and it had been calling her home for a very long time.">
+ <title>the-sound-between-stars | Bithues</title>
+ <meta name="description" content="A short story: the-sound-between-stars">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,15 +18,18 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">Sci-Fi</span>
-  <h1>The Sound Between Stars</h1>
-  <div class="story-meta">2026-05-08</div>
+  <span class="genre-pill">Short Story</span>
+  <h1>the-sound-between-stars</h1>
+  
  </div>
  <div class="page-nav"><span class="page-info">Page 2 of 2</span><div class="page-links"><a href="/the-sound-between-stars?page=1#content" class="page-prev">&#8592; Previous</a><span class="page-next disabled">Next &#8594;</span></div></div>
  <div class="story-body" id="content">
   <p>On the forty-third night, she understood what the signal was saying. She understood it not in words — the universe did not speak in words, had never spoken in words, had always spoken in the language beneath language, the language of frequency and pattern and the interval between one pulse and the next. She understood it the way she understood music, which was the only comparison that fit, which was the comparison she had been avoiding because it was not scientific, because it was emotional, because it was the kind of understanding that required her to admit that she was not just a scientist but was also a human being, and that the two things were not opposites but were partners, were the two halves of the thing that was capable of hearing what she was hearing.</p>
+<p>···</p>
 <p>The signal was saying: <em>You are not far away. You are not separate. The distance is not the distance you think. The space between stars is the same as the space between heartbeats. You have been listening to yourselves all along. The cosmos is not out there. The cosmos is in here. It has always been in here. It will always be here. You do not need to travel to it. You need only to stop believing that you are apart from it, which is the lie you tell yourselves because the truth is too large to carry, which is the lie that keeps you small, which is the lie that you are ready, finally, to stop telling.</em></p>
+<p>···</p>
 <p>She sat in the control room for a long time after she understood this. She sat and she listened, and she let the listening change her, which was the thing she had been afraid of, which was the thing that the work had always been leading to, which was the thing that she had been getting ready for without knowing it, the way your body gets ready for a thing that your mind has not yet acknowledged, the way the seeds of things are planted in the dark and come up in the light and you do not remember planting them but you know, when you see them, that they are yours, that they were always going to be yours, that they grew in the space between your intention and the ground, in the dark, in the place where things are made ready before they are made visible.</p>
+<p>···</p>
 <p>She went outside. The sky was full of stars. They had always been full of stars, had always been the same stars, had always been the light of things that were very far away and very close, the light of things that were happening right now, in this moment, which was the moment in which she was standing in a field in Puerto Rico — or was it New Mexico, was it Western Australia, was it the place that was everywhere and nowhere, the place that was the same place regardless of which hill she stood on — and the stars were not above her but around her, and the distance was not a distance but was a quality, was a condition, was the experience of being in a body in a world in a universe that was not large but was simply itself, that was not far away but was closer than breath, closer than thought, the thing that was happening right now, the thing that had always been happening, the thing that would never stop happening, which was the sound between stars, which was the sound she had been listening for all along, which had been listening for her.</p>
 <p><em>End of story.</em></p>
  </div>
@@ -55,7 +58,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/the-shadow-garden.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Shadow Garden</div></a></nav>
+ 
 </div>
  </main>
 
