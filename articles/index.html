@@ -54,7 +54,7 @@
       filtered.forEach(function(item) {
         var card = document.createElement('article');
         card.className = 'card';
-        card.innerHTML = '<div class="card-meta-top"></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
+        card.innerHTML = '<div class="card-thumb" style="background-image:url(' + (item.image || '/images/card-fallback.svg') + ');background-size:cover;background-position:center;min-height:100px;margin-bottom:12px;border-radius:2px;"></div><div class="card-meta-top"></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
         grid.appendChild(card);
         allCards.push(card);
       });

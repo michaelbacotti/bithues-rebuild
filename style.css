@@ -1302,3 +1302,15 @@ a:hover { color: var(--color-accent-hover); }
   .homepage-grid { grid-template-columns: 1fr; }
   .hero-card-title { font-size: 1.4rem; }
 }
+
+/* ── Vertical card thumbnail (used in stories/articles/reviews listing grids) ── */
+.card-thumb {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 2px;
+    background-color: #2a2a2a;
+    background-image: url('/images/card-fallback.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
