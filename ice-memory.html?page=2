@@ -32,6 +32,7 @@
 <p>"But they were waiting for something."</p>
 <p>Markham looked at the photograph again. The two men and the woman, their faces turned toward something she couldn't see. The camera held by the man on the left, pointed at the ground.</p>
 <p>"They were waiting," she said.</p>
+<p>···</p>
 <p>By the end of the season — by which Markham meant the end of the working season, the six weeks in summer when the weather was just barely cooperative enough to keep the equipment running — they had found thirty-one photographs. They depicted twelve different people in various combinations: alone, in pairs, in groups of three or four. All of them on the ice sheet. All of them in clothing that dated to the 1920s. All of them in locations that corresponded to no known expedition.</p>
 <p>She looked them all up, every name she could find, every reference to Greenland expeditions from that period. Most of the names didn't match anything in the historical record. A few did: a Norwegian cartographer who disappeared in 1925, a Danish surveyor whose last known communication was from 1928, a British geologist whose expedition was never recovered. None of them had records of photographs. None of them had explanations for what they were doing on the ice sheet in the locations where Markham's photographs showed them.</p>
 <p>But the photographs showed them. Not just showed them — showed them waiting. Standing still, looking at things outside the frame, expressions that ranged from calm to urgent to something that Markham could only describe as <em>expectant</em>. They were waiting for something. All of them.</p>
@@ -41,6 +42,7 @@
 <p>Markham read the rejections and set them aside and did not cry, because she had learned a long time ago that crying was a luxury she couldn't afford. She had been denied tenure at two universities before she stopped applying for tenure-track positions. She had been called a fraud and a crank and, once, in a review of a book she had written about ice core analysis, "a well-meaning enthusiast with an overactive imagination." She knew what it felt like to be dismissed by people who hadn't looked carefully at what she was showing them. This was different. This was worse.</p>
 <p>Because the photographs were real. The ice was real. The woman in the first photograph was real — had been real, in 1927 or whenever she had stood on the ice sheet with the camera pointed at her — and something had happened to her that no history recorded. Something had happened to all of them.</p>
 <p>And Markham didn't know what it was. That was the part that kept her awake at night, lying in her narrow bed in her apartment in Copenhagen, listening to the sound of the city that never quite went quiet. She didn't know.</p>
+<p>···</p>
 <p>She left research in 2019. Took a teaching position at a small university in the American Midwest, in a town that was so flat and so featureless that the first time she arrived she had to check whether she had gotten off the plane in the right place. The university was the kind of institution that people who had never heard of it would never hear of. It had a good glaciology program, by the standards of institutions that still cared about glaciology, which was not as many as Markham would have liked.</p>
 <p>She taught Introduction to Earth Systems and Advanced Topics in Paleoclimatology and a seminar she designed herself called The Ice Core Record, which attracted between six and twelve students per semester depending on the year and whether the university had managed to retain its funding. The students were mostly young and earnest and convinced that they wanted to save the planet. Markham liked them. She did not tell them about the photographs.</p>
 <p>She told one person. Only one. Her name was Claire, and she was a graduate student who had come to Markham's office hours every week for a semester, asking questions about ice core data and paleoclimate proxies and the things that ice could reveal about the history of the atmosphere. Claire was twenty-seven and she had the kind of relentless curiosity that Markham recognized because she had been that person once, before the ice had taught her how much the world didn't want to be understood.</p>
@@ -62,9 +64,30 @@
 <p>"I'm saying the ice recorded something. The photographs are evidence of that recording. But I don't know what the ice was recording, or why, or how it knew to record that specific thing at that specific time."</p>
  </div>
  <div class="share-bar">
- <span class="share-label">Share</span>
- <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+  <span class="share-label">Share</span>
+  <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <button class="share-btn share-copy" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('.copy-label').textContent='Copied!';setTimeout(()=>{this.querySelector('.copy-label').textContent='Copy'},2000)})">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    <span class="copy-label">Copy</span>
+  </button>
 </div>
+<script>
+document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
+  var url = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  if (el.classList.contains("share-x")) el.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
+  if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+});
+</script>
  
 </div>
  </main>

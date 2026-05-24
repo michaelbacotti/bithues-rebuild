@@ -27,6 +27,7 @@
   <p>She came back the next day, and the day after that, and the day after that. She sang different pieces — "Vissi d'arte" from <em>Tosca</em>, "Un bel di" from <em>Madama Butterfly</em>, "Der Hölle Rache" from <em>The Magic Flute</em>, which was a different kind of piece, a piece that showed the power of the voice rather than its beauty. She sang duets with herself, harmonizing with recordings she played on her phone, which was not the same as singing with another person but which was something, which was close to the feeling of singing with someone else, of two voices fitting together the way two voices fit together when they are meant to.</p>
 <p>She sang in the boxes, where the wealthy patrons had once sat, where they had been seen and had wanted to be seen. She sang in the balcony, looking down at the stage from above, seeing the space the way the performers would have seen it, understanding what it meant to be watched, to be looked at, to be the center of attention in a room that was built for exactly this purpose.</p>
 <p>She did not tell anyone what she was doing. She did not document it, except for the recordings she made for herself — for her own archive, for her own memory, for the record of what she had done in the last weeks of the Harwick's existence. She was not performing for an audience. She was performing for the building. She was giving the Harwick something to listen to before the Harwick was gone.</p>
+<p>···</p>
 <p>The last day was a Sunday. The demolition was scheduled to begin on Monday morning. Maya had come to the building one last time, with her water bottle and her phone and the dress she wore for concerts — the black dress, the simple one, the one that did not distract from the voice.</p>
 <p>She stood on the stage. She breathed. She thought about the soprano who had sung <em>La Traviata</em> in 1923, who had stood in this same spot and sung for an audience that had paid money to hear her, that had wanted what she had to give. She thought about all the performers who had stood on this stage over the decades, all the voices that had filled this room, all the music that had been made here and that was now gone, remembered by no one, known only as a fact in a historical record.</p>
 <p>She thought about the building. She thought about what it meant to tear down a building, to erase a space, to remove from the world a room that had held so much. The Harwick was not just a building. It was a container for what had happened in it, for what had been made there, for the sounds that had been produced and the people who had heard them. When the building was gone, all of that would be gone too. Not erased — nothing was ever truly erased — but moved, dispersed, returned to the general atmosphere of the world, the noise floor of history.</p>
@@ -40,10 +41,31 @@
 <p><em>End of story.</em></p>
  </div>
  <div class="share-bar">
- <span class="share-label">Share</span>
- <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+  <span class="share-label">Share</span>
+  <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <button class="share-btn share-copy" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('.copy-label').textContent='Copied!';setTimeout(()=>{this.querySelector('.copy-label').textContent='Copy'},2000)})">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    <span class="copy-label">Copy</span>
+  </button>
 </div>
- <nav class="story-nav"><a href="/the-last-winter.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Last Winter</div></a></nav>
+<script>
+document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
+  var url = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  if (el.classList.contains("share-x")) el.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
+  if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+});
+</script>
+ <nav class="story-nav"><a href="/the-listen.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Listen</div></a></nav>
 </div>
  </main>
 

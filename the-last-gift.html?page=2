@@ -32,6 +32,7 @@
 <p>"James was her father," Ruth said. "Not her mother's father — a different father. A second father. The man who lived in this house with me, who planted that garden, who took that photograph of your mother when she came to visit. He was your mother's father, but no one in the family ever acknowledged it. And when I was the only one left who knew, I decided that I would keep it that way. I would keep the secret. I would let the family believe what they wanted to believe."</p>
 <p>She reached into the chair cushion and pulled out a folded piece of paper. She handed it to Marcus.</p>
 <p>"This was for you," she said. "Your mother wrote it before she died. She asked me to send it to you when she was gone. She knew you would come looking. She knew you wouldn't be able to let it go."</p>
+<p>···</p>
 <p>The letter was short. His mother's handwriting, his mother's voice, his mother saying the things she had never said in life, the things she had carried and not known how to put down.</p>
 <p><em>Marcus,</em></p>
 <p><em>I'm sorry. There are things I should have told you, and I didn't. I'm telling you now, because I won't have the chance to tell you later, and because I want you to know who you are, even though knowing is harder than not knowing.</em></p>
@@ -40,6 +41,7 @@
 <p><em>The key is for the house. Ruth will have kept it. She kept everything. That's her way.</em></p>
 <p><em>I love you. I'm sorry I didn't tell you sooner.</em></p>
 <p><em>Mom</em></p>
+<p>···</p>
 <p>Marcus went back to the house on Birch Street. He stood on the porch where his mother had stood as a child, where James had planted the garden that was now gone, where the family had gathered and dispersed and eventually forgotten what it had been.</p>
 <p>He did not know what to do with the truth. He did not know how to carry it. But he knew, now, that he was carrying it — that it had been passed to him the way things are passed, from mother to child, from generation to generation, in the form of a letter or a key or a photograph of a house that you don't recognize but that you recognize anyway, that you know the way you know things you have always known but have only just remembered.</p>
 <p>He put the key in his pocket. He walked to his car.</p>
@@ -50,9 +52,30 @@
 <p><em>End of story.</em></p>
  </div>
  <div class="share-bar">
- <span class="share-label">Share</span>
- <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+  <span class="share-label">Share</span>
+  <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <button class="share-btn share-copy" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('.copy-label').textContent='Copied!';setTimeout(()=>{this.querySelector('.copy-label').textContent='Copy'},2000)})">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    <span class="copy-label">Copy</span>
+  </button>
 </div>
+<script>
+document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
+  var url = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  if (el.classList.contains("share-x")) el.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
+  if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+});
+</script>
  <nav class="story-nav"><a href="/the-last-signal.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Last Signal</div></a></nav>
 </div>
  </main>
