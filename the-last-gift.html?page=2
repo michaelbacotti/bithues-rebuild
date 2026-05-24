@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Last Gift | Bithues</title>
+ <meta name="description" content="A man receives a package with no return address. Inside is a photograph of a house he doesn't recognize and a key that fits no lock he owns. His mother died three months ago.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
+
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction / Mystery</span>
+  <h1>The Last Gift</h1>
+  <div class="story-meta">April 2026</div>
+ </div>
+ <div class="page-nav"><span class="page-info">Page 2 of 2</span><div class="page-links"><a href="/the-last-gift.html?page=1#content" class="page-prev">&#8592; Previous</a><span class="page-next disabled">Next &#8594;</span></div></div>
+ <div class="story-body" id="content">
+  <p>The woman's name was Ruth. She was eighty-seven years old. She had lived in the house for sixty-one years, since she was twenty-six, since a man she had loved had brought her there and told her it was theirs, that they would live there together, that they would grow old in it the way people in the old days grew old together, in one place, for a whole life.</p>
+<p>The man had been named James. He had been Marcus's mother's uncle, though the family had not spoken of him in decades, had not spoken of the house either, had treated both the house and the man as though they had never existed.</p>
+<p>"Your mother came here once," Ruth said. "Just once. She was a girl — maybe eight, maybe nine. This was the only time she ever saw the house. Her mother — my sister — didn't want her to know about it. Didn't want her to know about James. Didn't want her to know about any of it."</p>
+<p>"What was it?" Marcus asked. "What was it that she didn't want my mother to know?"</p>
+<p>Ruth looked at him. She was sitting in a chair in the living room of a house that had once been a garden, in a room that had once held a family that had been erased from memory.</p>
+<p>"James was her father," Ruth said. "Not her mother's father — a different father. A second father. The man who lived in this house with me, who planted that garden, who took that photograph of your mother when she came to visit. He was your mother's father, but no one in the family ever acknowledged it. And when I was the only one left who knew, I decided that I would keep it that way. I would keep the secret. I would let the family believe what they wanted to believe."</p>
+<p>She reached into the chair cushion and pulled out a folded piece of paper. She handed it to Marcus.</p>
+<p>"This was for you," she said. "Your mother wrote it before she died. She asked me to send it to you when she was gone. She knew you would come looking. She knew you wouldn't be able to let it go."</p>
+<p>The letter was short. His mother's handwriting, his mother's voice, his mother saying the things she had never said in life, the things she had carried and not known how to put down.</p>
+<p><em>Marcus,</em></p>
+<p><em>I'm sorry. There are things I should have told you, and I didn't. I'm telling you now, because I won't have the chance to tell you later, and because I want you to know who you are, even though knowing is harder than not knowing.</em></p>
+<p><em>Your real grandfather was a man named James. He lived in a house on Birch Street. He planted a garden in the front yard and kept it growing for forty years. He was not a bad man. He was just a man who existed in a way that the family could not accept, and so the family erased him, and in erasing him, they erased the part of me that came from him.</em></p>
+<p><em>I have carried this my whole life. I didn't want you to carry it. But you're an adult now, and you deserve the truth, even if the truth is heavy.</em></p>
+<p><em>The key is for the house. Ruth will have kept it. She kept everything. That's her way.</em></p>
+<p><em>I love you. I'm sorry I didn't tell you sooner.</em></p>
+<p><em>Mom</em></p>
+<p>Marcus went back to the house on Birch Street. He stood on the porch where his mother had stood as a child, where James had planted the garden that was now gone, where the family had gathered and dispersed and eventually forgotten what it had been.</p>
+<p>He did not know what to do with the truth. He did not know how to carry it. But he knew, now, that he was carrying it — that it had been passed to him the way things are passed, from mother to child, from generation to generation, in the form of a letter or a key or a photograph of a house that you don't recognize but that you recognize anyway, that you know the way you know things you have always known but have only just remembered.</p>
+<p>He put the key in his pocket. He walked to his car.</p>
+<p>He drove home. The letter was on the passenger seat, next to the photograph, next to all the evidence of a family that had been hidden and now was not hidden anymore.</p>
+<p>He did not know what he was going to do with any of it. But he knew, now, that he had it. And having it was the beginning of something — the beginning of knowing, the beginning of carrying, the beginning of the long slow work of making peace with what we are given and what we make of it.</p>
+<p>The garden in the photograph was gone. But the house was still there.</p>
+<p>And in the house, an old woman was sitting in a chair, holding the memory of James, waiting to see what Marcus would do with the truth she had finally let go.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-last-signal.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Last Signal</div></a></nav>
+</div>
+ </main>
+
+ <div id="site-footer"></div>
+
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
+
+</body>
+</html>

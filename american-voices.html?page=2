@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>American Voices | Bithues</title>
+ <meta name="description" content="When their grandmother dies, two siblings inherit a box of reel-to-reel tapes recorded in the 1960s — each one a voice from a life they never knew she lived before coming to America.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
+
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>American Voices</h1>
+  <div class="story-meta">March 2026</div>
+ </div>
+ <div class="page-nav"><span class="page-info">Page 2 of 2</span><div class="page-links"><a href="/american-voices.html?page=1#content" class="page-prev">&#8592; Previous</a><span class="page-next disabled">Next &#8594;</span></div></div>
+ <div class="story-body" id="content">
+  <p>Marina shook her head. "I don't know. Maybe it was easier. Maybe the story was already too long without adding the part that didn't fit."</p>
+<p>"That's a hell of a thing to carry alone."</p>
+<p>"For thirty years."</p>
+<p>David put the tapes back in the box, one by one. He handled them carefully, the way you'd handle something that might still remember being held. Marina watched him and thought about all the things she'd assumed about her grandmother — the Irish accent, the bifocals, the way she said <em>faucet</em> instead of <em>tap</em>, the endless cups of cold tea. She'd built a person out of scraps and called it complete.</p>
+<p>"We should give these to Mom," David said.</p>
+<p>"Not yet."</p>
+<p>"Why not?"</p>
+<p>Marina looked at the window. The glass was dark now, reflecting the kitchen light, and in the reflection she could see the table, the box, the back of her own head. She thought about what it would be like to hear those tapes for the first time knowing what was coming — knowing that the woman on the tapes was about to become a mother, was about to pack all of this into a new life and start over in a language she was still learning.</p>
+<p>"She needs to be ready," Marina said. "These aren't just tapes. They're the years before. And you can't just skip to the end of someone's story and expect it to make sense."</p>
+<p>David didn't argue. He left the box on the table, between the salt and pepper shakers, where Helen had always kept the everyday things.</p>
+<p>Marina listened to the tapes alone, after David left. Not all at once — she spread them out over several nights, one or two, late, after the house was quiet. She learned to hear things she hadn't heard before. The room acoustics changed over the years. The quality of the recordings improved, or the machine got better, or Yelena figured out where to place the microphone. The accordion on the fifth tape sounded like it was being played in a larger space, maybe a basement, maybe a community hall. The English on the last tape was fluent and unhesitating, but Yelena still paused before words like <em>mother</em> and <em>home</em>, like she was translating them in her head before she said them aloud.</p>
+<p>On the third tape, the one that was just sounds, Marina finally understood what she was listening to. It wasn't nothing. It was Yelena's kitchen in 1963 — the one on Albemarle Street, before the eviction, before the move to the apartment on Bexley. The sounds were specific and irreplaceable. A knife on a board. Water boiling. A window with the latch broken, letting in the sound of the street. Someone — Yelena — folding something, the soft percussion of fabric against fabric. All of it gone now, all of it preserved for sixty years in the chemical dark of a magnetic tape, waiting to be heard.</p>
+<p>Marina sat in her grandmother's kitchen and listened to a kitchen that no longer existed, and the grief of it was not sharp the way she expected. It was slow and warm and entirely human — the kind of grief that comes from understanding that the past was real, that it was full of specific people who did specific things, that it didn't wait for anyone to write it down before it moved on.</p>
+<p>She listened to the part where Yelena said <em>I will love you in English, but I will think of you in the other language</em>, and she understood that her mother had been that child, had grown up in both languages and carried both and never known how much of herself came from a woman on a tape, in a room, deciding what to say to someone who didn't exist yet.</p>
+<p>She understood that the love had been there before the child, before the name, before the papers and the new country and the years of becoming someone else. It had been there in the tape machine and the phrase book and the accordion and the window with the broken latch. It had been there in the decision to keep a record — to make something that would last longer than memory, that would say the thing that couldn't be said in person because there was no person yet to say it to.</p>
+<p><em>I love you,</em> Yelena had said, on the last tape, to a baby she hadn't met. <em>I love you.</em></p>
+<p>Marina sat in the kitchen and let the words be old. She let them travel the distance they'd been meant to travel. She didn't rewind or repeat or try to hold on to them. She let them go.</p>
+<p>Outside, the October dark was settling over the yard, over the street, over everything her grandmother had walked through for eleven years without ever saying the thing that was true. The cold was coming. The radiators would remember soon enough.</p>
+<p>Marina left the box on the table. She turned off the light and went to bed. In the morning she would call David and tell him she was ready to show their mother. In the morning the work of carrying the past would begin in earnest — the part where you take what you were given and decide what it means and give it to someone else to carry.</p>
+<p>But that was tomorrow.</p>
+<p>Tonight she slept in a house where someone had loved her in a language she'd never learned, and she dreamed of snow falling in a place she'd never been.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/city-of-wonders.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">City of Wonders</div></a></nav>
+</div>
+ </main>
+
+ <div id="site-footer"></div>
+
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
+
+</body>
+</html>

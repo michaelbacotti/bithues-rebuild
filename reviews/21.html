@@ -1,96 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Reviews — Page 3 | Bithues</title>
-  <meta name="description" content="In-depth book reviews across fiction, sci-fi, fantasy, nonfiction, and more — curated for curious readers.">
-  <link rel="stylesheet" href="/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="canonical" href="https://www.bithues.com/reviews/21">
-
-<script>
-  // Pre-load page 3 reviews (21-30) for /reviews/21 route
-  var PAGE3_REVIEWS = "<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/mythical-menagerie\">Mythical Menagerie</a></h2>\n  <p class=\"card-excerpt\">Review of Mythical Menagerie by Nadia El-Chehen. Creatures from myth, legend, and the spaces between. A beautifully illustrated journey through the fantastic bestiary.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/mindful-memory\">Mindful Memory</a></h2>\n  <p class=\"card-excerpt\">Empowering retirees with science-backed exercises like memory palaces and timeline mapping.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/microbiology-abcs\">Microbiology ABCs</a></h2>\n  <p class=\"card-excerpt\">Review of Microbiology ABCs. The invisible world made visible through the alphabet. Science and language learning meet in a genuinely clever package.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/men-of-three-seas\">Men of the Three Seas</a></h2>\n  <p class=\"card-excerpt\">An epic historical saga spanning three seas and three generations — Leander Vassos delivers a sweeping, character-driven epic that earns its scale.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/living-with-a-moving-planet\">Living with a Moving Planet</a></h2>\n  <p class=\"card-excerpt\">J. T. Hartley explores what it means to live on a planet that never stops moving.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-learns-to-fly\">Little Mike: Learns to Fly</a></h2>\n  <p class=\"card-excerpt\">Little Mike dreams of flying. With friends John and May, he meets Pilot Thomas who teaches the wonders of airplanes.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-fun-at-the-beach\">Little Mike Fun at the Beach</a></h2>\n  <p class=\"card-excerpt\">Review of Little Mike Fun at the Beach. A child's perfect beach day — sun, surf, and the small adventures that feel enormous when you're young.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/little-mike-builds-a-robot\">Little Mike Builds a Robot</a></h2>\n  <p class=\"card-excerpt\">Review of Little Mike Builds a Robot. A children's book about ingenuity, friendship, and the surprising intelligence of small things.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/horizonte-rojo\">Horizonte Rojo: Lanzamiento Lunar — Reseña</a></h2>\n  <p class=\"card-excerpt\">Una novela de ciencia ficción que comienza cuando la cuenta regresiva termina — M. A. Hale construye un thriller lunar ambientado en una colonia lunar en el momento del lanzamiento.</p>\n</article>\n<article class=\"card\">\n  <div class=\"card-meta-top\"></div>\n  <h2 class=\"card-title\"><a href=\"/reviews/home-for-anya\">A Home for Anya</a></h2>\n  <p class=\"card-excerpt\">A touching story of home, belonging, and family — Lena Ashfield delivers a romance that earns every emotional beat.</p>\n</article>\n";
-  var PAGE3_START = 20; // 0-indexed start for page 3 (3rd page at 10/page)
-</script>
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Reviews | Bithues</title>
+ <meta name="description" content="In-depth book reviews across fiction, sci-fi, fantasy, nonfiction, and more — curated for curious readers.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-  <div id="site-nav"></div>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
-  <header class="hero hero--small">
-    <div class="hero-inner">
-      <h1 class="hero-title">Reviews</h1>
-      <p class="hero-tagline">In-depth reviews across fiction, sci-fi, fantasy, nonfiction, and more.</p>
+ <main>
+ <article class="content-article">
+  <!-- HEADER -->
+  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
+    <!-- Left: Cover + Author + Genre -->
+    <div style="flex:0 0 auto;">
+      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
+        <a href="https://www.amazon.com/?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+          <img src="" alt="Reviews" style="width:110px; border-radius:3px; box-shadow:0 2px 10px rgba(0,0,0,0.12); display:block;">
+        </a>
+        <div>
+          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">by </p>
+          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">fiction</p>
+        </div>
+      </div>
+      <!-- Live Price -->
+      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
+        <div class="lp-row">
+          <span class="lp-label">Amazon Price:</span>
+          <span class="lp-price">—</span>
+        </div>
+        
+        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
+      </div>
     </div>
-  </header>
-
-  <main class="main" style="max-width:var(--max-width-wide);margin:0 auto;padding:0 24px;">
-    <div class="feed" id="feed-grid"></div>
-  </main>
-
-  <div id="pagination-controls" style="display:none;justify-content:center;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--font-body,system-ui);">
-    <button id="prev-btn" onclick="changePage(-1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;display:none;">← Previous</button>
-    <span id="page-num" style="font-size:.9rem;color:#3a2f1e;"></span>
-    <button id="next-btn" onclick="changePage(1)" style="background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;padding:6px 18px;border-radius:3px;cursor:pointer;font-size:.9rem;">Next →</button>
   </div>
 
-  <div style="margin:2rem 0;padding:.75rem;background:var(--surface);border-radius:var(--radius);text-align:center;">
+  <!-- BODY -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+   <p>The Reviews section offers deeper looks at books that merit more than a star rating. Each review explores what makes a book worth your time, who should read it, and what it offers that you will not find elsewhere.</p>
+<h2>What You'll Find Here</h2>
+<p><strong>Fiction Reviews</strong></p>
+<p>Novels across genres — literary fiction, science fiction, fantasy, thrillers, and the spaces where genres blur. These reviews focus on what a book is trying to do and how well it does it, rather than forcing everything into a single standard of excellence.</p>
+<p><strong>Nonfiction Reviews</strong></p>
+<p>Memoirs, histories, science, and essays. The nonfiction reviews are interested in both argument and style — a book that is right but boring still has a problem, and we'll say so.</p>
+<p><strong>Classic Revisits</strong></p>
+<p>Older books that are often referenced but rarely read. These reviews try to answer the question: is this book still worth your time, or has it been replaced by better work that came after?</p>
+<p><strong>Guilty Pleasures</strong></p>
+<p>Every serious reader has them. These reviews take them seriously anyway.</p>
+<h2>How We Review</h2>
+<p>We rate books on three dimensions:</p>
+<p><strong>Craft</strong> — How well is this book written? Is the prose doing something interesting? Does the structure serve the story?</p>
+<p><strong>Impact</strong> — Did this book change how you think? Did it stay with you after you finished? Does it still matter?</p>
+<p><strong>Recommendability</strong> — Would you recommend this to a specific person, or only to a specific type of reader?</p>
+<p>A book that scores highly on all three is rare. Most good books score well on one or two. We tell you which.</p>
+<p>Browse below, or use the genre filters to find reviews that match your interests. Every review is written to be honest, specific, and worth the time it takes to read it.</p>
+   
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+  <div class="share-bar">
+  <span class="share-label">Share</span>
+  <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </a>
+  <a class="share-btn share-facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a class="share-btn share-linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <button class="share-btn share-copy" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.querySelector('.copy-label').textContent='Copied!';setTimeout(()=>{this.querySelector('.copy-label').textContent='Copy'},2000)})">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    <span class="copy-label">Copy</span>
+  </button>
+</div>
+<script>
+document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(function(el) {
+  var url = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  if (el.classList.contains("share-x")) el.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
+  if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+});
+</script>
+  <div class="related-links">
+<h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">More Reviews</h3>
+<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+<a href="/reviews/dawn-of-civilization.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">The Dawn of Civilization</a>
+<a href="/reviews/living-with-a-moving-planet.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Living with a Moving Planet</a>
+<a href="/reviews/red-horizon.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Red Horizon</a>
+<a href="/reviews/rules-of-survival.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Rules of Survival</a>
+</div>
+</div>
+</article>
+ </main>
 
-  <div id="site-footer"></div>
+ <div id="site-footer"></div>
 
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
-  <script>
-  fetch('/search.json')
-    .then(r => r.json())
-    .then(data => {
-      var itemsPerPage = 10;
-      var grid = document.getElementById('feed-grid');
-      var filtered = data.filter(item => item.category === 'Book Review' || (item.type && item.type.toLowerCase().includes('review')));
-      var allCards = [];
-      // Sort newest first by date
-      filtered.sort(function(a, b) { return (b.date || 0) - (a.date || 0); });
-
-      filtered.forEach(function(item) {
-        var card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = '<div class="card-meta-top"></div><h2 class="card-title"><a href="' + item.url + '">' + item.title + '</a></h2><p class="card-excerpt">' + (item.summary || item.excerpt || '') + '</p>';
-        card.setAttribute('data-category', 'Book Review');
-        grid.appendChild(card);
-        allCards.push(card);
-      });
-
-      var totalPages = Math.ceil(allCards.length / itemsPerPage);
-      var currentPage = 2;
-      document.getElementById('pagination-controls').style.display = totalPages > 1 ? 'flex' : 'none';
-      document.getElementById('page-num').textContent = '1 of ' + totalPages;
-
-      window.changePage = function(d) {
-        currentPage = Math.max(1, Math.min(totalPages, currentPage + d));
-        var start = (currentPage - 1) * itemsPerPage;
-        allCards.forEach(function(c, i) {
-          c.style.display = (i >= start && i < start + itemsPerPage) ? '' : 'none';
-        });
-        document.getElementById('page-num').textContent = currentPage + ' of ' + totalPages;
-        document.getElementById('prev-btn').style.display = currentPage === 1 ? 'none' : '';
-        document.getElementById('next-btn').style.display = currentPage === totalPages ? 'none' : '';
-      };
-      // Initialize: hide all cards beyond page 1
-      var startInit = (1 - 1) * itemsPerPage;
-      allCards.forEach(function(c, i) {
-        c.style.display = (i >= startInit && i < startInit + itemsPerPage) ? '' : 'none';
-      });
-    });
-  </script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

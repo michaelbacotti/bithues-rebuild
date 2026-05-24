@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Last Song | Bithues</title>
+ <meta name="description" content="The last opera ever performed in the old building was in 1923. The building is being demolished next month. A soprano who has never performed there decides to stage one last concert — just for herself.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
+
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>The Last Song</h1>
+  <div class="story-meta">April 2026</div>
+ </div>
+ <div class="page-nav"><span class="page-info">Page 2 of 2</span><div class="page-links"><a href="/the-last-song.html?page=1#content" class="page-prev">&#8592; Previous</a><span class="page-next disabled">Next &#8594;</span></div></div>
+ <div class="story-body" id="content">
+  <p>She came back the next day, and the day after that, and the day after that. She sang different pieces — "Vissi d'arte" from <em>Tosca</em>, "Un bel di" from <em>Madama Butterfly</em>, "Der Hölle Rache" from <em>The Magic Flute</em>, which was a different kind of piece, a piece that showed the power of the voice rather than its beauty. She sang duets with herself, harmonizing with recordings she played on her phone, which was not the same as singing with another person but which was something, which was close to the feeling of singing with someone else, of two voices fitting together the way two voices fit together when they are meant to.</p>
+<p>She sang in the boxes, where the wealthy patrons had once sat, where they had been seen and had wanted to be seen. She sang in the balcony, looking down at the stage from above, seeing the space the way the performers would have seen it, understanding what it meant to be watched, to be looked at, to be the center of attention in a room that was built for exactly this purpose.</p>
+<p>She did not tell anyone what she was doing. She did not document it, except for the recordings she made for herself — for her own archive, for her own memory, for the record of what she had done in the last weeks of the Harwick's existence. She was not performing for an audience. She was performing for the building. She was giving the Harwick something to listen to before the Harwick was gone.</p>
+<p>The last day was a Sunday. The demolition was scheduled to begin on Monday morning. Maya had come to the building one last time, with her water bottle and her phone and the dress she wore for concerts — the black dress, the simple one, the one that did not distract from the voice.</p>
+<p>She stood on the stage. She breathed. She thought about the soprano who had sung <em>La Traviata</em> in 1923, who had stood in this same spot and sung for an audience that had paid money to hear her, that had wanted what she had to give. She thought about all the performers who had stood on this stage over the decades, all the voices that had filled this room, all the music that had been made here and that was now gone, remembered by no one, known only as a fact in a historical record.</p>
+<p>She thought about the building. She thought about what it meant to tear down a building, to erase a space, to remove from the world a room that had held so much. The Harwick was not just a building. It was a container for what had happened in it, for what had been made there, for the sounds that had been produced and the people who had heard them. When the building was gone, all of that would be gone too. Not erased — nothing was ever truly erased — but moved, dispersed, returned to the general atmosphere of the world, the noise floor of history.</p>
+<p>She opened her mouth.</p>
+<p>She sang the last piece — "Casta Diva" again, the piece she had sung on her first day, the piece that felt like the beginning and now felt like the end. She sang it slowly, taking her time with each phrase, treating each note as though it were the only note, as though the song were not a song but a series of moments, each one complete, each one enough.</p>
+<p>The building listened. The building had always listened — that was what it was built for, that was what it had always done. It had listened to voices for a hundred and thirty years, and it would listen one more time, and then it would be gone, and the listening would be done.</p>
+<p>When she finished, she stood in the silence.</p>
+<p>She walked off the stage.</p>
+<p>She left the building.</p>
+<p>On Monday, the demolition began.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-last-winter.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Last Winter</div></a></nav>
+</div>
+ </main>
+
+ <div id="site-footer"></div>
+
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
+
+</body>
+</html>

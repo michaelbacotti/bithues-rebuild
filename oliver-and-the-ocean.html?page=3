@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Oliver and the Ocean | Bithues</title>
+ <meta name="description" content="Oliver and the Ocean — Short Story by Bithues">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
+
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>Oliver and the Ocean</h1>
+  
+ </div>
+ <div class="page-nav"><span class="page-info">Page 3 of 3</span><div class="page-links"><a href="/oliver-and-the-ocean.html?page=2#content" class="page-prev">&#8592; Previous</a><span class="page-next disabled">Next &#8594;</span></div></div>
+ <div class="story-body" id="content">
+  <p><em>Tell him if you can. Tell him I'm not sorry. Tell him I was never sorry.</em></p>
+<p>Oliver closed the notebook. He sat at the kitchen table for a long time. The house was quiet. The photographs were on the wall. Eleanor at the Grand Canyon. Eleanor in the desert. Eleanor in the mountains.</p>
+<p>She had been to the ocean without him. He knew that now. He knew she'd gone with friends, with coworkers, with her sister on the one trip he'd let her take alone. She had seen it. She had loved it. And she had come home and never once let him feel that he had failed her by being who he was.</p>
+<p>He called Rose. "I read it," he said.</p>
+<p>"And?"</p>
+<p>"She was happy. Most of the time. She made peace with things. She didn't blame me."</p>
+<p>"I never thought she blamed you, Dad."</p>
+<p>"I know. But I needed to know."</p>
+<p>He was quiet for a moment. Then: "Next summer. The beach house. I want to come again."</p>
+<p>"We'd love that."</p>
+<p>"I'll come for the whole two weeks."</p>
+<p>"You don't have to — "</p>
+<p>"I want to. I want to sit on the deck. I want to watch the kids play. I want to be there."</p>
+<p>"Okay, Dad."</p>
+<p>He hung up. He sat in the kitchen for a while longer. The notebook was closed on the table. The sun was going down outside, painting the walls the way it always did at this hour, and the light was the same light that Eleanor used to eat breakfast in, all those winters ago.</p>
+<p>He got up and made dinner. He stood at the counter to eat it. He washed the dishes and dried them and put them away.</p>
+<p>Then he went to the closet, in the bedroom, and found the box of letters — the small notes Eleanor had left him over the years, the ones that weren't love letters but were something else, something he now understood better than he had before.</p>
+<p>He read two of them. Then he closed the box and put it back on the shelf.</p>
+<p>He went to bed early. He slept without dreaming.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/rules-of-the-game.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">R U L E S   O F   T H E   G A M E</div></a></nav>
+</div>
+ </main>
+
+ <div id="site-footer"></div>
+
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
+
+</body>
+</html>
