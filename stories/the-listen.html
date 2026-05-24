@@ -1,478 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Listen | Bithues</title>
-  <meta name="description" content="The Listen — a short story from Bithues.">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/the-listen">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "The Listen | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Listen | Bithues",
-  "url": "https://www.bithues.com/stories/the-listen",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Listen | Bithues</title>
+ <meta name="description" content="A woman works as a listener — someone who sits with the dying and hears what they have to say. Not an interviewer. Not a friend. Just someone who receives what's being given. She's been doing it for twenty years. Today she's assigned a patient she knows.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>The Listen</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>The Listen</h1>
+  <div class="story-meta">April 2026</div>
+ </div>
+ 
+ <div class="story-body" id="content">
+  <p>The woman who worked as a listener had a name but used it rarely. Her patients called her the Listener, which was not a title she had chosen but which she had come to accept, because it was accurate, because it was the thing she did, because after twenty years the title had become her the way titles sometimes do when they fit closely enough to be indistinguishable from the person wearing them.</p>
+<p>She sat with the dying. This was not a clinical role — she was not a nurse, not a doctor, not a social worker. She had no medical training. She had no therapeutic credential. What she had was something simpler and harder to describe: she was willing to be present. She was willing to be in a room with someone who was leaving and to stay there, without agenda, without direction, without the particular agenda that visitors bring, which is to say the need to be comforted, to be helped, to be given something that would make the dying person's situation better than it was.</p>
+<p>She did not help. She received.</p>
+<p>Today she was assigned to a patient she knew. This happened sometimes — not often, but enough that she had developed a practice for it. Today the patient was named Ruth, and Ruth was seventy-nine years old, and she was dying of the same thing most people Ruth's age were dying of, which was time, which was the body running down in the way that bodies do when they have done the work of living and have nothing left to give.</p>
+<p>Ruth had been her friend.</p>
+<p>This was the complication. This was the thing that made the assignment different from all the others, because the others had been strangers, and Ruth was not a stranger, and the Listener had to sit with Ruth's dying knowing what she knew about the person she was sitting with, which was everything, which was thirty years of conversation and disagreement and the particular closeness that comes from people who have known each other long enough to have seen each other at their worst and stayed anyway.</p>
+<p>Ruth was in a room on the fourth floor. The Listener came in and closed the door behind her and sat in the chair beside the bed. Ruth's eyes were closed but she was not asleep — the Listener knew the difference, had learned it over twenty years, the particular quality of the breathing that meant someone was awake but resting, waiting but not hoping.</p>
+<p>"I know you're here," Ruth said.</p>
+<p>"I know you know."</p>
+<p>The Listener had brought nothing with her. She never brought anything. She sat in the chair and she waited and she let Ruth speak when Ruth was ready, or let the silence be if Ruth was not ready to speak.</p>
+<p>Ruth was not ready to speak. She was quiet for a long time. The Listener sat.</p>
+<p>They had met at a conference in 1996. The Listener had been twenty-eight and working on her first book, a study of end-of-life care practices in different cultures. Ruth had been a palliative care nurse who had been asked to speak on a panel about what patients actually wanted in their final days. The Listener had gone to every session Ruth spoke at. They had had dinner afterward, and dinner had turned into dinner the next night, and dinner the next night, and a friendship that neither of them had expected and both of them had kept.</p>
+<p>Ruth had taught the Listener how to do what she did. Not formally — Ruth had never been her supervisor, never been her mentor in any official sense. But Ruth had shown her, through the way she moved through a room, the way she sat with a patient, the way she listened — had shown her what it meant to receive another person's dying without trying to change it, without trying to make it easier, without trying to do anything except be there.</p>
+<p>"You listen like a nurse," someone had said to the Listener once.</p>
+<p>"That's the compliment I want," the Listener had said.</p>
+<p>"Will you tell me something?" Ruth said.</p>
+<p>"Anything."</p>
+<p>"I don't know what I want you to tell me. That's the problem. I know what I'm supposed to want — I know what the books say people want at the end. They want to resolve things. They want to say goodbye. They want to make peace with whatever they've done wrong. They want to hear that they're forgiven."</p>
+<p>"Those things are not available to me. I can only tell you what I have."</p>
+<p>"What do you have?"</p>
+<p>The Listener sat with the question. This was the practice — to sit with the question, even when it was Ruth's question, even when she knew Ruth well enough to know what kind of answer would be comfortable and what kind would not.</p>
+<p>"I have the truth," the Listener said. "I have what I observed. I have twenty years of watching you move through the world and what I saw in you, which was someone who was trying, always, to be of use. Not to be comfortable. Not to be happy. To be useful. You were useful to me, Ruth. You showed me how to do this work. You showed me what it meant to receive someone without trying to fix them."</p>
+<p>Ruth's eyes were still closed. The Listener could see her breathing, the slow rhythm of it, the way it had slowed in the last weeks in a way that was not alarming but was noticeable, was the body's way of saying what it was preparing for.</p>
+<p>"That's not forgiveness," Ruth said.</p>
+<p>"No. It's not."</p>
+<p>"I don't want to be forgiven. I want to be understood. I want someone to understand what it was like. Not to apologize for it. Not to explain it. Just to understand it."</p>
+<p>The Listener understood. She had been doing this for twenty years. She knew what understanding meant in this context — not agreement, not absolution, not the removal of judgment. Understanding was simply the willingness to hold what someone had done or what had been done to them without collapsing it into something simpler than it was.</p>
+<p>"I'm here," the Listener said. "I'm listening. Tell me what it was like."</p>
+<p>Ruth talked for two hours. She talked about her childhood, which had been hard in a way that was not interesting to anyone except her and was now, at the end, interesting only to her and to whoever was willing to hear it. She talked about her marriage, which had been good and then bad and then something else that she had never found a name for. She talked about the patients she had sat with, the hundreds of them, the thousands of them, the ones she remembered and the ones she had let go.</p>
+<p>The Listener listened. She did not interrupt. She did not ask questions. She did not offer comfort or interpretation or the particular response that people offer when they are listening and are afraid that the silence means they are not doing their job.</p>
+<p>The silence was the job.</p>
+<p>At the end, Ruth was quiet. The Listener held her hand. The hand was thin — bone and skin and the particular weight of someone who was leaving.</p>
+<p>"I'm glad it's you," Ruth said.</p>
+<p>"I know."</p>
+<p>"You won't forget this."</p>
+<p>"I won't."</p>
+<p>"I want you to know that I'm not afraid. I thought I would be afraid. I'm not. I'm just — tired. And ready. And I wanted you to be here because you understand what it means. You've been here before. You know what I'm doing."</p>
+<p>The Listener knew. She had been here before — not with Ruth, but with others. The moment when the dying person let go of the need to explain, to justify, to make sense of what was happening. The moment when they simply rested in what was, which was the last thing any of us get to do.</p>
+<p>"I'm here," the Listener said.</p>
+<p>She held Ruth's hand. She stayed.</p>
+<p>The afternoon light moved across the floor. The machines beeped their small, precise rhythms. The Listener sat, and received, and let Ruth be what Ruth was, which was a woman in the last moments of a life that had been complicated and ordinary and entirely her own.</p>
+<p>Ruth died at 4:47 in the afternoon. The Listener was still there.</p>
+<p>She stayed for another hour. She did not call the nurses yet. She sat in the room with the body that had been Ruth, and she let the silence be what it was, and she thought about twenty years of work, and what it meant, and what it would mean when she could no longer do it.</p>
+<p>Then she stood up. She straightened her jacket. She walked out of the room and down the hall and out into the world, where there were other people who were dying and who needed someone to listen, and who would wait, as they always waited, for her to arrive.</p>
+<p>She went to the next assignment.</p>
+<p>She always did.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-last-winter.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">The Last Winter</div></a><a href="/the-other-side.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Other Side</div></a></nav>
+</div>
+ </main>
 
-    <div class="story-hero-image">
-      <img src="/stories/images/the-listen.jpg" alt="the listen cover art">
-    </div>
+ <div id="site-footer"></div>
 
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>The station was KXLP, 50 watts, and it reached just far enough to catch the edges of three counties before dissolving into static. Lena had taken the night shift because she didn't sleep anyway. She arrived at eleven, the parking lot gravel crunching under her boots, and sat in the dim glow of the board until dawn painted the blinds gold.</p>
-<p>She answered the phone when it rang. That was the whole job. She never gave advice, never offered solutions. She just listened, her voice low and even, the microphone picking up the soft cadence of her breathing between words. The calls came in waves — insomniacs mostly, people caught in the arithmetic of their own thoughts. One man called every Tuesday at 2 AM to describe the precise sound his ceiling fan made, the particular rattle in the bearings that he swore was getting worse. She let him talk until he was done. Then he thanked her and hung up, and the line went quiet again.</p>
-<p>Tonight, the caller described a hum.</p>
-<p>He was young, nervous, careful with his words. He said he'd been tracking something for weeks — a low vibration at the edge of hearing, more felt than heard. He'd mapped it across a topographic survey until he'd found the source: an abandoned well on the old Martinez place, just east of the railroad tracks where the land folded into scrub and silence. He'd gone there at midnight with a parabolic microphone and headphones, and the hum was there. Constant. Unchanged. Like something breathing underground.</p>
-<p>Lena wrote the coordinates on a napkin. She didn't say she'd come. But an hour later, she was driving.</p>
-<p>The desert at 3 AM is a different geography. The road unspooled ahead of her, pale under the high beams, and the sky was a black so complete it made the headlights feel like small and insufficient things. She passed no other cars. The land was cold, the windows fogging at the edges, and the radio had gone to static somewhere around mile marker 14. She didn't fix it. She drove in silence, the way you drive when you are going to meet something you cannot name.</p>
-<p>She found him at the well.</p>
-<p>He was standing in the dirt in a canvas jacket, headphones around his neck, one hand extended toward the stone ring. The well was old — hand-laid rocks, mortar gone soft with decades of rain and sun, no pump, no cover. Just a dark mouth opening into the earth. She could see the stones were irregular, fitted by someone who had built with their hands in a time before machines. The work of it was still visible in every line.</p>
-<p>He turned when he heard her truck. He wasn't surprised. Maybe he had known she would come.</p>
-<p>She got out and stood beside him. The cold was a physical thing, pressing against her jacket. She looked at the well and listened. At first there was nothing — just the wind moving across the scrub, the distant suggestion of highway sound far to the south. Then, beneath that, she felt it. A vibration. Not a sound exactly, but a pressure, a hum that lived in the chest and the base of the skull. It was below hearing in the way a heartbeat is below hearing — present, rhythmic, undeniable.</p>
-<p>The man said: "It started three weeks ago. Right after the new moon. Like something waking up."</p>
-<p>Lena said nothing. She didn't know what to say. She stood with her hands in her pockets and listened to what the earth was saying, if that is what it was saying. The hum continued. Low and constant and patient, like the pulse of something vast and indifferent, something that had been there longer than the stones, longer than the road, longer than the counties and their names.</p>
-<p>They stood there until the eastern sky began to grey. The hum did not stop. It did not change. It simply was, the way the ground was, the way the stones were, the way the silence between stars was. She drove home as the sun came up over the desert, her hands steady on the wheel, and the hum was still there. Not in the air anymore — she couldn't hear it inside the truck — but inside her, somewhere deeper than hearing, she carried it with her through the morning and into the next night, and she did not sleep, and she did not explain it, and she never spoke of it on the radio.</p>
-<p>Some things do not ask to be understood. They only ask to be heard.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
-  
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
-
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
-
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

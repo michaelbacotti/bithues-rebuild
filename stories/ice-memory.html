@@ -1,473 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I C E   M E M O R Y | Bithues</title>
-  <meta name="description" content="Short Story by Bithues">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/ice-memory">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "I C E   M E M O R Y | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "I C E   M E M O R Y | Bithues",
-  "url": "https://www.bithues.com/stories/ice-memory",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ice Memory | Bithues</title>
+ <meta name="description" content="Glaciologists drilling in Greenland pulled up a core sample with something frozen inside that should not have been there — a photograph, in perfect condition, dated 1927. No one could explain it. No one could explain what came next.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>I C E   M E M O R Y</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>Ice Memory</h1>
+  <div class="story-meta">March 2026</div>
+ </div>
+ <div class="page-nav"><span class="page-info">Page 1 of 3</span><div class="page-links"><span class="page-prev disabled">&#8592; Previous</span><a href="/ice-memory.html?page=2#content" class="page-next">Next &#8594;</a></div></div>
+ <div class="story-body" id="content">
+  <p>The drill bit screamed at 3,200 meters. That was the sound Anne Markham had learned to hate over nineteen years in the field — not the cold, not the isolation, not the equipment failures at temperatures that made steel brittle. It was the scream of the drill when it hit something it wasn't supposed to hit.</p>
+<p>She was seventy-three years old and she shouldn't have been on the ice. Her knees knew it, her back knew it, the way her hands trembled when she held anything steady for more than a few seconds told her she should be in a university office somewhere, reviewing other people's data. But she had come back to this site because she had to. Because the first photograph was still sitting in its climate-controlled case in Copenhagen, and no one had been able to explain it, and she had spent eleven years trying to forget it and couldn't.</p>
+<p>The core sample came up gray-white, the color of old ice that hadn't seen light since before humans built their first fires. Markham was standing in the processing tent, her parka stiff with frost at the cuffs, watching the tech pull the cylindrical sample from the barrel of the drill. The tech — a young man named Soren, who had done this a hundred times without ever losing his wonder at what the ice could tell them — held it up to the light and frowned.</p>
+<p>"There's something in it," he said.</p>
+<p>Markham walked over. The processing tent was small, barely large enough for the two of them and the equipment that reduced cores to thin slices for analysis. The light inside was the flat white of LED strips bolted to the ceiling, designed to mimic daylight without generating heat. In that light, she could see the object embedded in the ice like an insect in amber — a rectangle, edges sharp, surface glossy.</p>
+<p>"Photograph," she said.</p>
+<p>Soren looked at her. "You can't tell that from—"</p>
+<p>"I can tell."</p>
+<p>She took the core to the analysis station and spent forty minutes carefully exposing the object, shaving the ice away in micron layers until the photograph lay free in a shallow dish of cold water. The ice around it had been undisturbed for approximately 123,000 years, based on the depth and the ice's own stratigraphic record. The photograph was printed on paper stock that was manufactured no earlier than 1926.</p>
+<p>She held the tweezers steady and lifted it from the water and dried it with the breath-fog of her own exhalation, because that was the only warm air she had.</p>
+<p>The photograph showed a woman standing in front of a canvas tent, her hands deep in the pockets of a wool coat that was too thin for Greenland in winter. She was looking at the camera with an expression that Markham would later describe, in the privacy of her own thoughts, as <em>waiting</em>. Not the passive waiting of someone who has nothing better to do. The active, focused waiting of someone who knows exactly what they are waiting for.</p>
+<p>Behind the woman, the ice sheet stretched in every direction, featureless and white. There were no mountains visible, no coast, no reference points of any kind. Just ice and sky and the faint shadow of the tent's canvas in the light.</p>
+<p>Markham set the photograph down on the analysis table and stared at it until her eyes burned.</p>
+<p>The camp was called Station Eureka, which was a name the original research team had chosen with a kind of stubborn optimism that Markham had always found both admirable and foolish. It sat on the Greenland ice sheet at 71 degrees north, forty-seven miles from the nearest permanent structure, which was a fuel depot operated by the Danish government. The depot was unmanned except for six weeks in summer when a supply ship came through. The rest of the year, Station Eureka was the world.</p>
+<p>There were eight people in the camp that season, which was larger than usual. Three glaciologists including Markham. Two field technicians who maintained the equipment and drove the snowmobiles. A communications specialist named Ingrid who had been on the ice for three years and who spoke to the mainland every other day with the detached calm of someone who had accepted that weather would always decide her fate. And a man named Henrik Dahl, who had been sent by the funding agency — the European Science Foundation — and who had not explained his role in terms that anyone else found satisfactory.</p>
+<p>Dahl was fifty-something, clean-shaven, with the kind of face that suggested he had once been handsome in a conventional way and had since decided that convention no longer applied to him. He kept a leather notebook with no label on the cover and wrote in it every evening for exactly one hour, always at the same time, always in the common area where anyone could watch him if they chose. No one chose to watch him. He had that quality of people who have learned to be unremarkable on purpose.</p>
+<p>Markham didn't trust him. This was not unusual for her. She had never trusted easily, and the years on the ice had only sharpened that tendency. But she trusted her instincts less than she trusted data, and her instincts about Dahl were not data. They were a feeling she couldn't name, which she had learned to respect but not to follow.</p>
+<p>She told the camp about the photograph on the evening of the day she found it. They were eating dinner in the common tent — rehydrated stew that had been engineered for nutrition rather than taste, which everyone pretended to find acceptable — and she set the photograph on the table and told them where it had come from.</p>
+<p>The silence that followed lasted a long time.</p>
+<p>"The ice at that depth," said Lars, one of the glaciologists, a methodical man who had spent his career building models of ice sheet behavior, "is approximately 123,000 years old. If the photograph is in that ice, and the photograph is from 1926—"</p>
+<p>"It's from 1926 or 1927," Markham said. "Paper stock analysis is consistent with that period. The image style is consistent with that period. I'm not guessing."</p>
+<p>"I'm not suggesting you are." Lars looked at the photograph. "I'm suggesting that we have a problem."</p>
+<p>"We have more than one problem," said the other glaciologist, a woman named Sofia, who was thirty-four and still believed that science could explain everything if you just looked at it carefully enough. "We have a photograph embedded in ice that was frozen before modern humans left Africa. We have a woman in the photograph who appears to be standing on the same ice sheet we're standing on now. And we have no explanation for any of it."</p>
+<p>"Maybe we should just document what we have," Ingrid said. She was leaning back in her chair, her arms crossed, watching the conversation with the detached interest of someone who had learned that the interesting things that happened on the ice were rarely her concern. "Document it and send it to the mainland and let someone else figure it out."</p>
+<p>"And say what?" Sofia asked.</p>
+<p>"The truth. A photograph was found at depth X, ice age Y, appears to be from period Z. We don't have an explanation."</p>
+<p>Markham shook her head. "The truth is not a scientific finding. The truth is a phenomenon we can't account for. Journals won't publish that. They can't publish that."</p>
+<p>"Then what do we do?"</p>
+<p>Markham picked up the photograph and looked at the woman again. The woman was not looking at the camera anymore. In the photograph, she had turned her head slightly, as if she had heard something, or as if she was about to speak.</p>
+<p>"We keep working," Markham said. "And we document everything."</p>
+<p>The second photograph came up four days later, from a core sample taken two kilometers to the east. It was at a similar depth — 3,180 meters — which meant similar age. The photograph showed two men and a woman, all wearing heavy parkas, standing in front of a structure that might have been a cabin or might have been a section of wall built into a snowbank. One of the men was holding a camera. The other man and the woman were looking at something outside the frame of the photograph, their expressions focused and intent.</p>
+<p>On the back, in pencil that was still sharp despite the cold: <em>October 1923. Camp 3. Waiting for the storm to break.</em></p>
+<p>Markham stood in the processing tent and read the words three times before she set the photograph down.</p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/city-of-wonders.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">City of Wonders</div></a></nav>
+</div>
+ </main>
 
-    <div class="story-hero-image">
-      <img src="/stories/images/ice-memory.jpg" alt="ice memory cover art">
-    </div>
+ <div id="site-footer"></div>
 
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>Dr. Yuki Tanaka had been at Vostok Station for eleven months when she heard the signal. She had stopped counting days somewhere around month four, when the darkness settled in and the only thing that felt real was the work — the slow, cold extraction of ice cores from two kilometers below the Antarctic surface, each layer a year, each bubble of trapped air a moment preserved. The ice remembered things.</p>
-<p>That was what had drawn her to glaciology in the first place: the idea that the past was not gone but merely frozen, waiting for someone patient enough to read it. She was not supposed to be the one monitoring the array that night. She had traded shifts with Chen, who had a date — some new algorithm-matching service that had found him a woman in Christchurch who liked jazz and alpine climbing and had, according to his phone, an 87% compatibility score. Yuki did not judge. She had not had a date in three years, which was the least of her problems. Her problems were larger than dates. Her problems were the size of a career ended and a reputation in ruins and a name that certain people in certain rooms would not say aloud without a prefix of disappointment. She had been a physicist. A good one. One of the youngest to hold a tenure-track position at the Institute. And then she had published something that was not ready to be published, and the fallout had been — well. It had been the end of that life, and the beginning of this one, in the cold and the dark, listening to ice remember.</p>
-<p>The signal appeared on her screen at 3:12 AM, local time.</p>
-<p>Not unusual in itself — the deep sensors picked up electromagnetic fluctuations constantly, most of them geological, some of them anthropogenic, a few of them genuinely mysterious in ways that graduate students wrote papers about and that conference attendees nodded at without really hearing. But this signal was different. It was regular. It was repeating. And when she ran the first analysis, her hands went still on the keyboard. It was mathematical. Prime numbers, ascending. 2, 3, 5, 7, 11, 13. Not random noise. Not equipment malfunction. A pattern, deliberate and unmistakable, ascending through the ice — not from space, not from the atmosphere, but from below. From beneath the ice. From very far below.</p>
-<p>She ran the analysis four times. She checked the equipment. She checked the calibration. She went outside in the minus-forty cold and looked at the array and came back in and ran it again. The result was the same. A signal from the deep ice, a mathematical sequence that had no natural explanation, and when she decoded it — slowly, carefully, giving herself time to believe what she was seeing — it resolved into something that should not have been possible. English. Perfect English. And the words were simple, almost childlike in their directness: Is anyone there? Yuki sat very still.</p>
-<p>The station hummed around her. The ice moved beneath her feet, imperceptibly, ancient. She thought about her father, who had been a physicist too, who had spent his whole life chasing a unified theory in a notebook he never published, who had died still reaching for something he believed the universe contained if only he could find the right equation. She thought about the signal, and what it meant, and whether meaning was something that could survive two kilometers of ice and eleven months of darkness and the particular quality of loneliness that comes from being the only person in the world who knows something. She recorded her response.</p>
-<p>She spoke into the microphone with a steadiness she did not feel, a steadiness that was mostly the product of training and exhaustion and the knowledge that what she was doing was either the most important thing anyone had ever done or nothing at all. “Yes,” she said. “Someone is here.” She packaged her response in the format the signal had used — prime numbers, mathematical structure, encoded meaning. She sealed it in the ice core sample she had been analyzing, at the depth corresponding to the present day, where it would be preserved for as long as the ice held. Then she sealed the original signal’s container alongside it, and she labeled both with the date and her initials, and she placed them back in the cold storage where they would wait. She walked back to her quarters through the quiet station. In the common room, two graduate students were arguing about satellite coverage. In the kitchen, someone had left a half-eaten sandwich on the counter. The world was going on, as it always does, indifferent to the extraordinary things happening inside it. Yuki did not sleep that night. She sat on the edge of her bunk and thought about the signal, and the response, and the strange loop of causality she had just closed without meaning to. The signal was from below — from the future, in a sense, traveling upward through geological time to arrive at a moment when she would be here to receive it. Her response would travel down, through the ice, to a place and a time she could not imagine. And then she understood. Not the mechanism. That would come later, in the papers and the peer reviews and the Nobel nominations that would arrive like apologies from a universe that had briefly forgotten her. She understood something simpler and more important. The signal was not a question. It was an answer. It was the answer she would spend the rest of her life trying to send — to her father, to herself, to anyone who had ever pointed a receiver at the dark and wondered if anyone was listening. The answer was yes.</p>
-<p>The answer had always been yes. She had just been the one chosen to hear it and to speak it back into the ice. She lay down on her bunk and closed her eyes. The station hummed. The ice remembered. Outside, the Antarctic wind moved across the continent like a breath, carrying snow from places that had not seen it fall in ten thousand years. Yuki slept.</p>
-<p>And in her sleep, she dreamed of her father’s notebook, open on a desk in a room full of light, and in the dream the equation was solved, and the solution was the simplest possible thing — a single word, repeated, in every language that had ever been spoken or would ever be spoken again: Yes. Yes. Yes. The ice kept its vigil. The stars turned. And somewhere in the deep freeze of the world, a question and its answer rested side by side, waiting for the future to arrive.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
-  
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
-
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
-
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

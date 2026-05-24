@@ -1,489 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mabi | Bithues</title>
-  <meta name="description" content="Mabi — Short Story by Bithues">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/mabi">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Mabi | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Mabi | Bithues",
-  "url": "https://www.bithues.com/stories/mabi",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Mabi | Bithues</title>
+ <meta name="description" content="Mabi — Short Story by Bithues">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>Mabi</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
-
-    <div class="story-hero-image">
-      <img src="/stories/images/mabi.jpg" alt="mabi cover art">
-    </div>
-
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>Lena was eleven months old, and she had never said a word. This is the kind of fact about a baby that contains a whole world of worry. Lena watched everything. She turned toward voices. She laughed at faces. She grabbed at toes and spoons and the dog's tail with excellent coordination and complete focus. She did not say mama or dada or no or go or help or up. She said nothing at all.</p>
-<p>Lily tried every trick she knew. She read books aloud with theatrical voices — mama duck saying "Waddle waddle," baby duck saying "Peep peep." She pointed at pictures and named them. Apple. Ball. Baby. Lena looked at each page with what appeared to be great interest and then looked up at Lily with an expression that was, simultaneously, both innocent and ancient — as if she understood perfectly what was being requested and had decided, with great internal deliberation, to decline.</p>
-<p>The pediatrician said Lena was fine. Some children spoke early and some spoke late and all children eventually spoke, and there was no cause for concern until there was a cause for concern, and right now there was no cause. Lily nodded and made the appropriate sounds of reassurance and drove home and sat in the kitchen and felt worried anyway, because that is what parents do.</p>
-<p>David tried flashcards. He laid them out on the living room floor during Lena's tummy time and pointed at each one with the determined energy of a man who believed that with enough repetition, any problem could be solved. Dog. Cat. Boat. Lena watched him with patient amusement, the way an adult watches a coworker attempt something unnecessarily complicated. "What's this?" David said, tapping the card with a picture of a star. "Star. What's this? Star. Can you say star?" Lena made a sound. It was not "star." It was not a word of any kind. David celebrated it anyway, because that is also what parents do.</p>
-<p>Nana arrived on a Tuesday, with a small rolling suitcase and a calm that seemed to come from somewhere far away and long ago. She had flown in from the islands — had crossed an ocean and a continent and several time zones to get here, to this house, to this baby, to this room where everyone had been trying so hard to make something happen.</p>
-<p>Nana did not try. Nana sat. She sat in the rocking chair in the living room and held Lena against her chest and rocked, slowly, and looked out the window at the yard where the light was doing what light does in the late afternoon, which is to make everything look like it is being remembered rather than seen. Lena settled against her in a way she did not settle against anyone else — not with the squirmy impatience of a baby who wants to be doing something, but with the full-body stillness of a baby who has found exactly where she needs to be.</p>
-<p>Lily wanted to explain. She wanted to say: Nana, we have been trying to get her to talk. We have been reading and pointing and naming. We have exhausted the flash cards and the books and the songs. Lena is not speaking. Is there anything you can do? But Lily looked at her mother-in-law's face — at the quiet, undemanding attention of it — and she did not say any of this. She understood, without being able to articulate why, that what was happening in that room was something different from what had been happening in that room for the past several months. Something was being offered that had nothing to do with language, or education, or the will to produce a word.</p>
-<p>That evening, after dinner, Nana sat in the glider in Lena's room while the house grew quiet around them. The others were in the living room, the television on at low volume, the day settling into its final hours. Nana began to sing.</p>
-<p>It was not a song from a book or a show or a streaming service. It was a song that Nana's mother had sung to her, in a language that Nana had not spoken aloud in decades — a language of islands and ocean crossings, of things passed down through bodies rather than dictionaries. The melody was simple, a lullaby, the kind that doesn't try to teach you anything but instead tries to remind you of something you already know.</p>
-<p>Lena turned. Not the usual turning — not the reflexive head-turn of a baby responding to sound. This was a turning that came from somewhere deeper, a realignment, as if the whole small body had been pointed in a new direction and was now facing it. Nana sang. The words were old, so old that no one living could have told you their meaning, but the melody carried something that needed no translation: the feeling of being held, of being kept, of being somewhere you belong.</p>
-<p>Nana sang to the baby and the baby listened with an attention that had nothing to do with learning and everything to do with recognition. Lena's hand, the one that had never reached for anything, rose slowly off the blanket. It moved through the air with the deliberate quality of a thing that knows exactly where it is going. It came to rest on Nana's lips, the way a hand comes to rest on something that is vibrating, something that is alive and present and undeniable.</p>
-<p>Nana sang the last line of the song. She paused. She touched Lena's cheek with one gentle finger. And Lena said her first word.</p>
-<p>It was not mama or dada. It was not ball or dog or star or no. It was a sound that did not exist in English, a small and perfect sound that had been waiting, apparently, in a place beneath language, in the deep grammar that every human being carries but that most human beings spend their whole lives never quite reaching.</p>
-<p>"Mabi," Lena said. Clearly. Deliberately. With the full authority of someone who has been listening all along and has finally found the word that was hers to say.</p>
-<p>Nana's eyes filled with tears, which was embarrassing for everyone but also completely unavoidable. "Oh, little one," she said, in a voice that was not English either, and she held Lena against her and closed her eyes, and for a moment the room was so full of something unnameable that no one could have said what it was, only that it was there, and that it was enough.</p>
-<p>Lily had come to the doorway without either of them noticing. She was standing there with her hand on the frame and her heart doing something it had never done before, which was to break open in a way that felt like coming home. "What did she say?" Lily asked, quietly.</p>
-<p>Nana looked up. She wiped her eyes with the back of her hand. "It's a word from my mother's language," she said. "It means — " She paused, trying to find the English. "It means 'come home.' But that's not quite right. It's more like — you know when you come in from the cold and you stand by the fire and someone hands you something warm and you think: yes. This. I was waiting for this. That feeling."</p>
-<p>"That's what it means," Lily said.</p>
-<p>"That's what it means," Nana said.</p>
-<p>Lily crossed the room and sat on the arm of the glider and put her hand on Lena's back and felt the baby breathing, slowly, the way she breathed when she was asleep but was not asleep — was just very, very present. Nana began to sing again, softly, and the word hung in the air between them, not demanding anything, just being true.</p>
-<p>"She was listening," Lily said.</p>
-<p>"She was always listening," Nana said. "She was just waiting for the right thing to listen to."</p>
-<p>The house was quiet. The television in the other room went silent. Outside, the last of the light was leaving the yard, and inside the room the three of them sat together — the grandmother who had crossed an ocean, the mother who had not left the house in days, the baby who had been saying nothing and had finally said something that contained more than any of them knew how to hold.</p>
-<p>Lena's hand was still on Nana's lips. She left it there, and closed her eyes, and listened to the song continue — word after word, in a language she would not speak but would somehow know, because some things are not taught. Some things are caught. Some things pass from one body to another through the simple, ancient act of being present, of staying in the room, of singing softly to someone who is listening even when they seem to be doing nothing at all.</p>
-<p>Outside, the world went on. Inside, for one perfect moment, it stopped — and in the stopping, found what it had been looking for all along.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>Mabi</h1>
   
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
+ </div>
+ <div class="page-nav"><span class="page-info">Page 1 of 3</span><div class="page-links"><span class="page-prev disabled">&#8592; Previous</span><a href="/mabi.html?page=2#content" class="page-next">Next &#8594;</a></div></div>
+ <div class="story-body" id="content">
+  <p>The ocean had no memory, but Mabi did.</p>
+<p>This is what her grandmother told her, sitting on the porch of the bungalow with the blue shutters, the one that faced White Sound on the island where they had lived for four generations. The ocean forgets everything, her grandmother said. Every wave is new. Every tide starts fresh. But the water that lives in the rocks, in the soil, in the deep places beneath the island — that water remembers. That water is Mabi.</p>
+<p>Mabi was eleven years old. She did not fully understand, but she memorized it the way children memorize things — completely, without nuance, holding the words in her mouth like stones.</p>
+<p>She repeated the name sometimes, when she was alone. Mabi. The syllables felt like swallowing sea glass, smooth and dangerous. She didn't know what the name meant beyond what her grandmother told her, but she understood that Mabi was something in the island, something that was not the island, something that moved through the rocks and the wells and the tidal pools the way blood moves through a body — everywhere, all at once, impossible to see from the outside but felt constantly by the inside.</p>
+<p>She was a careful child. She minded the boundaries her grandmother drew, the ones that marked where she could swim and where she could not, the ones that separated the safe water from the water that belonged to something older. Her grandmother had shown her the shape of the safe places on a map drawn on paper so old it was translucent, the ink faded to the color of tea. The shapes on the map were not the shapes of the islands as they appeared on any modern chart. They were older. They were the shapes of the island as Mabi's grandmother's grandmother had known it, before the causeway was built. Before the dredging. Before the deep-water channel that cut through the reef and changed the way the tides moved.</p>
+<p>Some of the safe places on the map were now land. The sea had receded from them over the decades, leaving behind flat, scrubby ground that the islanders used for grazing goats. Other safe places were now open ocean. The sea had taken them back, or had given them to a different current, a current that moved in a direction no chart could account for.</p>
+<p>Mabi's grandmother did not use the modern charts. She used the old map. She said the old map was more accurate, because it showed where the water wanted to be, not just where it was at the moment of the map's making.</p>
+<p>Mabi did not argue with this. She had learned, by the age of eleven, that arguing with her grandmother was a form of exhaustion that produced nothing.</p>
+<p>She was fourteen when her grandmother died. The death was slow and then sudden, the way deaths sometimes are for old women who live alone on islands and believe in the old things. The doctor came from the mainland by the weekly ferry, but by the time he arrived her grandmother had been dead for two days, and the body was already cold, and the expression on her face was not peaceful but was, rather, the expression of someone who had just understood something that they had spent their whole life trying to avoid.</p>
+<p>Mabi found the old map in the drawer beside her grandmother's bed. The drawer was cluttered — medications from the mainland pharmacy, holy cards from the Catholic church in Port Luis, a coral rosary that had belonged to someone older, a ribbon from a festival in a year no longer legible, buttons, coins, a small brass key that fit nothing in the house. The map was at the bottom, folded into eighths, the creases so deep they had become permanent.</p>
+<p>Her mother, who came from the mainland for the funeral and left again three days later, said the island was too small and too far andtoo expensive and too everything, and that Mabi should come to Port Luis and start over, go to school properly, learn accounting or something useful, forget about the water and the old things and the shape of places that no longer existed.</p>
+<p>Mabi said no.</p>
+<p>Her mother had been saying no to the island since she was seventeen years old, had fled to the mainland and built a life there in a house without blue shutters or porches or any view at all, had married a man who did not like the ocean and had never been to the island and did not understand why anyone would choose to live somewhere so small, so far, so clearly marked for disappearance. Her mother did not say she was disappointed, but she said enough versions of it that Mabi understood the shape of her mother's feelings even when the words did not carry them.</p>
+<p>Mabi stayed. The bungalow with the blue shutters was hers now, by inheritance even though the paperwork was complicated and would take years to sort out. She was fourteen and she was alone and she had a house and she had an island and she had the old map and she had the name that lived in the rocks and the wells and the deep places.</p>
+<p>She said the name sometimes, when she was alone.</p>
+<p>Mabi. She was not sure why. It did not feel like calling. It felt like acknowledging, the way you acknowledge a presence that is already there, that has always been there, that does not need to be summoned because it has never left.</p>
+<p>She learned to fish from Old Pauley, who was not a relative but who had been my grandmother's friend in the way that island neighbors are friends, which is to say selectively and practically and with a clear understanding of what each person owed the other. Old Pauley had a boat — a flat-bottomed skiff that he maintained with a devotion that bordered on worship, scraping and painting and replacing the planks one by one over the decades until the boat was more repair than original wood and yet somehow stronger for it. He took Mabi out in the boat and taught her the tidal patterns, the fishing grounds, the places where the reef dropped off into the deep water where the big fish lived.</p>
+<p>He did not teach her the names of the places. He did not need to. She already knew them, from the old map, from the shape of the water in her memory. She knew that when he said "the northeast gut" he meant the channel that ran between the island and the reef, and she knew that the channel had a different name in her grandmother's map, a name that translated directly as "where Mabi turns" and that referred to a specific rock formation that was two miles offshore and sixty feet down and that was the center, the absolute center, of something she did not yet have words for.</p>
+<p>"What do you see?" Old Pauley asked her one day, early in her fishing life. They were anchored over the northeast gut, waiting for the tide to turn, and she was looking at the water with what Old Pauley called "the strange look," which was the look her grandmother used to get and which Old Pauley had known for forty years and had never asked about.</p>
+<p>"The water," she said. She knew better than to say what she was actually seeing, which was the current moving in patterns she could not see with her eyes but could feel with something behind her eyes, a kind of second sight that was not sight at all but something deeper, something that was less like seeing than like knowing, like the knowledge that comes in dreams and stays with you after waking.</p>
+<p>Old Pauley nodded. He had expected this answer. He had known her grandmother for forty years and had seen, in that time, enough of whatever gift her grandmother carried to know what it looked like when it was being passed down.</p>
+<p>"Your grandmother saw it too," he said. "The water is different for some people. I can see the surface. You people — you see what's underneath."</p>
+<p>"Is that what it is?"</p>
+<p>"I don't know what it is." Old Pauley baited his hook, a piece of fish cut small, the blood still bright. "I'm a fisherman, not a philosopher. I know what I see, and I know what you see, and I know they're not the same thing. Beyond that, I don't ask questions."</p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/jaspers-flight.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">J A S P E R S   F L I G H T</div></a></nav>
+</div>
+ </main>
 
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
+ <div id="site-footer"></div>
 
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

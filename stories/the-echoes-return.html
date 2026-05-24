@@ -1,491 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Echoes Return | Bithues</title>
-  <meta name="description" content="The Echoes Return — a short story from Bithues.">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/the-echoes-return">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "The Echoes Return | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Echoes Return | Bithues",
-  "url": "https://www.bithues.com/stories/the-echoes-return",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Echoes Return | Bithues</title>
+ <meta name="description" content="The Echoes Return — a short story from Bithues.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>The Echoes Return</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
-
-    <div class="story-hero-image">
-      <img src="/stories/images/the-echoes-return.jpg" alt="the echoes return cover art">
-    </div>
-
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>The house had the smell of her grandmother before it had anything else. Iris noticed it in the hallway, the moment she stepped inside—the faintest trace of lavender and something older beneath it, something that had no name but lived in the walls. The garden had gone wild in the three years since anyone had tended it. The roses had grown into each other and the stone path was half-covered in moss and the fountain at the center had gone dry.</p>
-<p>She stood on the step for a moment, her keys still in her hand, and understood that she had inherited more than a house.</p>
-<p>The attic was at the top of the stairs, past the bedroom that had always been her grandmother's, past the smaller room that had been empty for as long as Iris could remember. The boxes were there as the letter had promised they would be. Twelve of them, stacked against the far wall, each one marked in her grandmother's handwriting with a simple instruction: For Iris — do not open until I am gone. Her grandmother had been dead for six weeks.</p>
-<p>Iris sat down on the floor of the attic and opened the first box.</p>
-<p>The letters were different. That was the first thing she noticed. Different hands, different paper, different years written faintly in the top corners so faded they were hard to read. What they had in common was the addressee.</p>
-<p>Every single one was addressed to The Echoes. Not a person. Not a family. The Echoes, as if the words themselves were a place, a location where things that had been lost could be sent and might arrive.</p>
-<p>None of the letters had a return address. None of them had been sent.</p>
-<p>She read the first one. It was written in a careful, old-fashioned hand by someone she did not recognize, a woman, and it asked for forgiveness for something that had happened in 1952. She read the second.</p>
-<p>A man, different hand, different year, asking for forgiveness for what he had said and what he had not said and what he had let happen. She read the third and the fourth and by the fifth she realized that what she was reading was not random. These were answers to questions no one had asked, responses to an exchange that had been happening for decades, and she had been given the other side of it.</p>
-<p>She started to hear things that night. A sound like a music box, very faint, coming from somewhere below her bedroom.</p>
-<p>She went downstairs and checked the kitchen and the front room and the small parlor where her grandmother had sat in the evenings. Nothing. The house was silent. She went back to bed and lay awake for a long time and eventually fell asleep and in the morning the sound was gone and she told herself it was nothing, the house settling, the wind, an explanation that made sense and explained nothing.</p>
-<p>The second night she heard footsteps.</p>
-<p>They were in the hall outside her bedroom, slow and deliberate, the footsteps of someone who was not in a hurry. She got out of bed and opened the door and called out her grandmother's name—old habit, reflex—and the footsteps stopped. The hallway was empty. She stood in the doorway for a long time, her hand on the frame, and the silence that came back was different from ordinary silence.</p>
-<p>It was the silence of someone listening.</p>
-<p>By the third night she had read half the boxes. The letters in the second box were older than the first, written in the twenties and thirties, and the handwriting was less certain, the language more formal, as if the writers had been raised to believe that certain things required a specific form before they could be said at all. They were asking for forgiveness for the same things humans always ask forgiveness for—forgotten children, abandoned promises, small cruelties that had grown into large ones, large cruelties that had been dressed up as necessity. And each one was addressed to The Echoes, and none of them had been sent, and Iris understood that her grandmother had kept them not because she had written them but because she had been their guardian, their keeper, the person who made sure they existed even when they could not be delivered.</p>
-<p>The humming started on the fourth night.</p>
-<p>She woke to the sound of someone humming just below the threshold of full hearing, a melody she almost recognized but could not quite place. It was in the room with her. She could feel it in the air, in the way the air moves when someone is breathing nearby, and she lay very still and listened and the humming became something closer to a voice, not words, not exactly, but the shape of something that wanted to be words, and she understood that her grandmother had been humming this sound in this house for eighty years and the house had learned it and the house was trying to teach it to her.</p>
-<p>Each letter seemed to answer a question no one asked. That was the phrase that came back to her most often as she worked through the boxes.</p>
-<p>She would read a letter and set it down and think: this answers something I have not yet asked. And then, a day or two later, she would find herself in a particular moment and the letter would return to her and she would understand what question it had answered. A conversation happening in two directions at once, one side already written, the other side still being lived.</p>
-<p>She wrote back on the eleventh night. She sat at the small desk in the parlor with a piece of paper and wrote: I don't know who you are.</p>
-<p>I don't know what this means. But I am here, and I am listening. She addressed it to The Echoes, the way the others were addressed, and she left it in the attic on the desk where she had found the boxes, placed carefully in the center, as if it were a reply that needed to be positioned precisely to be found.</p>
-<p>The response came three days later. She found it in the morning when she went up to the attic, tucked beneath the lid of the fifth box, a single sheet of paper in her grandmother's handwriting.</p>
-<p>It said: You found them. You read them. You wrote back. That is all that was ever required.</p>
-<p>You are one of us now. You have always been one of us. The handwriting was the same as the notes on the boxes, certain and unhurried, and at the bottom there was a date from the previous month, the week before her grandmother died.</p>
-<p>The house is quiet now but not empty. Iris knows this is not metaphor.</p>
-<p>She hears it in the particular quality of the silence in the hallways, in the way the air moves in the rooms that have been closed for years, in the small sounds that come in the evening just before dark. Something is here that was here before her, something that has been listening for a very long time, and now that she has answered it has settled into a different kind of presence, less waiting, more present. She cannot explain it. She does not try.</p>
-<p>She walks through the house in the mornings and reads the letters in the order they were written and listens for the humming that comes just before sleep, and the house holds her the way it held her grandmother, and the echo, she understands now, was never lost. It was only waiting to be answered.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>The Echoes Return</h1>
   
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
+ </div>
+ <div class="page-nav"><span class="page-info">Page 1 of 3</span><div class="page-links"><span class="page-prev disabled">&#8592; Previous</span><a href="/the-echoes-return.html?page=2#content" class="page-next">Next &#8594;</a></div></div>
+ <div class="story-body" id="content">
+  <p>The town of Harmon Falls existed in two modes: before the war and after. Nothing in between, nothing that bridged them except the names carved into river stones and the particular silence that settled over the valley each evening like a fog that wouldn't lift.</p>
+<p>David Ames returned in the spring of 1946, carrying a duffel bag and a sense that he had become someone else entirely. The train arrived at 4:47 in the afternoon — he remembered because the clock in the station still showed the same time it had shown four years earlier when he left, and this small wrongness, this failure of the world to keep proper time, made him feel that he had stepped into a place that was slightly out of phase with the rest of existence.</p>
+<p>He walked to his mother's house through streets that were familiar but wrong, like a room rearranged in ways he couldn't quite identify. The buildings were the same. The elm trees were the same height they had always been, which meant they had been saplings when he left and were now tall enough to shade the sidewalks. His feet knew the route, and his body walked it without instruction, but something in him kept reaching for a version of the town that no longer existed.</p>
+<p>His mother was waiting on the porch. She was sixty-two now — she had been fifty-eight when he left, or maybe he had miscounted — and she had the look of a woman who had been waiting so long she had become the waiting itself. She didn't run to him. She didn't cry. She stood very still and watched him walk up the path and then she said, "David," and he said, "Mom," and that was all.</p>
+<p>Inside, the house was the same and not the same. The furniture was in different positions. The photographs on the mantle had been rearranged, some faces now turned away, others moved to the center. The kitchen smelled of coffee and something else, something he couldn't name, and when his mother made him sit at the table and pour him a cup, they talked about the train and the weather and whether the grocery store still carried the good canned peaches, and neither of them mentioned the war, or the four years, or the fact that he had left as a boy of twenty and come back as something else entirely.</p>
+<p>He found work at the mill. The mill had reopened or perhaps never fully closed — there was a gap in its history that people didn't discuss, a period when the machines were silent and the workers were gone and the building sat empty on the edge of town like a held breath. Now it was running again. The noise filled the valley in the mornings and evenings, a sound that David had grown up with and had forgotten and now couldn't forget again, because it was the sound of the town trying to resume, trying to pretend that the interruption had never happened.</p>
+<p>The mill was full of men like him. They stood at their stations and operated the machinery and ate their lunches in silence, and they did not talk about where they had been or what they had seen. They talked about the work. They talked about the hours. They talked about whether the foreman was fair and whether the pay was enough. They talked about the weather, which was the only safe subject, the only topic that didn't carry the weight of everything they weren't saying.</p>
+<p>David noticed the others. The ones who startled at sudden sounds. The ones who looked at things too long, as if searching for something that wasn't there. The ones who stood a little too far from the other men, occupying a perimeter of space they needed in case — in case what, they couldn't say, but the need was real and present and shaped everything about how they moved through the world.</p>
+<p>There were more of them than he expected. More than the town seemed willing to see.</p>
+<p>He found the first name by accident, late at night, when sleep wouldn't come and the house felt too small and the silence between its walls was unbearable. He walked to the river because the river was the only place in town that didn't feel like a place where something had been lost, and he stood on the bank and listened to the water moving over stones, and that was when he saw it.</p>
+<p>Carved into the flat rock at the water's edge, half-hidden by the growth of moss that came every spring and faded every fall, the letters were barely visible: M.H., 1943.</p>
+<p>He knew who M.H. was. Martin Heller, a boy from town, two years ahead of him in school, who had been drafted in the second wave and who had died somewhere in Belgium and whose name was on the memorial in the square and whose mother still walked to church every Sunday and who was, in every official sense, remembered.</p>
+<p>But here, on this rock, by this river, in the dark, the name meant something different. It was not the official memory. It was the other one. The one the town had tried to bury. The one that insisted on surfacing in places like this, places where the official story didn't reach, where the light was wrong and the silence was the wrong kind of silence.</p>
+<p>David knelt beside the rock and traced the letters with his fingers. The stone was cold. The water made its small sounds. The night pressed in around him, and he felt, for the first time since he'd come back, that he was not alone.</p>
+<p>He was not alone, and the town knew it, and the town had decided to pretend otherwise.</p>
+<p>Margaret Hollis ran the diner on Main Street, and she had been running it since before the war, and nothing about the diner had changed except that it stayed open later now. Margaret had lost a husband and a brother and a son, and she had decided that the best way to honor what she had lost was to be there, every night, until the last customer went home. The coffee was good. The pie was better. And the back booth, the one nearest the kitchen, was where the men who couldn't sleep came to sit and drink coffee and not talk about anything.</p>
+<p>David became a regular. Not because he had anywhere else to go, but because the diner was warm and the coffee was hot and Margaret never asked questions. She poured the coffee and she topped it off when it got low and she let the silence exist without trying to fill it, and that was the thing that made her different from everyone else in Harmon Falls.</p>
+<p>One night, in the hour when the town had gone fully dark and only the diner's lights were on, Margaret sat down across from him. She had never sat down before. In three months of coming here, she had always stood, always moved, always been the one doing the serving.</p>
+<p>"You found them," she said.</p>
+<p>David looked at her. "The names?"</p>
+<p>"The names." She folded her hands on the table. "I knew someone would, eventually. The town thinks they disappeared — the moss, the weather, the river. But they're still there. They wait. They come back."</p>
+<p>"What are they?"</p>
+<p>Margaret was quiet for a long time. The clock on the wall ticked. The coffee cooled in David's cup.</p>
+<p>"Memorials," she said. "The ones the town didn't want. The ones that say things the official memorial can't say. Who was really lost. What was really taken. The places where the war came home and never left."</p>
+<p>"The war came home?"</p>
+<p>"Harmon Falls lost thirty-one men in the war. The official memorial has twenty-eight names. The others — " She stopped. She looked at the dark window, at the reflection of the diner and the man and herself, all of them contained in that small rectangle of glass. "The others didn't fit the story."</p>
+<p>David understood. He understood because he had been in places where the war had done things that didn't fit stories, things that couldn't be spoken about in towns where people wanted to move on, to build new things on top of old graves.</p>
+<p>"The names on the riverbank," he said. "They're the ones that didn't fit."</p>
+<p>"Some of them. Others are the ones who came back wrong. The ones the town wanted to forget had come back at all." Margaret looked at him. "You know what I mean."</p>
+<p>David knew. He knew because he was one of them.</p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-door-between-worlds.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">The Door Between Worlds</div></a></nav>
+</div>
+ </main>
 
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
+ <div id="site-footer"></div>
 
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

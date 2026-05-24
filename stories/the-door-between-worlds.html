@@ -1,499 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>An in-depth look at The Door Between Worlds | Bithues</title>
-  <meta name="description" content="An in-depth look at The Door Between Worlds — a short story from Bithues.">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/the-door-between-worlds">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "An in-depth look at The Door Between Worlds | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "An in-depth look at The Door Between Worlds | Bithues",
-  "url": "https://www.bithues.com/stories/the-door-between-worlds",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Door Between Worlds | Bithues</title>
+ <meta name="description" content="A physicist builds a machine that can see into parallel versions of reality. What she finds on the other side is her own life, lived differently — and she's not sure which version is the real one.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>An in-depth look at The Door Between Worlds</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
-
-    <div class="story-hero-image">
-      <img src="/stories/images/the-door-between-worlds.jpg" alt="the door between worlds cover art">
-    </div>
-
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>The first pair of shoes he ever resoled was his mother's, and he was eleven years old, and he felt it immediately: the echo in his fingertips, the tremor of something running through the rubber and into his skin like a current. His mother's feet, her walk to the market, her standing at the stove, her dancing at a wedding in 1952 when she was seventeen and the world was still possible. He pulled his hands back and stared at the shoe and his mother said, "Rafael, what's wrong?" and he said, "Nothing," because he did not have the language for what had just happened and would not have it for another forty years. He was seventy-three now.</p>
-<p>The shop on Calle Obispo was small and smelled of leather and glue and the particular sweetness of old rubber. He had worked alone since his wife passed, since Carmen, who had understood what he carried and had never asked him to explain it. She had simply learned to leave him alone when he held a new pair of shoes in his hands, to let him stand very still with his eyes closed while the wearer's life moved through him — the tourist from Madrid with the grief in her heels, the old fisherman whose sandals carried the salt of fifty years, the boy who had walked twelve blocks to his first job interview and whose shoes remembered the trembling hope in his chest. He understood, now, what he was.</p>
-<p>Not a shoemaker — everyone was a shoemaker if they had hands and patience. He was something else. A keeper of paths. A reader of the ground.</p>
-<p>The woman came in on a Thursday. He knew it was a Thursday because the light through the window had that particular quality, amber and tired, and because Thursdays had always been Carmen's day to visit the botanica on Zanja Street and come home with incense and a new candle for Saint Lazarus. The woman was perhaps sixty, or perhaps much older — there was a hardness in her face that made age difficult to calculate. She carried a shoebox, brown cardboard, unremarkable, and she set it on the counter with the careful deliberateness of someone setting down something heavier than it looked.</p>
-<p>"My husband left these," she said. "Thirty years ago. He took the suitcase and his good boots and these — these were the ones he left behind. I kept them.</p>
-<p>I don't know why I kept them." Rafael looked at her. She was wearing cream-colored sandals, thin-strapped, the kind that leave marks on the skin. Her feet had known the sidewalks of this city the way his had — intimately, daily, through joy and sorrow and the ordinary accumulation of a life. "You want me to resole them?" "I don't know what I want." She touched the box with one finger, then withdrew.</p>
-<p>"Someone told me you could fix things. That you had hands for things other people couldn't see." Rafael did not answer. He took the box and opened it. Inside were a pair of men's dress shoes, black, scuffed at the toe, the left heel worn unevenly from decades of use before they were abandoned.</p>
-<p>He lifted the right shoe by its edge and held it. He closed his eyes. And then he was somewhere else. He was walking — but not his walk, not Rafael's walk with its flat-footed patience and the slight hitch in the left knee from a fall off a bicycle when he was nine.</p>
-<p>This was a different gait, bouncier, younger, a man who moved through the world as though it owed him something and he had not yet been proven wrong. He smelled coffee and cigarette smoke and the particular sweetness of a woman — not Carmen, something before Carmen, someone he had loved before he knew what love would cost. The sun was warm on his face and he was happy, genuinely happy, and the happiness was so sharp and clean that Rafael had to open his eyes to escape it because it was unbearable, because it was not his happiness and it ached. He put the shoe down.</p>
-<p>He picked up the left one. This time it was different. The walk was heavier, slower. There was a weight in the chest that hadn't been there before, a grayness settling into the margins of everything.</p>
-<p>He was still walking the same streets — he recognized the corner of Neptuno and Reina, the broken mosaic step at the pharmacy on San Rafael — but now the steps were heavy with something that had accumulated, layer upon layer, like sediment at the bottom of a river. Regret. He had never felt it so plainly, not in himself, not in the thousands of shoes that had passed through his hands. The man who had worn these shoes had carried a specific, crystalline regret, and it was in the leather, in the stitching, in the very atoms of the heel worn down to nothing by thirty years of walking away.</p>
-<p>Rafael set the shoe down. He was trembling. "They're from thirty years ago," he said quietly. "But he kept wearing them." The woman was watching him.</p>
-<p>Her face had changed — there was something open now, something exposed. "He sent letters. For the first two years. Then they stopped.</p>
-<p>I didn't know if he was alive or dead. I never found out. I just — I just waited." "You're still waiting." "I don't know how to stop." Rafael looked at the shoes. He understood, now, what they held.</p>
-<p>Not just one man's journey — but the echo of the woman who had stayed. He could feel her in the room, even though she hadn't touched these shoes. The waiting had seeped into them somehow, through proximity, through thirty years of the box sitting somewhere in her apartment, the box opened and closed, the box held and set down. The shoe remembered her the way the air remembers perfume.</p>
-<p>"The man who wore these," Rafael said carefully, "he was happy once. When he put them on, he was young, and he was going somewhere that mattered, and the world was open." He paused. "But the last time he wore them, he was carrying something terrible. Something he'd done.</p>
-<p>Or something he hadn't done and couldn't live with not fixing." The woman's eyes were wet. She didn't wipe them. "He left because of me," she said. "Because of what I'd found out.</p>
-<p>He'd done something — before we married — something that i discovered. And he couldn't stay and he couldn't explain, and so he just — he went. And I've spent thirty years wondering if I should have let him explain." Rafael picked up the shoe again. He held it gently, the way you hold a bird that might fly away.</p>
-<p>"He's alive," he said, and he knew it the way he knew things, not logically but completely. "He's alive and he's far away and he thinks about you every day. He thinks about you the way you think about him. He's not suffering more than you are, but he's suffering.</p>
-<p>He's been suffering since the day he left." "How do you know that?" "Because the shoes told me." He turned the shoe over. The sole was worn in a pattern he recognized now — the way a man walks when he is walking from something he cannot outpace. "They always tell me." The woman looked at the shoes for a long time. The light through the window had shifted; it was later than she'd thought.</p>
-<p>Outside, Havana hummed with its eternal music — a radio playing something old, a man arguing, a child laughing. The city that never stopped, that kept moving even when you stood still. "Should I keep waiting?" she asked. "Should I keep waiting or should I finally put him down?" This was the question Rafael had been asked a hundred times, in a hundred variations, by the shoes that passed through his hands.</p>
-<p>And his answer was always the same, because the shoes always told the same truth: that love was not a thing you could close like a book, but it was also not a door you had to leave open forever. That waiting was a choice, and not-waiting was also a choice, and both choices could be made with dignity. "You should know what you feel," he said. "Not what you think you should feel.</p>
-<p>Not what anyone else would feel in your place. What you actually feel, right now, in your own body, when you think about him." "I'm afraid if I stop waiting, I'll forget him." "You won't forget him. You can't. He's in you now.</p>
-<p>He's been in you for thirty years. You've walked with him, dreamed with him, argued with him in the dark — all of that is in you. The shoes aren't him. The shoes are just where he's been.</p>
-<p>You're where he lives." The woman was quiet. Then she reached out and touched the shoe, just with one fingertip, the way you touch something sacred. "Keep them," she said. "Fix them or don't.</p>
-<p>I don't think I need them anymore." She left. Rafael watched her go — watched the way she walked, her cream-colored sandals, her weight shifting from heel to toe with the particular rhythm of someone who has walked these streets her whole life. She didn't look back. He hoped she wouldn't.</p>
-<p>Hoped she would go home and open her windows and let the sea air in and sit in the chair by the window where she had probably sat every evening for thirty years, and sit there, and not wait. Just be. Just be present, for once, in a room where no one was coming through the door. He turned back to the shoes.</p>
-<p>He picked up the left one and held it, and this time he went deeper, past the regret, past the departure, into something older. He felt the man as a boy — small, dark-eyed, running through the streets of Old Havana with a sack of mangoes his mother had sent him to sell. He felt the boy's joy, pure and uncomplicated, the joy of running fast in a city that was all miracle and possibility. He felt the first time the boy had kissed a girl behind a curtain and how his heart had seemed too large for his chest.</p>
-<p>He felt the wedding, his own wedding, the shoes on his feet and the love so overwhelming he had to look away from it, had to stare at the floor to keep from weeping. The shoes remembered all of it. Every step of a life, documented in the wear of leather and the compression of rubber, a biography written in the grammar of distance traveled. This was what he did — what he had always done.</p>
-<p>He read the unwritten pages. He translated the footsteps into meaning. He held the evidence of a human life in his hands and bore witness to it, quietly, without judgment, the way a priest holds a confession. He set the shoes down on the counter.</p>
-<p>He did not know if he would resole them. Perhaps he would. Perhaps he would keep them in the shop, in the cabinet where he kept the other orphan shoes — the ones whose owners had died, or disappeared, or simply never came back. Perhaps one day the man would return to this city, to these streets, and feel something pull at him, some echo in his old worn feet, and he would find the shop on Obispo Street and sit in the chair across from Rafael and say, "The shoes.</p>
-<p>I left them with a woman, thirty years ago." Rafael would hand them back. And then he would watch what happened next. Or perhaps not. Perhaps the shoes would stay here forever, held in trust, waiting for a story to complete itself.</p>
-<p>This was also a kind of living. This was also a way of keeping faith. He turned back to the workbench. There were other shoes waiting — a child's sneakers, a nurse's clogs, a pair of red heels for a woman who danced at the Tropicana on weekends.</p>
-<p>Each of them carrying its cargo, each of them ready to be read. He picked up the first one and closed his eyes and let the next life move through him, patient and ceaseless and full of the world's enormous, unbearable weight. Outside, the light faded over Havana. Somewhere, a woman walked home in cream-colored sandals and did not look back.</p>
-<p>Somewhere, a man who had been running for thirty years sat down and rested his feet. And in the shop on Obispo Street, a shoemaker continued his work — not fixing shoes, exactly, but tending to the evidence of what it meant to be human and moving and alive in a world that wore you down, step by step, until the soles of your shoes were as thin as memory and twice as honest.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>The Door Between Worlds</h1>
   
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
+ </div>
+ 
+ <div class="story-body" id="content">
+  <p>The machine was not what anyone would have imagined. There were no sparks, no dramatic lighting, no thunderous sound effects. It was a box — matte black, roughly the size of a shipping container, with a single aperture on one side that was exactly the size and shape of a human eye. The aperture was covered by a lens that Dr. Yuki Tanaka had spent seven years perfecting, a lens that could resolve images at a resolution that should not have been possible with any known technology.</p>
+<p>The rest of the equipment was equally mundane: computers, monitors, cabling, the detritus of a research program that had consumed most of a career and all of a budget. The machine sat in a basement at the university, humming quietly, waiting for the moment when someone would be brave enough or foolish enough to look through the door it had opened.</p>
+<p>Yuki was both.</p>
+<p>The theory had been her own, developed in the early years of her career when she was still an assistant professor with more ambition than tenure and a willingness to pursue questions that her colleagues considered fringe. She had published the initial papers in a journal that most physicists never read, and she had spent the next decade building toward the machine that would prove her right.</p>
+<p>The theory was simple, in the way that the most important theories are simple. The universe was not singular. There were other universes — infinitely many of them — that existed alongside this one, separated by dimensions that the human mind was not equipped to perceive. These other universes were not distant in space; they were distant in configuration, in the particular arrangement of matter and energy that defined them. They were here, all around us, occupying the same space we occupied, layered like pages in a book that could not be opened because there was no seam to cut.</p>
+<p>The machine could see through that seam. It could look at the other pages.</p>
+<p>She had tested it first with cameras, then with instruments, then with animals. The results were always the same: on the other side of the aperture, there was another world. It looked like this world — the same laboratory, the same equipment, the same physical laws — but different in ways that the instruments could measure and the animals could sense. The animals, when placed in front of the aperture, showed elevated stress hormones. They knew something was there. They didn't know what.</p>
+<p>Yuki had resisted the temptation to look herself. That was the line she hadn't wanted to cross, because she understood what it would mean. Instruments could be calibrated. Animals could be studied. But if she looked through the aperture — if she put her eye to the lens and saw what the machine had opened — she would be crossing a threshold that couldn't be uncrossed. She would know. And knowing was not the same as suspecting.</p>
+<p>She looked.</p>
+<p>The first thing she saw was her laboratory. The same room, the same equipment, the same machine. But the woman standing at the console was not her.</p>
+<p>The woman was shorter. Darker. She had the same posture, the same tilt of the head, but her features were different — sharper, more defined, the features of someone who had lived a different life and been shaped by different experiences. She was talking to someone off-frame, laughing at something, and her laugh was the same laugh that Yuki had heard in her own head a thousand times but had never heard from anyone else's throat.</p>
+<p>Yuki stepped back. She breathed. She looked again.</p>
+<p>The other laboratory was the same. The other woman was the same. She was not Yuki — she had a different face, a different history — but she was doing what Yuki was doing, in a room that looked exactly like this room, in a world that was exactly like this world.</p>
+<p>She was looking back.</p>
+<p>The discoveries accumulated over the following months. The machine could see into many worlds, not just one — an infinite stack of parallel realities, each one slightly different from the last, each one containing a version of Yuki who had made slightly different choices. In some worlds, she had not pursued physics; she was an architect, a musician, a mother of three. In some worlds, she had pursued physics but had not built the machine; she was dead, or working in a different field, or a bureaucrat at a research institute. In some worlds, she had built the machine but had never looked through it; she was still in the laboratory, still waiting, still safe in the ignorance of the untested hypothesis.</p>
+<p>She mapped them, carefully, systematically, the way a cartographer maps the coastline of a new continent. She noted the differences. She tracked the patterns. She tried to understand which choices led to which outcomes, which branching points in her life had sent her down this path instead of that one.</p>
+<p>She found the world where her father had not died.</p>
+<p>In that world, she was not a physicist. She was a chef, or so the instruments suggested — she was standing in a kitchen, and the kitchen was full of the particular light that kitchens have when they are loved, and she was laughing at something a customer had said. Her father was there, older, white-haired, alive. He was setting tables. He was doing the work of a man who had not lost a son and had not spent the rest of his life in the grief that had defined his existence in Yuki's world.</p>
+<p>Yuki looked at that world for a long time. She looked until she couldn't see anymore, and then she closed her eyes and saw it anyway, and she understood that the door between worlds was not just a window.</p>
+<p>It was a wound.</p>
+<p>The problem — the problem she hadn't anticipated, the problem she should have anticipated — was that she could not stop looking.</p>
+<p>She should have been studying the physics. She should have been publishing papers, securing funding, building the academic career that the discovery warranted. But she was not studying the physics. She was studying the lives.</p>
+<p>She found the world where she had married David Kowalski instead of divorcing him. In that world, they were still married, twenty years later, and they had two children who looked like combinations of both of them, and they were sitting on a porch in a house she didn't recognize, watching the sun go down. David was older. His hair was grey. He was holding her hand, and she was leaning against his shoulder, and they were not talking because they didn't need to talk. They had been married for twenty years, and they had learned the particular silence that comes when two people have said everything important and can now simply exist in each other's presence.</p>
+<p>Yuki watched them until the sun went down in that world, and then she watched the darkness, and then she finally turned away from the aperture and sat in her chair and cried.</p>
+<p>She found the world where the grant had been funded and she had built a different machine. In that world, the machine was larger, more sophisticated, connected to a network of other machines across a dozen institutions. The discovery was shared, debated, accepted. She was famous. She was respected. She was on magazine covers and talk shows and had done the thing she had always wanted to do: changed the world.</p>
+<p>She watched herself give interviews. She watched herself smile at cameras. She watched the other Yuki be someone who had succeeded in the way that success is traditionally measured.</p>
+<p>She watched until she couldn't stand it anymore, and then she stopped watching that world, and she did not go back.</p>
+<p>The question she could not answer — the question that woke her at three in the morning and kept her awake until dawn — was which world was real.</p>
+<p>She had always believed, without examining the belief, that her world was the real one. This was the default assumption, the baseline, the reference point against which all other possibilities were measured. Her world was the world where things had happened the way they had happened, and other worlds were variations, alternatives, imagined possibilities.</p>
+<p>But she had looked through the door. She had seen the other sides. And in those other worlds, the people she saw — the other Yuki, the other David, the other father — they believed their worlds were real too. They had the same certainty she had. They had the same sense of being the center of things, the same conviction that they were the ones who had stayed behind in a universe of infinite possible selves.</p>
+<p>If all of them were real, then none of them were. Or all of them were. That was the other possibility — the possibility that the word "real" didn't apply, that the question she was asking was malformed, that the framework she was using to think about this was too small for the thing she was looking at.</p>
+<p>She didn't know. She couldn't know. That was the nature of the wound: it didn't heal, and it didn't close, and she was the one who had opened it and couldn't figure out how to stop bleeding.</p>
+<p>The last time she looked through the aperture, she found a world she hadn't seen before. In that world, the laboratory was empty. The machine was there, but it was covered with a tarp, and there was dust on the floor, and the monitors were dark. The other Yuki — if there had been an other Yuki — was not there. Had not been there, probably, for a long time.</p>
+<p>She looked at the empty laboratory for a long time, and she felt something she hadn't expected: peace.</p>
+<p>This was a world where she had never built the machine. Or where she had built it and destroyed it. Or where something had happened — an accident, a failure, a choice — that had ended the research and left the laboratory dark.</p>
+<p>In this world, there was no door between worlds. In this world, there was only one world, and the people in it lived their lives without knowing what they had given up, without knowing that other possibilities had existed and been left unexplored.</p>
+<p>Yuki understood that this world was also a variation. She understood that it was one of infinitely many, layered like pages, separated by dimensions that the human mind was not equipped to perceive.</p>
+<p>But it looked like peace. And after everything she had seen — after all the lives she had examined and all the choices she had traced — peace was not nothing.</p>
+<p>She closed the aperture. She turned off the machine. She sat in the laboratory, in the quiet, in the particular silence of a world that contained only what it contained.</p>
+<p>She was still here. She was still real. She didn't know if that was enough.</p>
+<p>But it was what she had.</p>
+<p><em>End of story.</em></p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-disclosure.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">T H E   D I S C L O S U R E</div></a><a href="/the-echoes-return.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Echoes Return</div></a></nav>
+</div>
+ </main>
 
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
+ <div id="site-footer"></div>
 
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>

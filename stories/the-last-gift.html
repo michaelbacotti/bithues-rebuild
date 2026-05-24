@@ -1,465 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Last Gift | Bithues</title>
-  <meta name="description" content="The Last Gift — a short story from Bithues.">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="canonical" href="https://www.bithues.com/stories/the-last-gift">
-  <style>
-
-/* ─── Story Reader Mode ─────────────────────────────── */
-.story-hero {
-  text-align: center;
-  padding: 48px 24px 40px;
-}
-.story-hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.story-hero .tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: 1px solid #5a7a65;
-  color: #5a7a65;
-  margin-bottom: 20px;
-}
-.story-hero h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.story-hero .byline {
-  font-size: 14px;
-  color: var(--color-text-light);
-  font-style: italic;
-}
-
-.story-hero-image {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.story-hero-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
-
-.story-ad-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  text-align: center;
-}
-.story-ad-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 8px;
-}
-
-/* ─── Reader Container ──────────────────────────────── */
-.reader-wrap {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* Bookmark button */
-.reader-bookmark {
-  position: absolute;
-  top: -8px;
-  right: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: var(--color-text-light);
-  border-radius: 4px;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.reader-bookmark:hover { color: var(--color-accent); }
-.reader-bookmark:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-bookmark .bm-label { white-space: nowrap; }
-.reader-bookmark-tooltip {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 4px);
-  background: var(--color-text);
-  color: var(--color-surface);
-  font-size: 11px;
-  font-family: var(--font-sans);
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.reader-bookmark-tooltip.show { opacity: 1; }
-
-/* Progress bar */
-.reader-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--color-accent);
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: width 0.1s linear;
-}
-
-/* ─── Story Body ─────────────────────────────────────── */
-.reader-body {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  line-height: 1.85;
-  color: var(--color-text);
-}
-.reader-body p {
-  margin-bottom: 1.5em;
-  font-size: 18px;
-  line-height: 1.85;
-}
-.reader-body p:last-child { margin-bottom: 0; }
-
-/* ─── Share/Back Footer ───────────────────────────────── */
-.reader-footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px 48px;
-  border-top: 1px solid var(--color-border-light);
-  display: flex;
-  justify-content: center;
-}
-.reader-back-link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
-}
-.reader-back-link:hover { color: var(--color-accent-hover); }
-
-@media (max-width: 640px) {
-  .reader-body { font-size: 16px; }
-  .reader-body p { font-size: 16px; }
-  .story-hero h1 { font-size: 28px; }
-  .reader-bookmark .bm-label { display: none; }
-}
-
-  
-/* ─── Story Page Navigation ──────────────────────── */
-.story-page-nav {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--color-border-light);
-  margin-top: 32px;
-}
-.story-page-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-page-indicator {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  min-width: 100px;
-  text-align: center;
-}
-.story-nav-btn {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.story-nav-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-.story-nav-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.story-resume-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 13px;
-  font-family: var(--font-sans);
-  padding: 10px 20px;
-  border-radius: 6px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 200;
-  pointer-events: none;
-}
-.story-resume-toast.show { opacity: 1; }
-
-@media (max-width: 500px) {
-  .story-page-nav-inner { gap: 10px; }
-  .story-page-indicator { min-width: 80px; font-size: 12px; }
-  .story-nav-btn { padding: 6px 12px; font-size: 12px; }
-}
-
-</style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.bithues.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Stories",
-      "item": "https://www.bithues.com/stories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "The Last Gift | Bithues"
-    }
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Last Gift | Bithues",
-  "url": "https://www.bithues.com/stories/the-last-gift",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bithues",
-    "url": "https://www.bithues.com"
-  }
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
-
-/* ─── Segmented Reader Mode ─────────────────────────── */
-.story-page-segment{display:block}
-.story-page-segment[style*="display:none"]{display:none!important}
-
-.story-page-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--color-border-light);margin-top:32px}
-.story-page-indicator{font-size:13px;color:var(--color-text-muted);font-family:var(--font-sans)}
-.story-page-buttons{display:flex;gap:10px}
-.story-nav-btn{background:none;border:1px solid var(--color-border);border-radius:4px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--color-text-muted);cursor:pointer;transition:all .2s}
-.story-nav-btn:hover:not(:disabled){border-color:var(--color-accent);color:var(--color-accent)}
-.story-nav-btn:disabled{opacity:.35;cursor:not-allowed}
-
-.story-resume-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--color-text);color:var(--color-bg);font-size:13px;font-family:var(--font-sans);padding:10px 20px;border-radius:6px;opacity:0;transition:opacity .3s;z-index:200;pointer-events:none}
-.story-resume-toast.show{opacity:1}
-
-.no-js .story-page-segment{display:block!important}
-
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>The Last Gift | Bithues</title>
+ <meta name="description" content="A man receives a package with no return address. Inside is a photograph of a house he doesn't recognize and a key that fits no lock he owns. His mother died three months ago.">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="site-nav"></div>
 
-  <article>
-    <!-- Story Header -->
-    <header class="story-hero">
-      <div class="story-hero-inner">
-        <span class="tag">Short Story</span>
-        <h1>The Last Gift</h1>
-        <p class="byline">by Bithues</p>
-      </div>
-    </header>
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
 
+ <main>
+ <div class="story-page">
+ <div class="story-header">
+  <span class="genre-pill">Literary Fiction / Mystery</span>
+  <h1>The Last Gift</h1>
+  <div class="story-meta">April 2026</div>
+ </div>
+ <div class="page-nav"><span class="page-info">Page 1 of 2</span><div class="page-links"><span class="page-prev disabled">&#8592; Previous</span><a href="/the-last-gift.html?page=2#content" class="page-next">Next &#8594;</a></div></div>
+ <div class="story-body" id="content">
+  <p>The package arrived on a Tuesday. This was the first ordinary thing about it — everything else was wrong. The box was plain, brown, unsealed. There was no return address. The postmark was local, from the same city where Marcus lived, but the handwriting on the label was not handwriting he recognized, not quite, though something about it felt familiar in a way he couldn't place.</p>
+<p>Inside: a photograph, face down, and a key.</p>
+<p>The photograph was a 4x6, the kind you get from a one-hour photo, the kind that has been around long enough to have the slight color fade that comes from age but which was not old enough, Marcus thought, to have that fade. The key was brass, old-style, the kind that was used in the old houses downtown, the kind that had been largely replaced by electronic locks but that still existed in the places where the buildings predated the technology.</p>
+<p>Marcus sat at his kitchen table and looked at the photograph. He did not turn it over for a long time. He sat and looked at the back of it — the glossy surface, the faint discoloration where it had been stored, the small scratch in the corner that might have been a fingernail or might have been something else.</p>
+<p>His mother had died three months ago. This was not unrelated to the photograph, though he did not yet know how.</p>
+<p>The photograph, when he finally turned it over, showed a house. This was not unusual — people received photographs of houses all the time, from real estate agents, from family members, from the various people who accumulate photographs as part of the ordinary business of life. What was unusual was that Marcus did not recognize the house. It was a small house, wooden, with a porch that wrapped around one side and a garden in the front that was either very well-tended or very wild, depending on how you looked at it. There were no people in the photograph. No cars. No signs of life except the garden, which was green and full and clearly being grown with some intention.</p>
+<p>Marcus looked at the photograph for a long time. He did not recognize the house. He did not recognize the garden. He did not recognize anything.</p>
+<p>But there was something in the way the light fell in the photograph — the angle of the sun, the quality of the shadows — that felt familiar, the way certain things feel familiar when you encounter them in dreams, when the dream presents you with a place you have never been but that you recognize anyway, that you know the way you know things in dreams, without explanation.</p>
+<p>He called his sister. Claire lived in Portland, three time zones away, and she worked long hours and had a family and did not have time for phone calls from Marcus, who was still in the city where they had grown up, who still lived in the house their mother had lived in, who had not moved away the way Claire had, the way their brother David had, the way everyone in the family had eventually moved away except their mother, who had stayed in the house until she died, which was what their mother did.</p>
+<p>"Did Mom ever mention a house?" Marcus asked. "A house we don't know about?"</p>
+<p>Claire was quiet for a moment. "What kind of question is that?"</p>
+<p>"I got a package. No return address. There's a photograph of a house I don't recognize. And a key."</p>
+<p>"What key?"</p>
+<p>"I don't know. It's old. Brass. Like the keys they used to use in the old buildings downtown."</p>
+<p>Another silence. Marcus could hear his sister's children in the background, the sounds of a family at dinner, the particular noise of a life that was happening somewhere else, in a place where this phone call was an interruption.</p>
+<p>"Mom didn't have any other houses," Claire said. "You know that. She had the one. We grew up in it. She died in it."</p>
+<p>"I know."</p>
+<p>"Then I don't understand why you're calling me about a house."</p>
+<p>Marcus didn't understand either. But the photograph was on his kitchen table and the key was in his hand and he could not shake the feeling that the house in the photograph was not just any house, that it was a house that mattered, that it was a house that someone wanted him to find.</p>
+<p>He started looking. This was not something he was good at — he was an accountant, not an investigator, a person who worked with numbers and not with mysteries, with the documented facts of financial life and not with the undocumented facts of everything else. But he looked anyway. He went to the county recorder's office and searched for properties that matched the key, properties that had the kind of lock the key would fit, properties that were old enough and in the right part of the city. He searched for hours. He found nothing.</p>
+<p>He went to his mother's house. He went through the boxes that he had not yet sorted through, the boxes that had accumulated in the months since her death, the boxes that he kept meaning to go through but that he kept not going through because going through them would mean accepting that she was gone. He found photographs, bills, letters, the ordinary detritus of a life that had been ordinary in all the ways that mattered and perhaps in some ways that were not ordinary at all, that were extraordinary in the way that all lives are extraordinary if you look closely enough.</p>
+<p>In one of the boxes — a shoebox, the kind that had once held shoes and that now held photographs — he found another photograph. This one showed the same house. The same garden. The same porch, the same windows, the same light falling in the same angle. But in this photograph, there was a woman. She was standing on the porch, very straight, very still, and she was looking at the camera with an expression that Marcus recognized.</p>
+<p>It was his mother. Younger — much younger, young enough that the photograph must have been taken decades ago, before he was born, before Claire was born, before his mother had become the mother he knew, the mother who had lived in the house he grew up in and had never left.</p>
+<p>The key fit the back door of the house. This was how Marcus finally found it — not through the county recorder, not through any official channel, but through the simple process of trying the key in every old house in the part of the city where the photograph seemed to have been taken, the part of the city that still had wooden houses and brass keys and the kind of porches that wrapped around the side.</p>
+<p>The house was different from the photograph. This was not surprising — the photograph was old, decades old, and houses changed, as houses do, as the people who lived in them changed them. The garden was gone. The porch had been repaired, badly, with materials that did not match the original construction. There were curtains in the windows that had not been in the photograph. The house looked like a house that someone had been living in without really caring about it, the way you live in a house when you are just passing through, when you are not the person who planted the garden and watched it grow.</p>
+<p>Marcus stood on the porch. He held the key in his hand. He did not know who lived there now. He did not know what he was going to say when someone answered the door. He did not know, in fact, what he was doing there at all.</p>
+<p>But he knocked anyway.</p>
+<p>The woman who answered the door was old. This was the first thing Marcus noticed — she was old in a way that his mother had been old, in the particular way that people become old when they have been old for a long time and have made their peace with it. She looked at him through the screen door with eyes that were sharp and tired and not particularly friendly.</p>
+<p>"Yes?"</p>
+<p>Marcus did not know what to say. He held up the key, then the photograph, then the key again.</p>
+<p>"I think this was my mother's house," he said.</p>
+<p>The woman was quiet for a long time. She did not speak. She did not open the door. She just looked at him, at the photograph in his hand, at the key, and something moved across her face that might have been recognition or might have been something else, something older, something that had been waiting a long time to surface.</p>
+<p>"Come in," she said finally. "Come in. I think there's a lot we need to talk about."</p>
+ </div>
+ <div class="share-bar">
+ <span class="share-label">Share</span>
+ <a href="javascript:void(0)" class="share-btn" onclick="window.location.href='mailto:?subject='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.location.href)">Email</a>
+</div>
+ <nav class="story-nav"><a href="/the-last-garden.html" class="story-nav-item prev-item"><div class="story-nav-label">&#8592; Previous</div><div class="story-nav-title">The Last Garden</div></a></nav>
+</div>
+ </main>
 
-    <div class="story-hero-image">
-      <img src="/stories/images/the-last-gift.jpg" alt="the last gift cover art">
-    </div>
+ <div id="site-footer"></div>
 
-  <div class="story-ad-section">
-    <p class="story-ad-label">Advertisement</p>
-    <ins class="adsbygoogle" style="display:block;width:100%;max-width:600px;margin:0 auto;" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  </div>
-
-    <!-- Reader Container -->
-    <div class="reader-wrap">
-      <button id="reader-bookmark-btn" class="reader-bookmark" aria-label="Copy link to this story">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="bm-label">Share</span>
-        <span id="reader-bookmark-tip" class="reader-bookmark-tooltip" aria-live="polite">Link copied!</span>
-      </button>
-      <div id="story-progress-bar" class="reader-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      <div id="reader-container">
-        <div class="reader-body">
-<p>Martin called his daughter on a Tuesday morning in March, which was unusual, because Martin did not call people on Tuesday mornings. Martin was a man of routines and habits, a retired professor of medieval literature who had spent thirty-five years teaching Chaucer and Malory to undergraduates who were mostly there because the class fit their schedule, and he had always preferred his routines to his phone. But on this particular Tuesday, he called. “I need to give some things away,” he said, without preamble. “I wondered if you might help me.” Claire drove to his house that afternoon. She lived forty minutes away, in the city, with her husband and her teenage daughter, and she visited her father every other Sunday, which was often enough to feel dutiful but not often enough to feel close. She had always felt that her father loved her in the way that scholars love books — intensely, but from a distance, through the protection of glass. He had been a good father in all the ways that could be measured: roof, food, university fees. He had not been a warm father in the ways that Claire had sometimes, in her darker moments, thought she needed. Martin was seventy-one and he was dying. Not immediately — the doctors had given him months, which was better than weeks and worse than years, and Martin had received this information with the same calm attention he brought to everything, including, Claire now suspected, his own death. He was sitting in his study when she arrived, surrounded by the books that had defined his life. He did not look ill yet. He looked like what he was: a man who had spent decades indoors, with pale skin and ink-stained fingers and eyes that had gone from sharp to wise without ever being kind in the conventional sense. “The watch,” he said, when she sat down. “I’ve given it to Richard Sterne.” Claire felt the name land in her stomach like a stone. Richard Sterne was the man who had destroyed Martin — professionally, reputationally, almost financially. Twenty years ago, Sterne had published a book that built on Martin’s research without attribution, and the ensuing academic dispute had cost Martin the department chairmanship and four of the best years of his career. They had not spoken since. Claire, who had been in graduate school at the time, had watched her father’s face when the verdict came down — not angry, not shattered, but quietly, terribly disappointed, in a way that was worse than either. “You gave him the watch,” Claire said. “Our father’s watch, yes. The gold one.” “That was your most valuable—” “It’s not valuable,” Martin said. “It’s meaningful. There’s a difference.” He looked at her with the expression she remembered from childhood, which was the expression of a man who was about to say something she wasn’t going to like. “Richard will not want the watch. He will find it meaningless. He will keep it in a drawer and wonder why I gave it to him, and eventually he will give it away or throw it out. And the question — the question will be his to keep.” “What question?” Martin smiled. It was the first time Claire had seen him smile since the diagnosis, and it was unsettling in its gentleness — the smile of a man who has stopped pretending the rules apply to him. “You’ll see,” he said. Claire stayed for dinner. Her father made pasta, the way he always had, with too much garlic and not enough sauce, and they ate in the kitchen where the light was good and the past was close. She asked him about the other things — the other gifts, the other giving-away — and he told her about the Hemingway. His first edition, the one he’d bought at a estate sale in Vermont when he was twenty-six and had never been able to bring himself to lend to anyone. “I’ve given it to Jennifer Okonkwo,” he said. “The woman who runs the dry cleaner?” “The laundromat. On Maple Street. She’s been taking care of my shirts for fifteen years.” “You gave a first edition Hemingway to the woman at the laundromat.” “Yes.” “Dad. She doesn’t read Hemingway. You know she doesn’t read Hemingway.” Martin put down his fork. He looked at his daughter with an expression she could not quite read — not sad, not amused, something in between that she had no name for. “You’re right,” he said. “She won’t read it. She’ll put it on a shelf and look at it sometimes and wonder what it means. And one day, maybe, she’ll open it. Or maybe she won’t. But the book will be in her house, and the question will be there with it: why would a man I’ve known for fifteen years give me something I can’t use? What does he think I am? What does he want me to become?” Claire stared at him. She felt, suddenly, the way she had felt as a child when he had corrected her grammar — gently, precisely, in a way that was not unkind but that left her with the clear sense that she had failed to understand something fundamental. “You’re not giving them things,” she said. “You’re giving them problems.” “I’m giving them questions,” Martin said. “There’s a difference.” She left that night more unsettled than she had arrived, which was saying something, because she had arrived in a state of considerable unsettlement. She sat in her car in his driveway for ten minutes before she could bring herself to drive away, thinking about the watch in Richard Sterne’s drawer, the Hemingway on Jennifer Okonkwo’s shelf, and the strange, deliberate wrongness of it all. Her father had always been a difficult man. Not cruel — never that — but difficult in the way that people are difficult when they see the world more clearly than they can bear to say. He had never yelled at her. He had never disappointed her openly. He had simply been, year after year, a wall of calm attention that reflected everything back at her without ever letting her see what was on the other side. And now he was dying, and he was giving away his things to the wrong people, and she did not understand, and she was afraid. She went home and told her husband, David, about the watch and the Hemingway, and David listened the way David always listened — carefully, with his whole body, the way a tree takes rain — and at the end he said, “What do you think he’s actually doing?” “I think he’s losing his mind,” Claire said. “Or I think he’s making a game out of dying, which might be worse.” “Or,” David said, gently, “or he’s doing something you don’t understand yet.” She visited again on Thursday. And on Sunday. And on the following Wednesday. She watched him give things away — his father’s cufflinks to a man at the coffee shop he’d never met, his wedding ring to the janitor at the university who had mopped his office floors for twenty years without ever exchanging more than a nod. Each gift was wrong for the recipient. Each gift was a misfit, a stranger, a thing that did not belong where it had been placed. And each time, Claire felt the same sick feeling in her stomach — the feeling of witnessing something she couldn’t stop and didn’t understand. Then one morning, sitting in his study with the spring light coming through the window, she asked him the question she had been carrying for weeks. “Why are you doing this?” “Because I’m dying,” he said, simply. “And I have things that mean things, and I don’t want them to mean nothing.” “They’d mean something to me.” “I know.” He looked at her — really looked, for the first time in weeks, with the full weight of his attention, which was like sunlight in that it illuminated without warmth. “That’s why I’m not giving them to you.” She felt something crack. “What does that mean?” “It means that if I gave you the watch, you would keep it, and it would mean what it has always meant, and it would stop. The question would be answered. The story would close.” He paused. “I don’t want the story to close. I want it to open. I want to give you questions that you have to spend the rest of your life answering.” Claire was quiet for a long time. Outside, a lawn mower started up, the ordinary sound of a spring afternoon, the world going on as if this conversation were not happening. “What question are you giving me?” she asked. Martin smiled. It was a real smile — the first real smile she had seen from him since the diagnosis, and it transformed his face in a way that made her want to cry. “You’re the only one I haven’t given anything to,” he said. “Think about why that might be.” She drove home in the late afternoon light, and she thought about it. She thought about every visit, every conversation, every gift she had witnessed being given to someone else. She thought about the watch and Richard Sterne and the question of forgiveness. She thought about the Hemingway and Jennifer Okonkwo and the question of what we owe to people we know but do not truly see. She thought about the wedding ring and the janitor and the question of what a life of quiet service is worth when the person who served has gone. She thought about herself, and her father, and the things he had not given her, and she understood — suddenly, completely, with the force of something that had been waiting to be understood — that he had given her the biggest question of all. He had given her the experience of not being given anything. He had given her the space to ask what that meant. It meant he believed she could find her own answers. It meant he trusted her with the uncertainty he had spent his whole life collecting. It meant that he had looked at her, all along, and seen not a daughter who needed to be given things but a person who needed to be given the chance to become. She pulled over on the side of the road and cried for ten minutes, the kind of crying that is less about sadness than about the sudden, overwhelming recognition of being loved by someone who did not know how to say it in any language you could translate. Martin died in October, quietly, in his sleep, with Claire beside him. The funeral was small and well-attended. Richard Sterne came, briefly, and stood at the back, and left before the reception. Jennifer Okonkwo came too, with the Hemingway in her bag, and she gave Claire a look that said something like: I still don’t understand, but I’m keeping it anyway. The janitor — whose name was Harold — stood by the casket for a long time, and when he walked away, Claire noticed he was wearing her father’s cufflinks. After everyone left, Claire sat in her father’s study, in his chair, surrounded by his books, and she thought about what to do with the space he had left. Not the physical space — the other space. The space of questions he had asked and not answered. The space of gifts he had given to the wrong people and the right people and the people who were neither wrong nor right but simply, irreducibly, themselves. On his desk, she found a note. She hadn’t seen it before — it had been tucked under a stack of papers, as if he’d wanted it found but not too easily. It was written in his hand, the same precise hand that had graded papers and written books and once, when she was seven, had written her name on the first page of the first book she ever owned: Claire — I have given you the only thing I had that mattered: the experience of being asked. The answer is yours. It was always going to be yours. I love you in whatever way I have always loved you — imperfectly, incompletely, but completely truly. Forgive me for the things I couldn’t say. Forgive yourself for the things you couldn’t hear. The rest is yours to figure out. — Dad She put the note in her pocket and drove home through the October dark, and when she got there, her daughter was doing homework at the kitchen table, and her husband was making tea, and the house was full of the ordinary sounds of people who are alive and together and do not yet know how much that costs. She showed them the note. Her daughter read it and said, “I don’t really get it.” Her husband read it and said, “He was a complicated man.” And Claire put it in the drawer where she kept the things she didn’t know what to do with, and she sat down at the table with her daughter, and she helped her with the math she was stuck on, and she did not say anything about questions or answers or the strange, impossible grammar of love between people who do not know how to say what they mean. Some things don’t need to be said. They need to be lived. And the living took the rest of Claire’s life, and it was not easy, and it was not simple, and it was not always kind — but it was hers, and it was full, and it was, in the end, the answer to a question she had never known she was asking until her father asked it for her, by refusing to answer it himself. That is the only way some questions get answered. By being given to the right person at the right time, and then trusted to become whatever they become.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="reader-footer">
-      <a href="/stories/" class="reader-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Stories
-      </a>
-    </footer>
-  </article>
-
-  <div id="site-footer"></div>
-  <script src="/nav.js"></script>
-  <script src="/footer.js"></script>
-  
-<script>
-// Segmented story reader
-(function(){
-  var readerBody = document.querySelector('.reader-body');
-  if (!readerBody) return;
-  var allPs = Array.from(readerBody.querySelectorAll('p'));
-  if (allPs.length === 0) return;
-
-  // Dynamic chunk size for even distribution
-  var targetPages = Math.max(3, Math.min(12, Math.round(allPs.length / 5)));
-  var chunkSize = Math.max(2, Math.min(8, Math.ceil(allPs.length / targetPages)));
-  var pages = [];
-  for (var i = 0; i < allPs.length; i += chunkSize) {
-    pages.push(allPs.slice(i, i + chunkSize));
-  }
-  var totalPages = pages.length;
-
-  // Move all p tags into segmented divs
-  allPs.forEach(function(p){ p.parentNode.removeChild(p); });
-  pages.forEach(function(chunk, idx) {
-    var div = document.createElement('div');
-    div.className = 'story-page-segment';
-    div.setAttribute('data-page', idx + 1);
-    div.id = 'page-' + (idx + 1);
-    if (idx > 0) div.style.display = 'none';
-    chunk.forEach(function(p){ div.appendChild(p); });
-    readerBody.appendChild(div);
-  });
-
-  // Nav bar
-  var nav = document.createElement('div');
-  nav.className = 'story-page-nav';
-  nav.innerHTML =
-    '<div class="story-page-nav-inner">
-      '<button id="prev-page-btn" class="story-nav-btn" disabled>Previous</button>'
-      '<span class="story-page-indicator">Page <span id="current-page-num">1</span> of <span id="total-pages-num">' + totalPages + '</span></span>'
-      '<button id="next-page-btn" class="story-nav-btn">Next</button>'
-    </div>';
-  readerBody.parentNode.insertBefore(nav, readerBody.nextSibling);
-
-  // Toast
-  var toast = document.createElement('div');
-  toast.className = 'story-resume-toast';
-  toast.id = 'story-resume-toast';
-  document.body.appendChild(toast);
-
-  var currentPage = 1;
-  var slug = window.location.pathname.split('/').pop().replace('.html','');
-
-  function showPage(n) {
-    if (n < 1 || n > totalPages) return;
-    document.querySelectorAll('.story-page-segment').forEach(function(el){ el.style.display = 'none'; });
-    var target = document.getElementById('page-' + n);
-    if (target) target.style.display = 'block';
-    var curEl = document.getElementById('current-page-num');
-    if (curEl) curEl.textContent = n;
-    var prevBtn = document.getElementById('prev-page-btn');
-    var nextBtn = document.getElementById('next-page-btn');
-    if (prevBtn) prevBtn.disabled = (n === 1);
-    if (nextBtn) nextBtn.disabled = (n === totalPages);
-    currentPage = n;
-    if (history.replaceState) history.replaceState(null, '', '#page-' + n);
-    try { localStorage.setItem('bithues-story-' + slug, n); } catch(e){}
-    var reader = document.getElementById('reader-container');
-    if (reader) reader.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function showToast(msg) {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-  }
-
-  document.getElementById('next-page-btn').addEventListener('click', function(){ showPage(currentPage + 1); });
-  document.getElementById('prev-page-btn').addEventListener('click', function(){ showPage(currentPage - 1); });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); showPage(currentPage + 1); }
-    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); showPage(currentPage - 1); }
-  });
-
-  (function(){
-    var savedPage = 1;
-    try { savedPage = parseInt(localStorage.getItem('bithues-story-' + slug)) || 1; } catch(e){}
-    var hashM = window.location.hash.match(/^#page-(d+)$/);
-    var startPage = hashM ? parseInt(hashM[1]) : savedPage;
-    if (startPage > totalPages) startPage = 1;
-    if (startPage > 1) { showPage(startPage); showToast('Resume from page ' + startPage); }
-    else { showPage(1); }
-  })();
-
-  // Per-page scroll progress bar
-  var bar = document.getElementById('story-progress-bar');
-  var container = document.getElementById('reader-container');
-  if (bar && container) {
-    function updateProgress() {
-      var rect = container.getBoundingClientRect();
-      var total = container.offsetHeight - window.innerHeight;
-      var scrolled = Math.max(0, -rect.top);
-      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-  }
-})();
-</script>
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
 
 </body>
 </html>
