@@ -859,43 +859,54 @@ small, .small {
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
 
-/* Book covers — portrait 2:3, bounded height, cover fit */
+/* Book covers — portrait 2:3, bounded height */
 .card-thumb.portrait-book {
-    max-height: 160px !important;
-    background-size: cover !important;
+    min-height: 160px !important;
+    height: 200px !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat;
 }
 .hero-col-img.portrait-book {
-    max-height: 160px !important;
-    background-size: cover !important;
+    min-height: 160px !important;
+    height: 200px !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat;
 }
 
-/* Hero column images — driven by grid, bounded by max-height */
+/* Hero column images */
 .hero-col-img {
-    max-height: 200px !important;
-    height: auto !important;
-    min-height: unset !important;
+    min-height: 120px !important;
+    height: 140px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
 }
 .hero-col--center .hero-col-img {
-    max-height: 240px !important;
+    min-height: 160px !important;
+    height: 180px !important;
+}
+.hero-col-img.portrait-book {
+    min-height: 160px !important;
+    height: 200px !important;
+    background-size: contain !important;
+    background-position: center center !important;
 }
 
-/* Stories thumbnails — 5x7 landscape, larger (primary focus) */
+/* Stories thumbnails — largest of all card types */
 .card-thumb.stories-thumb {
-    /* Stories: largest — primary visual focus */
-    max-height: 220px !important;
+    min-height: 180px !important;
+    height: 200px !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
 }
 
-/* Articles thumbnails — 4x5 landscape, smaller (secondary) */
+/* Articles thumbnails — medium, supporting content */
 .card-thumb.articles-thumb {
-    /* Articles: smallest — tertiary visual */
-    max-height: 120px !important;
+    min-height: 140px !important;
+    height: 160px !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
