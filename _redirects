@@ -1,17 +1,20 @@
-# Redirect legacy .html URLs to clean URLs
+# Redirect legacy .html URLs to clean URLs (root-level pages)
 /press.html /press 301
 /book-tracker.html /book-tracker 301
 
-# Redirect /story/ to /stories/ (singular -> plural)
-/story/ /stories/ 301
-/story/:splat /stories/:splat 301
-# Remove trailing slash from review/article/story subdirectory URLs
+# Remove .html from subdirectory pages (reviews/articles/stories) — glob pattern
+/reviews/*.html /reviews/:splat 301
+/articles/*.html /articles/:splat 301
+/stories/*.html /stories/:splat 301
+
+# Remove trailing slashes from subdirectory URLs
 /reviews/:slug/ /reviews/:slug 301
 /articles/:slug/ /articles/:slug 301
 /stories/:slug/ /stories/:slug 301
 
-# Redirect old subdirectory article/story patterns to root-level
+# Redirect old /stories/ subdirectory pattern to root-level slugs
 /stories/:slug /:slug 301
-/reviews/:slug /:slug 301
-/articles/:slug /articles/:slug 301
 
+# Redirect singular /story/ to /stories/
+/story/ /stories/ 301
+/story/:splat /stories/:splat 301
