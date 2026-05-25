@@ -898,18 +898,17 @@ small, .small {
 }
 /* ── Scene breaks (··· in MD) ── */
 .story-body .scene-break {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2em auto;
-    gap: 0.5em;
+    display: block;
+    text-align: center;
+    margin: 1.5em auto;
     color: #999;
+    font-size: 1.1em;
+    letter-spacing: 0.4em;
+    line-height: 1;
+    /* Single center dot row */
 }
-.story-body .scene-break::before,
-.story-body .scene-break::after {
+.story-body .scene-break::before {
     content: '· · ·';
-    font-size: 1.2em;
-    letter-spacing: 0.3em;
 }
 /* ── Story page hero image ── */
 .story-page .story-hero-img {
