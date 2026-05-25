@@ -335,18 +335,24 @@ small, .small {
 
 /* 7b. 3-column sections below hero */
 .section-three-col {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 0;
+ display: flex;
+ flex-wrap: wrap;
+ border-top: 1px solid var(--color-border);
  max-width: var(--max-width);
  margin: 0 auto;
- border-top: 1px solid var(--color-border);
 }
 
 .section-col {
+ flex: 1;
+ min-width: 280px;
  padding: 40px 24px;
  border-right: 1px solid var(--color-border);
 }
+
+/* Reorder: DOM is [Stories, Articles, Books] → display [Articles, Stories, Books] */
+.section-col:first-child { order: 2; } /* Stories → center */
+.section-col:nth-child(2) { order: 1; } /* Articles → left */
+.section-col:nth-child(3) { order: 3; } /* Books → right */
 
 .section-col:last-child {
  border-right: none;
@@ -852,12 +858,37 @@ small, .small {
  }
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
+
+/* Book covers — portrait 2:3, use cover crop (no side bars) */
+.card-thumb.portrait-book, .hero-col-img.portrait-book {
+    height: 220px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
+/* Stories thumbnails — 5x7 landscape, larger (primary focus) */
+.card-thumb.stories-thumb {
+    height: 180px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
+/* Articles thumbnails — 4x5 landscape, smaller (secondary) */
+.card-thumb.articles-thumb {
+    height: 120px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
 .card-thumb {
     background-color: #2a2a2a;
     background-image: url('/images/card-fallback.svg');
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: contain;
+    background-size: cover;
     width: 100%;
     height: 240px;
 }
