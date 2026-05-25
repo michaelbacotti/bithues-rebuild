@@ -27,7 +27,8 @@
    ' </div>',
    ' <div class="footer-bottom">',
    '  <p>&copy; 2026 Bithues. All rights reserved.</p>',
-   '  <p>All stories are fiction. Any resemblance to actual events is coincidental.</p>',
+   '  <p>All stories are fiction. Any resemblance to actual events is coincidental.</p>
+  <p>Articles and book reviews may include factual content. Book links are affiliate links — we may earn a small commission at no extra cost to you.</p>',
    ' </div>',
    '</div>'
   ].join('\n');
