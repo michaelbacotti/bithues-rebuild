@@ -917,16 +917,13 @@ small, .small {
     margin-bottom: 24px;
 }
 
-/* Portrait book-cover thumbnail in hero: 2/3 aspect ratio, contain crop */
-.hero-thu-review {
-    background-color: #2a2a2a;
-    background-image: url('/images/card-fallback.svg');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    height: auto;
-    border-radius: 2px;
-    margin-bottom: 24px;
+/* ── Review card book-cover thumbnail ──
+   Canonical book-cover style: inline <img> element, 110px wide.
+   Used on review detail pages AND homepage review cards.
+   Source of truth: review detail page book cover rendering. ── */
+.review-cover-thumb {
+    display: block;
+    width: 110px;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
