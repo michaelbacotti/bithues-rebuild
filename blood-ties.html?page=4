@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Before the Streetlights Came On | Bithues</title>
- <meta name="description" content="A story about growing up in a neighborhood before technology changed childhood forever.">
+ <title>Blood Ties | Bithues</title>
+ <meta name="description" content="A healer who has spent twenty years treating vampires must confront her own boundaries when her daughter is turned — and discovers that the cure requires something she has carried for far too long.">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,14 +18,16 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">STORY</span>
-  <h1>Before the Streetlights Came On</h1>
-  
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>Blood Ties</h1>
+  <div class="story-meta">2026-04-15</div>
  </div>
  <div class="story-body" id="content">
-  <p>Delores still walks at night. Not in her neighborhood — the streets are too bright, the traffic too present, the world too awake in the way that cities are awake now, everywhere, all the time. She drives to a place on the outskirts, a road that runs along the edge of a field with no houses on it, and she parks with the headlights off and sits in the car with the windows down, and she waits for the dark to arrive the way it used to arrive, slow and certain, filling the air from the ground up. It is not the same dark. It is not even close. But it is dark enough to remind her that she was once a girl who walked through a neighborhood that belonged to her, and she knew every corner of it, and she knew who she was in the dark between the porch lights, and she has never since been as certain of anything as she was of that.</p>
+  <p>But she was also, in this moment, grateful — for Sorin beside her, for the Heart's gift, for the simple animal pleasure of standing in the sun on the other side of the mountain with her anger finally gone and her daughter finally saved and the terrible, ordinary, sustaining possibility of tomorrow. "Let's go home," she said.</p>
 <div class="scene-break" aria-hidden="true"></div>
-<p>The streetlights in the old neighborhood came on in 1987. She was eleven. She did not understand.</p>
+<p>And they went.</p>
+<div class="scene-break" aria-hidden="true"></div>
+<div class="scene-break" aria-hidden="true"></div>
 <div class="scene-break" aria-hidden="true"></div>
 <p><em>End of story.</em></p>
 <p><em>End of story.</em></p>
@@ -55,7 +57,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/jaspers-flight.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">J A S P E R S   F L I G H T</div></a></nav>
+ <nav class="story-nav"><a href="/the-space-between.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Space Between</div></a></nav>
 </div>
  </main>
 
