@@ -973,6 +973,11 @@ small, .small {
  width: 110px;
 }
 
+/* Hero variant (homepage Editor's Pick): larger cover for focal emphasis */
+.review-card-hero .review-cover-thumb {
+ width: 130px;
+}
+
 @media (max-width: 600px) {
  .review-card-horizontal {
   flex-direction: column;
