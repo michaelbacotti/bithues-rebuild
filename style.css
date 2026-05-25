@@ -861,19 +861,19 @@ small, .small {
 
 /* Book covers — portrait 2:3, bounded height */
 .card-thumb.portrait-book {
-    min-height: 160px !important;
-    height: 200px !important;
-    background-size: contain !important;
-    background-position: center center !important;
+    min-height: 160px;
+    height: 200px;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: #1a1a1a;
-    background-image: none !important;
+    background-image: none;
 }
 .hero-col-img.portrait-book {
-    min-height: 160px !important;
-    height: 200px !important;
-    background-size: contain !important;
-    background-position: center center !important;
+    min-height: 160px;
+    height: 200px;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
@@ -881,42 +881,42 @@ small, .small {
 .hero-col-img {
     min-height: 120px !important;
     height: 140px !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 .hero-col--center .hero-col-img {
-    min-height: 160px !important;
-    height: 180px !important;
+    min-height: 160px;
+    height: 180px;
 }
 .hero-col-img.portrait-book {
-    min-height: 160px !important;
-    height: 200px !important;
-    background-size: contain !important;
-    background-position: center center !important;
+    min-height: 160px;
+    height: 200px;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: #1a1a1a;
-    background-image: none !important;
+    background-image: none;
 }
 
 /* Stories thumbnails — largest of all card types */
 .card-thumb.stories-thumb {
-    min-height: 180px !important;
-    height: 200px !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    min-height: 180px;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-image: none !important;
+    background-image: none;
 }
 
 /* Articles thumbnails — medium, supporting content */
 .card-thumb.articles-thumb {
-    min-height: 140px !important;
-    height: 160px !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    min-height: 140px;
+    height: 160px;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-image: none !important;
+    background-image: none;
 }
 
 .card-thumb {
