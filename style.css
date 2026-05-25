@@ -860,14 +860,73 @@ small, .small {
  .story-nav {
   grid-template-columns: 1fr;
  }
+ /* Hero thumbnails: scale down on mobile */
+ .hero-thu-article { height: 90px; }
+ .hero-thu-story  { height: 160px; }
+ .hero-thu-review { aspect-ratio: 2 / 3; height: auto; }
 }
-/* ── Card thumbnail images (story/article/review cards) ── */
+/* ── Card thumbnail images (story/article/review cards) ──
+   Used by "More …" sections on homepage and listing pages.
+   Dimensions match the hero thumbnail partials for visual consistency. ── */
 .card-thumb {
+    background-color: #2a2a2a;
+    background-image: url('/images/card-fallback.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+/* Article cards: 120px tall — matches .hero-thu-article */
+.card-thumb.articles-thumb {
+    height: 120px;
+}
+
+/* Story cards: 200px tall — matches .hero-thu-story */
+.card-thumb.stories-thumb {
+    height: 200px;
+}
+
+/* ── Hero thumbnail partials — Editor's Picks ──
+   These define the canonical thumbnail style for each content type.
+   "More …" sections reuse the same classes so all thumbnails match. ── */
+
+/* Article thumbnail in hero: 120px tall, cover crop */
+.hero-thu-article {
+    background-color: #2a2a2a;
+    background-image: url('/images/card-fallback.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 120px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+
+/* Story thumbnail in hero: 200px tall, cover crop */
+.hero-thu-story {
+    background-color: #2a2a2a;
+    background-image: url('/images/card-fallback.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+/* Portrait book-cover thumbnail in hero: 2/3 aspect ratio, contain crop */
+.hero-thu-review {
     background-color: #2a2a2a;
     background-image: url('/images/card-fallback.svg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
     width: 100%;
-    height: 240px;
+    aspect-ratio: 2 / 3;
+    height: auto;
+    border-radius: 2px;
+    margin-bottom: 24px;
 }
