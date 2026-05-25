@@ -859,7 +859,20 @@ small, .small {
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
 
-/* Book covers — portrait 2:3, use contain so full cover shows */
+/* Book covers — portrait 2:3, bounded height, cover fit */
+.card-thumb.portrait-book {
+    max-height: 160px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+.hero-col-img.portrait-book {
+    max-height: 160px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
 /* Hero column images — driven by grid, bounded by max-height */
 .hero-col-img {
     max-height: 200px !important;
@@ -877,8 +890,6 @@ small, .small {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
-    height: auto !important;
-    aspect-ratio: unset !important;
 }
 
 /* Articles thumbnails — 4x5 landscape, smaller (secondary) */
@@ -888,8 +899,6 @@ small, .small {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
-    height: auto !important;
-    aspect-ratio: unset !important;
 }
 
 .card-thumb {
