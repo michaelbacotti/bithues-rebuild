@@ -854,9 +854,10 @@ small, .small {
 /* ── Card thumbnail images (story/article/review cards) ── */
 /* For Amazon book covers (portrait 2:3 ratio) — use contain + taller height */
 .card-thumb.portrait-book, .hero-col-img.portrait-book {
-    height: 180px;
-    background-size: contain;
-    background-position: top center;
+    height: 220px !important;
+    background-size: contain !important;
+    background-position: top center !important;
+    background-repeat: no-repeat;
 }
 
 .card-thumb {
