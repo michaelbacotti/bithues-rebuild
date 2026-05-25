@@ -892,3 +892,27 @@ small, .small {
     width: 100%;
     height: 240px;
 }
+/* ── Scene breaks (··· in MD) ── */
+.story-body .scene-break {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em auto;
+    gap: 0.5em;
+    color: #999;
+}
+.story-body .scene-break::before,
+.story-body .scene-break::after {
+    content: '· · ·';
+    font-size: 1.2em;
+    letter-spacing: 0.3em;
+}
+/* ── Story page hero image ── */
+.story-page .story-hero-img {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    border-radius: 2px;
+}
