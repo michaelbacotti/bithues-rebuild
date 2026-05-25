@@ -931,3 +931,8 @@ small, .small {
 .review-card-horizontal .review-cover-thumb {
     width: 90px;
 }
+
+/* Feature variant (Editor's Pick): same 110px as review detail page */
+.review-card-feature .review-cover-thumb {
+    width: 110px;
+}
