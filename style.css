@@ -590,6 +590,7 @@ small, .small {
  color: #555555;
  max-width: 680px;
  margin: 0 auto;
+ text-align: center;
 }
 
 /* 12. Article / Story Page */
