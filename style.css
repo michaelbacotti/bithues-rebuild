@@ -306,6 +306,14 @@ small, .small {
  /* nothing special */
 }
 
+/* Portrait book cover in hero — constrain height to match text column */
+.hero-col-img.portrait-book {
+ background-size: contain;
+ background-position: top center;
+ background-repeat: no-repeat;
+ aspect-ratio: 2/3;
+}
+
 .hero-col .category-label {
  margin-bottom: 8px;
 }
