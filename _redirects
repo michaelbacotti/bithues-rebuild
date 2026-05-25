@@ -2,10 +2,10 @@
 /press.html /press 301
 /book-tracker.html /book-tracker 301
 
-# Remove .html from subdirectory pages (reviews/articles/stories) — glob pattern
-/reviews/*.html /reviews/:splat 301
-/articles/*.html /articles/:splat 301
-/stories/*.html /stories/:splat 301
+# Remove .html extension from subdirectory pages — glob pattern
+/reviews/* /reviews/:splat 301
+/articles/* /articles/:splat 301
+/stories/* /stories/:splat 301
 
 # Remove trailing slashes from subdirectory URLs
 /reviews/:slug/ /reviews/:slug 301
