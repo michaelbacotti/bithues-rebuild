@@ -852,12 +852,28 @@ small, .small {
  }
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
-/* For Amazon book covers (portrait 2:3 ratio) — use contain + taller height */
+
+/* Book covers — portrait 2:3, use cover crop (no side bars) */
 .card-thumb.portrait-book, .hero-col-img.portrait-book {
     height: 220px !important;
-    background-color: #FAF8F5 !important;
-    background-size: contain !important;
-    background-position: top center !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
+/* Stories thumbnails — 5x7 landscape, larger (primary focus) */
+.card-thumb.stories-thumb {
+    height: 180px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+}
+
+/* Articles thumbnails — 4x5 landscape, smaller (secondary) */
+.card-thumb.articles-thumb {
+    height: 120px !important;
+    background-size: cover !important;
+    background-position: center center !important;
     background-repeat: no-repeat;
 }
 
