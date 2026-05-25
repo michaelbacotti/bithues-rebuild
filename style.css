@@ -867,6 +867,7 @@ small, .small {
     background-position: center center !important;
     background-repeat: no-repeat;
     background-color: #1a1a1a;
+    background-image: none !important;
 }
 .hero-col-img.portrait-book {
     min-height: 160px !important;
@@ -895,6 +896,7 @@ small, .small {
     background-position: center center !important;
     background-repeat: no-repeat;
     background-color: #1a1a1a;
+    background-image: none !important;
 }
 
 /* Stories thumbnails — largest of all card types */
@@ -904,6 +906,7 @@ small, .small {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
+    background-image: none !important;
 }
 
 /* Articles thumbnails — medium, supporting content */
@@ -913,6 +916,7 @@ small, .small {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
+    background-image: none !important;
 }
 
 .card-thumb {
