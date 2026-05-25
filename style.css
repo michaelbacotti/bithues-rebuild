@@ -917,13 +917,17 @@ small, .small {
     margin-bottom: 24px;
 }
 
-/* ── Review card book-cover thumbnail ──
-   Canonical book-cover style: inline <img> element, 110px wide.
-   Used on review detail pages AND homepage review cards.
-   Source of truth: review detail page book cover rendering. ── */
+/* ── Review detail page book cover thumbnail ──
+   Standalone img element: 110px wide, used on review detail pages
+   where cover sits alongside genre/title/summary text (horizontal flex). */
 .review-cover-thumb {
     display: block;
     width: 110px;
     border-radius: 3px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* In horizontal review card wrapper on homepage */
+.review-card-horizontal .review-cover-thumb {
+    width: 90px;
 }
