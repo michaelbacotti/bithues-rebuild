@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>the-shadow-garden | Bithues</title>
- <meta name="description" content="A short story: the-shadow-garden">
+ <title>The Shadow Garden | Bithues</title>
+ <meta name="description" content="The garden remembers what its keeper has tried to forget. Some plants grow best in the dark.">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,9 +18,9 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">Short Story</span>
-  <h1>the-shadow-garden</h1>
-  
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>The Shadow Garden</h1>
+  <div class="story-meta">2026-03-22</div>
  </div>
  <div class="story-body" id="content">
   <p>She stayed. She stayed for the summer, and then for the fall, and then for the winter, when the garden was still dark but was dark in a different way, a way that understood that the dark was not a season but a condition, not an absence but a presence. She read the letters, all seventeen of them, and then she read them again. She did not write back — there was no one to write back to, no address, no name, just the letters and the garden and the long silence that was not empty but was full in the way that good soil is full, the way that roots are full, the way that a place where things are happening is full whether or not anyone is watching.</p>
@@ -63,7 +63,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/the-sound-between-stars.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">the-sound-between-stars</div></a></nav>
+ <nav class="story-nav"><a href="/the-last-winter.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Last Winter</div></a></nav>
 </div>
  </main>
 

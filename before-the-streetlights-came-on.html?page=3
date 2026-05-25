@@ -52,7 +52,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/blood-ties.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">blood-ties</div></a></nav>
+ <nav class="story-nav"><a href="/jaspers-flight.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">J A S P E R S   F L I G H T</div></a></nav>
 </div>
  </main>
 

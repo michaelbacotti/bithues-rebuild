@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>blood-ties | Bithues</title>
- <meta name="description" content="A short story: blood-ties">
+ <title>Blood Ties | Bithues</title>
+ <meta name="description" content="A healer who has spent twenty years treating vampires must confront her own boundaries when her daughter is turned — and discovers that the cure requires something she has carried for far too long.">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,9 +18,9 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">Short Story</span>
-  <h1>blood-ties</h1>
-  
+  <span class="genre-pill">SHORT STORY</span>
+  <h1>Blood Ties</h1>
+  <div class="story-meta">2026-04-15</div>
  </div>
  <div class="story-body" id="content">
   <p>···</p>
@@ -51,7 +51,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/jaspers-flight.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">J A S P E R S   F L I G H T</div></a></nav>
+ <nav class="story-nav"><a href="/the-space-between.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Space Between</div></a></nav>
 </div>
  </main>
 

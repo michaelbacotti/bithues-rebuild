@@ -89,7 +89,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/before-the-streetlights-came-on.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">Before the Streetlights Came On</div></a></nav>
+ <nav class="story-nav"><a href="/the-shadow-garden.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Shadow Garden</div></a></nav>
 </div>
  </main>
 
