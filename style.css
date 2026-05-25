@@ -1069,11 +1069,8 @@ small, .small {
 }
 
 /* ── Book icon inline with BOOK REVIEW label in hero meta ── */
-.review-hero-coin {
-    display: block;
-    width: 48px;
-    height: 48px;
-    margin: 10px auto 0;
-    border-radius: 50%;
-    overflow: hidden;
+.review-hero-author {
+    font-size: 0.8125rem;
+    color: #888;
+    margin: 4px 0;
 }
