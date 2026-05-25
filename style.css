@@ -860,31 +860,36 @@ small, .small {
 /* ── Card thumbnail images (story/article/review cards) ── */
 
 /* Book covers — portrait 2:3, use contain so full cover shows */
-.card-thumb.portrait-book, .hero-col-img.portrait-book {
-    /* Use aspect-ratio to match 2:3 book cover — no dark bars */
-    aspect-ratio: 2 / 3;
+/* Hero column images — driven by grid, bounded by max-height */
+.hero-col-img {
+    max-height: 200px !important;
     height: auto !important;
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat;
+    min-height: unset !important;
+}
+.hero-col--center .hero-col-img {
+    max-height: 240px !important;
 }
 
 /* Stories thumbnails — 5x7 landscape, larger (primary focus) */
 .card-thumb.stories-thumb {
-    aspect-ratio: 16 / 9;
-    height: auto !important;
+    /* Stories: largest — primary visual focus */
+    max-height: 220px !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
+    height: auto !important;
+    aspect-ratio: unset !important;
 }
 
 /* Articles thumbnails — 4x5 landscape, smaller (secondary) */
 .card-thumb.articles-thumb {
-    aspect-ratio: 16 / 9;
-    height: auto !important;
+    /* Articles: smallest — tertiary visual */
+    max-height: 120px !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat;
+    height: auto !important;
+    aspect-ratio: unset !important;
 }
 
 .card-thumb {
