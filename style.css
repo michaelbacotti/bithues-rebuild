@@ -335,24 +335,18 @@ small, .small {
 
 /* 7b. 3-column sections below hero */
 .section-three-col {
- display: flex;
- flex-wrap: wrap;
- border-top: 1px solid var(--color-border);
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0;
  max-width: var(--max-width);
  margin: 0 auto;
+ border-top: 1px solid var(--color-border);
 }
 
 .section-col {
- flex: 1;
- min-width: 280px;
  padding: 40px 24px;
  border-right: 1px solid var(--color-border);
 }
-
-/* Reorder: DOM is [Stories, Articles, Books] → display [Articles, Stories, Books] */
-.section-col:first-child { order: 2; } /* Stories → center */
-.section-col:nth-child(2) { order: 1; } /* Articles → left */
-.section-col:nth-child(3) { order: 3; } /* Books → right */
 
 .section-col:last-child {
  border-right: none;
@@ -858,112 +852,12 @@ small, .small {
  }
 }
 /* ── Card thumbnail images (story/article/review cards) ── */
-
-/* Book covers — portrait 2:3, bounded height */
-.card-thumb.portrait-book {
-    min-height: 160px;
-    height: 200px;
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #1a1a1a;
-    background-image: none;
-}
-.hero-col-img.portrait-book {
-    min-height: 160px;
-    height: 200px;
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* Hero column images */
-.hero-col-img {
-    min-height: 120px !important;
-    height: 140px !important;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-.hero-col--center .hero-col-img {
-    min-height: 160px;
-    height: 180px;
-}
-.hero-col-img.portrait-book {
-    min-height: 160px;
-    height: 200px;
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #1a1a1a;
-    background-image: none;
-}
-
-/* Stories thumbnails — largest of all card types */
-.card-thumb.stories-thumb {
-    min-height: 180px;
-    height: 200px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: none;
-}
-
-/* Articles thumbnails — medium, supporting content */
-.card-thumb.articles-thumb {
-    min-height: 140px;
-    height: 160px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
 .card-thumb {
-    background-color: #1e1e1e;
-    /* NO fallback image — inline style sets the real image */
-    background-image: none;
+    background-color: #2a2a2a;
+    background-image: url('/images/card-fallback.svg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-position: top center;
+    background-size: contain;
     width: 100%;
     height: 240px;
-}
-
-/* ── Scene breaks (··· in MD) ── */
-.story-body .scene-break {
-    display: block;
-    text-align: center;
-    margin: 1.5em auto;
-    color: #999;
-    font-size: 1.1em;
-    letter-spacing: 0.4em;
-    line-height: 1;
-    /* Single center dot row */
-}
-.story-body .scene-break::before {
-    content: '· · ·';
-}
-/* ── Story page hero image ── */
-.story-page .story-hero-img {
-    width: 100%;
-    height: 280px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 24px;
-    border-radius: 2px;
-}
-
-/* ── Hero section label ── */
-.hero-label {
-    text-align: center;
-    margin-bottom: 16px;
-}
-.hero-label h2 {
-    font-size: 0.85em;
-    letter-spacing: 0.12em;
-    color: #888;
-    font-weight: 600;
-}
-.hero-section {
-    padding-top: 28px;
 }
