@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>american-voices | Bithues</title>
- <meta name="description" content="A short story: american-voices">
+ <title>The Weight of What Remains | Bithues</title>
+ <meta name="description" content="When Marina inherits a box of reel-to-reel tapes from her grandmother, she finds recordings that complicate everything she thought she knew about who her family really was.">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,16 +18,12 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">Short Story</span>
-  <h1>american-voices</h1>
-  
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>The Weight of What Remains</h1>
+  <div class="story-meta">May 2026</div>
  </div>
  <div class="story-body" id="content">
-  <p>Ireland was a country Americans recognized in the sentimental register: rain, songs, hardship made picturesque by distance. Ireland could be folded into family lore without unsettling the furniture. But another country — unnamed, altered by war, bordered by fear, spoken in a language no one in the family knew — would have required too much explanation. It might also have required belief.</p>
-<div class="scene-break" aria-hidden="true"></div>
-<p>And perhaps belief was what her grandmother had run out of first.</p>
-<div class="scene-break" aria-hidden="true"></div>
-<p>Marina looked at the empty teacup still kept on the windowsill because she had not yet decided what to do with it. She pictured her grandmother in this same chair, older now, hair thinning, hands still beautiful and blunt at the fingers. A woman saying very little. A woman who had turned herself, through years of repetition, into someone the world could accommodate.</p>
+  <p>Marina looked at the empty teacup still kept on the windowsill because she had not yet decided what to do with it. She pictured her grandmother in this same chair, older now, hair thinning, hands still beautiful and blunt at the fingers. A woman saying very little. A woman who had turned herself, through years of repetition, into someone the world could accommodate.</p>
 <div class="scene-break" aria-hidden="true"></div>
 <p>Helen had not erased Yelena. The tapes proved that. But she had folded her away carefully, like a winter coat stored out of season, trusting perhaps that one day someone would open the box and understand that concealment is not always betrayal. Sometimes it is the final available form of tenderness.</p>
 <div class="scene-break" aria-hidden="true"></div>
@@ -93,7 +89,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/before-the-streetlights-came-on.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">Before the Streetlights Came On</div></a></nav>
+ <nav class="story-nav"><a href="/city-of-wonders.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">City of Wonders</div></a></nav>
 </div>
  </main>
 

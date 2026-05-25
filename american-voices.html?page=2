@@ -3,8 +3,8 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>american-voices | Bithues</title>
- <meta name="description" content="A short story: american-voices">
+ <title>The Weight of What Remains | Bithues</title>
+ <meta name="description" content="When Marina inherits a box of reel-to-reel tapes from her grandmother, she finds recordings that complicate everything she thought she knew about who her family really was.">
  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
@@ -18,14 +18,12 @@
  <main>
  <div class="story-page">
  <div class="story-header">
-  <span class="genre-pill">Short Story</span>
-  <h1>american-voices</h1>
-  
+  <span class="genre-pill">Literary Fiction</span>
+  <h1>The Weight of What Remains</h1>
+  <div class="story-meta">May 2026</div>
  </div>
  <div class="story-body" id="content">
-  <p>She listened to the whole tape while making coffee, and by the end she understood that what it preserved was not information but atmosphere. Solitude. The sound of a person continuing. The faint dignity of a life with no witness, except perhaps the machine turning patiently on a table.</p>
-<div class="scene-break" aria-hidden="true"></div>
-<p>The fourth tape, labeled 1964, had the background rhythm of factory work: metal, repetition, voices at a distance, labor breaking the day into measurable units. When Yelena finally spoke, it was about a woman named Katya.</p>
+  <p>The fourth tape, labeled 1964, had the background rhythm of factory work: metal, repetition, voices at a distance, labor breaking the day into measurable units. When Yelena finally spoke, it was about a woman named Katya.</p>
 <div class="scene-break" aria-hidden="true"></div>
 <p>"She said my hands are good," Yelena said. "She said I have the hands of someone who learned to work young. She is right. I was seven when I learned to hem. My mother stood behind me and counted."</p>
 <div class="scene-break" aria-hidden="true"></div>
@@ -140,6 +138,10 @@
 <p>He gave a short, humorless laugh. "Everybody."</p>
 <div class="scene-break" aria-hidden="true"></div>
 <p>That, Marina thought, was probably true.</p>
+<div class="scene-break" aria-hidden="true"></div>
+<p>Ireland was a country Americans recognized in the sentimental register: rain, songs, hardship made picturesque by distance. Ireland could be folded into family lore without unsettling the furniture. But another country — unnamed, altered by war, bordered by fear, spoken in a language no one in the family knew — would have required too much explanation. It might also have required belief.</p>
+<div class="scene-break" aria-hidden="true"></div>
+<p>And perhaps belief was what her grandmother had run out of first.</p>
 <div class="scene-break" aria-hidden="true"></div>
  </div>
  <div class="share-bar">
