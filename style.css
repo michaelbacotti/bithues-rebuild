@@ -855,6 +855,7 @@ small, .small {
 /* For Amazon book covers (portrait 2:3 ratio) — use contain + taller height */
 .card-thumb.portrait-book, .hero-col-img.portrait-book {
     height: 220px !important;
+    background-color: #FAF8F5 !important;
     background-size: contain !important;
     background-position: top center !important;
     background-repeat: no-repeat;
