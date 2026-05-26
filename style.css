@@ -602,6 +602,15 @@ small, .small {
 }
 
 /* 12. Article / Story Page */
+/* Story hero image */
+.story-hero-img {
+ height: 320px;
+ background-size: cover;
+ background-position: center;
+ border-radius: var(--radius);
+ margin-bottom: 32px;
+}
+
 .story-page {
  max-width: 800px;
  margin: 0 auto;
