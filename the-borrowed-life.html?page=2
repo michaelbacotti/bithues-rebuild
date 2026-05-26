@@ -5,7 +5,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>T H E   B O R R O W E D   L I F E | Bithues</title>
  <meta name="description" content="A man wakes up in a hospital with no memory of how he got there. The doctor says he's been a patient for six years. Everything in the room belongs to him. Nothing feels familiar.">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/style.css">
@@ -17,6 +21,7 @@
 
  <main>
  <div class="story-page">
+ <div class="story-hero-img" style="background-image:url(/stories/images/the-borrowed-life.jpg);" role="img" aria-label="T H E   B O R R O W E D   L I F E"></div>
  <div class="story-header">
   <span class="genre-pill">SHORT STORY</span>
   <h1>T H E   B O R R O W E D   L I F E</h1>

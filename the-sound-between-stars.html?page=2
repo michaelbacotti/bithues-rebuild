@@ -5,7 +5,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>The Sound Between Stars | Bithues</title>
  <meta name="description" content="Dr. Yuki Tanaka spent thirty-one years listening for signals from deep space. On the night she finally heard one, she realized the message was coming from the space between her own heartbeats.">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/style.css">
@@ -17,6 +21,7 @@
 
  <main>
  <div class="story-page">
+ 
  <div class="story-header">
   <span class="genre-pill">SHORT STORY</span>
   <h1>The Sound Between Stars</h1>

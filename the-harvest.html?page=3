@@ -4,8 +4,12 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>The Harvest | Bithues</title>
- <meta name="description" content="The Harvest — a short story from Bithues.">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta name="description" content="The harvest comes once a year, and with it, the reckoning. Three generations of one family, three ways of understanding what it means to be done.">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/style.css">
@@ -17,6 +21,7 @@
 
  <main>
  <div class="story-page">
+ <div class="story-hero-img" style="background-image:url(/stories/images/the-harvest.jpg);" role="img" aria-label="The Harvest"></div>
  <div class="story-header">
   <span class="genre-pill">SHORT STORY</span>
   <h1>The Harvest</h1>
@@ -101,7 +106,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- 
+ <nav class="story-nav"><a href="/heliostat.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Heliostat</div></a></nav>
 </div>
  </main>
 

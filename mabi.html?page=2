@@ -4,8 +4,12 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Mabi | Bithues</title>
- <meta name="description" content="Mabi — Short Story by Bithues">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta name="description" content="A woman returns to her childhood home and finds that the past is not as finished as she thought — and the house has been waiting.">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/style.css">
@@ -17,6 +21,7 @@
 
  <main>
  <div class="story-page">
+ <div class="story-hero-img" style="background-image:url(/stories/images/mabi.jpg);" role="img" aria-label="Mabi"></div>
  <div class="story-header">
   <span class="genre-pill">SHORT STORY</span>
   <h1>Mabi</h1>

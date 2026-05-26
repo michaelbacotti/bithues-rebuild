@@ -5,7 +5,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>The Last Song | Bithues</title>
  <meta name="description" content="The last opera ever performed in the old building was in 1923. The building is being demolished next month. A soprano who has never performed there decides to stage one last concert — just for herself.">
- <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/style.css">
@@ -17,6 +21,7 @@
 
  <main>
  <div class="story-page">
+ <div class="story-hero-img" style="background-image:url(/stories/images/the-last-song.jpg);" role="img" aria-label="The Last Song"></div>
  <div class="story-header">
   <span class="genre-pill">Literary Fiction</span>
   <h1>The Last Song</h1>
