@@ -1100,3 +1100,55 @@ small, .small {
     border-color: #999;
     color: #333;
 }
+
+/* ── Article body Amazon links ──────────────────────────────────────────────── */
+.article-body .amazon-book-list {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--surface, #f9f6f0);
+    border: 1px solid var(--color-border, #e8e4dd);
+    border-radius: var(--radius, 4px);
+}
+
+.article-body .amazon-book-list h3 {
+    font-size: 1rem !important;
+    font-weight: 600;
+    margin: 0 0 1rem !important;
+    color: var(--text, #3a2f1e);
+    border: none !important;
+    padding: 0 !important;
+}
+
+.article-body .amazon-book-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+}
+
+.article-body .amazon-book-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.article-body .amazon-book-list a {
+    display: inline;
+    font-size: 0.875rem;
+    color: #3a2f1e;
+    text-decoration: none;
+    border-bottom: 1px solid #c8b89a;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.article-body .amazon-book-list a:hover {
+    color: #8a6f3e;
+    border-bottom-color: #8a6f3e;
+}
+
+.article-body .amazon-book-list a::before {
+    content: "→ ";
+    color: #c8001e;
+    font-size: 0.75rem;
+}
