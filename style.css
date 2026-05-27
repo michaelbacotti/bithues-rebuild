@@ -675,10 +675,13 @@ small, .small {
  display: flex;
  align-items: center;
  gap: 10px;
- margin: 40px 0 32px;
- padding: 16px 0;
- border-top: 1px solid #e0e0e0;
- border-bottom: 1px solid #e0e0e0;
+ padding: 0;
+}
+
+.share-bar-mini {
+ display: flex;
+ align-items: center;
+ gap: 10px;
 }
 
 .share-label {
@@ -930,7 +933,7 @@ small, .small {
    where cover sits alongside genre/title/summary text (horizontal flex). */
 .review-cover-thumb {
     display: block;
-    width: 110px;
+    width: 160px;
     border-radius: 3px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
