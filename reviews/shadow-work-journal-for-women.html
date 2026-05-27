@@ -21,34 +21,23 @@
 
  <main>
  <article class="content-article">
-  <!-- HEADER -->
-  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
-    <!-- Left: Cover + Author + Genre -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
-        <a href="https://www.amazon.com/dp/B0GP91NKC7?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-          <img src="https://images-na.ssl-images-amazon.com/images/P/B0GP91NKC7.01._SX150_.jpg" alt="Shadow Work Journal for Women" class="review-cover-thumb">
-        </a>
-        <div>
-          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Luna Sage</p>
-          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Self-Help</p>
-        </div>
-      </div>
-      <!-- Live Price -->
-      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
-        <div class="lp-row">
-          <span class="lp-label">Amazon Price:</span>
-          <span class="lp-price" id="lp-amazon-price">Checking…</span>
-            <span class="lp-status checking" id="lp-status">—</span>
-        </div>
-        
-        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0GP91NKC7?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
-      </div>
+  <!-- HEADER (centered) -->
+  <div class="review-page-header" style="max-width:680px; margin:48px auto 40px; padding:0 24px; text-align:center;">
+    <!-- Cover centered above author/genre -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <a href="https://www.amazon.com/dp/B0GP91NKC7?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <img src="https://images-na.ssl-images-amazon.com/images/P/B0GP91NKC7.01._SX150_.jpg" alt="Shadow Work Journal for Women" class="review-cover-thumb">
+      </a>
+    </div>
+    <!-- Author + Genre below cover -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Luna Sage</p>
+      <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Self-Help</p>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+  <!-- BODY + CTA -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 24px;">
    <p>Shadow Work Journal for Women by Luna Sage offers a guided 90-day program in shadow work — the psychological practice of examining and integrating the parts of oneself that have been denied, suppressed, or hidden. The book is designed specifically for readers who are new to this territory and want a structured, supportive entry point. Sage draws on Jungian concepts but translates them into accessible, modern language that doesn't require any prior exposure to analytical psychology. The shadow, in Jungian terms, is the part of the psyche containing traits and impulses that have been pushed out of conscious awareness — often because they were deemed unacceptable by family, culture, or social context. This journal is about meeting that hidden material with curiosity rather than fear.</p>
 <p>The journal format is the right choice for this material. Shadow work is inherently reflective, and a book that asks readers to write through difficult emotional territory needs to provide both the prompts and the space. Sage's prompts are warm without being saccharine, specific without being prescriptive. Rather than asking leading questions like "aren't you angry about your childhood?" the prompts invite honest exploration: "Write about a time you surprised yourself by how you reacted to something. What were you feeling just beneath the surface?" This is a subtle but important distinction that separates this journal from more manipulative self-help templates.</p>
 <p>The 90-day structure provides enough duration to build genuine habit without being so long that readers lose momentum. Each week has a loose thematic focus — childhood patterns, relationship dynamics, professional identity — while leaving room for individual variation in what each reader needs to work through. The pacing is gentle, which is appropriate given the subject matter. There is no virtue in rushing through shadow work, and Sage clearly understands this. Some weeks may feel easier than others, and the book is forgiving about that.</p>
@@ -65,11 +54,9 @@
 </div>
   </div>
 
-  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-  <div class="share-bar">
+  <!-- SHARE BAR (centered, padded) -->
+  <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; justify-content:center; border-top:1px solid #e8e4dd; padding-top:24px;"><div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -93,7 +80,13 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
-</script>
+</script></div>
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
   <div class="related-links">
 <h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">More Reviews</h3>
 <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">

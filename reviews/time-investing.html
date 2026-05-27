@@ -21,34 +21,23 @@
 
  <main>
  <article class="content-article">
-  <!-- HEADER -->
-  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
-    <!-- Left: Cover + Author + Genre -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
-        <a href="https://www.amazon.com/dp/B0BRDJ9PW8?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-          <img src="https://images-na.ssl-images-amazon.com/images/P/B0BRDJ9PW8.01._SX150_.jpg" alt="Time Investing" class="review-cover-thumb">
-        </a>
-        <div>
-          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by H Harvey</p>
-          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Self-Help</p>
-        </div>
-      </div>
-      <!-- Live Price -->
-      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
-        <div class="lp-row">
-          <span class="lp-label">Amazon Price:</span>
-          <span class="lp-price" id="lp-amazon-price">Checking…</span>
-            <span class="lp-status checking" id="lp-status">—</span>
-        </div>
-        
-        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0BRDJ9PW8?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
-      </div>
+  <!-- HEADER (centered) -->
+  <div class="review-page-header" style="max-width:680px; margin:48px auto 40px; padding:0 24px; text-align:center;">
+    <!-- Cover centered above author/genre -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <a href="https://www.amazon.com/dp/B0BRDJ9PW8?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <img src="https://images-na.ssl-images-amazon.com/images/P/B0BRDJ9PW8.01._SX150_.jpg" alt="Time Investing" class="review-cover-thumb">
+      </a>
+    </div>
+    <!-- Author + Genre below cover -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by H Harvey</p>
+      <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Self-Help</p>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+  <!-- BODY + CTA -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 24px;">
    <p>Time Investing by H. Harvey is a self-help guide built around a single reframe: your time is not just a resource you spend — it is a resource you invest. The distinction matters because spending implies depletion, while investing implies expectation of return. Harvey uses this framing to structure a practical guide to taking your own time seriously, which turns out to be harder than it sounds.</p>
 <p>The book opens with the observation that most people are better at managing money than managing time. We budget money, track spending, plan for future financial needs. But we let time slide through without the same discipline, often because we do not have an accurate read on where it actually goes. Harvey's early chapters focus on auditing your current time allocation — which sounds simple and is, in concept, but requires honesty that most self-help readers avoid.</p>
 <p>The practical strategies the book offers are familiar territory dressed in the time-investing language: prioritization frameworks, the cost of saying yes to one thing in order to say no to another, the compound returns of investing in skills and relationships rather than simply burning time on consumption. What distinguishes the book from generic productivity writing is its consistent focus on internal investment rather than external achievement — the goal is not to get more done but to invest your time in ways that feel meaningful rather than merely occupied.</p>
@@ -66,11 +55,9 @@
 </div>
   </div>
 
-  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-  <div class="share-bar">
+  <!-- SHARE BAR (centered, padded) -->
+  <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; justify-content:center; border-top:1px solid #e8e4dd; padding-top:24px;"><div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -94,7 +81,13 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
-</script>
+</script></div>
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
   <div class="related-links">
 <h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">More Reviews</h3>
 <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">

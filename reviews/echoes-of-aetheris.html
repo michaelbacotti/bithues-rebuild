@@ -21,34 +21,23 @@
 
  <main>
  <article class="content-article">
-  <!-- HEADER -->
-  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
-    <!-- Left: Cover + Author + Genre -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
-        <a href="https://www.amazon.com/dp/B0GPPBCKYF?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-          <img src="https://images-na.ssl-images-amazon.com/images/P/B0GPPBCKYF.01._SX150_.jpg" alt="Echoes of Aetheris" class="review-cover-thumb">
-        </a>
-        <div>
-          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Eleanor Ashford</p>
-          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Speculative Fiction</p>
-        </div>
-      </div>
-      <!-- Live Price -->
-      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
-        <div class="lp-row">
-          <span class="lp-label">Amazon Price:</span>
-          <span class="lp-price" id="lp-amazon-price">Checking…</span>
-            <span class="lp-status checking" id="lp-status">—</span>
-        </div>
-        
-        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0GPPBCKYF?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
-      </div>
+  <!-- HEADER (centered) -->
+  <div class="review-page-header" style="max-width:680px; margin:48px auto 40px; padding:0 24px; text-align:center;">
+    <!-- Cover centered above author/genre -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <a href="https://www.amazon.com/dp/B0GPPBCKYF?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <img src="https://images-na.ssl-images-amazon.com/images/P/B0GPPBCKYF.01._SX150_.jpg" alt="Echoes of Aetheris" class="review-cover-thumb">
+      </a>
+    </div>
+    <!-- Author + Genre below cover -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Eleanor Ashford</p>
+      <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Speculative Fiction</p>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+  <!-- BODY + CTA -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 24px;">
    <p>Aetheri Codex's <em>Echoes of Aetheris</em> opens with a premise that reads like the setup for a conventional science fiction epic and then spends the rest of the novella refusing to be conventional about it.</p>
 <p>The Aetheri — agender, Nordic-pale bio-engineers operating as a collective consciousness — crash their living ship on a post-Ice Age Eurasian steppe around 9000 BCE and begin a deliberate, clinical experiment on early humans. Instead of a human protagonist discovering extraterrestrial visitors, readers experience the story through the aliens' cold, first-person plural "we" voice as they observe, measure, and reshape a small tribe of survivors.</p>
 <p>Early humans are initially seen as "specimens" and "vessels," but by the epilogue set in 2026, the experiment has escaped its bounds. The Aetheri realize they are not visitors anymore — they are the genetic foundation of humanity itself.</p>
@@ -86,8 +75,7 @@
 <h2>The Bottom Line</h2>
 <p><em>Echoes of Aetheris</em> is a tightly written, atmospheric speculative novella that delivers a fresh take on ancient astronauts by treating them as evolutionary engineering rather than mythic spectacle. Its greatest achievement is its voice: a cold, collective alien perspective that gradually reveals a profound, intimate truth about human origins and potential.</p>
 <p>For readers who enjoy <strong>speculative fiction</strong>, <strong>evolutionary "what-ifs,"</strong> and <strong>ancient-aliens stories done with intelligence and seriousness</strong>, this novella delivers a complete, thought-provoking experience that will linger long after the final page.</p>
-<p>Enjoyed this review?</p>
-<p><a href="https://www.amazon.com/dp/B0GPPBCKYF?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a></p>
+<p><em>This review was originally published in Speculative Fiction.</em></p>
    <div style="margin:32px 0 16px; padding:20px 0; border-top:1px solid #e8e4dd; border-bottom:1px solid #e8e4dd; text-align:center;">
   <p style="font-size:13px; color:#888; margin:0 0 10px; letter-spacing:0.04em; text-transform:uppercase;">Enjoyed this review?</p>
   <a href="https://www.amazon.com/dp/B0GPPBCKYF?tag=bithues-20" target="_blank" rel="noopener"
@@ -97,11 +85,9 @@
 </div>
   </div>
 
-  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-  <div class="share-bar">
+  <!-- SHARE BAR (centered, padded) -->
+  <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; justify-content:center; border-top:1px solid #e8e4dd; padding-top:24px;"><div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -125,7 +111,13 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
-</script>
+</script></div>
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
   
 </article>
  </main>

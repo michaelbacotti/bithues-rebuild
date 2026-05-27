@@ -21,34 +21,23 @@
 
  <main>
  <article class="content-article">
-  <!-- HEADER -->
-  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
-    <!-- Left: Cover + Author + Genre -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
-        <a href="https://www.amazon.com/dp/B0GS367G2M?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-          <img src="https://images-na.ssl-images-amazon.com/images/P/B0GS367G2M.01._SX150_.jpg" alt="Otomí" class="review-cover-thumb">
-        </a>
-        <div>
-          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by E. J. Marín</p>
-          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Fiction</p>
-        </div>
-      </div>
-      <!-- Live Price -->
-      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
-        <div class="lp-row">
-          <span class="lp-label">Amazon Price:</span>
-          <span class="lp-price" id="lp-amazon-price">Checking…</span>
-            <span class="lp-status checking" id="lp-status">—</span>
-        </div>
-        
-        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0GS367G2M?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
-      </div>
+  <!-- HEADER (centered) -->
+  <div class="review-page-header" style="max-width:680px; margin:48px auto 40px; padding:0 24px; text-align:center;">
+    <!-- Cover centered above author/genre -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <a href="https://www.amazon.com/dp/B0GS367G2M?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <img src="https://images-na.ssl-images-amazon.com/images/P/B0GS367G2M.01._SX150_.jpg" alt="Otomí" class="review-cover-thumb">
+      </a>
+    </div>
+    <!-- Author + Genre below cover -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by E. J. Marín</p>
+      <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Fiction</p>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+  <!-- BODY + CTA -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 24px;">
    <p>E. J. Marín's Otomí is a novel that asks what it costs to remember who you are when the world around you has decided to forget. Set across the central Mexican highlands in the decades surrounding the Mexican Revolution, it follows a community whose relationship to land, language, and ritual is under pressure from every direction — government modernization projects, extractive economic interests, the slow cultural erosion that comes when the surrounding society has already decided your way of life is an inconvenience to be managed rather than a wisdom to be preserved.</p>
 <p>The protagonist, Asunción, is a healer and keeper of oral tradition in a village that is beginning to lose its young people to the cities. Her arc across the novel is not one of dramatic action but of quiet, stubborn preservation — the daily practice of continuing to do what her grandmother taught her to do, even when the conditions that gave that practice meaning are eroding. Marín writes about traditional knowledge with a precision that respects rather than romanticizes it: Asunción's remedies work, and the book is clear about why they work, without ever turning her into a mystical figure or a shortcut to answers the narrative hasn't earned.</p>
 <p>The novel's great strength is its refusal to let the conflict be simple. The forces working against the Otomí community are not reducible to villains; there are landlords who are individually decent people participating in a system that is collectively destructive, government agents who believe they are helping, young people who leave not out of contempt for their heritage but out of a genuine desire for lives that the village cannot offer them. Marín has clearly done deep research into Otomí history and culture, and that research shows in small specific details — the way a particular ritual unfolds, the social structure of the community, the specific pressures of the period — that make the world feel inhabited rather than observed.</p>
@@ -65,11 +54,9 @@
 </div>
   </div>
 
-  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-  <div class="share-bar">
+  <!-- SHARE BAR (centered, padded) -->
+  <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; justify-content:center; border-top:1px solid #e8e4dd; padding-top:24px;"><div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -93,7 +80,13 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
-</script>
+</script></div>
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
   <div class="related-links">
 <h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">More Reviews</h3>
 <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">

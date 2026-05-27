@@ -21,34 +21,23 @@
 
  <main>
  <article class="content-article">
-  <!-- HEADER -->
-  <div class="review-page-header" style="display:flex; gap:32px; align-items:flex-start; max-width:680px; margin:48px auto 40px; padding:0 24px;">
-    <!-- Left: Cover + Author + Genre -->
-    <div style="flex:0 0 auto;">
-      <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:0;">
-        <a href="https://www.amazon.com/dp/B0CFHT4WDX?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
-          <img src="https://images-na.ssl-images-amazon.com/images/P/B0CFHT4WDX.01._SX150_.jpg" alt="Little Mike Fun at the Beach" class="review-cover-thumb">
-        </a>
-        <div>
-          <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Michael Jr</p>
-          <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Fiction</p>
-        </div>
-      </div>
-      <!-- Live Price -->
-      <div class="live-price-section" id="live-price-section" style="margin-top:16px;">
-        <div class="lp-row">
-          <span class="lp-label">Amazon Price:</span>
-          <span class="lp-price" id="lp-amazon-price">Checking…</span>
-            <span class="lp-status checking" id="lp-status">—</span>
-        </div>
-        
-        <a id="lp-amazon-btn" href="https://www.amazon.com/dp/B0CFHT4WDX?tag=bithues-20" target="_blank" rel="noopener" class="lp-amazon-btn">Check Price on Amazon →</a>
-      </div>
+  <!-- HEADER (centered) -->
+  <div class="review-page-header" style="max-width:680px; margin:48px auto 40px; padding:0 24px; text-align:center;">
+    <!-- Cover centered above author/genre -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <a href="https://www.amazon.com/dp/B0CFHT4WDX?tag=bithues-20" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <img src="https://images-na.ssl-images-amazon.com/images/P/B0CFHT4WDX.01._SX150_.jpg" alt="Little Mike Fun at the Beach" class="review-cover-thumb">
+      </a>
+    </div>
+    <!-- Author + Genre below cover -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 4px; font-size:15px; color:#3a2e1e;">Reviewed by Michael Jr</p>
+      <p style="margin:0 0 0; font-size:12px; color:#888; letter-spacing:0.03em;">Fiction</p>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 48px;">
+  <!-- BODY + CTA -->
+  <div class="review-body" style="max-width:680px; margin:0 auto; padding:0 24px 24px;">
    <p>Little Mike: Fun at the Beach by Michael Jr is a children's picture book about the simple, profound pleasure of building something together. Little Mike and his friends head to the beach with pails and shovels, and what follows is the kind of afternoon that children know well: the concentration, the collaboration, the small disasters and recoveries, and finally the pride of standing back to look at what they made.</p>
 <p>The book does not try to do too much. The story is simple and linear — beach, building, castle, tide — but it captures the texture of children's creative play with accuracy and affection. The illustrations are warm and accessible, and the text and images work together without either carrying all the weight.</p>
 <p>What is most notable about this book is what it does not do: there are no lessons, no moralizing, no conflict that needs resolving. Just children doing something they love together. That simplicity is a strength. Not every children's book needs to be about something larger than itself, and Little Mike: Fun at the Beach is a good reminder of that.</p>
@@ -64,11 +53,9 @@
 </div>
   </div>
 
-  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-  <div class="share-bar">
+  <!-- SHARE BAR (centered, padded) -->
+  <div style="max-width:680px; margin:0 auto; padding:0 24px;">
+    <div style="display:flex; justify-content:center; border-top:1px solid #e8e4dd; padding-top:24px;"><div class="share-bar">
   <span class="share-label">Share</span>
   <a class="share-btn share-x" href="#" target="_blank" rel="noopener" aria-label="Share on X">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -92,7 +79,13 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-facebook")) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
-</script>
+</script></div>
+  </div>
+
+  <div style="margin:2.5rem 0;padding:1rem;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9312870448453345" data-ad-slot="7590828986" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
   <div class="related-links">
 <h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">More Reviews</h3>
 <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
