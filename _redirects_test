@@ -1,5 +1,0 @@
-# Disable CF Pages automatic .html strip by matching all .html paths
-# Source: https://developers.cloudflare.com/pages/platform/redirects/
-
-# Preserve all .html files without redirecting
-/*.html - /{path} 200
