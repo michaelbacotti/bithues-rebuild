@@ -1131,18 +1131,24 @@ small, .small {
 .article-body .amazon-book-list li {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .article-body .amazon-book-list a {
     display: block;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #3a2f1e;
     text-decoration: none;
     border-bottom: 1px solid #c8b89a;
     transition: color 0.15s, border-color 0.15s;
     padding: 0.25rem 0;
+    line-height: 1.4;
 }
 
 .article-body .amazon-book-list a:hover {
@@ -1153,4 +1159,12 @@ small, .small {
 .article-body .amazon-book-list a::before {
     content: "→ ";
     color: #c8001e;
+}
+
+.article-body .amazon-book-list li::after {
+    content: attr(data-author);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #6b5a45;
+    white-space: nowrap;
 }
