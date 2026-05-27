@@ -1123,15 +1123,13 @@ small, .small {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 1.5rem;
 }
 
 .article-body .amazon-book-list li {
     margin: 0;
     padding: 0;
     display: block;
+    width: 100%;
 }
 
 .article-body .amazon-book-list a {
@@ -1160,8 +1158,10 @@ small, .small {
 }
 
 .article-body .amazon-book-list .book-author {
-    font-size: 0.9rem;
+    display: block;
+    font-size: 0.875rem;
     font-weight: 400;
     color: #6b5a45;
-    white-space: nowrap;
+    line-height: 1.4;
+    padding: 0.125rem 0 0.25rem 0;
 }
