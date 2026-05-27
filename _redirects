@@ -1,10 +1,15 @@
-# Redirect legacy .html URLs for root-level pages only
-/press.html /press 301
-/book-tracker.html /book-tracker 301
+# Preserve clean .html URLs — disable CF Pages automatic .html→strip redirect
+# This file tells CF Pages NOT to redirect .html to non-.html
+# Each rule below maps .html to itself with a passthrough, preventing the automatic strip
 
-# Remove trailing slash from root-level pages
-/press/ /press 301
-/book-tracker/ /book-tracker 301
-
-# Redirect singular /story/ to /stories/
-/story/ /stories/ 301
+/press.html /press.html 200
+/book-tracker.html /book-tracker.html 200
+/about.html /about.html 200
+/contact.html /contact.html 200
+/privacy.html /privacy.html 200
+/terms.html /terms.html 200
+/articles.html /articles.html 200
+/reviews.html /reviews.html 200
+/stories.html /stories.html 200
+/search.html /search.html 200
+/index.html /index.html 200
