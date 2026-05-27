@@ -1168,3 +1168,11 @@ small, .small {
     line-height: 1.4;
     padding: 0.125rem 0 0.25rem 0;
 }
+
+/* Review body — top spacing for section headings */
+.review-body h2 {
+    margin-top: 2.5rem;
+}
+.review-body h3 {
+    margin-top: 2rem;
+}
