@@ -1161,8 +1161,7 @@ small, .small {
     color: #c8001e;
 }
 
-.article-body .amazon-book-list li::after {
-    content: attr(data-author);
+.article-body .amazon-book-list .book-author {
     font-size: 0.9rem;
     font-weight: 400;
     color: #6b5a45;
