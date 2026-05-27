@@ -1134,12 +1134,15 @@ small, .small {
 }
 
 .article-body .amazon-book-list a {
-    display: inline;
-    font-size: 0.875rem;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
     color: #3a2f1e;
     text-decoration: none;
     border-bottom: 1px solid #c8b89a;
     transition: color 0.15s, border-color 0.15s;
+    padding: 0.25rem 0;
 }
 
 .article-body .amazon-book-list a:hover {
@@ -1150,5 +1153,4 @@ small, .small {
 .article-body .amazon-book-list a::before {
     content: "→ ";
     color: #c8001e;
-    font-size: 0.75rem;
 }
