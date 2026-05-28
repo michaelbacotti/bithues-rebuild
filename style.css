@@ -363,7 +363,7 @@ small, .small {
 
 /* article-card (used for articles AND reviews) */
 .article-card {
- padding: 16px 0;
+ padding: 10px 0;
  border-bottom: 1px solid var(--color-border);
 }
 
@@ -762,8 +762,8 @@ small, .small {
  display: flex;
  align-items: center;
  justify-content: center;
- gap: 8px;
- margin: 40px 0;
+ gap: 6px;
+ margin: 24px 0;
 }
 
 .pagination a, .pagination span {
