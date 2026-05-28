@@ -768,7 +768,7 @@ small, .small {
  align-items: center;
  justify-content: center;
  gap: 6px;
- margin: 24px 0;
+ margin: 32px 0;
 }
 
 .pagination a, .pagination span {
