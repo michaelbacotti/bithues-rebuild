@@ -27,7 +27,7 @@
    '  <a href="/articles.html">Articles</a>',
    '  <a href="/stories">Stories</a>',
    '  <a href="/reviews.html">Reviews</a>',
-   '  <a href="/book-picker.html">Book Picker</a>',
+   '  <a href="/book-match.html">Book Match</a>',
    ' </div>',
    '</div>'
   ].join('\n');
