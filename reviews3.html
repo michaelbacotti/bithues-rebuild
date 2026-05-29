@@ -25,9 +25,18 @@
  <h1>Book Reviews</h1>
  <p>41 book reviews — fiction, sci-fi, fantasy, nonfiction, and more.</p>
 </section>
-<section>
+<section style="padding-top:8px;">
+ <div class="genre-filter-bar">
+  <button class="filter-btn active" data-value="all">All</button>
+  <button class="filter-btn" data-value="Fiction">Fiction</button>
+  <button class="filter-btn" data-value="Nonfiction">Nonfiction</button>
+  <button class="filter-btn" data-value="Self-Help">Self-Help</button>
+  <button class="filter-btn" data-value="Science Fiction">Science Fiction</button>
+  <button class="filter-btn" data-value="Historical">Historical</button>
+  <button class="filter-btn" data-value="Children's">Children's</button>
+ </div>
  <div class="card-grid card-grid-compact">
-  <div class="article-card">
+  <div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/microbiology-abcs.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GR7R6HT1.01._SX150_.jpg" alt="Microbiology ABCs" class="review-cover-thumb">
@@ -39,7 +48,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="review-card-horizontal">
    <a href="/reviews/mindful-memory.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GPH597LL.01._SX150_.jpg" alt="Mindful Memory" class="review-cover-thumb">
@@ -51,7 +60,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="review-card-horizontal">
    <a href="/reviews/mythical-menagerie.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0CDFFW3LD.01._SX150_.jpg" alt="Mythical Menagerie" class="review-cover-thumb">
@@ -63,7 +72,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/otomi.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GS367G2M.01._SX150_.jpg" alt="Otomí" class="review-cover-thumb">
@@ -75,7 +84,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/physics-of-insight.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GRW79ZM7.01._SX150_.jpg" alt="Physics of Insight" class="review-cover-thumb">
@@ -87,7 +96,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="review-card-horizontal">
    <a href="/reviews/power-of-changing-your-mind.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GHQG9LLS.01._SX150_.jpg" alt="The Power of Changing Your Mind" class="review-cover-thumb">
@@ -99,19 +108,19 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/red-horizon.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GQVLB9N2.01._SX150_.jpg" alt="Red Horizon" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">fiction</div>
+     <div class="category-label">Fiction</div>
      <h3><a href="/reviews/red-horizon.html">Red Horizon</a></h3>
      <p>A near-future lunar colony faces sabotage and political intrigue in this fast-paced sci-fi thriller.</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/reminiscences-of-a-stock-operator.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B09YRCNQHB.01._SX150_.jpg" alt="Reminiscences of a Stock Operator" class="review-cover-thumb">
@@ -123,7 +132,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/resonance-drift.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GSC6SBQ9.01._SX150_.jpg" alt="Resonance Drift" class="review-cover-thumb">
@@ -150,6 +159,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

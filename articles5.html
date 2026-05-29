@@ -25,67 +25,74 @@
  <h1>Articles</h1>
  <p>53 articles on reading, books, and what books teach us about being human.</p>
 </section>
-<section>
+<section style="padding-top:8px;">
+ <div class="genre-filter-bar">
+  <button class="filter-btn active" data-value="all">All</button>
+  <button class="filter-btn" data-value="Lists">Lists</button>
+  <button class="filter-btn" data-value="Nonfiction">Nonfiction</button>
+  <button class="filter-btn" data-value="Business">Business</button>
+  <button class="filter-btn" data-value="Children's">Children's</button>
+ </div>
  <div class="card-grid">
-  <div class="article-card">
+  <div class="article-card" data-genre="Lists">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/hopepunk-fiction.jpg);" role="img" aria-label="The Rise of Hopepunk Fiction"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Lists</div>
  
  <h3><a href="/articles/hopepunk-fiction.html">The Rise of Hopepunk Fiction</a></h3>
  <p>Hopepunk fiction reframes sci-fi's darkest futures into stories about the choice to make things better. A genre that insists on hope as an act of resistance.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Lists">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/horror-for-beginners.jpg);" role="img" aria-label="Why We Read Horror: A Beginner's Guide to the Genre, Its Subgenres, and Where to Start"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Lists</div>
  
  <h3><a href="/articles/horror-for-beginners.html">Why We Read Horror: A Beginner's Guide to the Genre, Its Subgenres, and Where to Start</a></h3>
  <p>Why do we read horror? A guide to the genre, its subgenres, and where to start.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/how-to-read-more-books.jpg);" role="img" aria-label="How to Read More Books in Less Time"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Nonfiction</div>
  
  <h3><a href="/articles/how-to-read-more-books.html">How to Read More Books in Less Time</a></h3>
  <p>Strategies for reading more books without sacrificing comprehension -- the practical science of reading faster and better.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/how-we-review-books.jpg);" role="img" aria-label="How We Review Books at Bithues"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Nonfiction</div>
  
  <h3><a href="/articles/how-we-review-books.html">How We Review Books at Bithues</a></h3>
  <p>How Bithues evaluates books -- the criteria, the process, and what we look for in a great read.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Children's">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/kids-reading-guide.jpg);" role="img" aria-label="How to Get Kids Into Reading"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Children's</div>
  
  <h3><a href="/articles/kids-reading-guide.html">How to Get Kids Into Reading</a></h3>
  <p>Practical strategies to inspire a love of reading in children, from toddlers to teens -- without turning books into homework.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Children's">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/little-mike-series.jpg);" role="img" aria-label="Meet Little Mike: Adventures That Spark Imagination"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Children's</div>
  
  <h3><a href="/articles/little-mike-series.html">Meet Little Mike: Adventures That Spark Imagination</a></h3>
  <p>Three wholesome stories about friendship, dreams, and creativity -- the Little Mike series by Michael Bacotti Jr. teaches kids that trying new things is worth</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/meet-indie-authors.jpg);" role="img" aria-label="Meet the Indie Authors of Bithues"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Nonfiction</div>
  
  <h3><a href="/articles/meet-indie-authors.html">Meet the Indie Authors of Bithues</a></h3>
  <p>The voices behind the books -- their stories, inspirations, and what drives them to write outside the traditional publishing system.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/memoir-biography-guide.jpg);" role="img" aria-label="Memoir and Biography: Real Lives, Extraordinary Stories"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Nonfiction</div>
  
  <h3><a href="/articles/memoir-biography-guide.html">Memoir and Biography: Real Lives, Extraordinary Stories</a></h3>
  <p>Real lives, extraordinary stories -- why memoir and biography matter, and how to find the ones that actually change how you see the world.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="card-thumb articles-thumb" style="background-image:url(/content-images/mesoamerican-fiction-homeschool-guide.jpg);" role="img" aria-label="Mesoamerican Historical Fiction for Your Curriculum"></div>
- <div class="category-label">Article</div>
+ <div class="category-label">Nonfiction</div>
  
  <h3><a href="/articles/mesoamerican-fiction-homeschool-guide.html">Mesoamerican Historical Fiction for Your Curriculum</a></h3>
  <p>Using narrative to teach Aztec expansion, indigenous resistance, and Mesoamerican ecology -- a homeschool guide to the best Mesoamerican historical fiction.</p>
@@ -99,6 +106,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

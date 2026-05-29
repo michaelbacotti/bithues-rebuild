@@ -25,9 +25,18 @@
  <h1>Book Reviews</h1>
  <p>41 book reviews — fiction, sci-fi, fantasy, nonfiction, and more.</p>
 </section>
-<section>
+<section style="padding-top:8px;">
+ <div class="genre-filter-bar">
+  <button class="filter-btn active" data-value="all">All</button>
+  <button class="filter-btn" data-value="Fiction">Fiction</button>
+  <button class="filter-btn" data-value="Nonfiction">Nonfiction</button>
+  <button class="filter-btn" data-value="Self-Help">Self-Help</button>
+  <button class="filter-btn" data-value="Science Fiction">Science Fiction</button>
+  <button class="filter-btn" data-value="Historical">Historical</button>
+  <button class="filter-btn" data-value="Children's">Children's</button>
+ </div>
  <div class="card-grid card-grid-compact">
-  <div class="article-card">
+  <div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/the-physics-of-time.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GJ1463Y6.01._SX150_.jpg" alt="The Physics of Time" class="review-cover-thumb">
@@ -39,7 +48,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/the-quiet-hours.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0FH33TF12.01._SX150_.jpg" alt="The Quiet Hours" class="review-cover-thumb">
@@ -51,7 +60,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Self-Help">
  <div class="review-card-horizontal">
    <a href="/reviews/time-investing.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0BRDJ9PW8.01._SX150_.jpg" alt="Time Investing" class="review-cover-thumb">
@@ -63,7 +72,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="review-card-horizontal">
    <a href="/reviews/veiled-presence.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GTJN8YGG.01._SX150_.jpg" alt="Veiled Presence" class="review-cover-thumb">
@@ -75,7 +84,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/you-tell-the-story.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GQSJX1MP.01._SX150_.jpg" alt="You Tell the Story" class="review-cover-thumb">
@@ -102,6 +111,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

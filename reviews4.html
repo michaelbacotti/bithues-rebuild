@@ -25,33 +25,42 @@
  <h1>Book Reviews</h1>
  <p>41 book reviews — fiction, sci-fi, fantasy, nonfiction, and more.</p>
 </section>
-<section>
+<section style="padding-top:8px;">
+ <div class="genre-filter-bar">
+  <button class="filter-btn active" data-value="all">All</button>
+  <button class="filter-btn" data-value="Fiction">Fiction</button>
+  <button class="filter-btn" data-value="Nonfiction">Nonfiction</button>
+  <button class="filter-btn" data-value="Self-Help">Self-Help</button>
+  <button class="filter-btn" data-value="Science Fiction">Science Fiction</button>
+  <button class="filter-btn" data-value="Historical">Historical</button>
+  <button class="filter-btn" data-value="Children's">Children's</button>
+ </div>
  <div class="card-grid card-grid-compact">
-  <div class="article-card">
+  <div class="article-card" data-genre="Historical">
  <div class="review-card-horizontal">
    <a href="/reviews/richmond-cipher.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GQCZKRGB.01._SX150_.jpg" alt="The Richmond Cipher" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">History</div>
+     <div class="category-label">Historical</div>
      <h3><a href="/reviews/richmond-cipher.html">The Richmond Cipher</a></h3>
      <p>A historical thriller weaving cryptography, Civil War intrigue, and a family secret into a page-turner.</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/rules-of-survival.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GNFBWN6S.01._SX150_.jpg" alt="Rules of Survival" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">fiction</div>
+     <div class="category-label">Fiction</div>
      <h3><a href="/reviews/rules-of-survival.html">Rules of Survival</a></h3>
      <p>What if survival protocols that kept early humans alive still run inside us, shaping our fears?</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Self-Help">
  <div class="review-card-horizontal">
    <a href="/reviews/shadow-within.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GPT6QRDW.01._SX150_.jpg" alt="The Shadow Within" class="review-cover-thumb">
@@ -63,7 +72,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Self-Help">
  <div class="review-card-horizontal">
    <a href="/reviews/shadow-work-journal-for-women.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GP91NKC7.01._SX150_.jpg" alt="Shadow Work Journal for Women" class="review-cover-thumb">
@@ -75,7 +84,7 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/symbiont-bloom.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GS6KMYXV.01._SX150_.jpg" alt="Symbiont Bloom" class="review-cover-thumb">
@@ -87,43 +96,43 @@
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fantasy">
  <div class="review-card-horizontal">
    <a href="/reviews/the-burning-song.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GLDRQZXH.01._SX150_.jpg" alt="The Burning Song" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">fantasy</div>
+     <div class="category-label">Fantasy</div>
      <h3><a href="/reviews/the-burning-song.html">The Burning Song</a></h3>
      <p>When a cave lion wounds Aken, fever nearly claims him. But the question is: how can his band survive?</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Science Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/the-martian.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/0804139024.01._SX150_.jpg" alt="The Martian" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">sci-fi</div>
+     <div class="category-label">Science Fiction</div>
      <h3><a href="/reviews/the-martian.html">The Martian</a></h3>
      <p>When Mark Watney wakes alone on Mars with six months of food, he must become an engineer.</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Fiction">
  <div class="review-card-horizontal">
    <a href="/reviews/the-orchardist-harvest.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0GKRKP1Q4.01._SX150_.jpg" alt="The Orchardist: Harvest" class="review-cover-thumb">
    </a>
    <div class="review-card-text">
-     <div class="category-label">fiction</div>
+     <div class="category-label">Fiction</div>
      <h3><a href="/reviews/the-orchardist-harvest.html">The Orchardist: Harvest</a></h3>
      <p>A literal fall becomes a literary reckoning with what it means to cross a threshold and return.</p>
    </div>
  </div>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Nonfiction">
  <div class="review-card-horizontal">
    <a href="/reviews/the-perfection-cycle.html" class="review-cover-left" style="display:block; flex-shrink:0;">
      <img src="https://images-na.ssl-images-amazon.com/images/P/B0FL517JXK.01._SX150_.jpg" alt="The Perfection Cycle" class="review-cover-thumb">
@@ -150,6 +159,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

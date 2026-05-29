@@ -24,7 +24,7 @@
  <div class="story-page">
  <div class="story-hero-img" style="background-image:url(/stories/images/the-borrowed-life.jpg);" role="img" aria-label="T H E   B O R R O W E D   L I F E"></div>
  <div class="story-header">
-  <span class="genre-pill">SHORT STORY</span>
+  <span class="genre-pill">Literary Fiction</span>
   <h1>T H E   B O R R O W E D   L I F E</h1>
   
  </div>
@@ -163,6 +163,22 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

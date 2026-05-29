@@ -26,7 +26,7 @@
   <div class="content-header-inner">
    <span class="tag tag--article">Article</span>
    <h1 class="content-title">Books Like Dune</h1>
-   
+   <p class="content-meta">Lists</p>
   </div>
  </header>
 
@@ -106,7 +106,15 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- 
+ <div class="related-links">
+<h3 style="font-size:1rem;font-weight:600;margin-bottom:1rem;font-family:var(--font-heading,Georgia,serif);">Continue Reading</h3>
+<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+<a href="/articles/best-books-book-clubs.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Best Books for Book Clubs: Picks That Spark Real Discussion</a>
+<a href="/articles/best-books-discipline-willpower.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Best Books on Discipline and Willpower</a>
+<a href="/articles/best-books-for-entrepreneurs.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Best Books for Entrepreneurs</a>
+<a href="/articles/best-books-retired-military.html" style="display:inline-block;padding:6px 14px;background:#f5f0e8;color:#3a2f1e;border:1px solid #3a2f1e;border-radius:3px;text-decoration:none;font-size:.85rem;">Best Books for Retired Military Leaders</a>
+</div>
+</div>
 </div>
  </main>
 
@@ -114,6 +122,22 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

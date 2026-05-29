@@ -33,7 +33,7 @@
     </div>
     <!-- Author + Genre below cover -->
     <div style="text-align:center;">
-      <p style="margin:0 0 4px; font-size:12px; color:#888; letter-spacing:0.03em;">Speculative Fiction</p>
+      <p style="margin:0 0 4px; font-size:12px; color:#888; letter-spacing:0.03em;">Science Fiction</p>
       <p style="margin:0 0 0; font-size:15px; color:#3a2e1e;">Reviewed by Eleanor Ashford</p>
     </div>
   </div>
@@ -130,6 +130,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>

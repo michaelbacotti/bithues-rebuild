@@ -25,18 +25,24 @@
  <h1>All Stories</h1>
  <p>38 short stories — exploring what it means to be alive, in worlds familiar, strange, and somewhere in between.</p>
 </section>
-<section>
+<section style="padding-top:8px;">
+ <div class="genre-filter-bar">
+  <button class="filter-btn active" data-value="all">All</button>
+  <button class="filter-btn" data-value="Literary Fiction">Literary Fiction</button>
+  <button class="filter-btn" data-value="Science Fiction">Science Fiction</button>
+  <button class="filter-btn" data-value="Fantasy">Fantasy</button>
+ </div>
  <div class="card-grid">
-  <div class="article-card">
+  <div class="article-card" data-genre="Literary Fiction">
  <div class="card-thumb stories-thumb" style="background-image:url(/stories/images/the-forgotten-minute.jpg);" role="img" aria-label="The Forgotten Minute"></div>
- <div class="category-label">SHORT STORY</div>
+ <div class="category-label">Literary Fiction</div>
  
  <h3><a href="/the-forgotten-minute.html">The Forgotten Minute</a></h3>
  <p>A man wakes up and realizes he has lost exactly one minute -- not from his life, but from his memory. He spends the rest of the day trying to find it.</p>
 </div>
-<div class="article-card">
+<div class="article-card" data-genre="Literary Fiction">
  <div class="card-thumb stories-thumb" style="background-image:url(/stories/images/the-harvest.jpg);" role="img" aria-label="The Harvest"></div>
- <div class="category-label">SHORT STORY</div>
+ <div class="category-label">Literary Fiction</div>
  
  <h3><a href="/the-harvest.html">The Harvest</a></h3>
  <p>The harvest comes once a year, and with it, the reckoning. Three generations of one family, three ways of understanding what it means to be done.</p>
@@ -50,6 +56,22 @@
 
  <script src="/nav.js"></script>
  <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
 
 </body>
 </html>
