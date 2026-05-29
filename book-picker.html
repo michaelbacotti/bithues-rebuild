@@ -255,6 +255,8 @@
 </head>
 <body>
 
+ <div id="site-utility"></div>
+
  <div id="site-nav"></div>
 
  <main class="picker-page">
@@ -272,7 +274,7 @@
   <!-- Question 1: Age Range -->
   <div class="quiz-card" id="q1">
    <div class="question-number">Question 1 of 3</div>
-   <div class="question-text">Who are you shopping for?</div>
+   <div class="question-text">Who are you reading with?</div>
    <div class="answer-grid">
     <button class="answer-btn" onclick="selectAnswer(1, 'children', this)">Children's Books<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-secondary);">Ages 3–10</span></button>
     <button class="answer-btn" onclick="selectAnswer(1, 'teen', this)">Teen Books<br><span style="font-size:0.8rem;font-weight:400;color:var(--text-secondary);">Ages 12–17</span></button>
@@ -283,7 +285,7 @@
   <!-- Question 2: Mood -->
   <div class="quiz-card hidden" id="q2">
    <div class="question-number">Question 2 of 3</div>
-   <div class="question-text">What kind of experience are you in the mood for?</div>
+   <div class="question-text">What kind of read are you in the mood for?</div>
    <div class="answer-grid">
     <button class="answer-btn" onclick="selectAnswer(2, 'adventurous', this)">Adventurous</button>
     <button class="answer-btn" onclick="selectAnswer(2, 'dark', this)">Dark & Intense</button>
@@ -297,16 +299,15 @@
   <!-- Question 3: Content Type -->
   <div class="quiz-card hidden" id="q3">
    <div class="question-number">Question 3 of 3</div>
-   <div class="question-text">What type of content interests you most?</div>
+   <div class="question-text">What genre pulls you in?</div>
    <div class="answer-grid">
     <button class="answer-btn" onclick="selectAnswer(3, 'fiction', this)">Fiction</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'literary', this)">Literary Fiction</button>
     <button class="answer-btn" onclick="selectAnswer(3, 'scifi', this)">Science Fiction</button>
     <button class="answer-btn" onclick="selectAnswer(3, 'fantasy', this)">Fantasy</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'historical', this)">Historical</button>
+    <button class="answer-btn" onclick="selectAnswer(3, 'historical', this)">Historical Fiction</button>
     <button class="answer-btn" onclick="selectAnswer(3, 'nonfiction', this)">Nonfiction</button>
     <button class="answer-btn" onclick="selectAnswer(3, 'selfhelp', this)">Self-Help</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'children', this)">Children's Stories</button>
+    <button class="answer-btn" onclick="selectAnswer(3, 'romance', this)">Romance</button>
    </div>
   </div>
 
@@ -424,8 +425,9 @@
 
    var totalMatches = scored.filter(function(s) { return s.score > 0; }).length;
    var moodLabel = state.mood ? state.mood.replace(/([A-Z])/g, ' $1').toLowerCase() : '';
+   var ageLabel = state.age === 'children' ? 'young readers' : state.age === 'teen' ? 'teen readers' : 'adults';
    matchCountLabel.textContent = 'Showing 3 of ' + totalMatches + ' matches';
-   resultsSubtitle.textContent = moodLabel.charAt(0).toUpperCase() + moodLabel.slice(1) + ' reads for ' + state.age;
+   resultsSubtitle.textContent = moodLabel.charAt(0).toUpperCase() + moodLabel.slice(1) + ' reads for ' + ageLabel;
 
    var resultsGrid = document.getElementById('book-results');
    resultsGrid.innerHTML = '';
@@ -468,6 +470,8 @@
    document.getElementById('pip3').className = 'progress-pip';
  }
  </script>
+
+<div id="site-footer"></div>
 
 </body>
 </html>
