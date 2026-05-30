@@ -1147,15 +1147,16 @@ small, .small {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #3a2f1e;
+    font-size: 0.9rem;
+    color: #3a2e1e;
     text-decoration: none;
-    border-bottom: 1px solid #c8b89a;
+    border-bottom: 1px solid #d4c9b5;
     transition: color 0.15s, border-color 0.15s;
-    padding: 0.25rem 0;
-    line-height: 1.4;
-    word-break: break-word;
+    padding: 0.2rem 0;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .article-body .amazon-book-list a:hover {
