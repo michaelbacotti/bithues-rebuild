@@ -1230,6 +1230,33 @@ small, .small {
 }
 
 /* Card hidden by filter */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.article-body table td,
+.article-body table th {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border: 1px solid #d4c9b5;
+}
+
+.article-body table tr:first-child td {
+  font-weight: 600;
+  background: #f5f0e8;
+}
+
+.article-body table tr:not(:first-child) td {
+  border-top: none;
+}
+
+.article-body table tr:not(:first-child) + tr td {
+  border-top: 1px solid #d4c9b5;
+}
+
 .article-card[data-genre].hidden-by-filter {
   display: none;
 }
