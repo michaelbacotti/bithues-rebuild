@@ -1144,8 +1144,8 @@ small, .small {
 }
 
 .article-body .amazon-book-list a {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    max-width: 100%;
     box-sizing: border-box;
     font-size: 0.9rem;
     color: #3a2e1e;
@@ -1154,9 +1154,6 @@ small, .small {
     transition: color 0.15s, border-color 0.15s;
     padding: 0.2rem 0;
     line-height: 1.5;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .article-body .amazon-book-list a:hover {
