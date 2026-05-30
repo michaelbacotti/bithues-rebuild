@@ -681,12 +681,19 @@ small, .small {
  align-items: center;
  gap: 10px;
  padding: 0;
+ margin: 1.5rem 0 2.5rem;
 }
 
 .share-bar-mini {
  display: flex;
  align-items: center;
  gap: 10px;
+}
+
+.related-links {
+ margin: 0;
+ padding: 1.5rem 0 0;
+ border-top: 1px solid #e8e0d0;
 }
 
 .share-label {
