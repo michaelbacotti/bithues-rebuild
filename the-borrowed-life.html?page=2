@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>T H E   B O R R O W E D   L I F E | Bithues</title>
+ <title>The Borrowed Life | Bithues</title>
  <meta name="description" content="A man wakes up in a hospital with no memory of how he got there. The doctor says he's been a patient for six years. Everything in the room belongs to him. Nothing feels familiar.">
  <link rel="canonical" href="/the-borrowed-life">
    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
 
  <main>
  <div class="story-page">
- <div class="story-hero-img" style="background-image:url(/stories/images/the-borrowed-life.jpg);" role="img" aria-label="T H E   B O R R O W E D   L I F E"></div>
+ <div class="story-hero-img" style="background-image:url(/stories/images/the-borrowed-life.jpg);" role="img" aria-label="The Borrowed Life"></div>
  <div class="story-header">
   <span class="genre-pill">Literary Fiction</span>
-  <h1>T H E   B O R R O W E D   L I F E</h1>
+  <h1>The Borrowed Life</h1>
   
  </div>
  <div class="story-body" id="content">
@@ -151,7 +151,7 @@ document.querySelectorAll(".share-x, .share-facebook, .share-linkedin").forEach(
   if (el.classList.contains("share-linkedin")) el.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
 });
 </script>
- <nav class="story-nav"><a href="/the-cartographer-of-sea-serpents.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">T H E   C A R T O G R A P H E R   O F   S E A   S E R P E N T S</div></a></nav>
+ <nav class="story-nav"><a href="/the-cartographer-of-sea-serpents.html" class="story-nav-item next-item"><div class="story-nav-label">Next &#8594;</div><div class="story-nav-title">The Cartographer of Sea Serpents</div></a></nav>
 </div>
  </main>
 

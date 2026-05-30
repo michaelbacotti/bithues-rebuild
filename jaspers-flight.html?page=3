@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>J A S P E R S   F L I G H T | Bithues</title>
+ <title>Jasper's Flight | Bithues</title>
  <meta name="description" content="A story about a boy who could fly in his dreams, and the morning he realized the dreams weren't dreams at all.">
  <link rel="canonical" href="/jaspers-flight">
    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
 
  <main>
  <div class="story-page">
- <div class="story-hero-img" style="background-image:url(/stories/images/jaspers-flight.jpg);" role="img" aria-label="J A S P E R S   F L I G H T"></div>
+ <div class="story-hero-img" style="background-image:url(/stories/images/jaspers-flight.jpg);" role="img" aria-label="Jasper's Flight"></div>
  <div class="story-header">
   <span class="genre-pill">Literary Fiction</span>
-  <h1>J A S P E R S   F L I G H T</h1>
+  <h1>Jasper's Flight</h1>
   
  </div>
  <div class="story-body" id="content">
