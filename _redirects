@@ -1,36 +1,43 @@
 # ============================================================
-# BITHUES REDIRECTS - Comprehensive .html → clean URL redirects
-# Fixes: 21 "Page with redirect" GSC errors
+# BITHUES — Legacy .html → Clean URL Redirects
+# Fixes GSC "Page with redirect" errors by eliminating duplicate .html URLs
 # ============================================================
 
-# ----- ROOT-LEVEL LEGACY .HTML PAGES -----
-/about.html /about 301
-/contact.html /contact 301
-/press.html /press 301
-/privacy.html /privacy 301
-/terms.html /terms 301
+# Root index
 /index.html / 301
-/search.html /search 301
-/book-tracker.html /book-tracker 301
-/book-match.html /book-match 301
-/book-picker.html /book-picker 301
 
-# ----- SECTION LISTING PAGES -----
-/articles.html /articles 301
-/reviews.html /reviews 301
-/stories.html /stories 301
+# Static pages (still .html files — redirect to canonical)
+/about.html /about/ 301
+/contact.html /contact/ 301
+/privacy.html /privacy/ 301
+/terms.html /terms/ 301
+/book-match.html /book-match/ 301
+/book-picker.html /book-picker/ 301
 
-# ----- ARTICLE PAGES -----
-# Article .html files are in /articles/ subdirectory
-/articles/index.html /articles 301
+# Section listing pages (flat .html → directory)
+/articles.html /articles/ 301
+/reviews.html /reviews/ 301
+/stories.html /stories/ 301
 
-# ----- TRAILING SLASH REMOVALS -----
-/press/ /press 301
-/book-tracker/ /book-tracker 301
+# Paginated listing pages
+/articles2.html /articles/ 301
+/articles3.html /articles/ 301
+/articles4.html /articles/ 301
+/articles5.html /articles/ 301
+/articles6.html /articles/ 301
+/reviews2.html /reviews/ 301
+/reviews3.html /reviews/ 301
+/reviews4.html /reviews/ 301
+/reviews5.html /reviews/ 301
+/stories2.html /stories/ 301
+/stories3.html /stories/ 301
+/stories4.html /stories/ 301
+/stories5.html /stories/ 301
 
-# ----- SINGULAR → PLURAL -----
+# Trailing slash normalization
+/articles/ /articles 301
+/reviews/ /reviews 301
+/stories/ /stories 301
+
+# Singular → plural
 /story/ /stories/ 301
-
-# NOTE: Individual article/review .html files are served by CF Pages
-# at their clean URL equivalents. The CF Pages built-in redirect
-# handles /articles/X.html -> /articles/X automatically.
