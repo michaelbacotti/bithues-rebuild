@@ -340,17 +340,22 @@
  // State
  var state = { age: null, mood: null, type: null };
  var booksData = [];
+ var dataLoaded = false;
 
  // Load book data
  fetch('/picker-data.json')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     booksData = data;
+    dataLoaded = true;
     document.getElementById('q1').style.display = 'block';
     updateProgress(1);
+    // Enable all answer buttons once data is ready
+    document.querySelectorAll('.answer-btn').forEach(function(b) { b.disabled = false; });
   });
 
  function selectAnswer(q, value, btn) {
+   if (!dataLoaded) return;
    // Visual selection
    var card = btn.closest('.quiz-card');
    card.querySelectorAll('.answer-btn').forEach(function(b) { b.classList.remove('selected'); });
