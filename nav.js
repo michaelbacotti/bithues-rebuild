@@ -24,10 +24,10 @@
   nav.innerHTML = [
    '<div class="tab-bar">',
    ' <div class="tab-bar-inner">',
-   '  <a href="/articles.html">Articles</a>',
+   '  <a href="/articles/">Articles</a>',
    '  <a href="/stories">Stories</a>',
-   '  <a href="/reviews.html">Reviews</a>',
-   '  <a href="/book-match.html">Book Match</a>',
+   '  <a href="/reviews/">Reviews</a>',
+   '  <a href="/book-match/">Book Match</a>',
    ' </div>',
    '</div>'
   ].join('\n');
