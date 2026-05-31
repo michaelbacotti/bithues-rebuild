@@ -15,23 +15,14 @@
 /book-match.html /book-match 301
 /book-picker.html /book-picker 301
 
-# ----- ARTICLE PAGES (root-level .html) -----
+# ----- SECTION LISTING PAGES -----
 /articles.html /articles 301
-
-# ----- REVIEW PAGES (root-level .html) -----
 /reviews.html /reviews 301
-
-# ----- STORY PAGES (root-level .html) -----
 /stories.html /stories 301
 
-# ----- ARTICLE SUB-PAGES (clean up old .html files) -----
-/articles/* /articles/${1} 301
-
-# ----- REVIEWS SUB-PAGES (clean up old .html files) -----
-/reviews/* /reviews/${1} 301
-
-# ----- STORIES SUB-PAGES (clean up old .html files) -----
-/stories/* /stories/${1} 301
+# ----- ARTICLE PAGES -----
+# Article .html files are in /articles/ subdirectory
+/articles/index.html /articles 301
 
 # ----- TRAILING SLASH REMOVALS -----
 /press/ /press 301
@@ -40,8 +31,6 @@
 # ----- SINGULAR → PLURAL -----
 /story/ /stories/ 301
 
-# ============================================================
-# NOTE: Orphan .html files in website/ directory were deleted
-# to prevent Google from finding duplicate content.
-# Run cleanup_orphan_html.py from bithues-may24/ to regenerate.
-# ============================================================
+# NOTE: Individual article/review .html files are served by CF Pages
+# at their clean URL equivalents. The CF Pages built-in redirect
+# handles /articles/X.html -> /articles/X automatically.
