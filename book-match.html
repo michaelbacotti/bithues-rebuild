@@ -286,29 +286,14 @@
   <div class="quiz-card hidden" id="q2">
    <div class="question-number">Question 2 of 3</div>
    <div class="question-text">What kind of read are you in the mood for?</div>
-   <div class="answer-grid">
-    <button class="answer-btn" onclick="selectAnswer(2, 'adventurous', this)" disabled>Adventurous</button>
-    <button class="answer-btn" onclick="selectAnswer(2, 'dark', this)" disabled>Dark & Intense</button>
-    <button class="answer-btn" onclick="selectAnswer(2, 'inspiring', this)" disabled>Inspiring</button>
-    <button class="answer-btn" onclick="selectAnswer(2, 'thoughtful', this)" disabled>Thought-Provoking</button>
-    <button class="answer-btn" onclick="selectAnswer(2, 'fun', this)" disabled>Fun & Light</button>
-    <button class="answer-btn" onclick="selectAnswer(2, 'heartwarming', this)" disabled>Heartwarming</button>
-   </div>
+   <div class="answer-grid" id="q2-options"></div>
   </div>
 
   <!-- Question 3: Content Type -->
   <div class="quiz-card hidden" id="q3">
    <div class="question-number">Question 3 of 3</div>
    <div class="question-text">What genre pulls you in?</div>
-   <div class="answer-grid">
-    <button class="answer-btn" onclick="selectAnswer(3, 'fiction', this)" disabled>Fiction</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'scifi', this)" disabled>Science Fiction</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'fantasy', this)" disabled>Fantasy</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'historical', this)" disabled>Historical Fiction</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'nonfiction', this)" disabled>Nonfiction</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'selfhelp', this)" disabled>Self-Help</button>
-    <button class="answer-btn" onclick="selectAnswer(3, 'romance', this)" disabled>Romance</button>
-   </div>
+   <div class="answer-grid" id="q3-options"></div>
   </div>
 
   <!-- Results -->
@@ -356,17 +341,24 @@
 
  function selectAnswer(q, value, btn) {
    if (!dataLoaded) return;
+   if (btn.classList.contains('selected')) return;
    // Visual selection
    var card = btn.closest('.quiz-card');
    card.querySelectorAll('.answer-btn').forEach(function(b) { b.classList.remove('selected'); });
    btn.classList.add('selected');
 
-   // Save state
-   if (q === 1) state.age = value;
-   if (q === 2) state.mood = value;
+   // Save state & populate next question dynamically
+   if (q === 1) {
+     state.age = value;
+     populateQ2(value);
+   }
+   if (q === 2) {
+     state.mood = value;
+     populateQ3(state.age, value);
+   }
    if (q === 3) state.type = value;
 
-   // Next question
+   // Next question (with transition delay)
    setTimeout(function() {
      if (q === 1) {
        document.getElementById('q1').classList.add('hidden');
@@ -381,6 +373,71 @@
        showResults();
      }
    }, 280);
+ }
+
+ function populateQ2(age) {
+   var opts = document.getElementById('q2-options');
+   opts.innerHTML = '';
+   var allMoods = [
+     { key: 'adventurous', label: 'Adventurous' },
+     { key: 'dark', label: 'Dark & Intense' },
+     { key: 'inspiring', label: 'Inspiring' },
+     { key: 'thoughtful', label: 'Thought-Provoking' },
+     { key: 'fun', label: 'Fun & Light' },
+     { key: 'heartwarming', label: 'Heartwarming' }
+   ];
+   var available = allMoods.filter(function(m) {
+     return booksData.some(function(b) {
+       return b.age === age && b.moods && b.moods.indexOf(m.key) !== -1;
+     });
+   });
+   available.forEach(function(m) {
+     var btn = document.createElement('button');
+     btn.className = 'answer-btn';
+     btn.innerHTML = m.label;
+     btn.onclick = function() { selectAnswer(2, m.key, this); };
+     opts.appendChild(btn);
+   });
+   if (available.length === 0) {
+     opts.innerHTML = '<p style="color:var(--text-secondary);font-size:0.9rem">No options for this category.</p>';
+   }
+ }
+
+ function populateQ3(age, mood) {
+   var opts = document.getElementById('q3-options');
+   opts.innerHTML = '';
+   var allTypes = [
+     { key: 'fiction', label: 'Fiction' },
+     { key: 'scifi', label: 'Science Fiction' },
+     { key: 'fantasy', label: 'Fantasy' },
+     { key: 'historical', label: 'Historical Fiction' },
+     { key: 'nonfiction', label: 'Nonfiction' },
+     { key: 'selfhelp', label: 'Self-Help' },
+     { key: 'romance', label: 'Romance' }
+   ];
+   var available = allTypes.filter(function(t) {
+     return booksData.some(function(b) {
+       return b.age === age && b.type === t.key && b.moods && b.moods.indexOf(mood) !== -1;
+     });
+   });
+   // Fallback: show all types available for this age if no mood match
+   if (available.length === 0) {
+     available = allTypes.filter(function(t) {
+       return booksData.some(function(b) {
+         return b.age === age && b.type === t.key;
+       });
+     });
+   }
+   available.forEach(function(t) {
+     var btn = document.createElement('button');
+     btn.className = 'answer-btn';
+     btn.innerHTML = t.label;
+     btn.onclick = function() { selectAnswer(3, t.key, this); };
+     opts.appendChild(btn);
+   });
+   if (available.length === 0) {
+     opts.innerHTML = '<p style="color:var(--text-secondary);font-size:0.9rem">No options for this category.</p>';
+   }
  }
 
  function updateProgress(step) {
