@@ -370,6 +370,7 @@
        updateProgress(3);
      } else if (q === 3) {
        document.getElementById('q3').classList.add('hidden');
+       console.log('About to showResults. state:', JSON.stringify(state));
        showResults();
      }
    }, 280);
@@ -452,7 +453,8 @@
  }
 
  function showResults() {
-   document.getElementById('progress-bar').style.display = 'none';
+   // Hide progress pips
+   document.querySelectorAll('.progress-pip').forEach(function(p) { p.style.display = 'none'; });
 
    // Score all books
    var scored = booksData.map(function(b) {
