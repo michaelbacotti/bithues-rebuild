@@ -1260,3 +1260,21 @@ small, .small {
 .article-card[data-genre].hidden-by-filter {
   display: none;
 }
+
+/* Book row: side-by-side cover image + buy link */
+.article-body .book-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.article-body .book-row .book-cover {
+  margin-bottom: 0;
+}
+.article-body .book-row .book-cover img {
+  margin-bottom: 0;
+}
+.article-body .book-row .book-buy {
+  margin-top: 0;
+}
