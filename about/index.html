@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>About | Bithues</title>
+ <meta name="description" content="About Bithues — short fiction for curious readers.">
+ <link rel="canonical" href="/about">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+ <div id="site-utility"></div>
+ <div id="site-nav"></div>
+
+ <main>
+ <div class="page-hero">
+ <h1>About Bithues</h1>
+</div>
+<div class="page-content">
+ <div class="about-body">
+  <p><strong>Bithues</strong> is a home for short fiction — stories that explore what it means to be alive, in worlds familiar, strange, and somewhere in between. We publish original short fiction across dark fantasy, literary fiction, speculative fiction, and the occasional piece that refuses to be categorized.</p>
+  <p>Every story on Bithues is fiction. Any resemblance to actual events, persons, or places is entirely coincidental — and entirely intentional, where it needs to be.</p>
+  <h2>What you'll find here</h2>
+  <p>Dark fantasy. Literary fiction. Stories that take risks — with voice, with structure, with the way a story moves through the world. We believe short fiction is where writers take their best risks.</p>
+  <p>We also publish <a href="/reviews">book reviews</a> and <a href="/articles">articles on reading and books</a> — editorial takes on what we think is worth your time.</p>
+  <h2>Book reviews</h2>
+  <p>Our reviews are honest, independent takes on books we've read and think others should read too. We may earn a small affiliate commission when you purchase through links on this site — at no extra cost to you.</p>
+  <h2>Contact</h2>
+  <p>Have a story to share, a question, or just want to say hello? Reach out at <strong>info@bithues.com</strong>.</p>
+  <p>All inquiries are read. Not all replies come immediately — but they come.</p>
+  <h2>The site</h2>
+  <p>Bithues is an independent publication. We are not affiliated with any publisher or literary agency. All editorial decisions are our own.</p>
+ </div>
+</div>
+ </main>
+
+ <div id="site-footer"></div>
+
+ <script src="/nav.js"></script>
+ <script src="/footer.js"></script>
+ <script>
+(function() {
+  var bar = document.querySelector('.genre-filter-bar');
+  if (!bar) return;
+  bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var genre = btn.getAttribute('data-value');
+      bar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card[data-genre]').forEach(function(card) {
+        card.style.display = (genre === 'all' || card.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+ </script>
+
+</body>
+</html>
