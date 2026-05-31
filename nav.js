@@ -25,7 +25,7 @@
    '<div class="tab-bar">',
    ' <div class="tab-bar-inner">',
    '  <a href="/articles/">Articles</a>',
-   '  <a href="/stories">Stories</a>',
+   '  <a href="/stories/">Stories</a>',
    '  <a href="/reviews/">Reviews</a>',
    '  <a href="/book-match/">Book Match</a>',
    ' </div>',
