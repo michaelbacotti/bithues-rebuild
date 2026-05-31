@@ -1,10 +1,47 @@
-# Redirect legacy .html URLs for root-level pages only
-/press.html /press 301
-/book-tracker.html /book-tracker 301
+# ============================================================
+# BITHUES REDIRECTS - Comprehensive .html → clean URL redirects
+# Fixes: 21 "Page with redirect" GSC errors
+# ============================================================
 
-# Remove trailing slash from root-level pages
+# ----- ROOT-LEVEL LEGACY .HTML PAGES -----
+/about.html /about 301
+/contact.html /contact 301
+/press.html /press 301
+/privacy.html /privacy 301
+/terms.html /terms 301
+/index.html / 301
+/search.html /search 301
+/book-tracker.html /book-tracker 301
+/book-match.html /book-match 301
+/book-picker.html /book-picker 301
+
+# ----- ARTICLE PAGES (root-level .html) -----
+/articles.html /articles 301
+
+# ----- REVIEW PAGES (root-level .html) -----
+/reviews.html /reviews 301
+
+# ----- STORY PAGES (root-level .html) -----
+/stories.html /stories 301
+
+# ----- ARTICLE SUB-PAGES (clean up old .html files) -----
+/articles/* /articles/${1} 301
+
+# ----- REVIEWS SUB-PAGES (clean up old .html files) -----
+/reviews/* /reviews/${1} 301
+
+# ----- STORIES SUB-PAGES (clean up old .html files) -----
+/stories/* /stories/${1} 301
+
+# ----- TRAILING SLASH REMOVALS -----
 /press/ /press 301
 /book-tracker/ /book-tracker 301
 
-# Redirect singular /story/ to /stories/
+# ----- SINGULAR → PLURAL -----
 /story/ /stories/ 301
+
+# ============================================================
+# NOTE: Orphan .html files in website/ directory were deleted
+# to prevent Google from finding duplicate content.
+# Run cleanup_orphan_html.py from bithues-may24/ to regenerate.
+# ============================================================
