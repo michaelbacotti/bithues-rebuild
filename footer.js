@@ -41,3 +41,25 @@ document.querySelectorAll('.chapter-card-header').forEach(function(btn) {
     btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   });
 });
+
+// Chapter card expand/collapse
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.chapter-card-header').forEach(function(header) {
+    header.addEventListener('click', function() {
+      var card = header.closest('.chapter-card');
+      var isOpen = card.getAttribute('open') !== null;
+      // Close all others first (accordion behavior)
+      document.querySelectorAll('.chapter-card[open]').forEach(function(openCard) {
+        if (openCard !== card) {
+          openCard.removeAttribute('open');
+        }
+      });
+      // Toggle this one
+      if (isOpen) {
+        card.removeAttribute('open');
+      } else {
+        card.setAttribute('open', '');
+      }
+    });
+  });
+});
