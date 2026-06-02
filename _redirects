@@ -48,12 +48,7 @@
 # Same pattern
 
 # ── Trailing slash normalization ──
-# Remove trailing slash from section listing pages (cleaner URLs)
-/articles/ /articles 301
-/reviews/ /reviews 301
-/stories/ /stories 301
-
-# ── Singular → plural (bithues specific) ──
+# (rules removed 2026-06-02)
 /story/ /stories/ 301
 
 # ── Root index ──
