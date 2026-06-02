@@ -1278,3 +1278,83 @@ small, .small {
 .article-body .book-row .book-buy {
   margin-top: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CHAPTER CARDS — Story pages with expandable sections
+   ═══════════════════════════════════════════════════════════════ */
+.chapter-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  transition: box-shadow 0.2s;
+}
+.chapter-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.chapter-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s;
+}
+.chapter-card-header:hover {
+  background: var(--bg);
+}
+.chapter-card[open] .chapter-card-header {
+  border-bottom-color: var(--border);
+}
+
+.chapter-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 40px;
+}
+
+.chapter-title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chapter-toggle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  transition: transform 0.2s;
+  min-width: 24px;
+  text-align: center;
+}
+.chapter-card[open] .chapter-toggle {
+  transform: rotate(45deg);
+}
+
+.chapter-card-body {
+  display: none;
+  padding: 24px 20px;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+.chapter-card[open] .chapter-card-body {
+  display: block;
+}
+
+.chapter-card-body h2 {
+  font-size: 1.125rem;
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+}

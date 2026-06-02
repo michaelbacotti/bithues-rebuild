@@ -32,3 +32,12 @@
   + '</div>'
   + '</div>';
 })();
+// Chapter card expand/collapse (native details/summary alternative)
+document.querySelectorAll('.chapter-card-header').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var card = btn.closest('.chapter-card');
+    var isOpen = card.hasAttribute('open');
+    card.setAttribute('open', isOpen ? '' : 'true');
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+});
