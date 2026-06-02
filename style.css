@@ -1292,9 +1292,10 @@ small, .small {
    CHAPTER CARDS — Story pages with expandable sections
    ═══════════════════════════════════════════════════════════════ */
 .chapter-card {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   background: var(--surface);
   transition: box-shadow 0.2s;
 }
@@ -1360,6 +1361,15 @@ small, .small {
 }
 .chapter-card[open] .chapter-card-body {
   display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90vw, 860px);
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 4px;
 }
 
 .chapter-card-body h2 {
