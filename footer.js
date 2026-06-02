@@ -32,34 +32,27 @@
   + '</div>'
   + '</div>';
 })();
-// Chapter card expand/collapse (native details/summary alternative)
-document.querySelectorAll('.chapter-card-header').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var card = btn.closest('.chapter-card');
-    var isOpen = card.hasAttribute('open');
-    card.setAttribute('open', isOpen ? '' : 'true');
-    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-  });
-});
-
 // Chapter card expand/collapse
-document.addEventListener('DOMContentLoaded', function() {
+(function () {
   document.querySelectorAll('.chapter-card-header').forEach(function(header) {
     header.addEventListener('click', function() {
       var card = header.closest('.chapter-card');
-      var isOpen = card.getAttribute('open') !== null;
+      var isOpen = card.hasAttribute('open');
       // Close all others first (accordion behavior)
       document.querySelectorAll('.chapter-card[open]').forEach(function(openCard) {
         if (openCard !== card) {
           openCard.removeAttribute('open');
+          openCard.querySelector('.chapter-card-header').setAttribute('aria-expanded', 'false');
         }
       });
       // Toggle this one
       if (isOpen) {
         card.removeAttribute('open');
+        header.setAttribute('aria-expanded', 'false');
       } else {
         card.setAttribute('open', '');
+        header.setAttribute('aria-expanded', 'true');
       }
     });
   });
-});
+})();
