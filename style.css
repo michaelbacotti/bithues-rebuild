@@ -622,9 +622,9 @@ small, .small {
  padding: 48px 24px;
 }
 
-/* Chapter card stories: let the card grid break out to full width */
+/* Chapter card stories: let the card grid break out wider but with side margins */
 .story-page .card-grid {
- max-width: calc(100vw - 48px);
+ max-width: calc(var(--max-width) + 48px);
  width: 100%;
  margin: 0 auto;
  padding-left: 24px;
@@ -1354,18 +1354,11 @@ small, .small {
 
 .chapter-card-body {
   display: none;
-  padding: 24px 20px;
-  font-size: 0.9375rem;
-  line-height: 1.75;
-  color: var(--text-primary);
-}
-.chapter-card[open] .chapter-card-body {
-  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(90vw, 860px);
+  width: min(90vw, 780px);
   max-height: 85vh;
   overflow-y: auto;
   z-index: 200;
@@ -1374,6 +1367,9 @@ small, .small {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 32px 28px;
+}
+.chapter-card[open] .chapter-card-body {
+  display: block;
 }
 
 /* Dim overlay behind expanded story */
