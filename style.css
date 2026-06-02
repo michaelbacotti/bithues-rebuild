@@ -624,11 +624,11 @@ small, .small {
 
 /* Chapter card stories: let the card grid break out to full width */
 .story-page .card-grid {
- max-width: 100vw;
- width: 100vw;
- margin-left: calc(50% - 50vw);
- padding-left: 0;
- padding-right: 0;
+ max-width: calc(100vw - 48px);
+ width: 100%;
+ margin: 0 auto;
+ padding-left: 24px;
+ padding-right: 24px;
 }
 
 .story-page .story-header {
@@ -1361,15 +1361,31 @@ small, .small {
 }
 .chapter-card[open] .chapter-card-body {
   display: block;
-  position: absolute;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: min(90vw, 860px);
-  z-index: 100;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 200;
+  background: var(--surface);
+  box-shadow: 0 16px 64px rgba(0,0,0,0.25);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  margin-top: 4px;
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+
+/* Dim overlay behind expanded story */
+.chapter-card-body-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 199;
+}
+.chapter-card-body-backdrop.active {
+  display: block;
 }
 
 .chapter-card-body h2 {

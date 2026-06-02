@@ -34,6 +34,30 @@
 })();
 // Chapter card expand/collapse
 (function () {
+  // Create backdrop element
+  var backdrop = document.createElement('div');
+  backdrop.className = 'chapter-card-body-backdrop';
+  document.body.appendChild(backdrop);
+
+  backdrop.addEventListener('click', function() {
+    document.querySelectorAll('.chapter-card[open]').forEach(function(card) {
+      card.removeAttribute('open');
+      card.querySelector('.chapter-card-header').setAttribute('aria-expanded', 'false');
+    });
+    backdrop.classList.remove('active');
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.chapter-card[open]').forEach(function(card) {
+        card.removeAttribute('open');
+        card.querySelector('.chapter-card-header').setAttribute('aria-expanded', 'false');
+      });
+      backdrop.classList.remove('active');
+    }
+  });
+
   document.querySelectorAll('.chapter-card-header').forEach(function(header) {
     header.addEventListener('click', function() {
       var card = header.closest('.chapter-card');
@@ -49,9 +73,11 @@
       if (isOpen) {
         card.removeAttribute('open');
         header.setAttribute('aria-expanded', 'false');
+        backdrop.classList.remove('active');
       } else {
         card.setAttribute('open', '');
         header.setAttribute('aria-expanded', 'true');
+        backdrop.classList.add('active');
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
