@@ -48,10 +48,8 @@
 # Same pattern
 
 # ── Trailing slash normalization ──
-# Remove trailing slash from section listing pages (cleaner URLs)
-/articles/ /articles 301
-/reviews/ /reviews 301
-/stories/ /stories 301
+# REMOVED: caused redirect loop /articles/ → 301 /articles → 308 /articles/
+# CF Pages default handles this correctly
 
 # ── Singular → plural (bithues specific) ──
 /story/ /stories/ 301
