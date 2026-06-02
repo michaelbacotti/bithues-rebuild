@@ -52,6 +52,7 @@
       } else {
         card.setAttribute('open', '');
         header.setAttribute('aria-expanded', 'true');
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
   });
