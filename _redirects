@@ -8,6 +8,14 @@
 # Redirect to clean URL equivalents (with trailing slash)
 # CF Pages will serve about.html at /about, so we redirect to canonical /about/
 
+# Static pages (about, contact, privacy, terms) are generated as /about/index.html etc.
+# No .html files exist in bithues-may24/ for these — CF Pages falls back to homepage
+# without these explicit redirects
+/about.html /about/ 301
+/contact.html /contact/ 301
+/privacy.html /privacy/ 301
+/terms.html /terms/ 301
+
 # ── Section listing pages (now directories) ──
 # articles.html → /articles/
 # reviews.html → /reviews/
