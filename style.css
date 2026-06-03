@@ -1389,3 +1389,52 @@ small, .small {
   margin: 0 0 12px 0;
   color: var(--text-primary);
 }
+
+/* ================================================
+ Credibility Class blocks (whistleblower article)
+ ================================================ */
+.credibility-class {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  margin: 0 0 16px 0;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.credibility-class__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #f9f9f9;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.credibility-class__badge {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.credibility-class__title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.credibility-class__body {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #333;
+  padding: 12px 16px;
+}
