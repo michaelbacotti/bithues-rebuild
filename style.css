@@ -585,6 +585,93 @@ small, .small {
  text-align: center;
 }
 
+.footer-newsletter {
+ /* Newsletter signup column */
+}
+
+.footer-newsletter h5 {
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: var(--color-category);
+ font-weight: 600;
+ margin-bottom: 16px;
+ font-family: var(--font-body);
+}
+
+.footer-newsletter p {
+ font-size: 0.8125rem;
+ color: #666666;
+ line-height: 1.5;
+ margin-bottom: 12px;
+}
+
+.newsletter-form {
+ display: flex;
+ gap: 0;
+}
+
+.newsletter-form input[type="email"] {
+ flex: 1;
+ padding: 8px 12px;
+ font-size: 0.875rem;
+ border: 1px solid var(--color-border);
+ border-right: none;
+ border-radius: 3px 0 0 3px;
+ background: #ffffff;
+ color: var(--color-text);
+ font-family: var(--font-body);
+ outline: none;
+ min-width: 0;
+}
+
+.newsletter-form input[type="email"]:focus {
+ border-color: var(--color-accent);
+}
+
+.newsletter-form button[type="submit"] {
+ padding: 8px 14px;
+ font-size: 0.875rem;
+ font-weight: 600;
+ border: 1px solid var(--color-accent);
+ border-radius: 0 3px 3px 0;
+ background: var(--color-accent);
+ color: #ffffff;
+ cursor: pointer;
+ font-family: var(--font-body);
+ white-space: nowrap;
+ transition: opacity 0.2s;
+}
+
+.newsletter-form button[type="submit"]:hover {
+ opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+ .footer-grid {
+  grid-template-columns: 1fr 1fr;
+ }
+}
+
+@media (max-width: 600px) {
+ .footer-grid {
+  grid-template-columns: 1fr;
+ }
+ .newsletter-form {
+  flex-wrap: wrap;
+ }
+ .newsletter-form input[type="email"] {
+  border-right: 1px solid var(--color-border);
+  border-radius: 3px;
+  width: 100%;
+  margin-bottom: 8px;
+ }
+ .newsletter-form button[type="submit"] {
+  border-radius: 3px;
+  width: 100%;
+ }
+}
+
 /* 11. Page Hero */
 .page-hero {
  border-bottom: 1px solid var(--color-border);
