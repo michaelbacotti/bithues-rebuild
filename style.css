@@ -1021,6 +1021,67 @@ small, .small {
  }
 }
 
+/* Contact page channel grid — same surface/typography as .team-card,
+   used by the four contact-route blocks (submissions / reviews / press / general). */
+.contact-channels {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1.25rem;
+ margin: 1.5rem 0 2rem;
+}
+
+.contact-channel {
+ background: var(--surface, #faf6ee);
+ border: 1px solid var(--color-border, #e8e4dd);
+ border-left: 3px solid var(--color-accent, #c8001e);
+ border-radius: 6px;
+ padding: 1.1rem 1.25rem 1.2rem;
+ box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.contact-channel h3 {
+ font-family: var(--font-heading, Georgia, serif);
+ font-size: 1.15rem;
+ font-weight: 700;
+ margin: 0 0 0.35rem 0;
+ color: var(--text, #2a2418);
+}
+
+.contact-channel p {
+ font-size: 0.95rem;
+ line-height: 1.6;
+ margin: 0 0 0.6rem 0;
+ color: #2a2418;
+}
+
+.contact-channel p:last-child {
+ margin-bottom: 0;
+}
+
+.contact-channel code {
+ font-size: 0.85em;
+ background: rgba(0,0,0,0.04);
+ padding: 1px 5px;
+ border-radius: 3px;
+}
+
+.contact-channel a {
+ color: var(--color-accent, #c8001e);
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.15s ease;
+}
+
+.contact-channel a:hover {
+ border-bottom-color: var(--color-accent, #c8001e);
+}
+
+@media (max-width: 760px) {
+ .contact-channels {
+  grid-template-columns: 1fr;
+ }
+}
+
 .about-body h2 {
  font-size: 1.5rem;
  margin-top: 2rem;
