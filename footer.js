@@ -7,7 +7,7 @@
   + '<div class="footer-grid">'
   + '<div class="footer-brand">'
   + '<h4>Bithues</h4>'
-  + '<p>Short fiction for curious readers. Stories that explore what it means to be alive — in worlds familiar, strange, and somewhere in between.</p>'
+  + '<p>Honest book reviews. Original short fiction. Stories that explore what it means to be alive — in worlds familiar, strange, and somewhere in between.</p>'
   + '</div>'
   + '<div class="footer-newsletter">'
   + '<h5>Newsletter</h5>'

@@ -9,7 +9,7 @@
   utility.innerHTML = [
    '<nav class="top-bar">',
    ' <a href="/" class="top-wordmark">BITHUES</a>',
-   ' <span class="top-tagline">Short fiction for curious readers</span>',
+   ' <span class="top-tagline">Honest books. Original stories.</span>',
    ' <div class="top-links">',
    '  <a href="/about">About</a>',
    '  <a href="/contact">Contact</a>',
