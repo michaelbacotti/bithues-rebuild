@@ -693,6 +693,46 @@ small, .small {
  text-align: center;
 }
 
+/* Homepage intro hero — sits between the mid ad and the "More ..." catalog. */
+.homepage-intro-hero {
+ padding-top: 32px;
+ padding-bottom: 32px;
+}
+.homepage-intro-hero h2 {
+ font-size: 1.625rem;
+ margin-bottom: 16px;
+ text-align: center;
+}
+.homepage-intro-hero p {
+ margin: 0 auto 16px;
+}
+.homepage-featured-quote {
+ max-width: 720px;
+ margin: 24px auto;
+ padding: 16px 24px;
+ border-left: 3px solid var(--color-border, #d6d6d6);
+ background: #fafafa;
+ border-radius: 0 var(--radius, 6px) var(--radius, 6px) 0;
+ text-align: left;
+}
+.homepage-featured-quote p {
+ font-size: 1.0625rem;
+ font-style: italic;
+ color: #333333;
+ margin: 0 0 8px;
+ text-align: left;
+}
+.homepage-featured-quote footer {
+ font-size: 0.875rem;
+ color: #666666;
+ font-style: normal;
+ text-align: left;
+}
+.homepage-featured-quote cite {
+ font-style: normal;
+ font-weight: 600;
+}
+
 /* 12. Article / Story Page */
 /* Story hero image */
 .story-hero-img {
