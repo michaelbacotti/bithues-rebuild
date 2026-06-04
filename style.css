@@ -753,6 +753,21 @@ small, .small {
  margin-bottom: 24px;
 }
 
+.story-page .story-byline {
+ font-size: 0.9375rem;
+ color: #3a2e1e;
+ margin-bottom: 1.5rem;
+ font-style: italic;
+}
+
+.story-page .content-byline,
+.content-byline {
+ font-size: 0.9rem;
+ color: #5a4a30;
+ margin: 0.5rem 0 0 0;
+ font-style: italic;
+}
+
 .story-page .story-body {
  font-size: 1.0625rem;
  line-height: 1.9;
