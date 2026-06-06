@@ -525,8 +525,8 @@ small, .small {
 
 .footer-grid {
  display: grid;
- grid-template-columns: 1.5fr 1fr 1fr;
- gap: 40px;
+ grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+ gap: 32px;
 }
 
 .footer-brand h4 {
@@ -647,9 +647,10 @@ small, .small {
  opacity: 0.8;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
  .footer-grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
  }
 }
 
