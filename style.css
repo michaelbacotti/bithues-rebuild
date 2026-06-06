@@ -355,6 +355,17 @@ small, .small {
 .section-col {
  padding: 40px 24px;
  border-right: 1px solid var(--color-border);
+ display: flex;
+ flex-direction: column;
+}
+
+/* Push the last card in each "More …" section to the bottom of its column
+   so the three columns (Articles / Stories / Reviews) end at the same
+   vertical position, even when they have different card counts.
+   `margin-top: auto` on the last card absorbs the extra space, keeping
+   the section header and earlier cards at the top of the column. */
+.section-col .article-card:last-child {
+ margin-top: auto;
 }
 
 .section-col:last-child {
@@ -401,6 +412,11 @@ small, .small {
  color: #555555;
  line-height: 1.5;
  margin-bottom: 0;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ line-clamp: 3;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
 }
 
 /* page-nav (story pagination) */
@@ -1243,6 +1259,11 @@ small, .small {
  font-size: 0.875rem;
  line-height: 1.5;
  color: #4a3f2f;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ line-clamp: 3;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
 }
 .review-card-horizontal .accent-link {
  margin-top: auto;
