@@ -4,11 +4,11 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Physics, Consciousness, and Time — A Reading Path | Bithues</title>
- <meta name="description" content="Five books from Quantum Chronos and D. E. Harlan that take consciousness seriously as a physics question. A curated reading path for the scientifically curious.">
+ <meta name="description" content="A reading path for the scientifically curious — books that take consciousness seriously as a physics question, in suggested order from accessible to demanding.">
  <link rel="canonical" href="https://www.bithues.com/collections/physics-consciousness/">
  <meta property="og:type" content="website">
  <meta property="og:title" content="Physics, Consciousness, and Time — A Reading Path">
- <meta property="og:description" content="Five books that take consciousness seriously as a physics question. By Quantum Chronos and D. E. Harlan.">
+ <meta property="og:description" content="A reading path for the scientifically curious — books that take consciousness seriously as a physics question.">
  <meta property="og:image" content="https://images-na.ssl-images-amazon.com/images/P/B0GJ1463Y6.01._SL300_.jpg">
  <meta property="og:url" content="https://www.bithues.com/collections/physics-consciousness/">
    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -162,6 +162,68 @@
    border-radius: var(--radius, 4px);
    border-left: 3px solid var(--accent, #9b6b3a);
   }
+  .collection-related {
+   max-width: 720px;
+   margin: 2.5rem auto;
+   padding: 1.75rem 1.5rem 1.75rem;
+   background: var(--card-bg, #ffffff);
+   border-radius: var(--radius, 4px);
+   box-shadow: var(--shadow, 0 2px 12px rgba(44,24,16,0.08));
+  }
+  .collection-related h2 {
+   font-family: var(--font-heading, Georgia, serif);
+   font-size: 1.25rem;
+   margin: 0 0 0.4rem;
+   color: var(--heading, #2c1810);
+  }
+  .collection-related > p {
+   font-size: 0.92rem;
+   line-height: 1.55;
+   color: var(--text-secondary, #6b5c4a);
+   margin: 0 0 1.25rem;
+  }
+  .related-book {
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   gap: 18px;
+   padding-top: 1.25rem;
+   border-top: 1px solid var(--color-border, #e3d9c6);
+  }
+  .related-book .book-cover {
+   width: 110px;
+   height: auto;
+   aspect-ratio: 2 / 3;
+   object-fit: cover;
+   border-radius: 3px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+   flex-shrink: 0;
+   margin: 0;
+  }
+  .related-book .related-text { flex: 1; min-width: 0; }
+  .related-book h3 {
+   font-family: var(--font-heading, Georgia, serif);
+   font-size: 1.05rem;
+   line-height: 1.3;
+   margin: 0 0 4px;
+   color: var(--heading, #2c1810);
+  }
+  .related-book .book-author {
+   font-size: 0.85rem;
+   font-style: italic;
+   color: var(--text-secondary, #6b5c4a);
+   margin: 0 0 8px;
+  }
+  .related-book .book-pitch {
+   font-size: 0.9rem;
+   line-height: 1.55;
+   color: var(--text, #3a2f1e);
+   margin: 0 0 12px;
+  }
+  @media (max-width: 600px) {
+   .related-book { flex-direction: row; gap: 14px; }
+   .related-book .book-cover { width: 80px; }
+  }
   .collection-section h2 {
    font-family: var(--font-heading, Georgia, serif);
    font-size: 1.25rem;
@@ -243,13 +305,16 @@
   <header class="collection-hero">
    <span class="collection-eyebrow">Collection</span>
    <h1>Physics, Consciousness, and Time</h1>
-   <p>A reading path for the scientifically curious — five books that take the "hard problem" seriously as a physics question.</p>
+   <p>A reading path for the scientifically curious — books that take the "hard problem" seriously as a physics question.</p>
   </header>
 
   <section class="collection-intro">
    <p>The "hard problem of consciousness" has a marketing problem: most of the books written about it are either too pop-science or too dense. The reader who wants a serious treatment — neither a TED talk nor a textbook — is mostly left to assemble their own reading list from blog posts, podcasts, and the occasional lucky find in a used bookstore.</p>
-   <p>Here's a middle path. <strong>Quantum Chronos</strong> and <strong>D. E. Harlan</strong> are pen names for the same writer (Mike Bacotti Sr.) — so the throughline is consistent across all five. The books are arranged in suggested reading order, from the most accessible to the most demanding. Start with <em>The Physics of Time</em>; finish with <em>Quantum Soul Echoes</em>.</p>
+   <p>Here's a middle path. Four books that take consciousness seriously as a physics question, written for the generally curious reader who isn't afraid of a diagram or two — plus a fifth, from a related voice, that asks a different kind of question about what happens to the mind at the edge of life. The books are arranged in suggested reading order, from the most accessible to the most demanding. Start with <em>The Physics of Time</em>; finish with <em>Quantum Soul Echoes</em>.</p>
   </section>
+
+  <h2 class="collection-section-heading" style="max-width:720px;margin:2rem auto 0.5rem;font-family:var(--font-heading, Georgia, serif);font-size:1.3rem;color:var(--heading, #2c1810);">The Reading Path</h2>
+  <p style="max-width:720px;margin:0 auto 1.5rem;font-size:0.95rem;color:var(--text-secondary, #6b5c4a);line-height:1.55;">Four titles, in suggested order from most accessible to most demanding.</p>
 
   <div class="collection-grid">
 
@@ -263,7 +328,6 @@
       <a class="buy-btn" href="https://www.amazon.com/dp/B0GJ1463Y6?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
       <a class="review-btn" href="/reviews/the-physics-of-time/">Read review</a>
      </div>
-     <p class="book-meta">81 net units · $18.30 royalty</p>
     </div>
    </article>
 
@@ -277,7 +341,6 @@
       <a class="buy-btn" href="https://www.amazon.com/dp/B0GRW79ZM7?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
       <a class="review-btn" href="/reviews/physics-of-insight/">Read review</a>
      </div>
-     <p class="book-meta">44 net units · $1.64 royalty</p>
     </div>
    </article>
 
@@ -291,21 +354,6 @@
       <a class="buy-btn" href="https://www.amazon.com/dp/B0GGVDKZ96?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
       <a class="review-btn" href="/reviews/consciousness-in-higher-dimensional-spacetime/">Read review</a>
      </div>
-     <p class="book-meta">38 net units · $3.13 royalty</p>
-    </div>
-   </article>
-
-   <article class="collection-book">
-    <img class="book-cover" src="https://images-na.ssl-images-amazon.com/images/P/B0GPLX1NJD.01._SL300_.jpg" alt="Beyond the Veil by D. E. Harlan" loading="lazy" width="140" height="210">
-    <div class="book-text">
-     <h2>Beyond the Veil</h2>
-     <p class="book-author">D. E. Harlan</p>
-     <p class="book-pitch">Death, the universe, and the question of what — if anything — persists. A more lyrical, philosophical turn from the same writer under a different pen name.</p>
-     <div class="book-actions">
-      <a class="buy-btn" href="https://www.amazon.com/dp/B0GPLX1NJD?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
-      <a class="review-btn" href="/reviews/beyond-the-veil/">Read review</a>
-     </div>
-     <p class="book-meta">29 net units · $0.66 royalty</p>
     </div>
    </article>
 
@@ -319,11 +367,27 @@
       <a class="buy-btn" href="https://www.amazon.com/dp/B0GPNWJ314?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
       <a class="review-btn" href="/reviews/quantum-soul-echoes/">Read review</a>
      </div>
-     <p class="book-meta">26 net units · $3.11 royalty</p>
     </div>
    </article>
 
   </div>
+
+  <section class="collection-related">
+   <h2>Readers who liked this path also liked</h2>
+   <p>One book from a related voice on the same questions — a useful bridge to a different angle.</p>
+   <article class="related-book">
+    <img class="book-cover" src="https://images-na.ssl-images-amazon.com/images/P/B0GPLX1NJD.01._SL300_.jpg" alt="Beyond the Veil by D. E. Harlan" loading="lazy" width="110" height="165">
+    <div class="related-text">
+     <h3>Beyond the Veil</h3>
+     <p class="book-author">D. E. Harlan</p>
+     <p class="book-pitch">Death, the universe, and the question of what — if anything — persists. A careful, non-sensationalized look at the near-death experience literature and what it does and does not support. A more lyrical, philosophical book than the four above; it asks the question the others leave open.</p>
+     <div class="book-actions">
+      <a class="buy-btn" href="https://www.amazon.com/dp/B0GPLX1NJD?tag=bithues-20" target="_blank" rel="noopener">Buy on Amazon →</a>
+      <a class="review-btn" href="/reviews/beyond-the-veil/">Read review</a>
+     </div>
+    </div>
+   </article>
+  </section>
 
   <section class="collection-section">
    <h2>Suggested Reading Order</h2>
@@ -332,15 +396,9 @@
     <li><strong>The Physics of Time</strong> — start here. The most accessible entry point; sets the conceptual vocabulary for everything that follows.</li>
     <li><strong>Physics of Insight</strong> — applies the framework to a concrete phenomenon: the moment of understanding.</li>
     <li><strong>Consciousness in Higher Dimensional Spacetime</strong> — extends the picture outward into extra dimensions. Bring a coffee.</li>
-    <li><strong>Beyond the Veil</strong> — a tonal shift. More lyrical, more philosophical. Death, persistence, the cosmos as question.</li>
     <li><strong>Quantum Soul Echoes</strong> — finish here. The most demanding book in the sequence. The "echo operator" argument.</li>
    </ol>
-  </section>
-
-  <section class="collection-section">
-   <h2>A note on the pen names</h2>
-   <p><strong>Quantum Chronos</strong> and <strong>D. E. Harlan</strong> are both pen names for the same writer — Mike Bacotti Sr. The voice shifts slightly between the two namesakes, but the underlying throughline is consistent: consciousness taken seriously as a physics problem, with the speculative commitments kept visible rather than hidden behind hedges.</p>
-   <p>Reading all five back-to-back reveals the progression more clearly than any single book can. The reading order above is meant to mirror that arc.</p>
+   <p>For a different kind of question — what happens to the mind at the edge of life — see <a href="/reviews/beyond-the-veil/" style="color:var(--accent);"><em>Beyond the Veil</em></a> in the related section above. It is the natural complement to the four titles here, but it works just as well as a standalone read.</p>
   </section>
 
   <section class="collection-section">
