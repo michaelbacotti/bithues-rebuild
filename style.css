@@ -1377,6 +1377,28 @@ small, .small {
     color: #333;
 }
 
+/* ── Article body typography — heading/paragraph spacing ────────────────────── */
+.article-body h2 {
+    font-size: 1.5rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+.article-body h3 {
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+.article-body h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.article-body p {
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
+}
+
 /* ── Article body Amazon links ──────────────────────────────────────────────── */
 .article-body .amazon-book-list {
     margin: 2rem 0;
