@@ -419,6 +419,15 @@ small, .small {
  overflow: hidden;
 }
 
+/* The "More Stories" column is the second .section-col. Its article cards
+   have shorter p descriptions (2 lines vs 3 for articles) so the three
+   columns end at roughly the same y-position with only a small visual gap
+   before the last card. The "More Articles" column (1st) keeps 3 lines. */
+.section-col:nth-child(2) .article-card p {
+ -webkit-line-clamp: 2;
+ line-clamp: 2;
+}
+
 /* page-nav (story pagination) */
 .page-nav {
  display: flex;
@@ -1260,8 +1269,8 @@ small, .small {
  line-height: 1.5;
  color: #4a3f2f;
  display: -webkit-box;
- -webkit-line-clamp: 3;
- line-clamp: 3;
+ -webkit-line-clamp: 2;
+ line-clamp: 2;
  -webkit-box-orient: vertical;
  overflow: hidden;
 }
