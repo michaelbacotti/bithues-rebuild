@@ -357,15 +357,14 @@ small, .small {
  border-right: 1px solid var(--color-border);
  display: flex;
  flex-direction: column;
-}
-
-/* Push the last card in each "More …" section to the bottom of its column
-   so the three columns (Articles / Stories / Reviews) end at the same
-   vertical position, even when they have different card counts.
-   `margin-top: auto` on the last card absorbs the extra space, keeping
-   the section header and earlier cards at the top of the column. */
-.section-col .article-card:last-child {
- margin-top: auto;
+ /* The three "More …" columns (Articles / Stories / Reviews) are stretched
+    to the same height by the parent grid, but their card counts and per-
+    card heights differ — so each column has a different amount of free
+    space. `justify-content: space-between` distributes that free space
+    evenly between the cards, so the columns look balanced (no big gap
+    bunched at the bottom of one column). Columns whose cards already
+    fill the height (no free space) are unaffected. */
+ justify-content: space-between;
 }
 
 .section-col:last-child {
