@@ -91,9 +91,30 @@
   /* Cover grid */
   .otomi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 3rem;
+  }
+  @media (max-width: 860px) {
+    .otomi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .otomi-grid { grid-template-columns: 1fr; }
+  }
+  .otomi-lang-note {
+    font-size: 0.78rem !important;
+    color: var(--text-secondary, #6b5c4a) !important;
+    font-style: italic;
+    margin-top: -0.4rem !important;
+  }
+  .btn-amazon-es {
+    background: transparent;
+    color: var(--heading, #2c1810);
+    border: 1px solid var(--heading, #2c1810);
+  }
+  .btn-amazon-es:hover {
+    background: var(--heading, #2c1810);
+    color: #fff;
   }
   .otomi-book {
     display: flex;
@@ -200,16 +221,10 @@
     margin: 0 0 1.5rem;
     line-height: 1.55;
   }
-  .otomi-order-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .otomi-order-col h4 {
-    font-family: var(--font-heading, Georgia, serif);
-    font-size: 1rem;
-    color: var(--heading, #2c1810);
-    margin: 0 0 0.6rem;
+  .otomi-reading-order ol.otomi-order-list {
+    list-style: decimal;
+    padding-left: 1.25rem;
+    max-width: 640px;
   }
   .otomi-order-list {
     list-style: none;
@@ -376,7 +391,6 @@
 
   @media (max-width: 640px) {
     .otomi-series-page { padding: 2rem 1rem 3.5rem; }
-    .otomi-order-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .otomi-callout { padding: 1.5rem 1.25rem; }
     .otomi-cta { padding: 1.5rem 1.25rem; }
   }
@@ -395,7 +409,7 @@
    <h2>A reading order for E. J. Marín's Mesoamerican historical fiction</h2>
    <div class="otomi-badges">
     <span class="otomi-badge bilingual">English &amp; Spanish</span>
-    <span class="otomi-badge">3 Books · 5 Editions</span>
+    <span class="otomi-badge">3 Books</span>
     <span class="otomi-badge">~900–1500 CE Central Mexico</span>
    </div>
   </header>
@@ -407,7 +421,7 @@
 
   <div class="otomi-grid">
 
-   <!-- Book 1 EN -->
+   <!-- Book 1: Otomí (EN + ES) -->
    <article class="otomi-book">
     <div class="otomi-book-cover-wrap">
      <img class="otomi-book-cover" src="images/otomi-en.jpg" alt="Otomí: A Historical Narrative of Land, Ritual, and Continuity" loading="lazy" onerror="this.style.display='none'">
@@ -418,30 +432,15 @@
     </div>
     <h3 class="otomi-book-title">Otomí: A Historical Narrative of Land, Ritual, and Continuity</h3>
     <p class="otomi-book-pitch">Centuries after Teotihuacán, a highland village rides out one drought-stricken year. Household altars, hilltop shrines, and the slow arithmetic of survival.</p>
+    <p class="otomi-book-pitch otomi-lang-note">Also available in Spanish: <em>Otomí: Una narrativa histórica de tierra, ritual y continuidad</em>.</p>
     <div class="otomi-book-actions">
      <a href="https://www.amazon.com/dp/B0GS367G2M?tag=bithues-20" class="btn-amazon" target="_blank" rel="noopener">Buy on Amazon</a>
+     <a href="https://www.amazon.com/dp/B0GS2RJLS2?tag=bithues-20" class="btn-amazon btn-amazon-es" target="_blank" rel="noopener">Comprar en español</a>
      <a href="/reviews/otomi" class="btn-read-review">Read review</a>
     </div>
    </article>
 
-   <!-- Book 1 ES -->
-   <article class="otomi-book">
-    <div class="otomi-book-cover-wrap">
-     <img class="otomi-book-cover" src="images/otomi-es.jpg" alt="Otomí: Una narrativa histórica de tierra, ritual y continuidad" loading="lazy" onerror="this.style.display='none'">
-    </div>
-    <div class="otomi-book-meta">
-     <span class="otomi-book-num">Libro 1</span>
-     <span class="otomi-book-lang">ES · Español</span>
-    </div>
-    <h3 class="otomi-book-title">Otomí: Una narrativa histórica de tierra, ritual y continuidad</h3>
-    <p class="otomi-book-pitch">Siglos después de Teotihuacán, una aldea de las altas cumbres resiste un año de lluvias débiles. Altares domésticos, cerros sagrados, y la aritmética de la supervivencia.</p>
-    <div class="otomi-book-actions">
-     <a href="https://www.amazon.com/dp/B0GS2RJLS2?tag=bithues-20" class="btn-amazon" target="_blank" rel="noopener">Comprar en Amazon</a>
-     <a href="/reviews/otomi" class="btn-read-review">Leer reseña</a>
-    </div>
-   </article>
-
-   <!-- Book 2 EN -->
+   <!-- Book 2: Xaltocan (EN + ES) -->
    <article class="otomi-book">
     <div class="otomi-book-cover-wrap">
      <img class="otomi-book-cover" src="images/xaltocan-en.jpg" alt="Xaltocan: A Historical Narrative of Tribute, War, and Survival" loading="lazy" onerror="this.style.display='none'">
@@ -452,30 +451,15 @@
     </div>
     <h3 class="otomi-book-title">Xaltocan: A Historical Narrative of Tribute, War, and Survival</h3>
     <p class="otomi-book-pitch">A late-14th-century island polity in the Basin of Mexico. Tribute cords, borrowed cloth, and a council chamber that learns to count what it cannot afford to lose.</p>
+    <p class="otomi-book-pitch otomi-lang-note">Also available in Spanish: <em>Xaltocan: Una narración histórica del tributo, la guerra y la supervivencia</em>.</p>
     <div class="otomi-book-actions">
      <a href="https://www.amazon.com/dp/B0F2ZHBK46?tag=bithues-20" class="btn-amazon" target="_blank" rel="noopener">Buy on Amazon</a>
+     <a href="https://www.amazon.com/dp/B0GHM237Z9?tag=bithues-20" class="btn-amazon btn-amazon-es" target="_blank" rel="noopener">Comprar en español</a>
      <a href="/reviews/xaltocan" class="btn-read-review">Read review</a>
     </div>
    </article>
 
-   <!-- Book 2 ES -->
-   <article class="otomi-book">
-    <div class="otomi-book-cover-wrap">
-     <img class="otomi-book-cover" src="images/xaltocan-es.jpg" alt="Xaltocan: Una narración histórica del tributo, la guerra y la supervivencia" loading="lazy" onerror="this.style.display='none'">
-    </div>
-    <div class="otomi-book-meta">
-     <span class="otomi-book-num">Libro 2</span>
-     <span class="otomi-book-lang">ES · Español</span>
-    </div>
-    <h3 class="otomi-book-title">Xaltocan: Una narración histórica del tributo, la guerra y la supervivencia</h3>
-    <p class="otomi-book-pitch">A finales del siglo XIV, una ciudad isla otomí resiste la presión del tributo. Cuerdas contables, telas prestadas, y un consejo que aprende a contar lo que ya no puede perder.</p>
-    <div class="otomi-book-actions">
-     <a href="https://www.amazon.com/dp/B0GHM237Z9?tag=bithues-20" class="btn-amazon" target="_blank" rel="noopener">Comprar en Amazon</a>
-     <a href="/reviews/xaltocan" class="btn-read-review">Leer reseña</a>
-    </div>
-   </article>
-
-   <!-- Book 3 EN -->
+   <!-- Book 3: Cords of Empire (EN only) -->
    <article class="otomi-book">
     <div class="otomi-book-cover-wrap">
      <img class="otomi-book-cover" src="images/cords-of-empire-en.jpg" alt="Cords of Empire: An Otomí Saga of Aztec Wars" loading="lazy" onerror="this.style.display='none'">
@@ -486,6 +470,7 @@
     </div>
     <h3 class="otomi-book-title">Cords of Empire: An Otomí Saga of Aztec Wars</h3>
     <p class="otomi-book-pitch">After Xaltocan falls, the same household is counted again under new rulers. Grain, cloth, labor, and nearly grown sons enter the same hard arithmetic — and the road south begins to shape the family.</p>
+    <p class="otomi-book-pitch otomi-lang-note">English only — Spanish edition not yet announced.</p>
     <div class="otomi-book-actions">
      <a href="https://www.amazon.com/dp/B0GX36Z7KB?tag=bithues-20" class="btn-amazon" target="_blank" rel="noopener">Buy on Amazon</a>
      <a href="/reviews/cords-of-empire" class="btn-read-review">Read review</a>
@@ -505,43 +490,21 @@
 
   <section class="otomi-reading-order">
    <h3>Reading Order</h3>
-   <p>Three ways through the saga. The in-universe and publication orders are the same — Marín wrote them in chronological sequence — but the bilingual pair order is different.</p>
-   <div class="otomi-order-grid">
-    <div class="otomi-order-col">
-     <h4>Chronological (in-universe)</h4>
-     <ol class="otomi-order-list">
-      <li>
-       <strong>Otomí</strong> — highland village, post-Teotihuacan
-       <span class="ol-period">~900–1100 CE</span>
-      </li>
-      <li>
-       <strong>Xaltocan</strong> — Basin of Mexico island polity
-       <span class="ol-period">Late 14th century</span>
-      </li>
-      <li>
-       <strong>Cords of Empire</strong> — after Xaltocan falls
-       <span class="ol-period">Late 14th – early 15th century</span>
-      </li>
-     </ol>
-    </div>
-    <div class="otomi-order-col">
-     <h4>Bilingual pair order</h4>
-     <ol class="otomi-order-list">
-      <li>
-       <strong>Otomí</strong> (EN) → <strong>Otomí</strong> (ES)
-       <span class="ol-period">Compare Marín's word choice in both languages</span>
-      </li>
-      <li>
-       <strong>Xaltocan</strong> (EN) → <strong>Xaltocan</strong> (ES)
-       <span class="ol-period">Tribute-records and council scenes land differently in Spanish</span>
-      </li>
-      <li>
-       <strong>Cords of Empire</strong> (EN)
-       <span class="ol-period">English only — Spanish edition not yet announced</span>
-      </li>
-     </ol>
-    </div>
-   </div>
+   <p>One way through the saga. Marín wrote the three novels in chronological sequence, and the in-universe and publication orders are the same.</p>
+   <ol class="otomi-order-list">
+    <li>
+     <strong>Otomí</strong> — highland village, post-Teotihuacan
+     <span class="ol-period">~900–1100 CE</span>
+    </li>
+    <li>
+     <strong>Xaltocan</strong> — Basin of Mexico island polity
+     <span class="ol-period">Late 14th century</span>
+    </li>
+    <li>
+     <strong>Cords of Empire</strong> — after Xaltocan falls
+     <span class="ol-period">Late 14th – early 15th century</span>
+    </li>
+   </ol>
   </section>
 
   <aside class="otomi-related">
