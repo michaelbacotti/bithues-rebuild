@@ -357,14 +357,8 @@ small, .small {
  border-right: 1px solid var(--color-border);
  display: flex;
  flex-direction: column;
- /* The three "More …" columns (Articles / Stories / Reviews) are stretched
-    to the same height by the parent grid, but their card counts and per-
-    card heights differ — so each column has a different amount of free
-    space. `justify-content: space-between` distributes that free space
-    evenly between the cards, so the columns look balanced (no big gap
-    bunched at the bottom of one column). Columns whose cards already
-    fill the height (no free space) are unaffected. */
- justify-content: space-between;
+ /* Cards always anchor to the top; excess space falls to the bottom. */
+ justify-content: flex-start;
 }
 
 .section-col:last-child {
