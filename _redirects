@@ -3,6 +3,13 @@
 # Fixes: 21 "Page with redirect" GSC errors + prevents duplicate content
 # ============================================================
 
+# ── Host normalization: force www → bare (canonical host) ──
+# Canonical tags and sitemap both point at https://bithues.com/ (bare).
+# Without this, Google sees www.bithues.com as a duplicate and picks it as
+# the canonical, mismatching our declared canonical. 301 the www version
+# to bare on every URL.
+https://www.bithues.com/* https://bithues.com/:splat 301!
+
 # ── Root-level static pages ──
 /articles.html /articles/ 301
 /reviews.html /reviews/ 301
@@ -34,9 +41,3 @@
 
 # ── Root index ──
 /index.html / 301
-
-# ── www → bare canonical redirect ──
-# Google is indexing www variant; user canonical = bare.
-# 301 ensures www URLs redirect to bare, resolving the canonical conflict.
-www.bithues.com/ https://bithues.com/ 301
-www.bithues.com/* https://bithues.com/$1 301
