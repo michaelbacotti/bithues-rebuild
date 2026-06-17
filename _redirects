@@ -1,0 +1,42 @@
+# ============================================================
+# BITHUES — Legacy .html → Clean URL Redirects
+# Fixes: 21 "Page with redirect" GSC errors + prevents duplicate content
+# ============================================================
+
+# ── Root-level static pages ──
+/articles.html /articles/ 301
+/reviews.html /reviews/ 301
+/stories.html /stories/ 301
+
+# ── Paginated listing pages ──
+/articles2.html /articles/ 301
+/articles3.html /articles/ 301
+/articles4.html /articles/ 301
+/articles5.html /articles/ 301
+/articles6.html /articles/ 301
+/reviews2.html /reviews/ 301
+/reviews3.html /reviews/ 301
+/reviews4.html /reviews/ 301
+/reviews5.html /reviews/ 301
+/stories2.html /stories/ 301
+/stories3.html /stories/ 301
+/stories4.html /stories/ 301
+/stories5.html /stories/ 301
+
+# ── Individual story pages ──
+/heliostat.html /heliostat/ 301
+/the-borrowed-life.html /the-borrowed-life/ 301
+/the-door-between-worlds.html /the-door-between-worlds/ 301
+/the-last-song.html /the-last-song/ 301
+
+# ── Singular → plural (bithues specific) ──
+/story/ /stories/ 301
+
+# ── Root index ──
+/index.html / 301
+
+# ── www → bare canonical redirect ──
+# Google is indexing www variant; user canonical = bare.
+# 301 ensures www URLs redirect to bare, resolving the canonical conflict.
+/www/ https://bithues.com/:splat 301
+www.bithues.com/* https://bithues.com/:splat 301
