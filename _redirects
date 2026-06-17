@@ -86,21 +86,9 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # /reviews/<n>.html — same: no such file, redirect to the listing.
 /reviews/:n.html /reviews/ 301
 
-# ── WordPress-era query string orphans (2026-06-17) ──
-# The site was previously WordPress-hosted. Google still crawls
-# WP-style URLs like /?s=searchterm and /?p=1, which now return the
-# home page (no WP search/pagination). 301 them to /reviews/ since
-# search and post-pagination intent maps to the reviews listing.
-# Note: CF Pages _redirects matches PATH only, not query strings.
-# Test with: curl -sI "https://bithues.com/?s=hello" to verify.
-# If these don't match, the orphan will continue to be served as
-# home page (200 with home canonical). The 404 page fallback would
-# be better than that — but a 200 with home canonical is what we have.
-/?s=* /reviews/ 301
-/?p=* /reviews/ 301
-/?cat=* /reviews/ 301
-/?author=* /reviews/ 301
-/?page_id=* /reviews/ 301
-/?attachment_id=* /reviews/ 301
-/?feed=* /reviews/ 301
-/?m=* /reviews/ 301
+# (WordPress-era query string orphans /?s=* /?p=* were removed —
+# the CF Pages _redirects syntax matched '/' alone and broke the
+# home page redirect. See 2026-06-17 memory entry. Fix path:
+# Pages Function that detects the query string and 301s, OR
+# live with the soft-404 since the ?s=/?p= URLs are not high-value
+# for SEO and only exist in legacy WordPress back-links.)
