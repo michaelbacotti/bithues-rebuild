@@ -5,9 +5,12 @@
 
 # ── Host normalization: force www → bare (canonical host) ──
 # Canonical tags and sitemap both point at https://bithues.com/ (bare).
-# Without this, Google sees www.bithues.com as a duplicate and picks it as
-# the canonical, mismatching our declared canonical. 301 the www version
-# to bare on every URL.
+# The actual www → bare 301 is enforced by a Cloudflare Page Rule on the
+# bithues.com zone (target: www.bithues.com/*, action: forwarding_url 301 to
+# https://bithues.com/$1). CF Pages `_redirects` only matches paths, not hosts,
+# so a host-level redirect cannot be expressed here. The line below is a
+# defense-in-depth no-op kept for documentation; it is silently ignored by
+# Pages and the Page Rule is the source of truth.
 https://www.bithues.com/* https://bithues.com/:splat 301!
 
 # ── Root-level static pages ──
