@@ -1256,6 +1256,10 @@ small, .small {
  color: inherit;
  text-decoration: none;
 }
+.review-card-horizontal .review-card-text .review-hero-buy {
+ align-self: flex-start;
+ margin-top: 8px;
+}
 .review-card-horizontal .review-card-text p {
  margin: 0 0 8px;
  font-size: 0.875rem;
