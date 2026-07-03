@@ -11,8 +11,8 @@
    ' <a href="/" class="top-wordmark">BITHUES</a>',
    ' <span class="top-tagline">Honest books. Original stories.</span>',
    ' <div class="top-links">',
-   '  <a href="/about">About</a>',
-   '  <a href="/contact">Contact</a>',
+   '  <a href="/about/">About</a>',
+   '  <a href="/contact/">Contact</a>',
    ' </div>',
    '</nav>'
   ].join('\n');
