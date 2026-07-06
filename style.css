@@ -12,7 +12,7 @@
  --color-utility-bg: #111111;
  --color-utility-text: #ffffff;
  --color-category: #666666;
- --color-date: #888888;
+ --color-date: #595959;  /* WCAG AAA: 7.0:1 on #ffffff */
  --color-border: #e0e0e0;
  --font-heading: Georgia, serif;
  --font-body: system-ui, -apple-system, Inter, sans-serif;
@@ -55,6 +55,14 @@ a {
 a:hover {
  text-decoration: underline;
 }
+
+/* Inline link styling — links in prose blocks must be distinguishable by more than color (WCAG 1.4.1). Nav/button links already have their own styling. */
+.prose p a, article p a, .content a, main p a, .text-content a, .article-body a {
+ text-decoration: underline;
+ text-decoration-thickness: 1px;
+ text-underline-offset: 2px;
+}
+
 
 img {
  max-width: 100%;
