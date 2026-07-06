@@ -74,8 +74,8 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # returning 404. Older sitemaps / inbound links may have seeded Google on
 # the no-apostrophe path. 301 to the working apostrophe URL so Google
 # stops flagging these as duplicate-with-different-canonical.
-/articles/eric-carle-classic-childrens-books   /articles/eric-carle-classic-children\'s-books/   301
-/articles/frog-and-toad-classic-childrens-books /articles/frog-and-toad-classic-children\'s-books/ 301
+/articles/eric-carle-classic-childrens-books   /articles/eric-carle-classic-children's-books/   301
+/articles/frog-and-toad-classic-childrens-books /articles/frog-and-toad-classic-children's-books/ 301
 
 # ── Singular → plural (bithues specific) ──
 /story/ /stories/ 301
