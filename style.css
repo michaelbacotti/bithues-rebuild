@@ -56,14 +56,6 @@ a:hover {
  text-decoration: underline;
 }
 
-/* Inline link styling — links in prose blocks must be distinguishable by more than color (WCAG 1.4.1). Nav/button links already have their own styling. */
-.prose p a, article p a, .content a, main p a, .text-content a, .article-body a {
- text-decoration: underline;
- text-decoration-thickness: 1px;
- text-underline-offset: 2px;
-}
-
-
 img {
  max-width: 100%;
  height: auto;
@@ -607,7 +599,7 @@ small, .small {
 
 .footer-bottom p {
  font-size: 0.8125rem;
- color: #999999;
+ color: #595959;
  text-align: center;
 }
 
