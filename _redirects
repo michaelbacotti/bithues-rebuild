@@ -77,12 +77,6 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 /articles/eric-carle-classic-childrens-books   /articles/eric-carle-classic-children's-books/   301
 /articles/frog-and-toad-classic-childrens-books /articles/frog-and-toad-classic-children's-books/ 301
 
-# ── Newsletter mixed-case slug redirect (2026-07-08) ──
-# The original seed newsletter file used mixed-case "Teaches-You-to-NOTICE".
-# Lowered to match bithues URL convention. 301 the mixed-case variant so
-# any old links/bookmarks still resolve to the canonical lowercase URL.
-/newsletters/2026-07-08-what-a-book-Teaches-You-to-NOTICE/ /newsletters/2026-07-08-what-a-book-teaches-you-to-notice/ 301
-
 # ── Singular → plural (bithues specific) ──
 /story/ /stories/ 301
 
