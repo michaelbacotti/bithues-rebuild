@@ -783,11 +783,110 @@ small, .small {
  display: grid;
  grid-template-columns: repeat(3, 1fr);
  gap: 1.5rem;
- margin: 3rem 0;
+ margin: 1.5rem auto 3rem;
  max-width: var(--max-width, 1200px);
- margin-left: auto;
- margin-right: auto;
  padding: 0 24px;
+}
+
+/* Newsletter hero box — rectangular featured card for the latest issue,
+   positioned above the 3-col uniform grid. Mike 2026-07-10 ET: 'I think the
+   page would look better if the most recent newsletter article was in a
+   rectangular box at the top of the other squares.' Matches bithues
+   palette (warm brown accent on cream surface, dark ink) -- visually
+   distinct from the grid cards below via larger size, more padding,
+   prominent summary text, and a solid CTA button. */
+.newsletter-hero {
+ max-width: var(--max-width, 1200px);
+ margin: 2.5rem auto 0;
+ padding: 2.5rem 3rem 2rem;
+ background: linear-gradient(180deg, #fdfaf4 0%, #f5f0e8 100%);
+ border: 1px solid #e3dfd5;
+ border-left: 4px solid #3a2f1e;
+ border-radius: 4px;
+ box-shadow: 0 2px 12px rgba(58, 47, 30, 0.06);
+}
+
+@media (max-width: 600px) {
+ .newsletter-hero {
+  padding: 1.75rem 1.5rem;
+ }
+}
+
+.newsletter-hero__meta {
+ font-size: .85rem;
+ color: #777;
+ margin-bottom: 1rem;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: .5rem;
+ letter-spacing: .02em;
+}
+
+.newsletter-hero__chip {
+ background: #3a2f1e;
+ color: #fff;
+ padding: 3px 10px;
+ font-size: .68rem;
+ letter-spacing: .08em;
+ text-transform: uppercase;
+ border-radius: 3px;
+ font-weight: 600;
+}
+
+.newsletter-hero__title {
+ font-family: var(--font-heading, Georgia, serif);
+ font-size: 2rem;
+ font-weight: 700;
+ margin: 0 0 1rem;
+ line-height: 1.2;
+ color: #1a1a1a;
+}
+
+@media (max-width: 600px) {
+ .newsletter-hero__title {
+  font-size: 1.5rem;
+ }
+}
+
+.newsletter-hero__title a {
+ color: inherit;
+ text-decoration: none;
+}
+
+.newsletter-hero__title a:hover {
+ color: #3a2f1e;
+}
+
+.newsletter-hero__summary {
+ font-size: 1.05rem;
+ line-height: 1.65;
+ color: #444;
+ margin: 0 0 1.5rem;
+ max-width: 65ch;
+}
+
+@media (max-width: 600px) {
+ .newsletter-hero__summary {
+  font-size: .98rem;
+ }
+}
+
+.newsletter-hero__cta {
+ display: inline-block;
+ padding: 12px 28px;
+ background: #3a2f1e;
+ color: #fff;
+ text-decoration: none;
+ border-radius: 3px;
+ font-size: .92rem;
+ font-weight: 600;
+ letter-spacing: .04em;
+ transition: background .15s ease;
+}
+
+.newsletter-hero__cta:hover {
+ background: #5a4730;
 }
 
 @media (max-width: 900px) {
