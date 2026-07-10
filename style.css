@@ -792,12 +792,13 @@ small, .small {
    positioned above the 3-col uniform grid. Mike 2026-07-10 ET: 'I think the
    page would look better if the most recent newsletter article was in a
    rectangular box at the top of the other squares.' — 'better but the
-   rectangle is a little too big' (12:56 ET same day). Sized smaller:
-   900px max-width (centered, narrower than full grid), 24/28px padding,
-   1.5rem title, 1.5rem gap below the hero box before the grid.
+   rectangle is a little too big' (12:56 ET same day), then 'maybe it should
+   be the same width of the 3 boxes below it?' (13:44 ET same day). Final
+   directive: width matches the grid (max-width = grid max-width, with the
+   same horizontal padding so the left/right edges line up exactly).
    Matches bithues palette (warm brown accent on cream surface, dark ink). */
 .newsletter-hero {
- max-width: 900px;
+ max-width: var(--max-width, 1200px);
  margin: 1.75rem auto 0;
  padding: 1.5rem 2rem 1.25rem;
  background: linear-gradient(180deg, #fdfaf4 0%, #f5f0e8 100%);
