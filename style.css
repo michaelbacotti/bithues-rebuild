@@ -98,16 +98,6 @@ small, .small {
  letter-spacing: 0.1em;
  color: var(--color-category);
  font-weight: 600;
- cursor: default;
- user-select: none;
-}
-
-/* Make it visually clear that category-labels are NOT clickable filter pills.
-   Static labels, not buttons. The articles page has REAL filter buttons via .filter-btn. */
-.category-label::before {
- content: "📚 ";
- font-size: 0.7rem;
- opacity: 0.7;
 }
 
 .date-text {

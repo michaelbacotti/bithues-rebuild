@@ -24,18 +24,6 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 /stories.html /stories/ 301
 
 # ── Paginated listing pages ──
-# Pagination widget on /articles/2-6/ + /stories/2-5/ links to /articles1-6/ + /stories1-5/
-# (the OLD pagination format from build.py before 2026-06-01 — pagination was removed
-# from new builds, but old /articles/N/ and /stories/N/ HTML files still exist on disk
-# with the old broken pagination widget). These redirects preserve the user experience
-# by routing the broken links to the current single-page listings.
-/articles1/ /articles/ 301
-/articles2/ /articles/ 301
-/articles3/ /articles/ 301
-/articles4/ /articles/ 301
-/articles5/ /articles/ 301
-/articles6/ /articles/ 301
-/articles1.html /articles/ 301
 /articles2.html /articles/ 301
 /articles3.html /articles/ 301
 /articles4.html /articles/ 301
@@ -45,12 +33,6 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 /reviews3.html /reviews/ 301
 /reviews4.html /reviews/ 301
 /reviews5.html /reviews/ 301
-/stories1/ /stories/ 301
-/stories2/ /stories/ 301
-/stories3/ /stories/ 301
-/stories4/ /stories/ 301
-/stories5/ /stories/ 301
-/stories1.html /stories/ 301
 /stories2.html /stories/ 301
 /stories3.html /stories/ 301
 /stories4.html /stories/ 301
