@@ -113,3 +113,10 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # Pages Function that detects the query string and 301s, OR
 # live with the soft-404 since the ?s=/?p= URLs are not high-value
 # for SEO and only exist in legacy WordPress back-links.)
+# ── Series → Collections consolidation (2026-07-18) ──
+# /series/otomi/ is the same page, same schema, same footer column
+# as /collections/physics-consciousness/ and
+# /collections/little-mike-books/. One label for one thing.
+# 301 with explicit /:splat handling in case subpaths ever appear.
+/series/otomi/  /collections/otomi-saga/  301
+/series/otomi/* /collections/otomi-saga/:splat 301

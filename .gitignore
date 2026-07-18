@@ -1,0 +1,8 @@
+# Local scratch + archived twin repos (never commit; never deploy)
+.openclaw/tmp/pump-and-dump/
+.openclaw/tmp/wps-clone/
+_trash/_archive-bithues-2026-05-11/bithues/
+_trash/depend-push/
+_trash/entities-bithues-website-2026-05-15/
+_trash/entities-dependability-website-2026-05-15/
+_trash/succession-2026-05-12/
