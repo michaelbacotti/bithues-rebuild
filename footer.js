@@ -29,6 +29,8 @@
   + '<div class="footer-nav">'
   + '<h5>Collections</h5>'
   + '<ul>'
+  + '<li><a href="/collections/">All Collections</a></li>'
+  + '<li><a href="/collections/little-mike-books/">Little Mike Picture Books</a></li>'
   + '<li><a href="/series/otomi/">The Otomí Saga</a></li>'
   + '<li><a href="/collections/physics-consciousness/">Physics, Consciousness &amp; Time</a></li>'
   + '<li><a href="/book-match/">Book Match</a></li>'
