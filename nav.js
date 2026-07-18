@@ -27,6 +27,7 @@
    '  <a href="/articles/">Articles</a>',
    '  <a href="/stories/">Stories</a>',
    '  <a href="/reviews/">Reviews</a>',
+   '  <a href="/collections/">Collections</a>',
    '  <a href="/best/">Best Of</a>',
    '  <a href="/newsletters/">Newsletter</a>',
    '  <a href="/book-match/">Book Match</a>',
