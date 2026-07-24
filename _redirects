@@ -126,8 +126,11 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # (~250-340w each, no ads, no internal links). Returned 200 but
 # are essentially duplicates of /articles/. 301 them to the listing
 # to eliminate the thin-page risk for AdSense review.
-# Pattern matches integer page numbers specifically (not article slugs).
+# CF Pages _redirects treats the trailing-slash form as a separate
+# request, so both forms need their own rule.
 /articles/:n /articles/ 301
+/articles/:n/ /articles/ 301
 
 # /stories/<n> — orphaned pagination stubs, redirect to listing (2026-07-24)
 /stories/:n /stories/ 301
+/stories/:n/ /stories/ 301
