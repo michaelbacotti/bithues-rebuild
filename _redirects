@@ -128,3 +128,6 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # to eliminate the thin-page risk for AdSense review.
 # Pattern matches integer page numbers specifically (not article slugs).
 /articles/:n /articles/ 301
+
+# /stories/<n> — orphaned pagination stubs, redirect to listing (2026-07-24)
+/stories/:n /stories/ 301
