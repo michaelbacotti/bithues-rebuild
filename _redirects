@@ -120,3 +120,11 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # 301 with explicit /:splat handling in case subpaths ever appear.
 /series/otomi/  /collections/otomi-saga/  301
 /series/otomi/* /collections/otomi-saga/:splat 301
+
+# ── Articles pagination stubs (2026-07-24) ──
+# /articles/2/ through /articles/6/ are orphaned pagination stubs
+# (~250-340w each, no ads, no internal links). Returned 200 but
+# are essentially duplicates of /articles/. 301 them to the listing
+# to eliminate the thin-page risk for AdSense review.
+# Pattern matches integer page numbers specifically (not article slugs).
+/articles/:n /articles/ 301
