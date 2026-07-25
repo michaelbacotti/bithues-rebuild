@@ -101,29 +101,8 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 /press.html / 301
 
 # /reviews/<n> — legacy integer URL pattern; real reviews use slugs.
-# Explicit integer rules because :n in CF Pages matches ANY path segment
-# (including article slugs like 'american-journeys'), not just digits.
 # 301 all integer URLs to the reviews listing.
-/reviews/2 /reviews/ 301
-/reviews/3 /reviews/ 301
-/reviews/4 /reviews/ 301
-/reviews/5 /reviews/ 301
-/reviews/6 /reviews/ 301
-/reviews/7 /reviews/ 301
-/reviews/8 /reviews/ 301
-/reviews/9 /reviews/ 301
-/reviews/10 /reviews/ 301
-/reviews/11 /reviews/ 301
-/reviews/12 /reviews/ 301
-/reviews/13 /reviews/ 301
-/reviews/14 /reviews/ 301
-/reviews/15 /reviews/ 301
-/reviews/16 /reviews/ 301
-/reviews/17 /reviews/ 301
-/reviews/18 /reviews/ 301
-/reviews/19 /reviews/ 301
-/reviews/20 /reviews/ 301
-/reviews/21 /reviews/ 301
+/reviews/:n /reviews/ 301
 
 # /reviews/<n>.html — same: no such file, redirect to the listing.
 /reviews/:n.html /reviews/ 301
@@ -141,26 +120,3 @@ https://www.bithues.com/* https://bithues.com/:splat 301!
 # 301 with explicit /:splat handling in case subpaths ever appear.
 /series/otomi/  /collections/otomi-saga/  301
 /series/otomi/* /collections/otomi-saga/:splat 301
-
-# ── Articles pagination stubs (2026-07-24) ──
-# /articles/<n> — orphaned pagination stubs, redirect to listing (2026-07-24)
-/articles/2 /articles/ 301
-/articles/3 /articles/ 301
-/articles/4 /articles/ 301
-/articles/5 /articles/ 301
-/articles/6 /articles/ 301
-/articles/2/ /articles/ 301
-/articles/3/ /articles/ 301
-/articles/4/ /articles/ 301
-/articles/5/ /articles/ 301
-/articles/6/ /articles/ 301
-
-# /stories/<n> — orphaned pagination stubs, redirect to listing (2026-07-24)
-/stories/2 /stories/ 301
-/stories/3 /stories/ 301
-/stories/4 /stories/ 301
-/stories/5 /stories/ 301
-/stories/2/ /stories/ 301
-/stories/3/ /stories/ 301
-/stories/4/ /stories/ 301
-/stories/5/ /stories/ 301
