@@ -376,6 +376,163 @@ small, .small {
  border-right: none;
 }
 
+/* 7c. 4-column section (newsletters strip on homepage, sidebar + main combos) */
+.section-four-col {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 0;
+ max-width: var(--max-width);
+ margin: 0 auto;
+ border-top: 1px solid var(--color-border);
+ border-bottom: 1px solid var(--color-border);
+}
+
+.section-four-col .section-col {
+ border-right: 1px solid var(--color-border);
+}
+.section-four-col .section-col:last-child {
+ border-right: none;
+}
+
+/* 7d. 2-column section with sidebar + main (e.g. /articles/ + newsletter sidebar) */
+.section-sidebar {
+ display: grid;
+ grid-template-columns: 2fr 1fr;
+ gap: 0;
+ max-width: var(--max-width);
+ margin: 0 auto;
+ border-top: 1px solid var(--color-border);
+}
+
+.section-sidebar .section-main {
+ padding: 12px 24px 20px;
+ border-right: 1px solid var(--color-border);
+}
+
+.section-sidebar .section-aside {
+ padding: 12px 24px 20px;
+ background: var(--color-surface-alt);
+}
+
+.section-aside h2 {
+ font-size: 1rem;
+ margin-bottom: 12px;
+ font-family: var(--font-body);
+ font-weight: 600;
+ letter-spacing: 0.02em;
+}
+
+.section-aside .nl-mini-card {
+ padding: 12px 0;
+ border-bottom: 1px solid var(--color-border);
+}
+
+.section-aside .nl-mini-card:last-child {
+ border-bottom: none;
+}
+
+.section-aside .nl-mini-card__date {
+ font-size: 0.75rem;
+ color: var(--color-date);
+ margin-bottom: 4px;
+}
+
+.section-aside .nl-mini-card__title {
+ font-size: 0.95rem;
+ margin-bottom: 6px;
+ font-family: var(--font-body);
+ font-weight: 600;
+ line-height: 1.3;
+}
+
+.section-aside .nl-mini-card__title a {
+ color: var(--color-text);
+ text-decoration: none;
+}
+
+.section-aside .nl-mini-card__title a:hover {
+ color: var(--color-accent);
+}
+
+.section-aside .nl-mini-card__summary {
+ font-size: 0.85rem;
+ color: #555;
+ line-height: 1.4;
+ margin-bottom: 6px;
+}
+
+.section-aside .nl-mini-card__cta {
+ font-size: 0.8rem;
+ color: var(--color-accent);
+ text-decoration: none;
+}
+
+.section-aside .see-all-link {
+ display: inline-block;
+ margin-top: 12px;
+ font-weight: 600;
+ color: var(--color-accent);
+ text-decoration: none;
+}
+
+/* 7e. Related-content strip (used at bottom of individual review/newsletter pages) */
+.related-strip {
+ max-width: var(--max-width);
+ margin: 32px auto 0;
+ padding: 24px 24px 16px;
+ border-top: 1px solid var(--color-border);
+}
+
+.related-strip h2 {
+ font-size: 1.1rem;
+ margin-bottom: 16px;
+ font-family: var(--font-body);
+ font-weight: 600;
+ letter-spacing: 0.02em;
+}
+
+.related-strip-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+}
+
+.related-strip-card {
+ padding: 12px;
+ border: 1px solid var(--color-border);
+ border-radius: 4px;
+ background: var(--color-surface);
+}
+
+.related-strip-card__meta {
+ font-size: 0.75rem;
+ color: var(--color-date);
+ margin-bottom: 4px;
+}
+
+.related-strip-card__title {
+ font-size: 0.95rem;
+ font-weight: 600;
+ margin-bottom: 6px;
+ font-family: var(--font-body);
+ line-height: 1.3;
+}
+
+.related-strip-card__title a {
+ color: var(--color-text);
+ text-decoration: none;
+}
+
+.related-strip-card__title a:hover {
+ color: var(--color-accent);
+}
+
+.related-strip-card__summary {
+ font-size: 0.85rem;
+ color: #555;
+ line-height: 1.4;
+}
+
 /* article-card (used for articles AND reviews) */
 .article-card {
  padding: 16px 0;
@@ -680,6 +837,12 @@ small, .small {
  .footer-grid {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
+ }
+ .section-four-col {
+  grid-template-columns: repeat(2, 1fr);
+ }
+ .related-strip-grid {
+  grid-template-columns: repeat(2, 1fr);
  }
 }
 
@@ -1340,6 +1503,19 @@ small, .small {
  }
  .section-three-col {
   grid-template-columns: 1fr;
+ }
+ .section-four-col {
+  grid-template-columns: repeat(2, 1fr);
+ }
+ .section-sidebar {
+  grid-template-columns: 1fr;
+ }
+ .related-strip-grid {
+  grid-template-columns: 1fr;
+ }
+ .section-sidebar .section-main {
+  border-right: none;
+  border-bottom: 1px solid var(--color-border);
  }
  .section-col {
   border-right: none;
