@@ -29,7 +29,9 @@
    '  <a href="/reviews/">Reviews</a>',
    '  <a href="/best/">Best Of</a>',
    '  <a href="/newsletters/">Newsletter</a>',
-   '  <a href="/book-match/">Book Match</a>\n   <a href="/shop/">Shop</a>',
+   '  <a href="/reading-maps/">Reading Maps</a>',
+   '  <a href="/book-match/">Book Match</a>',
+   '  <a href="/shop/">Shop</a>',
    ' </div>',
    '</div>'
   ].join('\n');
