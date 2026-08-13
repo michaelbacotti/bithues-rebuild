@@ -5,10 +5,10 @@
 
 # ── Host normalization: force www → bare (canonical host) ──
 # Canonical tags and sitemap both point at https://bithues.com/ (bare).
-# Without this, Google sees www.bithues.com as a duplicate and picks it as
+# Without this, Google sees www.books.bithues.com as a duplicate and picks it as
 # the canonical, mismatching our declared canonical. 301 the www version
 # to bare on every URL.
-https://www.bithues.com/* https://bithues.com/:splat 301!
+https://www.books.bithues.com/* https://bithues.com/:splat 301!
 
 # ── Root-level static pages ──
 # These pages are still .html files (build.py outputs them that way)
